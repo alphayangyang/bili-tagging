@@ -2,13 +2,27 @@
   {
     "participant": "P02",
     "block": 1,
-    "condition": "A",
-    "condition_order": 1,
+    "bvid": "BV18E1NByEYv",
+    "genre": "entertainment",
+    "density": "low",
+    "study_id": "P02-1",
+    "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block1-BV18E1NByEYv.md",
+    "counts": {
+      "pool_total": 1519,
+      "thinned": 1030,
+      "shown": 475,
+      "folded": 0,
+      "hidden": 14
+    }
+  },
+  {
+    "participant": "P02",
+    "block": 2,
     "bvid": "BV1VMRKBCEDp",
     "genre": "information",
     "density": "low",
-    "study_id": "P02-1-A",
-    "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block1-A-BV1VMRKBCEDp.md",
+    "study_id": "P02-2",
+    "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block2-BV1VMRKBCEDp.md",
     "counts": {
       "pool_total": 1171,
       "thinned": 772,
@@ -19,54 +33,32 @@
   },
   {
     "participant": "P02",
-    "block": 2,
-    "condition": "A",
-    "condition_order": 1,
+    "block": 3,
     "bvid": "BV1X7zGY4E45",
     "genre": "entertainment",
     "density": "high",
-    "study_id": "P02-2-A",
-    "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block2-A-BV1X7zGY4E45.md",
+    "study_id": "P02-3",
+    "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block3-BV1X7zGY4E45.md",
     "counts": {
       "pool_total": 4121,
       "thinned": 0,
-      "shown": 4121,
+      "shown": 3228,
       "folded": 0,
-      "hidden": 0
-    }
-  },
-  {
-    "participant": "P02",
-    "block": 3,
-    "condition": "C",
-    "condition_order": 2,
-    "bvid": "BV1Ho4y1D7Wz",
-    "genre": "information",
-    "density": "high",
-    "study_id": "P02-3-C",
-    "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block3-C-BV1Ho4y1D7Wz.md",
-    "counts": {
-      "pool_total": 2101,
-      "thinned": 0,
-      "shown": 2020,
-      "folded": 0,
-      "hidden": 81
+      "hidden": 893
     }
   },
   {
     "participant": "P02",
     "block": 4,
-    "condition": "C",
-    "condition_order": 2,
-    "bvid": "BV18E1NByEYv",
-    "genre": "entertainment",
-    "density": "low",
-    "study_id": "P02-4-C",
-    "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block4-C-BV18E1NByEYv.md",
+    "bvid": "BV1Z4RHYKEcB",
+    "genre": "information",
+    "density": "high",
+    "study_id": "P02-4",
+    "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block4-BV1Z4RHYKEcB.md",
     "counts": {
-      "pool_total": 1519,
-      "thinned": 1030,
-      "shown": 489,
+      "pool_total": 725,
+      "thinned": 0,
+      "shown": 725,
       "folded": 0,
       "hidden": 0
     }
@@ -74,37 +66,33 @@
   {
     "participant": "P02",
     "block": 5,
-    "condition": "B",
-    "condition_order": 3,
-    "bvid": "BV1Z4RHYKEcB",
-    "genre": "information",
-    "density": "high",
-    "study_id": "P02-5-B",
-    "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block5-B-BV1Z4RHYKEcB.md",
-    "counts": {
-      "pool_total": 725,
-      "thinned": 0,
-      "shown": 721,
-      "folded": 0,
-      "hidden": 4
-    }
-  },
-  {
-    "participant": "P02",
-    "block": 6,
-    "condition": "B",
-    "condition_order": 3,
     "bvid": "BV1CzW26vEXz",
     "genre": "entertainment",
     "density": "low",
-    "study_id": "P02-6-B",
-    "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block6-B-BV1CzW26vEXz.md",
+    "study_id": "P02-5",
+    "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block5-BV1CzW26vEXz.md",
     "counts": {
       "pool_total": 630,
       "thinned": 541,
       "shown": 89,
       "folded": 0,
       "hidden": 0
+    }
+  },
+  {
+    "participant": "P02",
+    "block": 6,
+    "bvid": "BV1Ho4y1D7Wz",
+    "genre": "information",
+    "density": "high",
+    "study_id": "P02-6",
+    "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block6-BV1Ho4y1D7Wz.md",
+    "counts": {
+      "pool_total": 2101,
+      "thinned": 0,
+      "shown": 2066,
+      "folded": 0,
+      "hidden": 35
     }
   }
 ]

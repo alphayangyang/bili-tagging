@@ -1,6 +1,6 @@
 {
   "schema": "dmf-study-manifest/1",
-  "created": "2026-11-18T12:31:00Z",
+  "created": "2026-11-18T17:15:04Z",
   "files": [
     {
       "path": "data/study/stimuli.json",
@@ -34,8 +34,8 @@
     },
     {
       "path": "data/study/questionnaire.csv",
-      "bytes": 320,
-      "sha256": "ca4185c2aadb7065c5fc64eca9b3ced37749de9c1cb337662cd4b6a4b7343c0a"
+      "bytes": 17907,
+      "sha256": "56d66c449a4b28c2ee012da2390f33645bb37233a728910f7303d0ad30c3be4e"
     },
     {
       "path": "data/study/models/BV18E1NByEYv.json",
@@ -99,8 +99,8 @@
     },
     {
       "path": "extension/dist/bili-danmaku-filter.user.js",
-      "bytes": 188784,
-      "sha256": "27b0c8572356c6d33b63d9e39738ad88ffa61d15c97a91214b0c7580ab39dbce"
+      "bytes": 191898,
+      "sha256": "04a69b093a0b140a1c4d2f40484a24ba40dc887b51e1930a482bd1fc239db711"
     }
   ],
   "counts": {
@@ -112,6 +112,6 @@
     "model_bytes": 2397183,
     "run_sheet_rows": 180,
     "run_sheet_participants": 30,
-    "userscript_bytes": 188784
+    "userscript_bytes": 191898
   }
 }

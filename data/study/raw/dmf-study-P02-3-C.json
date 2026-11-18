@@ -5,43 +5,40 @@
   "condition": "prototype",
   "condition_label": "C",
   "started_at": "2026-11-19T09:53:00Z",
-  "ended_at": "2026-11-19T09:56:16Z",
-  "script_version": "0.4.2-simulated",
+  "ended_at": "2026-11-19T09:56:24Z",
+  "script_version": "0.4.2-simulated-blind",
   "prefs": {
     "condition": "C"
   },
   "counts": {
     "segments": 1,
-    "shown": 2020,
-    "hidden": 81,
+    "shown": 3228,
+    "hidden": 893,
     "collapsed": 0,
     "thinned": 0,
-    "expands": 2,
+    "expands": 0,
     "restores": 1,
     "prefs": 1,
     "corrections": 0,
     "dropped_events": 0
   },
+  "self_report": {
+    "expectancy_1": 3,
+    "expectancy_2": 3,
+    "opened_panel": true
+  },
   "events": [
     {
       "t": 1795081980000,
       "type": "segment",
-      "bvid": "BV1Ho4y1D7Wz",
+      "bvid": "BV1X7zGY4E45",
       "segment_index": 1,
-      "shown": 2020,
-      "hidden": 81,
+      "shown": 3228,
+      "hidden": 893,
       "collapsed": 0,
       "thinned": 0,
       "latency_ms": 1.0,
       "online": true
-    },
-    {
-      "t": 1795081985000,
-      "type": "expand"
-    },
-    {
-      "t": 1795081986000,
-      "type": "expand"
     },
     {
       "t": 1795081986000,
@@ -54,5 +51,5 @@
   ],
   "simulated": true,
   "participant_kind": "llm-agent",
-  "persona": "娱乐至上型（20岁本科生，把弹幕当气氛，讨厌被过滤）"
+  "persona": "娱乐至上型：弹幕就是气氛，看 B 站主要为开心，讨厌弹幕被拿掉"
 }

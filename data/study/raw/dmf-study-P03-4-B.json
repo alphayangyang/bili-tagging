@@ -1,0 +1,47 @@
+{
+  "schema": "dmf-study-session/1",
+  "study_id": "P03-4-B",
+  "participant": "P03",
+  "condition": "keyword",
+  "condition_label": "B",
+  "started_at": "2026-11-19T10:42:00Z",
+  "ended_at": "2026-11-19T10:46:41Z",
+  "script_version": "0.4.2-simulated-blind",
+  "prefs": {
+    "condition": "B"
+  },
+  "counts": {
+    "segments": 1,
+    "shown": 89,
+    "hidden": 0,
+    "collapsed": 0,
+    "thinned": 541,
+    "expands": 0,
+    "restores": 0,
+    "prefs": 0,
+    "corrections": 0,
+    "dropped_events": 0
+  },
+  "self_report": {
+    "expectancy_1": 1,
+    "expectancy_2": 1,
+    "opened_panel": false
+  },
+  "events": [
+    {
+      "t": 1795084920000,
+      "type": "segment",
+      "bvid": "BV1CzW26vEXz",
+      "segment_index": 1,
+      "shown": 89,
+      "hidden": 0,
+      "collapsed": 0,
+      "thinned": 541,
+      "latency_ms": 17.0,
+      "online": true
+    }
+  ],
+  "simulated": true,
+  "participant_kind": "llm-agent",
+  "persona": "敏感易被冒犯型：讨厌攻击、引战和剧透，对“傻逼/急了”这类词反应强，想要能挡掉噪音又不漏信息的工具"
+}

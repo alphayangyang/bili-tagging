@@ -24,7 +24,12 @@ ANALYZE = REPO / "scripts" / "study" / "analyze.py"
 OUT = REPO / "submission" / "figures" / "imr-figure2-simulated.png"
 
 MEASURES = (("discomfort", "Discomfort", "higher is worse"), ("control", "Control", ""), ("overall", "Overall", ""))
-CONDITIONS = (("A", "A  all-on", "#b9c9e2"), ("B", "B  keyword", "#cfe3cf"), ("C", "C  prototype", "#f6d9a8"))
+CONDITIONS = (
+    ("A", "A  all-on", "#b9c9e2"),
+    ("B", "B  keyword", "#cfe3cf"),
+    ("C", "C  prototype", "#f6d9a8"),
+    ("D", "D  sham", "#e2cfe6"),
+)
 
 
 def load_analyze():
@@ -55,19 +60,18 @@ def main() -> int:
 
     plt.rcParams.update({"font.family": "DejaVu Serif", "font.size": 9})
     fig, ax = plt.subplots(figsize=(6.4, 3.0), dpi=260)
-    width = 0.24
+    width = 0.19
     positions = range(len(MEASURES))
     for offset, (condition, name, color) in enumerate(CONDITIONS):
-        xs = [p + (offset - 1) * width for p in positions]
+        shift = offset - (len(CONDITIONS) - 1) / 2
+        xs = [p + shift * width for p in positions]
         ys = [means[outcome][condition] for outcome, _l, _h in MEASURES]
         low = [y - cis[outcome][condition][0] for (outcome, _l, _h), y in zip(MEASURES, ys)]
         high = [cis[outcome][condition][1] - y for (outcome, _l, _h), y in zip(MEASURES, ys)]
         bars = ax.bar(xs, ys, width=width, color=color, edgecolor="#4a4a4a", linewidth=0.6,
                       label=name, yerr=[low, high], capsize=2.2,
                       error_kw={"elinewidth": 0.7, "ecolor": "#4a4a4a"})
-        for bar, y in zip(bars, ys):
-            ax.text(bar.get_x() + bar.get_width() / 2, y + 0.14, f"{y:.2f}",
-                    ha="center", va="bottom", fontsize=6.6)
+        del bars
 
     ax.set_xticks(list(positions))
     ax.set_xticklabels([label for _o, label, _h in MEASURES])
@@ -78,7 +82,7 @@ def main() -> int:
     ax.set_axisbelow(True)
     for spine in ("top", "right"):
         ax.spines[spine].set_visible(False)
-    ax.legend(frameon=False, ncol=3, loc="upper center", bbox_to_anchor=(0.5, 1.16), fontsize=7.5)
+    ax.legend(frameon=False, ncol=4, loc="upper center", bbox_to_anchor=(0.5, 1.16), fontsize=7.0)
     fig.tight_layout()
     OUT.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(OUT, dpi=260, bbox_inches="tight", facecolor="white")

@@ -1,0 +1,47 @@
+{
+  "schema": "dmf-study-session/1",
+  "study_id": "P08-2-B",
+  "participant": "P08",
+  "condition": "keyword",
+  "condition_label": "B",
+  "started_at": "2026-11-19T14:19:00Z",
+  "ended_at": "2026-11-19T14:23:51Z",
+  "script_version": "0.4.2-simulated-blind",
+  "prefs": {
+    "condition": "B"
+  },
+  "counts": {
+    "segments": 1,
+    "shown": 721,
+    "hidden": 4,
+    "collapsed": 0,
+    "thinned": 0,
+    "expands": 0,
+    "restores": 0,
+    "prefs": 0,
+    "corrections": 0,
+    "dropped_events": 0
+  },
+  "self_report": {
+    "expectancy_1": 2,
+    "expectancy_2": 2,
+    "opened_panel": false
+  },
+  "events": [
+    {
+      "t": 1795097940000,
+      "type": "segment",
+      "bvid": "BV1Z4RHYKEcB",
+      "segment_index": 1,
+      "shown": 721,
+      "hidden": 4,
+      "collapsed": 0,
+      "thinned": 0,
+      "latency_ms": 17.0,
+      "online": true
+    }
+  ],
+  "simulated": true,
+  "participant_kind": "llm-agent",
+  "persona": "游戏直播常客（22 岁），习惯高强度弹幕、觉得对喷是乐子，只烦剧透和被工具管着"
+}

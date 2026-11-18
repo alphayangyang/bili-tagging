@@ -5,42 +5,43 @@
   "condition": "prototype",
   "condition_label": "C",
   "started_at": "2026-11-19T10:50:00Z",
-  "ended_at": "2026-11-19T10:53:24Z",
-  "script_version": "0.4.2-simulated",
+  "ended_at": "2026-11-19T10:55:00Z",
+  "script_version": "0.4.2-simulated-blind",
   "prefs": {
     "condition": "C"
   },
   "counts": {
     "segments": 1,
-    "shown": 3228,
-    "hidden": 893,
+    "shown": 489,
+    "hidden": 0,
     "collapsed": 0,
-    "thinned": 0,
+    "thinned": 1030,
     "expands": 0,
     "restores": 0,
-    "prefs": 1,
+    "prefs": 0,
     "corrections": 0,
     "dropped_events": 0
+  },
+  "self_report": {
+    "expectancy_1": 2,
+    "expectancy_2": 2,
+    "opened_panel": true
   },
   "events": [
     {
       "t": 1795085400000,
       "type": "segment",
-      "bvid": "BV1X7zGY4E45",
+      "bvid": "BV18E1NByEYv",
       "segment_index": 1,
-      "shown": 3228,
-      "hidden": 893,
+      "shown": 489,
+      "hidden": 0,
       "collapsed": 0,
-      "thinned": 0,
+      "thinned": 1030,
       "latency_ms": 1.0,
       "online": true
-    },
-    {
-      "t": 1795085407000,
-      "type": "pref"
     }
   ],
   "simulated": true,
   "participant_kind": "llm-agent",
-  "persona": "敏感易被冒犯型：23 岁，讨厌攻击、引战与剧透，看视频想清净"
+  "persona": "敏感易被冒犯型：讨厌攻击、引战和剧透，对“傻逼/急了”这类词反应强，想要能挡掉噪音又不漏信息的工具"
 }

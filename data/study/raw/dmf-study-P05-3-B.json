@@ -1,0 +1,47 @@
+{
+  "schema": "dmf-study-session/1",
+  "study_id": "P05-3-B",
+  "participant": "P05",
+  "condition": "keyword",
+  "condition_label": "B",
+  "started_at": "2026-11-19T12:08:00Z",
+  "ended_at": "2026-11-19T12:11:44Z",
+  "script_version": "0.4.2-simulated-blind",
+  "prefs": {
+    "condition": "B"
+  },
+  "counts": {
+    "segments": 1,
+    "shown": 399,
+    "hidden": 0,
+    "collapsed": 0,
+    "thinned": 772,
+    "expands": 0,
+    "restores": 0,
+    "prefs": 0,
+    "corrections": 0,
+    "dropped_events": 0
+  },
+  "self_report": {
+    "expectancy_1": 2,
+    "expectancy_2": 2,
+    "opened_panel": false
+  },
+  "events": [
+    {
+      "t": 1795090080000,
+      "type": "segment",
+      "bvid": "BV1VMRKBCEDp",
+      "segment_index": 1,
+      "shown": 399,
+      "hidden": 0,
+      "collapsed": 0,
+      "thinned": 772,
+      "latency_ms": 74.0,
+      "online": true
+    }
+  ],
+  "simulated": true,
+  "participant_kind": "llm-agent",
+  "persona": "共看氛围型（把弹幕当一起看的人，重视热闹与共鸣）"
+}

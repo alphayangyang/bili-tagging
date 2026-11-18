@@ -1,0 +1,47 @@
+{
+  "schema": "dmf-study-session/1",
+  "study_id": "P07-1-D",
+  "participant": "P07",
+  "condition": "sham",
+  "condition_label": "D",
+  "started_at": "2026-11-19T13:30:00Z",
+  "ended_at": "2026-11-19T13:33:44Z",
+  "script_version": "0.4.2-simulated-blind",
+  "prefs": {
+    "condition": "D"
+  },
+  "counts": {
+    "segments": 1,
+    "shown": 399,
+    "hidden": 0,
+    "collapsed": 0,
+    "thinned": 772,
+    "expands": 0,
+    "restores": 0,
+    "prefs": 0,
+    "corrections": 0,
+    "dropped_events": 0
+  },
+  "self_report": {
+    "expectancy_1": 2,
+    "expectancy_2": 2,
+    "opened_panel": false
+  },
+  "events": [
+    {
+      "t": 1795095000000,
+      "type": "segment",
+      "bvid": "BV1VMRKBCEDp",
+      "segment_index": 1,
+      "shown": 399,
+      "hidden": 0,
+      "collapsed": 0,
+      "thinned": 772,
+      "latency_ms": 1.0,
+      "online": true
+    }
+  ],
+  "simulated": true,
+  "participant_kind": "llm-agent",
+  "persona": "安静隐私型：28岁工作党，看视频只想放松，讨厌弹幕争吵和面板打扰"
+}

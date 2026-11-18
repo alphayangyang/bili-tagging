@@ -27,7 +27,7 @@ from danmaku_filter.classify.linear import LinearTagger
 from danmaku_filter.policy import DEFAULT_PREFS, decide
 
 AGENTS = REPO / "data" / "study" / "agents"
-RUN_SHEET = AGENTS / "run-sheet-6.csv"
+RUN_SHEET = AGENTS / "run-sheet-8.csv"
 FRAMES = AGENTS / "frames"
 BLOCKS = AGENTS / "blocks"
 
@@ -57,25 +57,21 @@ CONDITION_NAMES = {
 LOW_DENSITY_PER_MIN = 30
 WINDOW_S = 10
 
-
 def djb2(text: str) -> int:
     value = 5381
     for char in text:
         value = ((value * 33) + ord(char)) & 0xFFFFFFFF
     return value
 
-
 def load_stimuli() -> dict[str, dict]:
     report = json.loads((REPO / "data" / "study" / "report.json").read_text(encoding="utf-8"))
     return {row["bvid"]: row for row in report["stimuli"]}
-
 
 def load_model(bvid: str) -> LinearTagger:
     path = REPO / "data" / "study" / "models" / (bvid + ".json")
     if not path.exists():
         path = REPO / "data" / "study" / "models" / "_global.json"
     return LinearTagger.load(path)
-
 
 def load_pool(bvid: str) -> list[dict]:
     payload = json.loads((REPO / "data" / "tags" / (bvid + ".json")).read_text(encoding="utf-8"))
@@ -89,7 +85,6 @@ def load_pool(bvid: str) -> list[dict]:
     rows.sort(key=lambda row: row["time_ms"])
     return rows
 
-
 def label_pool(rows: list[dict], model: LinearTagger) -> None:
     scores = model.predict_scores([row["text"] for row in rows])
     for row, row_scores in zip(rows, scores):
@@ -97,7 +92,6 @@ def label_pool(rows: list[dict], model: LinearTagger) -> None:
         row["label"] = label
         row["score"] = row_scores[label]
         row["tags"] = row_scores
-
 
 def thin(rows: list[dict], duration_s: float) -> tuple[list[dict], list[dict]]:
     """Deterministically drop to LOW_DENSITY_PER_MIN using stable dmid hashes."""
@@ -122,21 +116,18 @@ def thin(rows: list[dict], duration_s: float) -> tuple[list[dict], list[dict]]:
     dropped.sort(key=lambda row: row["time_ms"])
     return kept, dropped
 
-
 def apply_condition(rows: list[dict], condition: str) -> list[dict]:
+    """Apply one display setting; A and D are pass-through, D is the inert sham."""
     out = []
     for row in rows:
         row = dict(row)
         row["action"] = "show"
         row["reason"] = ""
-        if condition == "A":
-            out.append(row)
-            continue
         if condition == "B":
             if any(word in row["text"] for word in KEYWORDS):
                 row["action"] = "hide"
                 row["reason"] = "platform keyword"
-        else:
+        elif condition == "C":
             decision = decide(row, PROTOTYPE_PREFS)
             row["action"] = decision["action"]
             row["reason"] = decision["reason"]
@@ -148,7 +139,6 @@ def mmss(ms: int) -> str:
     seconds = max(0, int(ms // 1000))
     return "%02d:%02d" % (seconds // 60, seconds % 60)
 
-
 def sample(rows: list[dict], count: int, seed: str) -> list[dict]:
     if len(rows) <= count:
         return rows
@@ -159,11 +149,14 @@ def sample(rows: list[dict], count: int, seed: str) -> list[dict]:
         picked.append(rows[min(len(rows) - 1, offset)])
     return picked
 
-
 def block_markdown(row: dict, stimulus: dict, pool: dict, condition: str) -> str:
     shown = [item for item in pool["items"] if item["action"] == "show"]
     folded = [item for item in pool["items"] if item["action"] == "collapse"]
     hidden = [item for item in pool["items"] if item["action"] == "hide"]
+    has_panel = condition in {"C", "D"}
+    has_capsule = condition in {"C", "D"}
+    duration = int(stimulus.get("duration_s") or 0)
+    rate = (len(shown) / (duration / 60.0)) if duration else 0.0
     lines = []
     lines.append("# Block material: %s, block %s" % (row["participant"], row["block"]))
     lines.append("")
@@ -171,41 +164,46 @@ def block_markdown(row: dict, stimulus: dict, pool: dict, condition: str) -> str
     lines.append("- bvid: %s" % row["bvid"])
     lines.append("- title (Chinese): %s" % stimulus["title"])
     lines.append("- type: %s (%s)" % (row["genre"], stimulus.get("label", "")))
-    lines.append("- duration: %d seconds" % int(stimulus.get("duration_s") or 0))
+    lines.append("- duration: %d seconds" % duration)
     lines.append("- density cell: %s (original pool %d comments)" % (row["density"], pool["pool_total"]))
     lines.append("- screenshots: %s and %s" % (pool["frames"][0], pool["frames"][1]))
     lines.append("")
     lines.append("## What you see in this block")
-    lines.append(CONDITION_NAMES[condition])
+    lines.append("这一块只描述**你在屏幕上看得到的东西**。研究不会告诉你这块用的是哪种设置，")
+    lines.append("请只根据你看到的界面和弹幕作答，不要猜测组别，也不要在 notes 里写组别。")
     lines.append("")
-    lines.append("- comments in the pool: %d" % pool["pool_total"])
-    lines.append("- removed by the density cell before playback: %d" % pool["thinned"])
-    lines.append("- comments you actually see: %d" % len(shown))
-    lines.append("- comments hidden: %d" % len(hidden))
-    lines.append("- comments folded (in the panel, one click to show): %d" % len(folded))
-    lines.append("- shown-label distribution: %s" % json.dumps(dict(Counter(item["label"] for item in shown).most_common()), ensure_ascii=False))
+    lines.append("- 屏幕上是否出现「过滤控制台」面板：%s" % ("有" if has_panel else "没有"))
+    lines.append("- 加载时是否出现「正在整理弹幕池」的进度提示：%s" % ("有" if has_capsule else "没有"))
+    lines.append("- 弹幕池里原本有：%d 条" % pool["pool_total"])
+    if pool["thinned"]:
+        lines.append("- 这一块的密度格在播放前抽掉了一部分弹幕：%d 条没有出现（你看到的密度约 %.0f 条/分钟）" % (pool["thinned"], rate))
+    lines.append("- 你实际看到的弹幕：%d 条" % len(shown))
+    if has_panel:
+        lines.append("- 面板统计显示：显示 %d / 折叠 %d / 隐藏 %d" % (len(shown), len(folded), len(hidden)))
+    unavailable = len(hidden) + pool["thinned"]
+    if unavailable:
+        lines.append("- 始终没有在屏幕上出现的弹幕：%d 条（你看不到它们的原文）" % unavailable)
     lines.append("")
-    lines.append("## Examples of comments you see (time, label, text)")
+    has_time = any(int(item.get("time_ms") or 0) for item in shown)
+    lines.append("## Examples of comments you see%s" % (" (time, text)" if has_time else " (text)"))
     for item in sample(shown, 14, row["participant"] + row["bvid"] + condition):
-        lines.append("- %s  [%s %.2f]  %s" % (mmss(item["time_ms"]), item["label"], item["score"], item["text"][:60]))
+        if has_time:
+            lines.append("- %s  %s" % (mmss(item["time_ms"]), item["text"][:60]))
+        else:
+            lines.append("- %s" % item["text"][:60])
     lines.append("")
     if folded:
-        lines.append("## Comments folded into the panel (you can open any of them)")
+        lines.append("## Comments in the panel folded list (one click shows them)")
         for item in sample(folded, 8, row["participant"] + "fold"):
-            lines.append("- %s  [%s %.2f]  %s" % (mmss(item["time_ms"]), item["label"], item["score"], item["text"][:60]))
+            if has_time:
+                lines.append("- %s  %s" % (mmss(item["time_ms"]), item["text"][:60]))
+            else:
+                lines.append("- %s" % item["text"][:60])
         lines.append("")
-    if hidden:
-        lines.append("## Comments hidden (you never see these)")
-        for item in sample(hidden, 6, row["participant"] + "hide"):
-            lines.append("- %s  [%s %.2f]  %s" % (mmss(item["time_ms"]), item["label"], item["score"], item["text"][:60]))
-        lines.append("")
-    lines.append("## System behaviour")
-    lines.append("- interface: Bilibili video page, danmaku switching on, 1440x900 desktop browser")
-    if condition == "C":
-        lines.append("- before playback the extension loads and scores the whole pool (progress pill, 0.2 to 3 s)")
-        lines.append("- the panel is closed by default; a small badge shows hidden and folded counts")
-    else:
-        lines.append("- no extension intervenes; the page behaves like normal Bilibili")
+    lines.append("## Your reaction")
+    lines.append("按 PROTOCOL.md 的题面逐题给 1-7 的整数分；先想清楚「以我这个人格，在这一块里")
+    lines.append("看到了什么」，再给分。")
+    lines.append("")
     return "\n".join(lines)
 
 
@@ -245,7 +243,7 @@ def main() -> int:
         }
         directory = out_dir / row["participant"]
         directory.mkdir(parents=True, exist_ok=True)
-        path = directory / ("block%s-%s-%s.md" % (row["block"], row["condition"], bvid))
+        path = directory / ("block%s-%s.md" % (row["block"], bvid))
         path.write_text(block_markdown(row, stimulus, pool, row["condition"]), encoding="utf-8")
         packets.append({
             "participant": row["participant"],
@@ -270,8 +268,17 @@ def main() -> int:
         index[packet["participant"]].append(packet)
     for participant, entries in index.items():
         entries.sort(key=lambda entry: entry["block"])
+        # The participant-facing index must stay blind: no condition letter, and
+        # the study id only carries the block number.
+        blind = []
+        for entry in entries:
+            item = dict(entry)
+            item.pop("condition", None)
+            item.pop("condition_order", None)
+            item["study_id"] = "%s-%d" % (participant, item["block"])
+            blind.append(item)
         (out_dir / (participant + ".index.json")).write_text(
-            json.dumps(entries, ensure_ascii=False, indent=2), encoding="utf-8")
+            json.dumps(blind, ensure_ascii=False, indent=2), encoding="utf-8")
     summary = {participant: entries for participant, entries in index.items()}
     (AGENTS / "materials-index.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
     print("blocks:", len(packets), "participants:", len(index))

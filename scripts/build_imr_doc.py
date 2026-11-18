@@ -140,7 +140,7 @@ def main():
                 pic_par = doc.paragraphs[-1]
                 pic_par.alignment = WD_ALIGN_PARAGRAPH.CENTER
                 pic_par.paragraph_format.space_before = Pt(8)
-            elif line.startswith("Figure 2."):
+            elif line.startswith("Figure 3."):
                 doc.add_picture(str(FIG2), width=Inches(6.0))
                 pic_par = doc.paragraphs[-1]
                 pic_par.alignment = WD_ALIGN_PARAGRAPH.CENTER

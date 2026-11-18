@@ -43,6 +43,7 @@
 | L23 | S2 收尾工具：S1 单标注金标 120 条（analyze --gold 出 per-tag P/R/F1）、主试清单 + 结果报告模板、一键自检脚本 precheck.py（服务/材料/模型/报告/链接表/金标/版本 7 项） | DONE | lead | data/study/gold_sheet.jsonl + gold.jsonl（120 行，6 视频各 20 条，与 teacher 一致率 0.575）；脚本 scripts/study/precheck.py + tests/test_study_precheck.py（16 用例）；文档 docs/study/{gold-annotation,examiner-checklist,results-template}.md；RQ2 金标结果 dominant 0.558 / macro-F1 0.496 / other recall 0.147 / attack recall 1.0（support 6）；docs/study/recruitment.md（招募/排期/提醒）、protocol §14 改为「6 件事当前状态」；281 python tests + 103 js pass |
 | L24 | 分析口径 QA：Krippendorff α 有限样本修正（原实现系统性低估）、Wilcoxon/Holm/Cronbach 与 scipy/参考值逐值对齐、macro-F1 并集口径写明、功效模拟脚本 | DONE | lead | analyze.py 的 krippendorff_alpha_nominal 改为 (N²−Σn²)/(N(N−1))，与 krippendorff 0.9.0 在 4 组固定样例上逐值一致（0.620/0.240/0.298/0.294）；tests/test_study_analyze.py 新增 scipy 参考值与 Holm 参考例；scripts/study/power_sim.py + tests/test_study_power.py；protocol §2.4 补「N=24 对 d≥0.7 有 80%+ power、d=0.6 约 .78，Holm 后 .61/.74」、§8.2 补 α 与 macro-F1 口径、results-template §2.5 分析口径；README S2 行同步；286 python tests |
 
+| L26 | S2 模拟运行 v2：加 sham 条件 D + 盲化材料 + 8 个 AI 被试 × 48 块；analyze.py 扩到 4 条件 / 6 对比 / expectancy；study.js 增 sham 预设（C/D 默认显示面板，A/B 仍隐藏）；Figure 3 四条件；IMR 改 4 条件设计与盲化结果（不适感差异消失）；protocol/agents README 同步 | DONE | lead | 48 blocks / 8 participants，每条件 12 块；C vs A 不适感 −0.28（Holm 1.000）、控制感 +1.54（原始 p=.025，Holm .148）、期待/信任 +1.69（.012 / .070）；299 python tests + 105 js pass |
 | L25 | S2 模拟运行（AI 被试）+ IMR 结果更新：6 个 LLM 子智能体按人格作答 36 块 → assemble → analyze.py 出表；拉丁方修正（每视频每条件 2 次、每被试看全 6 支）；familiar 编码/延迟匹配两个 bug 修掉；IMR 数字改去泄漏口径并补统计方法段与 §2.6 模拟小节 | DONE | lead | `data/study/agents/`（run-sheet-6.csv、blocks/、frames/、out/、README.md）、`scripts/study/agents/{build_materials,assemble}.py`、`data/study/{questionnaire.csv,raw/,analysis.json,analysis.md}`、`docs/study/results-simulated.md`、`docs/study/imr-methods-results.md` + `submission/Class X + ZonE + IMR.docx`（2,532 词 / 9 表 / 1 图）；去泄漏金标：agreement .525、macro-F1 .350（CI [.255,.430]）、3 表逐标签；模拟结果 C vs A 不适感 −1.02（Holm p=.344，n=6 不足以显著）；297 python tests + 104 js pass |
 
 ## TODO（未开始，按序）
@@ -75,7 +76,7 @@
     ③ 低置信放行开关默认开，已确认关掉后「全隐藏」能整池清零，但真机上要不要默认关需可用性测试；
     ④ study 模式已验证：A/B record-only 走原始段并记录（只记录策略会做什么），C 走整池过滤；三条件都应用密度格抽稀（low = 30 条/分）。
 
-12. **S2 真人执行**（模拟管线已通，见 L25）：按 `data/study/run-sheet.csv`（30 被试 × 6 块 = 180 URL）招人；
+12. **S2 真人执行**（模拟管线已通，见 L26）：正式设计改为 4 条件 × 8 块/人（加 sham D，见 protocol §2.1 变更说明），`scripts/study/session_url.py` 的 run sheet 生成器仍为 3 条件/6 块，招人前必须先改并重生成；否则只能按旧 3 条件跑；
     A/B 条件用带屏蔽词账号，C 条件确认整池加载；每块导出 session JSON 到 `data/study/raw/`、问卷填 `data/study/questionnaire.csv`，
     然后 `python3 scripts/study/analyze.py --bootstrap 5000`。注意：模拟运行已证明 n=6 时 Wilcoxon 最小 p≈.031、Holm 后不可能显著，N=16 才够。
 13. **IMR 提交收尾**：`submission/Class X + ZonE + IMR.docx` 里的班级号占位 `Class X` 待用户给；

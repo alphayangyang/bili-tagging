@@ -15,7 +15,7 @@ OUT = REPO / "submission" / "figures" / "imr-figure1.png"
 BOXES = [
     ("Consent and briefing\n5 min", 2.05),
     ("Setup and practice\n5 min", 2.05),
-    ("Six blocks, 3 to 5 min each\nA / B / C x high / low density\nLatin-square order", 4.15),
+    ("Eight blocks, 3 to 5 min each\nA / B / C / D x high / low density\nLatin-square order", 4.15),
     ("Between blocks\nlog export, seen-before?\nabout 1 min", 2.55),
     ("Debrief\n5 min", 1.75),
 ]
@@ -48,7 +48,7 @@ def build() -> Path:
         end = edges[i + 1][0] - 0.04
         ax.add_patch(FancyArrowPatch((start, 1.5), (end, 1.5), arrowstyle="-|>",
                                      mutation_scale=13, linewidth=1.1, color="#4a4f5c"))
-    ax.text(7.5, 0.24, "Total session: about 45 minutes", ha="center", va="center",
+    ax.text(7.5, 0.24, "Total session: about 55 minutes", ha="center", va="center",
             fontsize=9.4, color="#4a4f5c")
     fig.tight_layout(pad=0.2)
     OUT.parent.mkdir(parents=True, exist_ok=True)

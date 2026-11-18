@@ -8,7 +8,7 @@ Note: replace "Class X" with the class number before submission.
 
 ### 1.1 Design
 
-We evaluate the prototype in a within-subject laboratory experiment with three conditions: no filtering (A), platform keyword blocking (B), and the semantic prototype (C). Every participant views six Bilibili videos in six blocks of three to five minutes, two blocks per condition. For each condition one video is informational and one is entertainment, and for each pair one video keeps its original danmaku density while the other is thinned to 30 comments per minute. Condition assignment and the order of conditions follow a Latin square with six rows, so that every video pair appears in every condition across participants and no condition is always experienced first; the order of the two videos inside a pair alternates between participants. The design is therefore a 3 (condition) by 2 (genre) by 2 (density) fully crossed manipulation, with condition and density varied within participants and genre crossed with the video pairs. A session lasts about 45 minutes.
+We evaluate the prototype in a within-subject laboratory experiment with four conditions: no filtering (A), platform keyword blocking (B), the semantic prototype (C), and a sham (D) that shows the same panel, the same whole-pool loading step and the same folded list, but filters nothing. Every participant views six Bilibili videos in eight blocks of three to five minutes, two blocks per condition. For each condition one video is informational and one is entertainment, and for each pair one video keeps its original danmaku density while the other is thinned to 30 comments per minute. Because there are four conditions and six videos, every participant sees each video once and each condition twice; condition assignment and the order of conditions follow a Latin square with four rows, so that no condition is always experienced first. The design is therefore a 4 (condition) by 2 (genre) by 2 (density) fully crossed manipulation, with condition and density varied within participants and genre crossed with the video pairs. A session lasts about 55 minutes.
 
 ### 1.2 Participants and samples
 
@@ -38,8 +38,9 @@ Table 2. Experimental conditions.
 | A: all-on | Every danmaku comment as Bilibili shows it; native keyword blocking switched off | Record only: never modifies the stream |
 | B: platform-keyword | Comments matching five Bilibili blocked words are removed (剧透, 前方高能, 傻逼, 打卡, ???) | Record only: the platform removes, the script logs |
 | C: prototype | Attack, conflict, inflammatory bait and irrelevant repetition hidden; spoilers folded (recoverable in the panel); everything else shown; confidence threshold 0.30 | Full filtering: whole-pool scoring, byte-level rewriting, panel |
+| D: sham | The same panel, progress capsule and folded list as C, but every comment is shown and nothing is folded | Interface and whole-pool loading on, classification and rewriting off |
 
-The density manipulation applies to all three conditions: high-density blocks keep the original stream, and low-density blocks are thinned to 30 comments per minute with fixed 10-second windows and a stable hash over comment identifiers, so that the same comments survive regardless of condition. Condition C uses the same thinned stream, which keeps the comparison between conditions fair.
+The sham condition separates the interface from the filtering. Comparing A with D measures what the panel, the loading step and the expectation of filtering do on their own; comparing C with D measures what semantic filtering adds beyond that interface. The density manipulation applies to all four conditions: high-density blocks keep the original stream, and low-density blocks are thinned to 30 comments per minute with fixed 10-second windows and a stable hash over comment identifiers, so that the same comments survive regardless of condition. Condition C uses the same thinned stream, which keeps the comparison between conditions fair. All materials, including the on-screen panel and the experimenter script, describe only what is visible and never name the condition.
 
 ### 1.5 Measures
 
@@ -63,19 +64,21 @@ Table 3. Tagger validation on the 120-comment reference set.
 
 Note. Leave-reference-out evaluation, n = 120; dominant-label agreement = .525, macro-F1 = .350, weighted F1 = .509. Labels that do not occur in the reference set are omitted. The weak categories (other, attack, irrelevant repetition) bound the filtering gain expected in condition C and are treated as a limitation rather than a result.
 
-Debrief notes. After the last block the experimenter asks three open questions: which comments they noticed, whether they wanted anything back, and whether anything surprised them. Answers are written down as short notes and analysed thematically. No questionnaire or rating scale is administered, so the quantitative evidence comes entirely from the logs.
+Post-block ratings. After each block the participant completes a short five-item form on a 7-point scale: discomfort while watching (single item), felt control over what appeared (single item), overall evaluation of the block (single item), and expectancy (two items: whether the setting was useful, and whether they trusted it to hide what they did not want). The form takes under a minute and is the only self-report in the study; together with the logs it lets the sham condition be interpreted, because expectancy and control can rise from the interface alone.
+
+Debrief notes. After the last block the experimenter asks three open questions: which comments they noticed, whether they wanted anything back, and whether anything surprised them. Answers are written down as short notes and analysed thematically.
 
 ### 1.6 Procedure
 
-Sessions run individually in a quiet room. The experimenter first explains the study and obtains consent (5 minutes), then opens the browser, installs the userscript on a clean profile, checks the local service and runs one practice video that is not part of the stimuli (5 minutes). For condition B the five blocked words are entered in the Bilibili settings before the block and removed afterwards; for condition C the experimenter confirms that the whole pool has loaded (the script shows a progress capsule and waits up to 2.5 seconds). Each block then follows the same sequence: the participant watches the video for its full duration, the experimenter exports the session log with the script's export command, and the participant answers whether they had seen the video before. Blocks are separated by about one minute of rest. The order of blocks is read from the run sheet prepared for each participant number. After the sixth block the experimenter conducts the debrief (5 minutes), thanks the participant and records the compensation.
+Sessions run individually in a quiet room. The experimenter first explains the study and obtains consent (5 minutes), then opens the browser, installs the userscript on a clean profile, checks the local service and runs one practice video that is not part of the stimuli (5 minutes). For condition B the five blocked words are entered in the Bilibili settings before the block and removed afterwards; for conditions C and D the experimenter confirms that the whole pool has loaded (the script shows a progress capsule and waits up to 2.5 seconds). The experimenter never names the condition and uses the same wording for every block. Each block then follows the same sequence: the participant watches the video for its full duration, completes the five-item rating form, the experimenter exports the session log with the script's export command, and the participant answers whether they had seen the video before. Blocks are separated by about one minute of rest. The order of blocks is read from the run sheet prepared for each participant number. After the eighth block the experimenter conducts the debrief (5 minutes), thanks the participant and records the compensation.
 
-Figure 1. Session procedure. Each participant completes six blocks; the order of conditions follows a Latin square and the density cell alternates within each video pair.
+Figure 1. Session procedure. Each participant completes eight blocks; the order of conditions follows a Latin square and the density cell alternates within each video pair.
 
 ### 1.7 Analysis plan
 
-All measures are aggregated to participant means before inference, and blocks are the unit of description. The three planned contrasts are C versus A (total effect of filtering), C versus B (semantic versus keyword filtering) and B versus A (platform baseline), tested with two-tailed Wilcoxon signed-rank tests on participant means and Holm correction across the three contrasts. Effect sizes are Cohen's d_z for paired comparisons and Cliff's delta as a distribution-free check, each with 95% percentile bootstrap confidence intervals from 10,000 resamples. Hypotheses H1 to H4 are directional and tested as listed in Table 4; H5 is exploratory and reported descriptively with an interaction plot. The manipulation check compares rendered comments per minute between density cells within each condition. Missing or failed blocks are reported, and blocks with a failed pool load are excluded from filtering analyses but kept in the counts.
+All measures are aggregated to participant means before inference, and blocks are the unit of description. Six planned contrasts are tested: C versus A (total effect of filtering), C versus B (semantic versus keyword filtering), C versus D (semantic filtering beyond the sham interface), D versus A (the interface alone), D versus B and B versus A (platform baseline). All use two-tailed Wilcoxon signed-rank tests on participant means with Holm correction across the six contrasts. Effect sizes are Cohen's d_z for paired comparisons and Cliff's delta as a distribution-free check, each with 95% percentile bootstrap confidence intervals from 10,000 resamples. Hypotheses H1 to H4 are directional and tested as listed in Table 4; H5 is exploratory and reported descriptively with an interaction plot. The manipulation check compares rendered comments per minute between density cells within each condition. Missing or failed blocks are reported, and blocks with a failed pool load are excluded from filtering analyses but kept in the counts.
 
-Statistical inference follows the conventions of the field. A two-tailed Wilcoxon signed-rank test compares the two conditions on participant means; the null hypothesis is that the median within-participant difference is zero, and a p value below .05 is read as evidence against that null, never as the probability that the hypothesis is true. Because three contrasts are tested, p values are Holm-adjusted: the smallest of the three is compared with .05/3, the next with .05/2 and the largest with .05, which keeps the family-wise error rate at .05. A non-significant contrast is reported as "no detectable difference", not as evidence of equivalence. Effect sizes are Cohen's d_z (mean difference divided by the standard deviation of the within-participant differences; 0.2, 0.5 and 0.8 are read as small, medium and large) and Cliff's delta as a distribution-free alternative, each accompanied by a 95% percentile bootstrap interval computed from 10,000 resamples of participants.
+Statistical inference follows the conventions of the field. A two-tailed Wilcoxon signed-rank test compares the two conditions on participant means; the null hypothesis is that the median within-participant difference is zero, and a p value below .05 is read as evidence against that null, never as the probability that the hypothesis is true. Because six contrasts are tested, p values are Holm-adjusted: the smallest of the six is compared with .05/6, the next with .05/5, and so on down to .05, which keeps the family-wise error rate at .05. A non-significant contrast is reported as "no detectable difference", not as evidence of equivalence. Effect sizes are Cohen's d_z (mean difference divided by the standard deviation of the within-participant differences; 0.2, 0.5 and 0.8 are read as small, medium and large) and Cliff's delta as a distribution-free alternative, each accompanied by a 95% percentile bootstrap interval computed from 10,000 resamples of participants.
 
 Table 4. Hypotheses, measures and tests.
 | Hypothesis | Comparison | Measure | Test |
@@ -84,6 +87,7 @@ Table 4. Hypotheses, measures and tests.
 | H3: filtering requires little repair work | C | Restores + corrections per block | Descriptive; median restores and corrections at or below 1 per block |
 | H4: filtering is fast enough to be invisible | C | Segment p95 latency, pool load time, fail-open blocks | Descriptive against thresholds 50 ms, 3 s and 1% |
 | H5 (exploratory): filtering benefit depends on density and genre | C vs A, C vs B by cell | Removal recall and false-removal rate | Descriptives and interaction plot |
+| H6: the prototype's benefit exceeds the sham interface | C vs D | Discomfort, control, expectancy | Wilcoxon signed-rank, d_z and bootstrap CI |
 
 ## 2. Results (design)
 
@@ -99,8 +103,10 @@ Table 5. Rendered comments per block, by condition and density cell (shell).
 | B | Low | __ (__) | __ (__) | 16 |
 | C | High | __ (__) | 0 (0) | 16 |
 | C | Low | __ (__) | __ (__) | 16 |
+| D | High | __ (__) | 0 (0) | 16 |
+| D | Low | __ (__) | __ (__) | 16 |
 
-Template: "Thinning reduced the rendered stream from M = __ comments per minute (SD = __) in the high-density cells to M = __ (SD = __) in the low-density cells, a difference of __ comments per minute. The manipulation therefore held in all three conditions, which allows the density factor to be interpreted in the analyses that follow."
+Template: "Thinning reduced the rendered stream from M = __ comments per minute (SD = __) in the high-density cells to M = __ (SD = __) in the low-density cells, a difference of __ comments per minute. The manipulation therefore held in all four conditions, which allows the density factor to be interpreted in the analyses that follow."
 
 ### 2.2 Filtering performance (H1 and H2)
 
@@ -109,8 +115,9 @@ Table 6. Removal recall and false-removal rate by condition (shell).
 | A | __ (__, __) | __ (__, __) | 0 |
 | B | __ (__, __) | __ (__, __) | 0 |
 | C | __ (__, __) | __ (__, __) | __ |
+| D | 0 (by construction) | 0 (by construction) | __ |
 
-Figure 2 (planned). Stacked bars of shown, folded and hidden comments for conditions A, B and C, separately for the unwanted and the desired sets.
+Figure 2 (planned). Stacked bars of shown, folded and hidden comments for conditions A, B, C and D, separately for the unwanted and the desired sets.
 
 Template: "Condition C removed or folded __% of unwanted comments (95% CI [__, __]), compared with __% in condition B; the difference was V = __, p = __, d_z = __, supporting H1. Condition C removed __% of desired comments (95% CI [__, __]) against __% in condition B (V = __, p = __), so the gain in recall did not come at the cost of removing wanted content, consistent with H2. Against the unfiltered baseline, condition A removed 0% of unwanted comments by construction, and the contrast C versus A therefore quantifies the total effect of filtering."
 
@@ -132,34 +139,38 @@ Table 8. Latency and reliability by condition (shell).
 | A | __ | __ | __ | __ | 0 |
 | B | __ | __ | __ | __ | 0 |
 | C | __ | __ | __ | __ | __ |
+| D | __ | __ | __ | __ | 0 |
 
 Template: "In condition C the median segment decision took __ ms and the 95th percentile __ ms, the whole pool loaded in M = __ s (SD = __), __ blocks failed open and __% of comments were scored by the local model. All values are inside the thresholds set in H4, so filtering was fast enough to be invisible during playback."
 
 ### 2.5 Exploratory analysis and debrief themes
 
-Figure 3 (planned). Removal recall for C versus A and C versus B by density cell and genre, with 95% bootstrap confidence intervals.
+Figure 4 (planned). Removal recall for C versus A, C versus B and C versus D by density cell and genre, with 95% bootstrap confidence intervals.
 
 The exploratory analysis asks whether the benefit of filtering is larger when the stream is dense and whether it differs between informational and entertainment videos; because N = 16 and the cells contain two blocks per participant, the analysis is descriptive and will be reported as an interaction plot with confidence intervals rather than as a formal test. The debrief notes will be grouped into three themes: comments participants wanted removed, comments they wanted back, and comments they did not notice at all. Quotations will be translated into English and reported with participant codes.
 
-Reporting conventions: p values are reported to three decimals, effect sizes with 95% bootstrap confidence intervals, alpha is .05 and the three planned contrasts are Holm-corrected; all tests are two-tailed except the directional tests specified in Table 4. When a result contradicts a hypothesis we report the direction, the effect size and the interval rather than only the p value.
+Reporting conventions: p values are reported to three decimals, effect sizes with 95% bootstrap confidence intervals, alpha is .05 and the six planned contrasts are Holm-corrected; all tests are two-tailed except the directional tests specified in Table 4. When a result contradicts a hypothesis we report the direction, the effect size and the interval rather than only the p value.
 
 ### 2.6 Simulated dry run (illustrative only)
 
-Before recruiting, the full pipeline was exercised with six simulated participants: LLM agents, each given a distinct viewer persona, that read the block materials (video facts, two screenshots, the comment samples and the filtering counts) and completed the same rating forms. They did not watch the videos. Their data are labelled simulated everywhere, are analysed with the identical script, and are reported here only to show what the tables above will look like; they are not evidence for or against H1 to H5.
+Before recruiting, the full pipeline was exercised with eight simulated participants: LLM agents, each given a distinct viewer persona, that read the block materials (video facts, two screenshots, the comment samples and the visible counts) and completed the same rating form. They did not watch the videos, and the materials never named the condition, so the agents could not infer whether they were in A, B, C or D. Their data are labelled simulated everywhere, are analysed with the identical script, and are reported here only to show what the tables above will look like; they are not evidence for or against H1 to H6.
 
-Figure 2. Simulated condition means for discomfort, control and overall (1–7, six simulated participants), with 95% participant-level bootstrap intervals.
+Figure 3. Simulated condition means for discomfort, control and overall (1-7, eight simulated participants, 48 blocks), with 95% participant-level bootstrap intervals.
 
-Table 9. Simulated dry run, condition means (1–7, six agents, two blocks per condition per agent).
-| Measure | A all-on | B keyword | C prototype |
-| Discomfort | 3.65 (1.07) | 3.43 (0.93) | 2.63 (0.69) |
-| Co-viewing | 4.25 | 4.06 | 4.22 |
-| Control | 2.67 | 2.92 | 4.89 |
-| FOMO | 4.08 | 4.00 | 4.42 |
-| NASA-TLX load | 3.15 | 3.14 | 2.89 |
-| Comprehension (self-rated) | 4.18 | 4.15 | 4.28 |
-| Overall | 3.71 | 3.88 | 4.88 |
+Table 9. Simulated dry run, condition means (1-7, eight agents, 48 blocks in total).
+| Measure | A all-on (n = 12) | B keyword (n = 12) | C prototype (n = 12) | D sham (n = 12) |
+| Discomfort | 3.00 (0.89) | 3.03 (0.92) | 2.95 (0.92) | 3.13 (1.05) |
+| Co-viewing | 4.03 (1.02) | 4.00 (1.11) | 3.75 (1.17) | 3.97 (1.02) |
+| Control | 2.42 (0.62) | 2.33 (0.57) | 3.75 (1.03) | 3.28 (0.66) |
+| FOMO | 3.67 (1.30) | 3.58 (0.90) | 3.67 (1.07) | 3.50 (1.24) |
+| NASA-TLX load | 3.01 (0.42) | 3.22 (0.60) | 3.26 (0.60) | 3.08 (0.48) |
+| Comprehension (self-rated) | 4.28 (0.72) | 4.48 (0.64) | 4.30 (0.56) | 4.40 (0.57) |
+| Overall | 3.92 (0.97) | 3.96 (1.18) | 4.04 (1.05) | 3.79 (1.05) |
+| Expectancy and trust | 2.12 (0.53) | 2.17 (0.61) | 3.58 (1.15) | 2.62 (0.61) |
 
-The direction matches the hypotheses: C has the lowest discomfort, the highest control and the highest overall rating. With six participants, however, the smallest attainable two-tailed Wilcoxon p value is about .031, and after Holm correction none of the three planned contrasts reaches .05 (C versus A discomfort: difference -1.02, 95% CI [-1.90, -0.03], d_z = -0.79, p = .115, adjusted p = .344). The latency table in 2.4 is populated from the instrumented preflight rather than from the simulation (C: segment p50 1 ms, p95 31 ms, because the pool is served locally). The dry run is reported in full in docs/study/results-simulated.md, together with the three design bugs it exposed.
+The most instructive result is a null one. In an earlier, unblinded dry run with six agents and three conditions, condition C had clearly lower discomfort than A (difference -1.02, 95% CI [-1.90, -0.03]); once the materials stopped naming the condition and a sham was added, that difference disappeared (C 2.95 versus A 3.00, all six Holm-adjusted contrasts p = 1.000). What remained is a graded pattern in control and expectancy: C 3.75 and 3.58, D 3.28 and 2.62, A and B below 2.5. Participants therefore appear to respond to the interface and to the fact that something is being removed, not to the semantic quality of the removal; with eight agents the contrasts are directional (C versus A control p = .025 raw, .148 adjusted; C versus A expectancy p = .012 raw, .070 adjusted) but not significant after correction, which is expected at this sample size.
+
+The latency table in 2.4 is populated from the instrumented preflight rather than from the simulation (C: segment p50 1 ms, p95 31 ms, because the pool is served locally). The dry run is reported in full in docs/study/results-simulated.md, together with the design bugs it exposed and the limitation that the low-density thinning is not shown in the panel counts.
 
 ## 3. References
 

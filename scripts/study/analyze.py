@@ -8,9 +8,10 @@ data/study/analysis.md:
   self-reported familiarity with 4+ stimuli, missing session logs), marked and
   counted rather than silently dropped;
 * scale means and Cronbach alpha per condition;
-* planned within-subject contrasts C vs A, C vs B, B vs A with paired Wilcoxon
-  signed-rank tests (normal approximation with tie correction), Holm correction
-  over the three contrasts, Cohen's d and a participant-level bootstrap 95% CI;
+* planned within-subject contrasts C vs A, C vs B, C vs D, D vs A, D vs B and
+  B vs A with paired Wilcoxon signed-rank tests (normal approximation with tie
+  correction), Holm correction over the six contrasts, Cohen's d and a
+  participant-level bootstrap 95% CI;
 * optional linear mixed model score ~ condition + (1|participant) + (1|video)
   through statsmodels when it is installed, a documented note otherwise;
 * RQ1 descriptive genre x density table for condition A (exploratory, video
@@ -57,23 +58,34 @@ DEFAULT_GOLD_DOUBLE = REPO / "data" / "study" / "gold_double.jsonl"
 DEFAULT_MODELS = REPO / "data" / "study" / "models"
 DEFAULT_STUDY_REPORT = REPO / "data" / "study" / "report.json"
 
-CONDITIONS = ("A", "B", "C")
+CONDITIONS = ("A", "B", "C", "D")
 # The study script stores the canonical condition ids; the protocol and the
-# questionnaire use the A/B/C letters. Accept both so a raw export can be
-# analysed without hand editing.
+# questionnaire use the A/B/C/D letters (D is the sham condition). Accept both
+# so a raw export can be analysed without hand editing.
 CONDITION_ALIASES = {
     "ALL_ON": "A",
     "ALL-ON": "A",
     "KEYWORD": "B",
     "PROTOTYPE": "C",
+    "SHAM": "D",
+    "SHAM_FILTER": "D",
+    "SHAM-FILTER": "D",
 }
 
 
 def _normalise_condition(value: object) -> str:
-    """Map a canonical condition id or an A/B/C letter to A/B/C ("" when unknown)."""
+    """Map a canonical condition id or an A/B/C/D letter to A/B/C/D ("" when unknown)."""
     text = str(value or "").strip().upper().replace(" ", "_")
     text = CONDITION_ALIASES.get(text, text)
     return text if text in CONDITIONS else ""
+
+
+def _ordered_conditions(rows: list[dict]) -> list[str]:
+    """Conditions present in rows: A/B/C/D first, then unknown labels alphabetically."""
+    present = {str(row.get("condition") or "").strip() for row in rows}
+    known = [condition for condition in CONDITIONS if condition in present]
+    extras = sorted(condition for condition in present if condition and condition not in CONDITIONS)
+    return known + extras
 
 SCALES = {
     "discomfort": ("discomfort", 5),
@@ -83,12 +95,26 @@ SCALES = {
     "comp": ("comp", 5),
     "explain": ("explain", 2),
     "overall": ("overall", 2),
+    "expectancy": ("expectancy", 2),
+}
+# Extra prefixes tolerated for a scale's item columns (expectancy_1 vs expect_1).
+SCALE_PREFIX_ALIASES = {
+    "expectancy": ("expectancy", "expectation", "expect", "expected"),
 }
 SINGLE_ITEM_OUTCOMES = ("fomo",)
 OUTCOMES = tuple(SCALES) + SINGLE_ITEM_OUTCOMES
 PRIMARY_OUTCOMES = ("discomfort", "control")
-SECONDARY_OUTCOMES = ("coview", "fomo", "nasa", "comp", "overall", "explain")
-PLANNED_CONTRASTS = (("C", "A"), ("C", "B"), ("B", "A"))
+SECONDARY_OUTCOMES = ("coview", "fomo", "nasa", "comp", "overall", "explain", "expectancy")
+# Six planned within-subject contrasts over the four conditions (D is the sham
+# control; C vs A and C vs D are the primary comparisons).
+PLANNED_CONTRASTS = (
+    ("C", "A"),
+    ("C", "B"),
+    ("C", "D"),
+    ("D", "A"),
+    ("D", "B"),
+    ("B", "A"),
+)
 MIN_DWELL_RATIO = 0.6
 FAMILIAR_MAX = 4
 MAX_BOOTSTRAP = 5000
@@ -104,6 +130,7 @@ COLUMN_ALIASES = {
     "block_order": ("block_order", "block_order_index", "block", "order", "sequence"),
     "familiar": ("familiar", "familiarity", "seen", "seen_before", "know"),
     "fomo": ("fomo", "fomo_1", "fomo_score"),
+    "expectancy": ("expectancy", "expectation", "expect", "expectancy_score"),
     "recall": ("recall", "free_recall", "recall_text"),
     "notes": ("notes", "note", "comment", "comments"),
 }
@@ -195,11 +222,16 @@ def _canonicalise(row: dict) -> dict:
     for name, aliases in COLUMN_ALIASES.items():
         canonical[name] = _pick(lower, aliases)
     for name, (prefix, count) in SCALES.items():
+        prefixes = (prefix,) + SCALE_PREFIX_ALIASES.get(name, ())
         items = []
         for index in range(1, count + 1):
-            value = lower.get("%s_%d" % (prefix, index))
-            if value is None:
-                value = lower.get("%s%d" % (prefix, index))
+            value = None
+            for candidate in prefixes:
+                value = lower.get("%s_%d" % (candidate, index))
+                if value is None:
+                    value = lower.get("%s%d" % (candidate, index))
+                if value is not None and str(value).strip() != "":
+                    break
             items.append(_number(value))
         canonical["%s_items" % name] = items
     canonical["recall"] = canonical.get("recall")
@@ -290,7 +322,7 @@ def _condition_from_name(path: Path, payload: dict) -> str:
     if condition:
         return condition
     study_id = str(payload.get("study_id") or "").strip().upper()
-    if study_id.endswith(("-A", "-B", "-C")):
+    if study_id.endswith(tuple("-" + condition for condition in CONDITIONS)):
         return _normalise_condition(study_id[-1])
     stem = path.stem.upper()
     for candidate in CONDITIONS:
@@ -450,7 +482,7 @@ def clean_data(
         "participants": participants,
         "excluded": excluded,
         "excluded_participants": sorted(familiar_drop),
-        "rows_by_condition": {condition: blocks_by_condition.get(condition, 0) for condition in CONDITIONS},
+        "rows_by_condition": {condition: blocks_by_condition.get(condition, 0) for condition in _ordered_conditions(included)},
         "notes": explanations,
     }
     return included, cleaning
@@ -501,9 +533,9 @@ def _participant_condition_scores(rows: list[dict], outcome: str) -> dict[str, d
 
 
 def descriptives(rows: list[dict]) -> dict:
-    """Per-condition and per-video outcome summaries."""
+    """Per-condition and per-video outcome summaries (conditions present in rows)."""
     by_condition: dict[str, dict] = {}
-    for condition in CONDITIONS:
+    for condition in _ordered_conditions(rows):
         subset = [row for row in rows if row["condition"] == condition]
         by_condition[condition] = {
             "n_blocks": len(subset),
@@ -569,7 +601,7 @@ def cronbach_alpha(item_rows: list[list[float | None]]) -> float | None:
 def reliability(rows: list[dict]) -> dict:
     """Cronbach alpha per scale and condition (only scales with >= 2 items)."""
     result: dict[str, dict] = {}
-    for condition in CONDITIONS:
+    for condition in _ordered_conditions(rows):
         subset = [row for row in rows if row["condition"] == condition]
         condition_result: dict[str, float | None] = {}
         for name, (_prefix, count) in SCALES.items():
@@ -1064,7 +1096,7 @@ def render_markdown(analysis: dict) -> str:
     if cleaning["rows_by_condition"]:
         lines.append("")
         lines.append("Blocks by condition: " + ", ".join(
-            "%s=%d" % (condition, cleaning["rows_by_condition"][condition]) for condition in CONDITIONS
+            "%s=%d" % (condition, count) for condition, count in cleaning["rows_by_condition"].items()
         ))
     if cleaning["excluded"]:
         lines.append("")
@@ -1079,15 +1111,17 @@ def render_markdown(analysis: dict) -> str:
 
     lines.append("## Descriptives by condition")
     lines.append("")
+    condition_summaries = analysis["descriptives"]["by_condition"]
+    conditions = list(condition_summaries)
     header = ["outcome"] + [
-        "%s (n=%d)" % (condition, analysis["descriptives"]["by_condition"][condition]["n_blocks"])
-        for condition in CONDITIONS
+        "%s (n=%d)" % (condition, condition_summaries[condition]["n_blocks"])
+        for condition in conditions
     ]
     rows = []
     for outcome in OUTCOMES:
         cells = [outcome]
-        for condition in CONDITIONS:
-            summary = analysis["descriptives"]["by_condition"][condition]["outcomes"][outcome]
+        for condition in conditions:
+            summary = condition_summaries[condition]["outcomes"][outcome]
             if summary["n"]:
                 cells.append("%s (SD %s)" % (_fmt(summary["mean"]), _fmt(summary["sd"])))
             else:
@@ -1096,7 +1130,7 @@ def render_markdown(analysis: dict) -> str:
     lines.extend(_table(header, rows).splitlines())
     lines.append("")
 
-    lines.append("## Planned contrasts (paired Wilcoxon, Holm over 3) ")
+    lines.append("## Planned contrasts (paired Wilcoxon, Holm over %d)" % len(PLANNED_CONTRASTS))
     lines.append("")
     for outcome in PRIMARY_OUTCOMES + SECONDARY_OUTCOMES:
         entries = analysis["contrasts"].get(outcome) or []

@@ -760,7 +760,10 @@ function initStudy() {
       prefs,
       analysisPrefs,
       session,
-      uiVisible: false,
+      // Interactive conditions (prototype C, sham D) keep the badge and panel
+      // visible from the first segment; record-only A/B stay hidden so the
+      // participant cannot read counts they are not being shown.
+      uiVisible: !spec.record_only,
     };
   } catch (error) {
     log("study init failed", error);
@@ -2512,7 +2515,9 @@ function start() {
     installXhrHook();
     installFetchHook();
     whenBodyReady(() => {
-      // Study mode hides the UI until the examiner calls study.showUi().
+      // Interactive study conditions (C/D) start with the UI visible;
+      // record-only conditions (A/B) stay hidden until the examiner calls
+      // study.showUi().
       if (state.study && !state.study.uiVisible) return;
       ensureUi();
     });

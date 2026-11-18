@@ -1,0 +1,47 @@
+{
+  "schema": "dmf-study-session/1",
+  "study_id": "P02-1-B",
+  "participant": "P02",
+  "condition": "keyword",
+  "condition_label": "B",
+  "started_at": "2026-11-19T09:45:00Z",
+  "ended_at": "2026-11-19T09:50:00Z",
+  "script_version": "0.4.2-simulated-blind",
+  "prefs": {
+    "condition": "B"
+  },
+  "counts": {
+    "segments": 1,
+    "shown": 475,
+    "hidden": 14,
+    "collapsed": 0,
+    "thinned": 1030,
+    "expands": 0,
+    "restores": 0,
+    "prefs": 0,
+    "corrections": 0,
+    "dropped_events": 0
+  },
+  "self_report": {
+    "expectancy_1": 2,
+    "expectancy_2": 2,
+    "opened_panel": false
+  },
+  "events": [
+    {
+      "t": 1795081500000,
+      "type": "segment",
+      "bvid": "BV18E1NByEYv",
+      "segment_index": 1,
+      "shown": 475,
+      "hidden": 14,
+      "collapsed": 0,
+      "thinned": 1030,
+      "latency_ms": 78.0,
+      "online": true
+    }
+  ],
+  "simulated": true,
+  "participant_kind": "llm-agent",
+  "persona": "娱乐至上型：弹幕就是气氛，看 B 站主要为开心，讨厌弹幕被拿掉"
+}

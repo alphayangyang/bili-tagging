@@ -28,10 +28,15 @@ export const STUDY_DENSITIES = Object.freeze(["high", "low"]);
 export const LOW_DENSITY_PER_MIN = 30;
 
 /** Conditions understood by the study harness. */
-export const STUDY_CONDITIONS = Object.freeze(["all_on", "keyword", "prototype"]);
-// The protocol and the questionnaire use A/B/C letters; exports carry both the
-// canonical id and the letter so the analysis script and humans agree.
-export const CONDITION_LETTERS = Object.freeze({ all_on: "A", keyword: "B", prototype: "C" });
+export const STUDY_CONDITIONS = Object.freeze(["all_on", "keyword", "prototype", "sham"]);
+// The protocol and the questionnaire use A/B/C/D letters; exports carry both
+// the canonical id and the letter so the analysis script and humans agree.
+export const CONDITION_LETTERS = Object.freeze({
+  all_on: "A",
+  keyword: "B",
+  prototype: "C",
+  sham: "D",
+});
 
 /**
  * @param {string} condition canonical condition id
@@ -50,6 +55,7 @@ export const CONDITION_LABELS = Object.freeze({
   all_on: "全部开启（仅记录）",
   keyword: "仅关键词（仅记录）",
   prototype: "原型策略",
+  sham: "安慰剂（不过滤）",
 });
 
 /**
@@ -130,16 +136,17 @@ export function normalizeDensity(value) {
 /**
  * Normalize a condition name, case-insensitively; returns "" when unknown.
  * @param {unknown} value
- * @returns {"all_on"|"keyword"|"prototype"|""}
+ * @returns {"all_on"|"keyword"|"prototype"|"sham"|""}
  */
 export function normalizeCondition(value) {
   if (typeof value !== "string") return "";
   const text = value.trim().toLowerCase();
   if (STUDY_CONDITIONS.includes(text)) return text;
-  // The lab protocol writes conditions as A / B / C in the URL.
+  // The lab protocol writes conditions as A / B / C / D in the URL.
   if (text === "a" || text === "1") return "all_on";
   if (text === "b" || text === "2") return "keyword";
   if (text === "c" || text === "3") return "prototype";
+  if (text === "d" || text === "4") return "sham";
   return "";
 }
 
@@ -153,11 +160,15 @@ export function conditionSpec(condition) {
   const key = normalizeCondition(condition);
   if (!key) return null;
   const prototype = key === "prototype";
+  // The sham condition is interactive too: it prefetches the whole pool and
+  // keeps the badge/panel visible like prototype, but its per-type preset is
+  // all "show", so the player stream is never rewritten.
+  const interactive = prototype || key === "sham";
   return {
     condition: key,
     label: CONDITION_LABELS[key],
-    record_only: !prototype,
-    enabled: prototype,
+    record_only: !interactive,
+    enabled: interactive,
     per_type: prototype ? { ...PROTOTYPE_PER_TYPE } : { ...RECORD_ONLY_PER_TYPE },
     density: { enabled: false },
   };
@@ -193,15 +204,17 @@ export function prefsForCondition(condition, basePrefs) {
  * Record-only conditions run with `enabled: false` so they never touch the
  * danmaku; counting still uses the prototype policy, otherwise the service
  * would answer "show" for every comment and the recorded counts would be zero
- * in every condition.
+ * in every condition. The sham condition applies no per-type action at all, so
+ * its analysis prefs are all-show as well; it is the no-filtering control.
  *
  * @param {unknown} condition
  * @param {object|null|undefined} basePrefs
  * @returns {object|null}
  */
 export function analysisPrefsForCondition(condition, basePrefs) {
-  if (!normalizeCondition(condition)) return null;
-  return prefsForCondition("prototype", basePrefs);
+  const key = normalizeCondition(condition);
+  if (!key) return null;
+  return prefsForCondition(key === "sham" ? "sham" : "prototype", basePrefs);
 }
 
 /**

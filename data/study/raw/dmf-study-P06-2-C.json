@@ -5,38 +5,47 @@
   "condition": "prototype",
   "condition_label": "C",
   "started_at": "2026-11-19T12:49:00Z",
-  "ended_at": "2026-11-19T12:54:00Z",
-  "script_version": "0.4.2-simulated",
+  "ended_at": "2026-11-19T12:52:44Z",
+  "script_version": "0.4.2-simulated-blind",
   "prefs": {
     "condition": "C"
   },
   "counts": {
     "segments": 1,
-    "shown": 489,
+    "shown": 399,
     "hidden": 0,
     "collapsed": 0,
-    "thinned": 1030,
+    "thinned": 772,
     "expands": 0,
     "restores": 0,
-    "prefs": 0,
+    "prefs": 1,
     "corrections": 0,
     "dropped_events": 0
+  },
+  "self_report": {
+    "expectancy_1": 3,
+    "expectancy_2": 2,
+    "opened_panel": true
   },
   "events": [
     {
       "t": 1795092540000,
       "type": "segment",
-      "bvid": "BV18E1NByEYv",
+      "bvid": "BV1VMRKBCEDp",
       "segment_index": 1,
-      "shown": 489,
+      "shown": 399,
       "hidden": 0,
       "collapsed": 0,
-      "thinned": 1030,
+      "thinned": 772,
       "latency_ms": 1.0,
       "online": true
+    },
+    {
+      "t": 1795092547000,
+      "type": "pref"
     }
   ],
   "simulated": true,
   "participant_kind": "llm-agent",
-  "persona": "信息效率型（27 岁，讨厌刷屏/复读/无意义重复，想看清科普讲解；觉得平台屏蔽词太粗，愿意为看清内容调设置；对政治/引战偏回避）"
+  "persona": "信息效率型：只要有用的，讨厌刷屏和纯符号"
 }

@@ -23,7 +23,8 @@ QUESTIONNAIRE_COLUMNS = [
     "control_1", "control_2", "control_3",
     "fomo", "nasa_1", "nasa_2", "nasa_3", "nasa_4", "nasa_5", "nasa_6",
     "comp_1", "comp_2", "comp_3", "comp_4", "comp_5",
-    "recall", "explain_1", "explain_2", "overall_1", "overall_2", "notes",
+    "recall", "explain_1", "explain_2", "overall_1", "overall_2",
+    "expectancy_1", "expectancy_2", "notes",
 ]
 
 
@@ -47,6 +48,7 @@ def _row(**overrides) -> dict:
         "nasa_1": 2, "nasa_2": 2, "nasa_3": 2, "nasa_4": 2, "nasa_5": 2, "nasa_6": 2,
         "comp_1": 2, "comp_2": 2, "comp_3": 2, "comp_4": 2, "comp_5": 2,
         "recall": "记得一点", "explain_1": 1, "explain_2": 1, "overall_1": 2, "overall_2": 2,
+        "expectancy_1": 2, "expectancy_2": 2,
         "notes": "",
     }
     row.update(overrides)
@@ -77,6 +79,7 @@ def _manifest(path: Path) -> None:
         {"bvid": "BVtestA", "duration_s": 200.0},
         {"bvid": "BVtestB", "duration_s": 200.0},
         {"bvid": "BVtestC", "duration_s": 200.0},
+        {"bvid": "BVtestD", "duration_s": 200.0},
     ]
     path.write_text(json.dumps({"schema": 1, "stimuli": stimuli}), encoding="utf-8")
 
@@ -111,7 +114,7 @@ class QuestionnaireTest(unittest.TestCase):
                 _row(participant_id="P07", cond="B", bvid="BVx", discomfort_1=4, discomfort_2=4,
                      discomfort_3=4, discomfort_4=4, discomfort_5=4),
                 _row(participant_id="", cond="A"),
-                _row(participant="P08", condition="D"),
+                _row(participant="P08", condition="Z"),
             ], columns=columns)
             rows, problems = analyze.load_questionnaire(path)
         self.assertEqual(len(rows), 1)
@@ -121,7 +124,32 @@ class QuestionnaireTest(unittest.TestCase):
         self.assertAlmostEqual(rows[0]["outcomes"]["discomfort"], 4.0)
         self.assertAlmostEqual(rows[0]["outcomes"]["coview"], 2.0)
         self.assertEqual(rows[0]["outcomes"]["fomo"], 2.0)
+        self.assertAlmostEqual(rows[0]["outcomes"]["expectancy"], 2.0)
         self.assertEqual(len(problems), 2)
+
+    def test_reads_four_conditions_and_expectancy(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "questionnaire.csv"
+            alias_row = _row(participant="P11", condition="D")
+            alias_row.pop("expectancy_1")
+            alias_row.pop("expectancy_2")
+            alias_row.update({"expect_1": 3, "expect_2": 5})
+            _write_csv(
+                path,
+                [
+                    _row(participant="P09", condition="D", expectancy_1=4, expectancy_2=5),
+                    _row(participant="P10", condition="sham", expectancy_1="", expectancy_2=""),
+                    alias_row,
+                ],
+                columns=QUESTIONNAIRE_COLUMNS + ["expect_1", "expect_2"],
+            )
+            rows, problems = analyze.load_questionnaire(path)
+        self.assertEqual([row["condition"] for row in rows], ["D", "D", "D"])
+        self.assertAlmostEqual(rows[0]["outcomes"]["expectancy"], 4.5)
+        self.assertIsNone(rows[1]["outcomes"]["expectancy"])
+        # Item-column aliases (expect_1 / expect_2) are accepted too.
+        self.assertAlmostEqual(rows[2]["outcomes"]["expectancy"], 4.0)
+        self.assertEqual(problems, [])
 
     def test_missing_file_is_reported(self) -> None:
         rows, problems = analyze.load_questionnaire("/nonexistent/questionnaire.csv")
@@ -196,17 +224,20 @@ class SessionsTest(unittest.TestCase):
                                 {"schema": 1, "condition": "prototype", "events": []})
             self._write_session(root, "dmf-study-P07-.json",
                                 {"schema": 1, "condition_label": "C", "events": []})
+            self._write_session(root, "dmf-study-P08-sham.json",
+                                {"schema": 1, "condition": "sham", "events": []})
             sessions, problems = analyze.load_sessions(root / "raw")
         by_participant = {session["participant"]: session["condition"] for session in sessions}
-        self.assertEqual(by_participant, {"P04": "A", "P05": "B", "P06": "C", "P07": "C"})
+        self.assertEqual(by_participant, {"P04": "A", "P05": "B", "P06": "C", "P07": "C", "P08": "D"})
         self.assertEqual(problems, [])
 
     def test_questionnaire_accepts_canonical_condition_ids(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "q.csv"
-            _write_csv(path, [_row(condition="all_on"), _row(condition="prototype", block_order=2)])
+            _write_csv(path, [_row(condition="all_on"), _row(condition="prototype", block_order=2),
+                               _row(condition="sham", block_order=3)])
             rows, problems = analyze.load_questionnaire(path)
-        self.assertEqual([row["condition"] for row in rows], ["A", "C"])
+        self.assertEqual([row["condition"] for row in rows], ["A", "C", "D"])
         self.assertEqual(problems, [])
 
     def test_missing_raw_dir(self) -> None:
@@ -219,7 +250,7 @@ class CleanDataTest(unittest.TestCase):
     def _rows(self) -> list[dict]:
         rows = []
         for participant in ("P01", "P02"):
-            for condition in ("A", "B", "C"):
+            for condition in ("A", "B", "C", "D"):
                 for suffix in ("1", "2"):
                     rows.append({
                         "participant": participant,
@@ -241,19 +272,20 @@ class CleanDataTest(unittest.TestCase):
                 wall_seconds=60.0 if condition == "A" else 300.0,
                 bvids=["BVtest%s1" % condition, "BVtest%s2" % condition],
             )
-            for condition in ("A", "B", "C")
+            for condition in ("A", "B", "C", "D")
         ]
         durations = {row["video"]: 200.0 for row in rows}
         included, cleaning = analyze.clean_data(rows, sessions, durations)
         self.assertEqual(cleaning["excluded_participants"], ["P02"])
         p01 = [row for row in included if row["participant"] == "P01"]
-        self.assertEqual({row["condition"] for row in p01}, {"B", "C"})
-        self.assertEqual(len(p01), 4)
+        self.assertEqual({row["condition"] for row in p01}, {"B", "C", "D"})
+        self.assertEqual(len(p01), 6)
         short = [entry for entry in cleaning["excluded"] if entry["participant"] == "P01"]
         self.assertEqual(len(short), 2)
         self.assertIn("dwell", short[0]["reasons"][0])
         self.assertEqual(cleaning["included_participants"], 1)
-        self.assertEqual(cleaning["session_logs"], 3)
+        self.assertEqual(cleaning["session_logs"], 4)
+        self.assertEqual(list(cleaning["rows_by_condition"]), ["B", "C", "D"])
 
     def test_missing_session_is_a_note_not_an_exclusion(self) -> None:
         rows = self._rows()[:1]
@@ -341,6 +373,9 @@ class DescriptivesTest(unittest.TestCase):
             {"participant": "P01", "condition": "B", "video": "BV2", "genre": "entertainment",
              "density": "low", "outcomes": outcomes(discomfort=3.0, control=5.0, fomo=3.0),
              "discomfort_items": [3, 3, 3, 3, 3]},
+            {"participant": "P03", "condition": "D", "video": "BV3", "genre": "entertainment",
+             "density": "low", "outcomes": outcomes(discomfort=1.0, expectancy=2.0),
+             "discomfort_items": [1, 1, 1, 1, 1]},
         ]
 
     def test_by_condition_summary(self) -> None:
@@ -349,27 +384,53 @@ class DescriptivesTest(unittest.TestCase):
         self.assertEqual(condition_a["n_blocks"], 2)
         self.assertEqual(condition_a["n_participants"], 2)
         self.assertAlmostEqual(condition_a["outcomes"]["discomfort"]["mean"], 3.0)
-        self.assertIsNone(result["by_condition"]["C"]["outcomes"]["discomfort"]["mean"])
+        self.assertIsNone(condition_a["outcomes"]["expectancy"]["mean"])
+        # Conditions missing from the data are omitted, not zero-filled.
+        self.assertNotIn("C", result["by_condition"])
+        self.assertEqual(list(result["by_condition"]), ["A", "B", "D"])
+        self.assertAlmostEqual(result["by_condition"]["D"]["outcomes"]["expectancy"]["mean"], 2.0)
         self.assertEqual(result["by_video"]["BV1"]["n_blocks"], 2)
 
-    def test_contrasts_produce_three_pairs(self) -> None:
+    def test_condition_order_is_known_then_alphabetical(self) -> None:
+        rows = [
+            {"participant": "P01", "condition": "Z", "video": "BVz", "outcomes": {}},
+            {"participant": "P02", "condition": "D", "video": "BVd", "outcomes": {}},
+            {"participant": "P03", "condition": "A", "video": "BVa", "outcomes": {}},
+            {"participant": "P04", "condition": "B", "video": "BVb", "outcomes": {}},
+            {"participant": "P05", "condition": "E", "video": "BVe", "outcomes": {}},
+        ]
+        result = analyze.descriptives(rows)
+        self.assertEqual(list(result["by_condition"]), ["A", "B", "D", "E", "Z"])
+
+    def test_contrasts_cover_six_pairs(self) -> None:
         rows = []
         for index in range(8):
             participant = "P%02d" % index
-            for condition, score in (("A", 4.0), ("B", 3.0), ("C", 2.0)):
+            for condition, score in (("A", 4.0), ("B", 3.0), ("C", 2.0), ("D", 2.5)):
                 rows.append({
                     "participant": participant, "condition": condition, "video": "BV" + condition,
                     "outcomes": {"discomfort": score}, "discomfort_items": [score] * 5,
                 })
         result = analyze.planned_contrasts(rows, samples=50)
-        self.assertEqual(len(result["discomfort"]), 3)
-        c_vs_a = result["discomfort"][0]
-        self.assertEqual(c_vs_a["contrast"], "C vs A")
+        entries = result["discomfort"]
+        self.assertEqual(len(entries), 6)
+        self.assertEqual(
+            [entry["contrast"] for entry in entries],
+            ["C vs A", "C vs B", "C vs D", "D vs A", "D vs B", "B vs A"],
+        )
+        c_vs_a = entries[0]
         self.assertEqual(c_vs_a["n"], 8)
         self.assertAlmostEqual(c_vs_a["mean_diff"], -2.0)
         self.assertEqual(c_vs_a["ci95"], [-2.0, -2.0])
-        self.assertIn("p_holm", c_vs_a)
-        self.assertIsNone(result["discomfort"][0]["d"])
+        self.assertAlmostEqual(entries[2]["mean_diff"], -0.5)
+        self.assertAlmostEqual(entries[3]["mean_diff"], -1.5)
+        self.assertIsNone(c_vs_a["d"])
+        # Holm correction covers all six planned contrasts, not just the primary pair.
+        for entry in entries:
+            self.assertIn("p_holm", entry)
+        expected = analyze.holm([entry["wilcoxon"]["p"] for entry in entries])
+        for entry, adjusted in zip(entries, expected):
+            self.assertAlmostEqual(entry["p_holm"], adjusted)
 
     def test_reliability(self) -> None:
         rows = [
@@ -514,13 +575,13 @@ class EndToEndTest(unittest.TestCase):
         questionnaire = root / "questionnaire.csv"
         rows = []
         for participant in ("P01", "P02", "P03"):
-            for condition in ("A", "B", "C"):
+            for condition in ("A", "B", "C", "D"):
                 rows.append(_row(participant=participant, condition=condition,
                                  video="BVtest" + condition))
         _write_csv(questionnaire, rows)
         raw = root / "raw"
         for participant in ("P01", "P02", "P03"):
-            for condition in ("A", "B", "C"):
+            for condition in ("A", "B", "C", "D"):
                 payload = {
                     "schema": 1, "study_id": participant + "-" + condition,
                     "participant": participant, "condition": condition,
@@ -559,14 +620,20 @@ class EndToEndTest(unittest.TestCase):
             self.assertEqual(code, 0)
             payload = json.loads(out.read_text(encoding="utf-8"))
             self.assertEqual(payload["schema"], 1)
-            self.assertEqual(payload["cleaning"]["included_rows"], 9)
-            self.assertEqual(payload["cleaning"]["session_logs"], 9)
+            self.assertEqual(payload["cleaning"]["included_rows"], 12)
+            self.assertEqual(payload["cleaning"]["session_logs"], 12)
+            self.assertEqual(payload["cleaning"]["rows_by_condition"]["D"], 3)
+            self.assertEqual(list(payload["descriptives"]["by_condition"]), ["A", "B", "C", "D"])
+            self.assertEqual(len(payload["contrasts"]["discomfort"]), 6)
+            self.assertIn("expectancy", payload["contrasts"])
             self.assertEqual(payload["rq2"]["latency"]["A"]["n"], 3)
+            self.assertEqual(payload["rq2"]["latency"]["D"]["n"], 3)
             self.assertFalse(payload["rq2"]["gold"]["available"])
             self.assertFalse(payload["rq2"]["double_annotation"]["available"])
             text = markdown.read_text(encoding="utf-8")
         self.assertIn("Data cleaning", text)
         self.assertIn("Planned contrasts", text)
+        self.assertIn("Holm over 6", text)
         self.assertIn("RQ2: latency", text)
 
     def test_missing_inputs_still_produce_report(self) -> None:

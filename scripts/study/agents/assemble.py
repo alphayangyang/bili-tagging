@@ -1,25 +1,25 @@
-"""Assemble AI-participant outputs into the study analysis inputs.
+"""Assemble AI-participant outputs into the study analysis inputs (v2, blind, 4 conditions).
 
-Reads data/study/agents/out/P0x.json (six simulated participants, six blocks
-each), data/study/agents/materials-index.json (what each block actually showed)
-and data/study/preflight/ (real measured segment latencies for the same
-participant/condition/video triples), then writes:
+Reads data/study/agents/out/P01..P08.json (eight simulated participants, six
+blocks each), data/study/agents/run-sheet-8.csv (the true condition of every
+block), data/study/agents/materials-index.json (what each block actually showed)
+and data/study/preflight/ (measured segment latencies), then writes:
 
 * data/study/questionnaire.csv - one row per block, protocol §7.3 columns;
 * data/study/raw/dmf-study-<pid>-<block>-<cond>.json - one session log per block
-  so scripts/study/analyze.py can pair the self-report with the system counters.
+  so scripts/study/analyze.py can pair self-report with system counters.
 
-The session logs are reconstructions: the participants are LLM agents that read
-the block material offline instead of watching the video in a browser, so the
-counters come from the same policy pipeline that generated the material and the
-latencies are the measured values from the preflight run of the same block.
+The participants were blind: their block files never named the condition, so the
+condition is joined back in from the run sheet here. The session logs are
+reconstructions (the agents read offline instead of playing the video), so the
+counters come from the policy pipeline that generated the material and the
+latencies are the measured preflight values.
 """
 from __future__ import annotations
 
 import argparse
 import csv
 import json
-import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -28,14 +28,17 @@ AGENTS = REPO / "data" / "study" / "agents"
 PREFLIGHT = REPO / "data" / "study" / "preflight"
 RAW = REPO / "data" / "study" / "raw"
 CSV_PATH = REPO / "data" / "study" / "questionnaire.csv"
+RUN_SHEET = AGENTS / "run-sheet-8.csv"
 
-PARTICIPANTS = ("P01", "P02", "P03", "P04", "P05", "P06")
+PARTICIPANTS = tuple("P%02d" % index for index in range(1, 9))
+CONDITION_NAMES = {"A": "all_on", "B": "keyword", "C": "prototype", "D": "sham"}
 SCALES = {
     "discomfort": 5,
     "coview": 3,
     "control": 3,
     "nasa": 6,
     "comp": 5,
+    "expectancy": 2,
     "overall": 2,
 }
 CSV_COLUMNS = (
@@ -49,13 +52,13 @@ def load_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def preflight_key(participant: str, condition: str, bvid: str) -> str:
-    return "%s-%s-%s" % (participant, condition, bvid)
+def load_run_sheet(path: Path = RUN_SHEET) -> dict[tuple[str, int], dict]:
+    rows = list(csv.DictReader(path.read_text(encoding="utf-8").splitlines()))
+    return {(row["participant"], int(row["block"])): row for row in rows}
 
 
 def load_latency_by_condition() -> dict[str, list[float]]:
-    """Measured segment latencies per condition from the preflight run."""
-    values: dict[str, list[float]] = {"A": [], "B": [], "C": []}
+    values: dict[str, list[float]] = {"A": [], "B": [], "C": [], "D": []}
     if not PREFLIGHT.is_dir():
         return values
     for path in sorted(PREFLIGHT.glob("dmf-study-*.json")):
@@ -71,113 +74,85 @@ def load_latency_by_condition() -> dict[str, list[float]]:
     return values
 
 
-def load_preflight() -> dict[str, dict]:
-    measurements: dict[str, dict] = {}
-    if not PREFLIGHT.is_dir():
-        return measurements
-    for path in sorted(PREFLIGHT.glob("dmf-study-*.json")):
-        payload = load_json(path)
-        participant = str(payload.get("participant") or "")
-        if not participant:
-            study_id = str(payload.get("study_id") or "")
-            participant = study_id.split("-")[0]
-        condition = str(payload.get("condition_label") or "")
-        bvids = []
-        for event in payload.get("events") or []:
-            bvid = str(event.get("bvid") or "")
-            if bvid and bvid not in bvids:
-                bvids.append(bvid)
-        if not participant or not condition or not bvids:
-            continue
-        measurements[preflight_key(participant, condition, bvids[0])] = payload
-    return measurements
-
-
 def measured_latency(latencies: dict[str, list[float]], participant: str, condition: str, bvid: str) -> float:
-    """Pick a measured latency for the block's condition.
+    """Pick a measured segment latency for the block's condition.
 
-    The simulated participants read offline instead of loading the segment in a
-    browser, so the latency has to come from the instrumented preflight run of
-    the same condition.  Selection is deterministic on (participant, bvid) so
-    re-running the assembler keeps the numbers stable.
+    The sham condition reuses the prototype pipeline (whole pool prefetch, same
+    panel), and the preflight run only measured A/B/C, so D falls back to C.
+    Selection is deterministic on (participant, bvid, condition).
     """
-    pool = latencies.get(condition) or []
+    pool = latencies.get(condition) or latencies.get("C") or []
     if not pool:
         return 0.0
     seed = sum(ord(char) for char in participant + bvid + condition)
     return float(pool[seed % len(pool)])
 
 
-def validate_block(block: dict, entry: dict, participant: str) -> list[str]:
+def validate_block(block: dict, expected: dict, entry: dict, participant: str) -> list[str]:
     problems = []
-    for field in ("study_id", "condition", "genre", "density"):
-        expected = entry.get(field)
-        if str(block.get(field)) != str(expected):
-            problems.append("%s: %s=%r expected %r" % (participant, field, block.get(field), expected))
-    if str(block.get("video")) != str(entry.get("bvid")):
-        problems.append("%s: video=%r expected %r" % (participant, block.get("video"), entry.get("bvid")))
-    for field in ("block",):
-        expected = entry[field] if field in entry else None
-        if field == "block":
-            continue
-        if str(block.get(field)) != str(expected):
-            problems.append("%s: %s=%r expected %r" % (participant, field, block.get(field), expected))
+    number = expected["block"]
+    if str(block.get("study_id")) != "%s-%s" % (participant, number):
+        problems.append("%s: study_id=%r expected %r" % (participant, block.get("study_id"), "%s-%s" % (participant, number)))
+    for field in ("video", "genre", "density"):
+        if str(block.get(field)) != str(expected.get("bvid" if field == "video" else field)):
+            problems.append("%s block %s: %s=%r expected %r" % (participant, number, field, block.get(field), expected.get(field)))
     for name, count in SCALES.items():
         for index in range(1, count + 1):
             key = "%s_%d" % (name, index)
             value = block.get(key)
             if not isinstance(value, int) or not 1 <= value <= 7:
-                problems.append("%s block %s: %s=%r not 1..7" % (participant, block.get("block"), key, value))
+                problems.append("%s block %s: %s=%r not 1..7" % (participant, number, key, value))
     if not isinstance(block.get("familiar"), int) or not 1 <= block.get("familiar") <= 3:
-        problems.append("%s block %s: familiar invalid" % (participant, block.get("block")))
+        problems.append("%s block %s: familiar invalid" % (participant, number))
     if not isinstance(block.get("fomo"), int) or not 1 <= block.get("fomo") <= 7:
-        problems.append("%s block %s: fomo invalid" % (participant, block.get("block")))
+        problems.append("%s block %s: fomo invalid" % (participant, number))
     if not str(block.get("recall") or "").strip():
-        problems.append("%s block %s: recall empty" % (participant, block.get("block")))
-    if block["condition"] == "C":
+        problems.append("%s block %s: recall empty" % (participant, number))
+    counts = entry["counts"]
+    needs_explain = (counts["folded"] + counts["hidden"]) > 0
+    if needs_explain:
         if block.get("explain_reason") not in ("能", "不能"):
-            problems.append("%s block %s: explain_reason invalid" % (participant, block.get("block")))
+            problems.append("%s block %s: explain_reason invalid" % (participant, number))
         if not isinstance(block.get("explain_clarity"), int) or not 1 <= block["explain_clarity"] <= 7:
-            problems.append("%s block %s: explain_clarity invalid" % (participant, block.get("block")))
+            problems.append("%s block %s: explain_clarity invalid" % (participant, number))
     return problems
 
 
-def build_session(participant: str, block: dict, entry: dict, latencies: dict[str, list[float]], start: datetime) -> dict:
-    duration = float(entry.get("duration_s") or 240)
-    counts = entry["counts"]
-    started = start
+def build_session(participant: str, block: dict, expected: dict, counts: dict, latencies: dict[str, list[float]], start: datetime) -> dict:
+    condition = expected["condition"]
+    duration = float(expected.get("duration_s") or 240)
     ended = start + timedelta(seconds=duration + 10)
-    latency = measured_latency(latencies, participant, block["condition"], block["video"])
+    latency = measured_latency(latencies, participant, condition, expected["bvid"])
     events = [
         {
-            "t": int(started.timestamp() * 1000),
+            "t": int(start.timestamp() * 1000),
             "type": "segment",
-            "bvid": block["video"],
+            "bvid": expected["bvid"],
             "segment_index": 1,
             "shown": counts["shown"],
             "hidden": counts["hidden"],
             "collapsed": counts["folded"],
             "thinned": counts["thinned"],
             "latency_ms": latency,
-            "online": block["condition"] != "A",
+            "online": condition != "A",
         }
     ]
     for index in range(int(block.get("expanded") or 0)):
-        events.append({"t": int((started + timedelta(seconds=5 + index)).timestamp() * 1000), "type": "expand"})
+        events.append({"t": int((start + timedelta(seconds=5 + index)).timestamp() * 1000), "type": "expand"})
     for index in range(int(block.get("restored") or 0)):
-        events.append({"t": int((started + timedelta(seconds=6 + index)).timestamp() * 1000), "type": "restore"})
+        events.append({"t": int((start + timedelta(seconds=6 + index)).timestamp() * 1000), "type": "restore"})
     for index in range(int(block.get("pref_changes") or 0)):
-        events.append({"t": int((started + timedelta(seconds=7 + index)).timestamp() * 1000), "type": "pref"})
+        events.append({"t": int((start + timedelta(seconds=7 + index)).timestamp() * 1000), "type": "pref"})
     return {
         "schema": "dmf-study-session/1",
-        "study_id": block["study_id"],
+        "study_id": expected["study_id"],
         "participant": participant,
-        "condition": {"A": "all_on", "B": "keyword", "C": "prototype"}[block["condition"]],
-        "condition_label": block["condition"],
-        "started_at": started.isoformat().replace("+00:00", "Z"),
+        "condition": CONDITION_NAMES[condition],
+        "condition_label": condition,
+        "started_at": start.isoformat().replace("+00:00", "Z"),
         "ended_at": ended.isoformat().replace("+00:00", "Z"),
-        "script_version": "0.4.2-simulated",
-        "prefs": {"condition": block["condition"]},
+        "script_version": "0.4.2-simulated-blind",
+        "prefs": {"condition": condition},
         "counts": {
             "segments": 1,
             "shown": counts["shown"],
@@ -190,6 +165,11 @@ def build_session(participant: str, block: dict, entry: dict, latencies: dict[st
             "corrections": 0,
             "dropped_events": 0,
         },
+        "self_report": {
+            "expectancy_1": block.get("expectancy_1"),
+            "expectancy_2": block.get("expectancy_2"),
+            "opened_panel": bool(block.get("opened_panel")),
+        },
         "events": events,
         "simulated": True,
         "participant_kind": "llm-agent",
@@ -201,8 +181,10 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--out-dir", default=str(AGENTS / "out"))
     parser.add_argument("--report", default=str(REPO / "data" / "study" / "report.json"))
+    parser.add_argument("--run-sheet", default=str(RUN_SHEET))
     args = parser.parse_args(argv)
 
+    sheet = load_run_sheet(Path(args.run_sheet))
     index = load_json(AGENTS / "materials-index.json")
     durations = {row["bvid"]: row for row in load_json(Path(args.report))["stimuli"]}
     latencies = load_latency_by_condition()
@@ -223,23 +205,26 @@ def main(argv: list[str] | None = None) -> int:
         start = datetime(2026, 11, 19, 9, 0, tzinfo=timezone.utc) + timedelta(minutes=45 * (PARTICIPANTS.index(participant)))
         for block in blocks:
             number = int(block.get("block") or 0)
+            expected = sheet.get((participant, number))
             entry = entries.get(number)
-            if entry is None:
+            if expected is None or entry is None:
                 problems.append("%s: unknown block %r" % (participant, block.get("block")))
                 continue
-            entry = dict(entry)
-            entry["duration_s"] = float(durations[entry["bvid"]].get("duration_s") or 240)
-            problems.extend(validate_block(block, entry, participant))
+            expected = dict(expected)
+            expected["block"] = number
+            expected["duration_s"] = float(durations[expected["bvid"]].get("duration_s") or 240)
+            problems.extend(validate_block(block, expected, entry, participant))
             block["persona"] = payload.get("persona")
-            session = build_session(participant, block, entry, latencies, start + timedelta(minutes=4 * (number - 1)))
-            (RAW / ("dmf-study-%s-%d-%s.json" % (participant, number, block["condition"]))).write_text(
-                json.dumps(session, ensure_ascii=False, indent=2), encoding="utf-8")
+            session = build_session(participant, block, expected, entry["counts"], latencies, start + timedelta(minutes=4 * (number - 1)))
+            condition = expected["condition"]
+            raw_path = RAW / ("dmf-study-%s-%d-%s.json" % (participant, number, condition))
+            raw_path.write_text(json.dumps(session, ensure_ascii=False, indent=2), encoding="utf-8")
             row = {
                 "participant": participant,
-                "condition": block["condition"],
-                "video": block["video"],
-                "genre": block["genre"],
-                "density": block["density"],
+                "condition": condition,
+                "video": expected["bvid"],
+                "genre": expected["genre"],
+                "density": expected["density"],
                 "block_order": number,
                 # analyze.py treats this column as a binary "seen before" flag,
                 # while the questionnaire asks 1=never, 2=clips, 3=full video.
@@ -251,7 +236,7 @@ def main(argv: list[str] | None = None) -> int:
             for name, count in SCALES.items():
                 for index_number in range(1, count + 1):
                     row["%s_%d" % (name, index_number)] = block.get("%s_%d" % (name, index_number))
-            if block["condition"] == "C":
+            if (entry["counts"]["folded"] + entry["counts"]["hidden"]) > 0:
                 row["explain_1"] = 7 if block.get("explain_reason") == "能" else 1
                 row["explain_2"] = block.get("explain_clarity")
             else:

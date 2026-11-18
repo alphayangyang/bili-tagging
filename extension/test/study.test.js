@@ -34,8 +34,8 @@ function clock(startMs) {
   };
 }
 
-test("conditions are the three protocol conditions", () => {
-  assert.deepEqual([...STUDY_CONDITIONS], ["all_on", "keyword", "prototype"]);
+test("conditions are the four protocol conditions", () => {
+  assert.deepEqual([...STUDY_CONDITIONS], ["all_on", "keyword", "prototype", "sham"]);
 });
 
 test("normalizeCondition accepts known conditions case-insensitively", () => {
@@ -45,6 +45,11 @@ test("normalizeCondition accepts known conditions case-insensitively", () => {
   assert.equal(normalizeCondition("A"), "all_on");
   assert.equal(normalizeCondition("b"), "keyword");
   assert.equal(normalizeCondition(" C "), "prototype");
+  assert.equal(normalizeCondition("sham"), "sham");
+  assert.equal(normalizeCondition(" SHAM "), "sham");
+  assert.equal(normalizeCondition("D"), "sham");
+  assert.equal(normalizeCondition("d"), "sham");
+  assert.equal(normalizeCondition("4"), "sham");
   assert.equal(normalizeCondition("control"), "");
   assert.equal(normalizeCondition(null), "");
   assert.equal(normalizeCondition(42), "");
@@ -79,6 +84,18 @@ test("conditionSpec marks record-only conditions", () => {
   assert.equal(prototype.per_type.conflict, "hide");
   assert.equal(prototype.per_type.inflammatory, "hide");
   assert.equal(prototype.per_type.spoiler, "collapse");
+  // The sham condition is interactive (pool prefetch + UI) but never filters.
+  const sham = conditionSpec("sham");
+  assert.equal(sham.condition, "sham");
+  assert.equal(sham.record_only, false);
+  assert.equal(sham.enabled, true);
+  assert.equal(sham.density.enabled, false);
+  assert.equal(sham.per_type.attack, "show");
+  assert.equal(sham.per_type.spoiler, "show");
+  for (const label of TYPES) {
+    assert.equal(sham.per_type[label], "show", "sham shows " + label);
+  }
+  assert.equal(conditionSpec("D").condition, "sham");
   assert.equal(conditionSpec("nope"), null);
 });
 
@@ -100,18 +117,33 @@ test("prefsForCondition merges the preset onto the base without mutating it", ()
   assert.equal(recordOnly.per_type.attack, "show");
   assert.equal(JSON.stringify(base), snapshot, "base prefs stay untouched");
   assert.equal(normalizePrefs(prefsForCondition("keyword", base)).per_type.conflict, "show");
+  const sham = normalizePrefs(prefsForCondition("sham", base));
+  assert.equal(sham.enabled, true, "sham runs the filtering path");
+  assert.equal(sham.density.enabled, false, "density stays a separate factor");
+  assert.equal(sham.min_confidence, base.min_confidence);
+  for (const label of TYPES) {
+    assert.equal(sham.per_type[label], "show", "sham never " + label);
+  }
   assert.equal(prefsForCondition("nope", base), null);
 });
 
-test("analysis prefs always count with the prototype policy", () => {
+test("analysis prefs use the prototype policy except for sham", () => {
   const base = defaultPrefs();
-  for (const condition of STUDY_CONDITIONS) {
+  for (const condition of ["all_on", "keyword", "prototype"]) {
     const analysis = normalizePrefs(analysisPrefsForCondition(condition, base));
     assert.equal(analysis.enabled, true, condition + " still counts would-be actions");
     assert.equal(analysis.per_type.attack, "hide");
     assert.equal(analysis.per_type.spoiler, "collapse");
     assert.equal(analysis.density.enabled, false);
   }
+  // Sham never filters, so its analysis policy must be all-show as well.
+  const sham = normalizePrefs(analysisPrefsForCondition("sham", base));
+  assert.equal(sham.enabled, true);
+  assert.equal(sham.density.enabled, false);
+  for (const label of TYPES) {
+    assert.equal(sham.per_type[label], "show", "sham analysis shows " + label);
+  }
+  assert.equal(normalizePrefs(analysisPrefsForCondition("D", base)).per_type.attack, "show");
   assert.equal(analysisPrefsForCondition("nope", base), null);
 });
 
@@ -122,6 +154,13 @@ test("parseStudyConfig reads both URL parameters", () => {
   });
   assert.deepEqual(parseStudyConfig("?dmf_study=pilot-a&dmf_cond=C&dmf_density=low", null), {
     studyId: "pilot-a", condition: "prototype", density: "low", source: "url",
+  });
+  // Protocol letter D (and the numeric alias 4) selects the sham condition.
+  assert.deepEqual(parseStudyConfig("?dmf_study=pilot-d&dmf_cond=D", null), {
+    studyId: "pilot-d", condition: "sham", density: "high", source: "url",
+  });
+  assert.deepEqual(parseStudyConfig("?dmf_study=pilot-d&dmf_cond=4&dmf_density=low", null), {
+    studyId: "pilot-d", condition: "sham", density: "low", source: "url",
   });
   assert.equal(normalizeDensity("LOW"), "low");
   assert.equal(normalizeDensity("medium"), "");
@@ -360,6 +399,19 @@ test("export returns the protocol document shape", () => {
   assert.equal(document.prefs.per_type.attack, "hide");
   // The exported event array is a snapshot of the event list.
   assert.notEqual(document.events, session.events);
+});
+
+test("sham sessions export the D letter and all-show prefs", () => {
+  const session = createStudySession({
+    studyId: "pilot-d",
+    condition: "sham",
+    prefs: normalizePrefs(prefsForCondition("sham", defaultPrefs())),
+    now: clock(),
+  });
+  const document = session.export();
+  assert.equal(document.condition, "sham");
+  assert.equal(document.condition_label, "D");
+  assert.equal(document.prefs.per_type.attack, "show");
 });
 
 test("setPrefs updates the exported snapshot", () => {

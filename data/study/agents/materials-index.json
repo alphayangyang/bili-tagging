@@ -9,7 +9,7 @@
       "genre": "information",
       "density": "high",
       "study_id": "P01-1-A",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P01/block1-A-BV1Ho4y1D7Wz.md",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P01/block1-BV1Ho4y1D7Wz.md",
       "counts": {
         "pool_total": 2101,
         "thinned": 0,
@@ -27,7 +27,7 @@
       "genre": "entertainment",
       "density": "low",
       "study_id": "P01-2-A",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P01/block2-A-BV18E1NByEYv.md",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P01/block2-BV18E1NByEYv.md",
       "counts": {
         "pool_total": 1519,
         "thinned": 1030,
@@ -40,12 +40,12 @@
       "participant": "P01",
       "block": 3,
       "condition": "B",
-      "condition_order": 2,
+      "condition_order": 3,
       "bvid": "BV1VMRKBCEDp",
       "genre": "information",
       "density": "low",
       "study_id": "P01-3-B",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P01/block3-B-BV1VMRKBCEDp.md",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P01/block3-BV1VMRKBCEDp.md",
       "counts": {
         "pool_total": 1171,
         "thinned": 772,
@@ -58,12 +58,12 @@
       "participant": "P01",
       "block": 4,
       "condition": "B",
-      "condition_order": 2,
+      "condition_order": 3,
       "bvid": "BV1X7zGY4E45",
       "genre": "entertainment",
       "density": "high",
       "study_id": "P01-4-B",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P01/block4-B-BV1X7zGY4E45.md",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P01/block4-BV1X7zGY4E45.md",
       "counts": {
         "pool_total": 4121,
         "thinned": 0,
@@ -76,12 +76,12 @@
       "participant": "P01",
       "block": 5,
       "condition": "C",
-      "condition_order": 3,
+      "condition_order": 5,
       "bvid": "BV1Z4RHYKEcB",
       "genre": "information",
       "density": "high",
       "study_id": "P01-5-C",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P01/block5-C-BV1Z4RHYKEcB.md",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P01/block5-BV1Z4RHYKEcB.md",
       "counts": {
         "pool_total": 725,
         "thinned": 0,
@@ -93,19 +93,19 @@
     {
       "participant": "P01",
       "block": 6,
-      "condition": "C",
-      "condition_order": 3,
+      "condition": "D",
+      "condition_order": 6,
       "bvid": "BV1CzW26vEXz",
       "genre": "entertainment",
       "density": "low",
-      "study_id": "P01-6-C",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P01/block6-C-BV1CzW26vEXz.md",
+      "study_id": "P01-6-D",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P01/block6-BV1CzW26vEXz.md",
       "counts": {
         "pool_total": 630,
         "thinned": 541,
-        "shown": 88,
+        "shown": 89,
         "folded": 0,
-        "hidden": 1
+        "hidden": 0
       }
     }
   ],
@@ -113,13 +113,31 @@
     {
       "participant": "P02",
       "block": 1,
-      "condition": "A",
+      "condition": "B",
       "condition_order": 1,
+      "bvid": "BV18E1NByEYv",
+      "genre": "entertainment",
+      "density": "low",
+      "study_id": "P02-1-B",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block1-BV18E1NByEYv.md",
+      "counts": {
+        "pool_total": 1519,
+        "thinned": 1030,
+        "shown": 475,
+        "folded": 0,
+        "hidden": 14
+      }
+    },
+    {
+      "participant": "P02",
+      "block": 2,
+      "condition": "C",
+      "condition_order": 2,
       "bvid": "BV1VMRKBCEDp",
       "genre": "information",
       "density": "low",
-      "study_id": "P02-1-A",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block1-A-BV1VMRKBCEDp.md",
+      "study_id": "P02-2-C",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block2-BV1VMRKBCEDp.md",
       "counts": {
         "pool_total": 1171,
         "thinned": 772,
@@ -130,14 +148,106 @@
     },
     {
       "participant": "P02",
-      "block": 2,
+      "block": 3,
+      "condition": "C",
+      "condition_order": 2,
+      "bvid": "BV1X7zGY4E45",
+      "genre": "entertainment",
+      "density": "high",
+      "study_id": "P02-3-C",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block3-BV1X7zGY4E45.md",
+      "counts": {
+        "pool_total": 4121,
+        "thinned": 0,
+        "shown": 3228,
+        "folded": 0,
+        "hidden": 893
+      }
+    },
+    {
+      "participant": "P02",
+      "block": 4,
+      "condition": "D",
+      "condition_order": 4,
+      "bvid": "BV1Z4RHYKEcB",
+      "genre": "information",
+      "density": "high",
+      "study_id": "P02-4-D",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block4-BV1Z4RHYKEcB.md",
+      "counts": {
+        "pool_total": 725,
+        "thinned": 0,
+        "shown": 725,
+        "folded": 0,
+        "hidden": 0
+      }
+    },
+    {
+      "participant": "P02",
+      "block": 5,
       "condition": "A",
+      "condition_order": 5,
+      "bvid": "BV1CzW26vEXz",
+      "genre": "entertainment",
+      "density": "low",
+      "study_id": "P02-5-A",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block5-BV1CzW26vEXz.md",
+      "counts": {
+        "pool_total": 630,
+        "thinned": 541,
+        "shown": 89,
+        "folded": 0,
+        "hidden": 0
+      }
+    },
+    {
+      "participant": "P02",
+      "block": 6,
+      "condition": "B",
+      "condition_order": 1,
+      "bvid": "BV1Ho4y1D7Wz",
+      "genre": "information",
+      "density": "high",
+      "study_id": "P02-6-B",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block6-BV1Ho4y1D7Wz.md",
+      "counts": {
+        "pool_total": 2101,
+        "thinned": 0,
+        "shown": 2066,
+        "folded": 0,
+        "hidden": 35
+      }
+    }
+  ],
+  "P03": [
+    {
+      "participant": "P03",
+      "block": 1,
+      "condition": "D",
+      "condition_order": 1,
+      "bvid": "BV1VMRKBCEDp",
+      "genre": "information",
+      "density": "low",
+      "study_id": "P03-1-D",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P03/block1-BV1VMRKBCEDp.md",
+      "counts": {
+        "pool_total": 1171,
+        "thinned": 772,
+        "shown": 399,
+        "folded": 0,
+        "hidden": 0
+      }
+    },
+    {
+      "participant": "P03",
+      "block": 2,
+      "condition": "D",
       "condition_order": 1,
       "bvid": "BV1X7zGY4E45",
       "genre": "entertainment",
       "density": "high",
-      "study_id": "P02-2-A",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block2-A-BV1X7zGY4E45.md",
+      "study_id": "P03-2-D",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P03/block2-BV1X7zGY4E45.md",
       "counts": {
         "pool_total": 4121,
         "thinned": 0,
@@ -147,125 +257,15 @@
       }
     },
     {
-      "participant": "P02",
-      "block": 3,
-      "condition": "C",
-      "condition_order": 2,
-      "bvid": "BV1Ho4y1D7Wz",
-      "genre": "information",
-      "density": "high",
-      "study_id": "P02-3-C",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block3-C-BV1Ho4y1D7Wz.md",
-      "counts": {
-        "pool_total": 2101,
-        "thinned": 0,
-        "shown": 2020,
-        "folded": 0,
-        "hidden": 81
-      }
-    },
-    {
-      "participant": "P02",
-      "block": 4,
-      "condition": "C",
-      "condition_order": 2,
-      "bvid": "BV18E1NByEYv",
-      "genre": "entertainment",
-      "density": "low",
-      "study_id": "P02-4-C",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block4-C-BV18E1NByEYv.md",
-      "counts": {
-        "pool_total": 1519,
-        "thinned": 1030,
-        "shown": 489,
-        "folded": 0,
-        "hidden": 0
-      }
-    },
-    {
-      "participant": "P02",
-      "block": 5,
-      "condition": "B",
-      "condition_order": 3,
-      "bvid": "BV1Z4RHYKEcB",
-      "genre": "information",
-      "density": "high",
-      "study_id": "P02-5-B",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block5-B-BV1Z4RHYKEcB.md",
-      "counts": {
-        "pool_total": 725,
-        "thinned": 0,
-        "shown": 721,
-        "folded": 0,
-        "hidden": 4
-      }
-    },
-    {
-      "participant": "P02",
-      "block": 6,
-      "condition": "B",
-      "condition_order": 3,
-      "bvid": "BV1CzW26vEXz",
-      "genre": "entertainment",
-      "density": "low",
-      "study_id": "P02-6-B",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P02/block6-B-BV1CzW26vEXz.md",
-      "counts": {
-        "pool_total": 630,
-        "thinned": 541,
-        "shown": 89,
-        "folded": 0,
-        "hidden": 0
-      }
-    }
-  ],
-  "P03": [
-    {
-      "participant": "P03",
-      "block": 1,
-      "condition": "B",
-      "condition_order": 1,
-      "bvid": "BV1Ho4y1D7Wz",
-      "genre": "information",
-      "density": "high",
-      "study_id": "P03-1-B",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P03/block1-B-BV1Ho4y1D7Wz.md",
-      "counts": {
-        "pool_total": 2101,
-        "thinned": 0,
-        "shown": 2066,
-        "folded": 0,
-        "hidden": 35
-      }
-    },
-    {
-      "participant": "P03",
-      "block": 2,
-      "condition": "B",
-      "condition_order": 1,
-      "bvid": "BV18E1NByEYv",
-      "genre": "entertainment",
-      "density": "low",
-      "study_id": "P03-2-B",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P03/block2-B-BV18E1NByEYv.md",
-      "counts": {
-        "pool_total": 1519,
-        "thinned": 1030,
-        "shown": 475,
-        "folded": 0,
-        "hidden": 14
-      }
-    },
-    {
       "participant": "P03",
       "block": 3,
       "condition": "A",
-      "condition_order": 2,
+      "condition_order": 3,
       "bvid": "BV1Z4RHYKEcB",
       "genre": "information",
       "density": "high",
       "study_id": "P03-3-A",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P03/block3-A-BV1Z4RHYKEcB.md",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P03/block3-BV1Z4RHYKEcB.md",
       "counts": {
         "pool_total": 725,
         "thinned": 0,
@@ -277,13 +277,13 @@
     {
       "participant": "P03",
       "block": 4,
-      "condition": "A",
-      "condition_order": 2,
+      "condition": "B",
+      "condition_order": 4,
       "bvid": "BV1CzW26vEXz",
       "genre": "entertainment",
       "density": "low",
-      "study_id": "P03-4-A",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P03/block4-A-BV1CzW26vEXz.md",
+      "study_id": "P03-4-B",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P03/block4-BV1CzW26vEXz.md",
       "counts": {
         "pool_total": 630,
         "thinned": 541,
@@ -296,36 +296,36 @@
       "participant": "P03",
       "block": 5,
       "condition": "C",
-      "condition_order": 3,
-      "bvid": "BV1VMRKBCEDp",
+      "condition_order": 5,
+      "bvid": "BV1Ho4y1D7Wz",
       "genre": "information",
-      "density": "low",
+      "density": "high",
       "study_id": "P03-5-C",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P03/block5-C-BV1VMRKBCEDp.md",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P03/block5-BV1Ho4y1D7Wz.md",
       "counts": {
-        "pool_total": 1171,
-        "thinned": 772,
-        "shown": 399,
+        "pool_total": 2101,
+        "thinned": 0,
+        "shown": 2020,
         "folded": 0,
-        "hidden": 0
+        "hidden": 81
       }
     },
     {
       "participant": "P03",
       "block": 6,
       "condition": "C",
-      "condition_order": 3,
-      "bvid": "BV1X7zGY4E45",
+      "condition_order": 5,
+      "bvid": "BV18E1NByEYv",
       "genre": "entertainment",
-      "density": "high",
+      "density": "low",
       "study_id": "P03-6-C",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P03/block6-C-BV1X7zGY4E45.md",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P03/block6-BV18E1NByEYv.md",
       "counts": {
-        "pool_total": 4121,
-        "thinned": 0,
-        "shown": 3228,
+        "pool_total": 1519,
+        "thinned": 1030,
+        "shown": 489,
         "folded": 0,
-        "hidden": 893
+        "hidden": 0
       }
     }
   ],
@@ -333,13 +333,31 @@
     {
       "participant": "P04",
       "block": 1,
-      "condition": "B",
+      "condition": "A",
       "condition_order": 1,
+      "bvid": "BV1X7zGY4E45",
+      "genre": "entertainment",
+      "density": "high",
+      "study_id": "P04-1-A",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P04/block1-BV1X7zGY4E45.md",
+      "counts": {
+        "pool_total": 4121,
+        "thinned": 0,
+        "shown": 4121,
+        "folded": 0,
+        "hidden": 0
+      }
+    },
+    {
+      "participant": "P04",
+      "block": 2,
+      "condition": "B",
+      "condition_order": 2,
       "bvid": "BV1Z4RHYKEcB",
       "genre": "information",
       "density": "high",
-      "study_id": "P04-1-B",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P04/block1-B-BV1Z4RHYKEcB.md",
+      "study_id": "P04-2-B",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P04/block2-BV1Z4RHYKEcB.md",
       "counts": {
         "pool_total": 725,
         "thinned": 0,
@@ -350,68 +368,32 @@
     },
     {
       "participant": "P04",
-      "block": 2,
-      "condition": "B",
-      "condition_order": 1,
+      "block": 3,
+      "condition": "C",
+      "condition_order": 3,
       "bvid": "BV1CzW26vEXz",
       "genre": "entertainment",
       "density": "low",
-      "study_id": "P04-2-B",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P04/block2-B-BV1CzW26vEXz.md",
+      "study_id": "P04-3-C",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P04/block3-BV1CzW26vEXz.md",
       "counts": {
         "pool_total": 630,
         "thinned": 541,
-        "shown": 89,
+        "shown": 88,
         "folded": 0,
-        "hidden": 0
-      }
-    },
-    {
-      "participant": "P04",
-      "block": 3,
-      "condition": "C",
-      "condition_order": 2,
-      "bvid": "BV1VMRKBCEDp",
-      "genre": "information",
-      "density": "low",
-      "study_id": "P04-3-C",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P04/block3-C-BV1VMRKBCEDp.md",
-      "counts": {
-        "pool_total": 1171,
-        "thinned": 772,
-        "shown": 399,
-        "folded": 0,
-        "hidden": 0
+        "hidden": 1
       }
     },
     {
       "participant": "P04",
       "block": 4,
-      "condition": "C",
-      "condition_order": 2,
-      "bvid": "BV1X7zGY4E45",
-      "genre": "entertainment",
-      "density": "high",
-      "study_id": "P04-4-C",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P04/block4-C-BV1X7zGY4E45.md",
-      "counts": {
-        "pool_total": 4121,
-        "thinned": 0,
-        "shown": 3228,
-        "folded": 0,
-        "hidden": 893
-      }
-    },
-    {
-      "participant": "P04",
-      "block": 5,
-      "condition": "A",
-      "condition_order": 3,
+      "condition": "D",
+      "condition_order": 4,
       "bvid": "BV1Ho4y1D7Wz",
       "genre": "information",
       "density": "high",
-      "study_id": "P04-5-A",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P04/block5-A-BV1Ho4y1D7Wz.md",
+      "study_id": "P04-4-D",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P04/block4-BV1Ho4y1D7Wz.md",
       "counts": {
         "pool_total": 2101,
         "thinned": 0,
@@ -422,18 +404,36 @@
     },
     {
       "participant": "P04",
-      "block": 6,
-      "condition": "A",
-      "condition_order": 3,
+      "block": 5,
+      "condition": "D",
+      "condition_order": 4,
       "bvid": "BV18E1NByEYv",
       "genre": "entertainment",
       "density": "low",
-      "study_id": "P04-6-A",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P04/block6-A-BV18E1NByEYv.md",
+      "study_id": "P04-5-D",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P04/block5-BV18E1NByEYv.md",
       "counts": {
         "pool_total": 1519,
         "thinned": 1030,
         "shown": 489,
+        "folded": 0,
+        "hidden": 0
+      }
+    },
+    {
+      "participant": "P04",
+      "block": 6,
+      "condition": "A",
+      "condition_order": 1,
+      "bvid": "BV1VMRKBCEDp",
+      "genre": "information",
+      "density": "low",
+      "study_id": "P04-6-A",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P04/block6-BV1VMRKBCEDp.md",
+      "counts": {
+        "pool_total": 1171,
+        "thinned": 772,
+        "shown": 399,
         "folded": 0,
         "hidden": 0
       }
@@ -443,13 +443,85 @@
     {
       "participant": "P05",
       "block": 1,
-      "condition": "C",
+      "condition": "A",
       "condition_order": 1,
+      "bvid": "BV1Ho4y1D7Wz",
+      "genre": "information",
+      "density": "high",
+      "study_id": "P05-1-A",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P05/block1-BV1Ho4y1D7Wz.md",
+      "counts": {
+        "pool_total": 2101,
+        "thinned": 0,
+        "shown": 2101,
+        "folded": 0,
+        "hidden": 0
+      }
+    },
+    {
+      "participant": "P05",
+      "block": 2,
+      "condition": "A",
+      "condition_order": 1,
+      "bvid": "BV18E1NByEYv",
+      "genre": "entertainment",
+      "density": "low",
+      "study_id": "P05-2-A",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P05/block2-BV18E1NByEYv.md",
+      "counts": {
+        "pool_total": 1519,
+        "thinned": 1030,
+        "shown": 489,
+        "folded": 0,
+        "hidden": 0
+      }
+    },
+    {
+      "participant": "P05",
+      "block": 3,
+      "condition": "B",
+      "condition_order": 3,
+      "bvid": "BV1VMRKBCEDp",
+      "genre": "information",
+      "density": "low",
+      "study_id": "P05-3-B",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P05/block3-BV1VMRKBCEDp.md",
+      "counts": {
+        "pool_total": 1171,
+        "thinned": 772,
+        "shown": 399,
+        "folded": 0,
+        "hidden": 0
+      }
+    },
+    {
+      "participant": "P05",
+      "block": 4,
+      "condition": "B",
+      "condition_order": 3,
+      "bvid": "BV1X7zGY4E45",
+      "genre": "entertainment",
+      "density": "high",
+      "study_id": "P05-4-B",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P05/block4-BV1X7zGY4E45.md",
+      "counts": {
+        "pool_total": 4121,
+        "thinned": 0,
+        "shown": 4103,
+        "folded": 0,
+        "hidden": 18
+      }
+    },
+    {
+      "participant": "P05",
+      "block": 5,
+      "condition": "C",
+      "condition_order": 5,
       "bvid": "BV1Z4RHYKEcB",
       "genre": "information",
       "density": "high",
-      "study_id": "P05-1-C",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P05/block1-C-BV1Z4RHYKEcB.md",
+      "study_id": "P05-5-C",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P05/block5-BV1Z4RHYKEcB.md",
       "counts": {
         "pool_total": 725,
         "thinned": 0,
@@ -460,92 +532,20 @@
     },
     {
       "participant": "P05",
-      "block": 2,
-      "condition": "C",
-      "condition_order": 1,
+      "block": 6,
+      "condition": "D",
+      "condition_order": 6,
       "bvid": "BV1CzW26vEXz",
       "genre": "entertainment",
       "density": "low",
-      "study_id": "P05-2-C",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P05/block2-C-BV1CzW26vEXz.md",
+      "study_id": "P05-6-D",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P05/block6-BV1CzW26vEXz.md",
       "counts": {
         "pool_total": 630,
         "thinned": 541,
-        "shown": 88,
-        "folded": 0,
-        "hidden": 1
-      }
-    },
-    {
-      "participant": "P05",
-      "block": 3,
-      "condition": "A",
-      "condition_order": 2,
-      "bvid": "BV1VMRKBCEDp",
-      "genre": "information",
-      "density": "low",
-      "study_id": "P05-3-A",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P05/block3-A-BV1VMRKBCEDp.md",
-      "counts": {
-        "pool_total": 1171,
-        "thinned": 772,
-        "shown": 399,
+        "shown": 89,
         "folded": 0,
         "hidden": 0
-      }
-    },
-    {
-      "participant": "P05",
-      "block": 4,
-      "condition": "A",
-      "condition_order": 2,
-      "bvid": "BV1X7zGY4E45",
-      "genre": "entertainment",
-      "density": "high",
-      "study_id": "P05-4-A",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P05/block4-A-BV1X7zGY4E45.md",
-      "counts": {
-        "pool_total": 4121,
-        "thinned": 0,
-        "shown": 4121,
-        "folded": 0,
-        "hidden": 0
-      }
-    },
-    {
-      "participant": "P05",
-      "block": 5,
-      "condition": "B",
-      "condition_order": 3,
-      "bvid": "BV1Ho4y1D7Wz",
-      "genre": "information",
-      "density": "high",
-      "study_id": "P05-5-B",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P05/block5-B-BV1Ho4y1D7Wz.md",
-      "counts": {
-        "pool_total": 2101,
-        "thinned": 0,
-        "shown": 2066,
-        "folded": 0,
-        "hidden": 35
-      }
-    },
-    {
-      "participant": "P05",
-      "block": 6,
-      "condition": "B",
-      "condition_order": 3,
-      "bvid": "BV18E1NByEYv",
-      "genre": "entertainment",
-      "density": "low",
-      "study_id": "P05-6-B",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P05/block6-B-BV18E1NByEYv.md",
-      "counts": {
-        "pool_total": 1519,
-        "thinned": 1030,
-        "shown": 475,
-        "folded": 0,
-        "hidden": 14
       }
     }
   ],
@@ -553,49 +553,31 @@
     {
       "participant": "P06",
       "block": 1,
-      "condition": "C",
+      "condition": "B",
       "condition_order": 1,
-      "bvid": "BV1Ho4y1D7Wz",
-      "genre": "information",
-      "density": "high",
-      "study_id": "P06-1-C",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P06/block1-C-BV1Ho4y1D7Wz.md",
+      "bvid": "BV18E1NByEYv",
+      "genre": "entertainment",
+      "density": "low",
+      "study_id": "P06-1-B",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P06/block1-BV18E1NByEYv.md",
       "counts": {
-        "pool_total": 2101,
-        "thinned": 0,
-        "shown": 2020,
+        "pool_total": 1519,
+        "thinned": 1030,
+        "shown": 475,
         "folded": 0,
-        "hidden": 81
+        "hidden": 14
       }
     },
     {
       "participant": "P06",
       "block": 2,
       "condition": "C",
-      "condition_order": 1,
-      "bvid": "BV18E1NByEYv",
-      "genre": "entertainment",
-      "density": "low",
-      "study_id": "P06-2-C",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P06/block2-C-BV18E1NByEYv.md",
-      "counts": {
-        "pool_total": 1519,
-        "thinned": 1030,
-        "shown": 489,
-        "folded": 0,
-        "hidden": 0
-      }
-    },
-    {
-      "participant": "P06",
-      "block": 3,
-      "condition": "B",
       "condition_order": 2,
       "bvid": "BV1VMRKBCEDp",
       "genre": "information",
       "density": "low",
-      "study_id": "P06-3-B",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P06/block3-B-BV1VMRKBCEDp.md",
+      "study_id": "P06-2-C",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P06/block2-BV1VMRKBCEDp.md",
       "counts": {
         "pool_total": 1171,
         "thinned": 772,
@@ -606,32 +588,32 @@
     },
     {
       "participant": "P06",
-      "block": 4,
-      "condition": "B",
+      "block": 3,
+      "condition": "C",
       "condition_order": 2,
       "bvid": "BV1X7zGY4E45",
       "genre": "entertainment",
       "density": "high",
-      "study_id": "P06-4-B",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P06/block4-B-BV1X7zGY4E45.md",
+      "study_id": "P06-3-C",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P06/block3-BV1X7zGY4E45.md",
       "counts": {
         "pool_total": 4121,
         "thinned": 0,
-        "shown": 4103,
+        "shown": 3228,
         "folded": 0,
-        "hidden": 18
+        "hidden": 893
       }
     },
     {
       "participant": "P06",
-      "block": 5,
-      "condition": "A",
-      "condition_order": 3,
+      "block": 4,
+      "condition": "D",
+      "condition_order": 4,
       "bvid": "BV1Z4RHYKEcB",
       "genre": "information",
       "density": "high",
-      "study_id": "P06-5-A",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P06/block5-A-BV1Z4RHYKEcB.md",
+      "study_id": "P06-4-D",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P06/block4-BV1Z4RHYKEcB.md",
       "counts": {
         "pool_total": 725,
         "thinned": 0,
@@ -642,18 +624,256 @@
     },
     {
       "participant": "P06",
-      "block": 6,
+      "block": 5,
       "condition": "A",
-      "condition_order": 3,
+      "condition_order": 5,
       "bvid": "BV1CzW26vEXz",
       "genre": "entertainment",
       "density": "low",
-      "study_id": "P06-6-A",
-      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P06/block6-A-BV1CzW26vEXz.md",
+      "study_id": "P06-5-A",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P06/block5-BV1CzW26vEXz.md",
       "counts": {
         "pool_total": 630,
         "thinned": 541,
         "shown": 89,
+        "folded": 0,
+        "hidden": 0
+      }
+    },
+    {
+      "participant": "P06",
+      "block": 6,
+      "condition": "B",
+      "condition_order": 1,
+      "bvid": "BV1Ho4y1D7Wz",
+      "genre": "information",
+      "density": "high",
+      "study_id": "P06-6-B",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P06/block6-BV1Ho4y1D7Wz.md",
+      "counts": {
+        "pool_total": 2101,
+        "thinned": 0,
+        "shown": 2066,
+        "folded": 0,
+        "hidden": 35
+      }
+    }
+  ],
+  "P07": [
+    {
+      "participant": "P07",
+      "block": 1,
+      "condition": "D",
+      "condition_order": 1,
+      "bvid": "BV1VMRKBCEDp",
+      "genre": "information",
+      "density": "low",
+      "study_id": "P07-1-D",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P07/block1-BV1VMRKBCEDp.md",
+      "counts": {
+        "pool_total": 1171,
+        "thinned": 772,
+        "shown": 399,
+        "folded": 0,
+        "hidden": 0
+      }
+    },
+    {
+      "participant": "P07",
+      "block": 2,
+      "condition": "D",
+      "condition_order": 1,
+      "bvid": "BV1X7zGY4E45",
+      "genre": "entertainment",
+      "density": "high",
+      "study_id": "P07-2-D",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P07/block2-BV1X7zGY4E45.md",
+      "counts": {
+        "pool_total": 4121,
+        "thinned": 0,
+        "shown": 4121,
+        "folded": 0,
+        "hidden": 0
+      }
+    },
+    {
+      "participant": "P07",
+      "block": 3,
+      "condition": "A",
+      "condition_order": 3,
+      "bvid": "BV1Z4RHYKEcB",
+      "genre": "information",
+      "density": "high",
+      "study_id": "P07-3-A",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P07/block3-BV1Z4RHYKEcB.md",
+      "counts": {
+        "pool_total": 725,
+        "thinned": 0,
+        "shown": 725,
+        "folded": 0,
+        "hidden": 0
+      }
+    },
+    {
+      "participant": "P07",
+      "block": 4,
+      "condition": "B",
+      "condition_order": 4,
+      "bvid": "BV1CzW26vEXz",
+      "genre": "entertainment",
+      "density": "low",
+      "study_id": "P07-4-B",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P07/block4-BV1CzW26vEXz.md",
+      "counts": {
+        "pool_total": 630,
+        "thinned": 541,
+        "shown": 89,
+        "folded": 0,
+        "hidden": 0
+      }
+    },
+    {
+      "participant": "P07",
+      "block": 5,
+      "condition": "C",
+      "condition_order": 5,
+      "bvid": "BV1Ho4y1D7Wz",
+      "genre": "information",
+      "density": "high",
+      "study_id": "P07-5-C",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P07/block5-BV1Ho4y1D7Wz.md",
+      "counts": {
+        "pool_total": 2101,
+        "thinned": 0,
+        "shown": 2020,
+        "folded": 0,
+        "hidden": 81
+      }
+    },
+    {
+      "participant": "P07",
+      "block": 6,
+      "condition": "C",
+      "condition_order": 5,
+      "bvid": "BV18E1NByEYv",
+      "genre": "entertainment",
+      "density": "low",
+      "study_id": "P07-6-C",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P07/block6-BV18E1NByEYv.md",
+      "counts": {
+        "pool_total": 1519,
+        "thinned": 1030,
+        "shown": 489,
+        "folded": 0,
+        "hidden": 0
+      }
+    }
+  ],
+  "P08": [
+    {
+      "participant": "P08",
+      "block": 1,
+      "condition": "A",
+      "condition_order": 1,
+      "bvid": "BV1X7zGY4E45",
+      "genre": "entertainment",
+      "density": "high",
+      "study_id": "P08-1-A",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P08/block1-BV1X7zGY4E45.md",
+      "counts": {
+        "pool_total": 4121,
+        "thinned": 0,
+        "shown": 4121,
+        "folded": 0,
+        "hidden": 0
+      }
+    },
+    {
+      "participant": "P08",
+      "block": 2,
+      "condition": "B",
+      "condition_order": 2,
+      "bvid": "BV1Z4RHYKEcB",
+      "genre": "information",
+      "density": "high",
+      "study_id": "P08-2-B",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P08/block2-BV1Z4RHYKEcB.md",
+      "counts": {
+        "pool_total": 725,
+        "thinned": 0,
+        "shown": 721,
+        "folded": 0,
+        "hidden": 4
+      }
+    },
+    {
+      "participant": "P08",
+      "block": 3,
+      "condition": "C",
+      "condition_order": 3,
+      "bvid": "BV1CzW26vEXz",
+      "genre": "entertainment",
+      "density": "low",
+      "study_id": "P08-3-C",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P08/block3-BV1CzW26vEXz.md",
+      "counts": {
+        "pool_total": 630,
+        "thinned": 541,
+        "shown": 88,
+        "folded": 0,
+        "hidden": 1
+      }
+    },
+    {
+      "participant": "P08",
+      "block": 4,
+      "condition": "D",
+      "condition_order": 4,
+      "bvid": "BV1Ho4y1D7Wz",
+      "genre": "information",
+      "density": "high",
+      "study_id": "P08-4-D",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P08/block4-BV1Ho4y1D7Wz.md",
+      "counts": {
+        "pool_total": 2101,
+        "thinned": 0,
+        "shown": 2101,
+        "folded": 0,
+        "hidden": 0
+      }
+    },
+    {
+      "participant": "P08",
+      "block": 5,
+      "condition": "D",
+      "condition_order": 4,
+      "bvid": "BV18E1NByEYv",
+      "genre": "entertainment",
+      "density": "low",
+      "study_id": "P08-5-D",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P08/block5-BV18E1NByEYv.md",
+      "counts": {
+        "pool_total": 1519,
+        "thinned": 1030,
+        "shown": 489,
+        "folded": 0,
+        "hidden": 0
+      }
+    },
+    {
+      "participant": "P08",
+      "block": 6,
+      "condition": "A",
+      "condition_order": 1,
+      "bvid": "BV1VMRKBCEDp",
+      "genre": "information",
+      "density": "low",
+      "study_id": "P08-6-A",
+      "material": "/home/alphayang/bili-tagging/data/study/agents/blocks/P08/block6-BV1VMRKBCEDp.md",
+      "counts": {
+        "pool_total": 1171,
+        "thinned": 772,
+        "shown": 399,
         "folded": 0,
         "hidden": 0
       }

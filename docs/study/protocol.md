@@ -12,7 +12,7 @@
 | 被试 | N = 24（招募 30 防流失），B 站常规用户（≥3 小时/周） |
 | 材料 | 6 支 3–5 分钟真实视频（3 信息型 + 3 娱乐型），真实弹幕流，密度自然分层（低 ~30 条/分，高 ~150 条/分） |
 | 单场时长 | 70–85 分钟 |
-| 平衡 | 6 种条件顺序 × 3 个视频对 = 拉丁方，每 6 人一轮完全平衡 |
+| 平衡 | 正式设计：4 条件 × 8 块/人，4 条拉丁方（每 4 人一轮完全平衡）；模拟试跑：6 块/人、{A,A,B,B,C,D} 轮转（见 2.1 的变更说明） |
 | 主要测量 | 不适感、共看感、控制感、FOMO、NASA-TLX、理解测验、可解释性、会话日志 |
 | 产出 | data/study/raw/P01..P24、data/study/analysis.json、结果表与图 |
 | 关键依赖 | task-7 研究模式（脚本）、task-8 材料准备与分析脚本 |
@@ -23,7 +23,7 @@
 |---|---|---|---|
 | RQ1 | 弹幕的类型与密度如何影响观看体验？ | H1a 攻击/争论/剧透提高不适；H1b 信息/幽默/共鸣提升共看感；H1c 高密度放大类型效应 | 只用条件 A 的 6 支视频，按视频的 genre × density 分析 |
 | RQ2 | 分类器是否够准够快？ | H2 macro-F1 ≥ 0.70，p50 延迟足够离线预计算，spoiler 最弱 | S1 标注（180 条双标）+ 离线评测 + 会话日志延迟 |
-| RQ3 | 个性化过滤是否改善体验、降低负担？ | H3a 不适↓控制↑；H3b setup ≤3 min、纠正 ≤1 次/10 min；H3c 不损信息理解；H3d 隐藏可解释 | A/B/C 三条件对比 + 日志（setup 时间、纠正次数）+ 访谈 |
+| RQ3 | 个性化过滤是否改善体验、降低负担？ | H3a 不适↓控制↑；H3b setup ≤3 min、纠正 ≤1 次/10 min；H3c 不损信息理解；H3d 隐藏可解释；H3e 效果超过 sham 界面 | A/B/C/D 四条件对比（C vs A/B/D）+ 日志（setup 时间、纠正次数）+ 简短评分 |
 
 ## 2. 设计
 
@@ -34,8 +34,11 @@
 | A | all-on | B 站默认；**关闭**关键词屏蔽；脚本以 record-only 运行（不干预渲染，只记录） | 基线：未经任何过滤的真实弹幕环境 |
 | B | platform-keyword | B 站原生「屏蔽词」开启并预置 5 个词；脚本 record-only | 代表平台现有能力：任意词/正则匹配，无语义 |
 | C | prototype | 脚本 prototype 模式：attack / conflict / inflammatory / irrelevant_repetition → 隐藏；spoiler → 折叠（面板列表可找回原文）；其余 → 显示；阈值 0.30 | 我们的社会功能过滤 + 可解释 + 可纠正 |
+| D | sham | 面板、整池加载进度、折叠列表都在，但**不过滤**（全 show、不折叠） | 分离界面/期待效应：A vs D 量界面本身，C vs D 量语义过滤的净效应 |
 
-**密度操纵（三个条件都生效）**：每个视频块带一个密度格，由 dmf_density 参数控制。high = 保持原样（实测 150–750 条/分）；low = 脚本按 10 秒时间窗 + 稳定 hash 抽稀到 **30 条/分**（每窗 5 条，被抽掉的直接不渲染）。这道操纵在 A/B（record-only）条件下同样执行，否则 RQ1 的「高密度放大类型效应」检验没有低密度格可用。所有 6 支视频实测峰值都 ≥ 150 条/分，低格只靠抽稀实现，不依赖视频本身稀疏。
+> 变更（2026-11-19，加 sham 条件 D 后）：正式设计改为 **4 条件 × 8 块/人**（每条件 2 块），4 条件拉丁方；`scripts/study/session_url.py` 的 run sheet 生成器目前仍是 3 条件/6 块，正式招被试前必须先改并重生成（`data/study/run-sheet.csv` 也要重跑）。模拟试跑（docs/study/results-simulated.md）用的是缩减版 6 块/人（每人条件多重集 {A,A,B,B,C,D}）与盲化材料，仅用于验证管线与设计，不是正式设计。
+
+**密度操纵（四个条件都生效）**：每个视频块带一个密度格，由 dmf_density 参数控制。high = 保持原样（实测 150–750 条/分）；low = 脚本按 10 秒时间窗 + 稳定 hash 抽稀到 **30 条/分**（每窗 5 条，被抽掉的直接不渲染）。这道操纵在 A/B（record-only）条件下同样执行，否则 RQ1 的「高密度放大类型效应」检验没有低密度格可用。所有 6 支视频实测峰值都 ≥ 150 条/分，低格只靠抽稀实现，不依赖视频本身稀疏。
 
 B 条件的屏蔽词（对所有被试统一，事先写在设备上，实验后清除）：
 
@@ -238,7 +241,7 @@ https://www.bilibili.com/video/<bvid>/?dmf_study=P01-A&dmf_cond=A&dmf_density=hi
 }
 ~~~
 
-字段说明：`condition` 是规范 id（`all_on`/`keyword`/`prototype`），`condition_label` 是协议里的 A/B/C（分析脚本优先读后者，旧导出没有时从 `study_id` 后缀取字母）；`events[].t` 是 epoch 毫秒；`thinned` 是本段被密度格抽稀掉、本来会显示的条数；`applied` 表示这一段是否真的改写了弹幕字节（A/B 条件恒为 false）；`online` 表示决策是否走了服务端实时打标。
+字段说明：`condition` 是规范 id（`all_on`/`keyword`/`prototype`/`sham`），`condition_label` 是协议里的 A/B/C/D（分析脚本优先读后者，旧导出没有时从 `study_id` 后缀取字母）；`events[].t` 是 epoch 毫秒；`thinned` 是本段被密度格抽稀掉、本来会显示的条数；`applied` 表示这一段是否真的改写了弹幕字节（A/B 条件恒为 false）；`online` 表示决策是否走了服务端实时打标。
 
 **applied 与 would 的区别（v0.4.2 起）**：`shown/hidden/collapsed` 一律记「被试实际看到的」，所以 A/B 恒为 `shown = 段内全部 − 抽稀, hidden = 0, collapsed = 0`；原型策略在 A/B 上「本来会怎么做」记在 `would`（及整块累计的 `counts.would_shown/would_hidden/would_collapsed`）。这样 RQ2 的行为表可以同时回答「条件实际过滤了多少」和「若启用原型会过滤多少」，不会把反事实当成事实。
 
@@ -249,7 +252,7 @@ https://www.bilibili.com/video/<bvid>/?dmf_study=P01-A&dmf_cond=A&dmf_density=hi
 一行 = 一个被试的一个视频块：
 
 ~~~
-participant,condition,video,genre,density,block_order,familiar,discomfort_1..5,coview_1..3,control_1..3,fomo,nasa_1..6,comp_1..5,recall,explain_1..2,overall_1..2,notes
+participant,condition,video,genre,density,block_order,familiar,discomfort_1..5,coview_1..3,control_1..3,fomo,expectancy_1..2,nasa_1..6,comp_1..5,recall,explain_1..2,overall_1..2,notes
 ~~~
 
 问卷用在线表单（问卷星/Google Form）导出 CSV，或纸质录入；列名与上面一致，方便 analyze.py 直接读。
@@ -264,7 +267,7 @@ participant,condition,video,genre,density,block_order,familiar,discomfort_1..5,c
 
 ### 8.2 主分析
 
-RQ3（A/B/C 三条件）：
+RQ3（A/B/C/D 四条件）：
 
 ~~~
 score ~ condition + (1 | participant) + (1 | video)
