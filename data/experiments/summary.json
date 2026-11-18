@@ -1,0 +1,103 @@
+{
+  "videos": {
+    "BV1GJ411x7h7": {
+      "domain": "music/meme",
+      "title": "【官方 MV】Never Gonna Give You Up - Rick Astley",
+      "rows": 1407,
+      "dist": {
+        "information": 200,
+        "humor": 902,
+        "emotional_resonance": 233,
+        "irrelevant_repetition": 65,
+        "conflict": 1,
+        "spoiler": 5,
+        "other": 1
+      },
+      "time_ms_nonzero": 1403,
+      "time_ms_max": 211009
+    },
+    "BV1w5xh6sEEz": {
+      "domain": "music/meme",
+      "title": "【只对你有感觉】|“【恋爱の小曲】”",
+      "rows": 173,
+      "dist": {
+        "humor": 66,
+        "emotional_resonance": 45,
+        "information": 43,
+        "irrelevant_repetition": 14,
+        "attack": 1,
+        "other": 4
+      },
+      "time_ms_nonzero": 171,
+      "time_ms_max": 214994
+    },
+    "BV1rCxe6wEN9": {
+      "domain": "politics",
+      "title": "一条视频看10月世界：中东在燃烧，法国在骚乱，中国网友在跨国吵架",
+      "rows": 472,
+      "dist": {
+        "irrelevant_repetition": 84,
+        "emotional_resonance": 37,
+        "political": 53,
+        "information": 206,
+        "other": 11,
+        "humor": 63,
+        "attack": 11,
+        "conflict": 6,
+        "inflammatory": 1
+      },
+      "time_ms_nonzero": 0,
+      "time_ms_max": 0
+    },
+    "BV1bnxr6cEJ9": {
+      "domain": "politics/conflict",
+      "title": "外网中德骂战！10月31号 再现神推：中国人用梯子是买动物园门票",
+      "rows": 67,
+      "dist": {
+        "political": 13,
+        "information": 10,
+        "irrelevant_repetition": 11,
+        "humor": 15,
+        "attack": 9,
+        "emotional_resonance": 8,
+        "conflict": 1
+      },
+      "time_ms_nonzero": 0,
+      "time_ms_max": 0
+    },
+    "BV1mV4F6mE5Z": {
+      "domain": "gaming",
+      "title": "八倍AK致敬吃鸡，队友脸色对了",
+      "rows": 174,
+      "dist": {
+        "other": 16,
+        "humor": 69,
+        "emotional_resonance": 25,
+        "information": 52,
+        "irrelevant_repetition": 6,
+        "inflammatory": 2,
+        "conflict": 3,
+        "attack": 1
+      },
+      "time_ms_nonzero": 0,
+      "time_ms_max": 0
+    },
+    "BV1W18Y61Ee5": {
+      "domain": "story/drama",
+      "title": "我妈妈第一次怀孕时……",
+      "rows": 164,
+      "dist": {
+        "humor": 60,
+        "emotional_resonance": 47,
+        "irrelevant_repetition": 12,
+        "other": 17,
+        "conflict": 4,
+        "information": 22,
+        "attack": 2
+      },
+      "time_ms_nonzero": 0,
+      "time_ms_max": 0
+    }
+  },
+  "created": "2026-11-04T17:56:43Z"
+}

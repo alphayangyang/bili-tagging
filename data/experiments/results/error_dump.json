@@ -1,0 +1,233 @@
+{
+  "BV1GJ411x7h7": {
+    "n_test": 120,
+    "errors": [
+      {
+        "text": "我从大唐gang简介传过来的。",
+        "gold": "information",
+        "pred": "irrelevant_repetition",
+        "score": 0.318
+      },
+      {
+        "text": "愿   者   上   钩",
+        "gold": "humor",
+        "pred": "irrelevant_repetition",
+        "score": 0.368
+      },
+      {
+        "text": "转眼90年代上学单身狗变身中老年社畜了……",
+        "gold": "emotional_resonance",
+        "pred": "humor",
+        "score": 0.275
+      },
+      {
+        "text": "这首歌很适合写作业时听！让人专心",
+        "gold": "information",
+        "pred": "emotional_resonance",
+        "score": 0.357
+      },
+      {
+        "text": "范特西~",
+        "gold": "irrelevant_repetition",
+        "pred": "humor",
+        "score": 0.277
+      },
+      {
+        "text": "这首歌是哪年的？",
+        "gold": "other",
+        "pred": "emotional_resonance",
+        "score": 0.379
+      },
+      {
+        "text": "看到这都是正经听歌的，但好多刷广告",
+        "gold": "conflict",
+        "pred": "emotional_resonance",
+        "score": 0.434
+      },
+      {
+        "text": "C y t u s 3",
+        "gold": "humor",
+        "pred": "irrelevant_repetition",
+        "score": 0.335
+      },
+      {
+        "text": "繁体字幕笑死了",
+        "gold": "humor",
+        "pred": "emotional_resonance",
+        "score": 0.292
+      },
+      {
+        "text": "汪苏泷～",
+        "gold": "information",
+        "pred": "humor",
+        "score": 0.468
+      },
+      {
+        "text": "好家伙居然是原声",
+        "gold": "information",
+        "pred": "emotional_resonance",
+        "score": 0.363
+      },
+      {
+        "text": "你会算微积分了",
+        "gold": "humor",
+        "pred": "emotional_resonance",
+        "score": 0.285
+      }
+    ]
+  },
+  "BV1rCxe6wEN9": {
+    "n_test": 120,
+    "errors": [
+      {
+        "text": "欧洲之春",
+        "gold": "political",
+        "pred": "humor",
+        "score": 0.207
+      },
+      {
+        "text": "刷大a的活该你赔裤衩都不剩 看不懂题目吗世界观察",
+        "gold": "attack",
+        "pred": "humor",
+        "score": 0.219
+      },
+      {
+        "text": "满脑子炒股，活该输光",
+        "gold": "attack",
+        "pred": "humor",
+        "score": 0.231
+      },
+      {
+        "text": "按照美国油价那种涨幅，国内最起码得每升涨20块起步。国内抱怨涨油价的差不多得了，你们交的这些买油钱最后都会充入国库，成为军费，造更多的航母和高超音速，你们还有什么不满吗？",
+        "gold": "political",
+        "pred": "information",
+        "score": 0.274
+      },
+      {
+        "text": "笨蛋，问题是经济",
+        "gold": "attack",
+        "pred": "political",
+        "score": 0.479
+      },
+      {
+        "text": "开饭",
+        "gold": "humor",
+        "pred": "emotional_resonance",
+        "score": 0.244
+      },
+      {
+        "text": "一言堂",
+        "gold": "political",
+        "pred": "irrelevant_repetition",
+        "score": 0.235
+      },
+      {
+        "text": "美国真是个世界毒瘤，搞的油价飙升",
+        "gold": "attack",
+        "pred": "information",
+        "score": 0.283
+      },
+      {
+        "text": "+",
+        "gold": "other",
+        "pred": "irrelevant_repetition",
+        "score": 0.315
+      },
+      {
+        "text": "我骂吐了土耳其人了 谢谢我",
+        "gold": "attack",
+        "pred": "information",
+        "score": 0.233
+      },
+      {
+        "text": "这就是文明",
+        "gold": "political",
+        "pred": "irrelevant_repetition",
+        "score": 0.316
+      },
+      {
+        "text": "刁民 哈哈哈",
+        "gold": "attack",
+        "pred": "humor",
+        "score": 0.393
+      }
+    ]
+  },
+  "BV1mV4F6mE5Z": {
+    "n_test": 120,
+    "errors": [
+      {
+        "text": "老黑有队友",
+        "gold": "information",
+        "pred": "humor",
+        "score": 0.579
+      },
+      {
+        "text": "才发现自己首弹幕",
+        "gold": "other",
+        "pred": "humor",
+        "score": 0.572
+      },
+      {
+        "text": "架水桶",
+        "gold": "information",
+        "pred": "humor",
+        "score": 0.548
+      },
+      {
+        "text": "这俩也玩上了",
+        "gold": "information",
+        "pred": "humor",
+        "score": 0.539
+      },
+      {
+        "text": "真的有这么好笑吗",
+        "gold": "conflict",
+        "pred": "information",
+        "score": 0.545
+      },
+      {
+        "text": "再戴个机枪兵的自闭头，完美",
+        "gold": "humor",
+        "pred": "information",
+        "score": 0.517
+      },
+      {
+        "text": "哈哈哈哈哈",
+        "gold": "irrelevant_repetition",
+        "pred": "humor",
+        "score": 0.516
+      },
+      {
+        "text": "可是他玩的真的好开心",
+        "gold": "emotional_resonance",
+        "pred": "information",
+        "score": 0.544
+      },
+      {
+        "text": "很开心啊鸭区",
+        "gold": "emotional_resonance",
+        "pred": "humor",
+        "score": 0.532
+      },
+      {
+        "text": "2",
+        "gold": "irrelevant_repetition",
+        "pred": "humor",
+        "score": 0.505
+      },
+      {
+        "text": "谁绷得住",
+        "gold": "emotional_resonance",
+        "pred": "humor",
+        "score": 0.66
+      },
+      {
+        "text": "飞八",
+        "gold": "other",
+        "pred": "humor",
+        "score": 0.529
+      }
+    ]
+  }
+}

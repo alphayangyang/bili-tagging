@@ -1,0 +1,117 @@
+{
+  "schema": "dmf-study-manifest/1",
+  "created": "2026-11-18T12:31:00Z",
+  "files": [
+    {
+      "path": "data/study/stimuli.json",
+      "bytes": 1537,
+      "sha256": "0bdb37d53359b1a7337ab39cf6452948c260ffa9547a0a23f824c5d266a90f1b"
+    },
+    {
+      "path": "data/study/report.json",
+      "bytes": 15394,
+      "sha256": "a11068c04b7e7bfaf4e8949bf8a0a4e94cfe3ddaf1ec1b688ef319fabf933a3a"
+    },
+    {
+      "path": "data/study/teacher_sample.jsonl",
+      "bytes": 268261,
+      "sha256": "02cec9ab7577ec89d2aabac7e2404f148bbc62117218d2c1fd58fe3816df102c"
+    },
+    {
+      "path": "data/study/gold.jsonl",
+      "bytes": 16514,
+      "sha256": "b4b0cb8467aca564cf62efe1e358beb41a419eff383f6d594b962ead7b4bd05c"
+    },
+    {
+      "path": "data/study/gold_sheet.jsonl",
+      "bytes": 10582,
+      "sha256": "e6b5f81e7967f346162c39c4c023bd0ad8ef0dffe4db7f5d92ac06d9ce001696"
+    },
+    {
+      "path": "data/study/run-sheet.csv",
+      "bytes": 24922,
+      "sha256": "cb41198e68a60ea0471da05f5121c5306ecdd045d532686b568f37cf79d93d4a"
+    },
+    {
+      "path": "data/study/questionnaire.csv",
+      "bytes": 320,
+      "sha256": "ca4185c2aadb7065c5fc64eca9b3ced37749de9c1cb337662cd4b6a4b7343c0a"
+    },
+    {
+      "path": "data/study/models/BV18E1NByEYv.json",
+      "bytes": 122219,
+      "sha256": "8fdc8e03459f7c49f2ed55605bccc596c1075a7319976157bc181638c8cdd047"
+    },
+    {
+      "path": "data/study/models/BV1CzW26vEXz.json",
+      "bytes": 328637,
+      "sha256": "cba0995c4293f4da591fe6ef4140613548a738b143f370b9e314d17677f20453"
+    },
+    {
+      "path": "data/study/models/BV1GJ411x7h7.json",
+      "bytes": 238446,
+      "sha256": "4d40488e94b8a4ed8d8223fb44253200ecee7c25cb1c21df328e9ce8ac8e550c"
+    },
+    {
+      "path": "data/study/models/BV1Ho4y1D7Wz.json",
+      "bytes": 125922,
+      "sha256": "824e18825d27343238869e47a72c9e4486db9bb4b0781569c2341b30913a49bf"
+    },
+    {
+      "path": "data/study/models/BV1VMRKBCEDp.json",
+      "bytes": 190200,
+      "sha256": "3638c30a0737b7759bb21274fcdb6f4bf9ed3e140fa2d56a631362b8cb3afd3b"
+    },
+    {
+      "path": "data/study/models/BV1W18Y61Ee5.json",
+      "bytes": 196863,
+      "sha256": "66c42a03997c3943942128c5e4e59eec12956009bc4eccec494a9ea20c82e015"
+    },
+    {
+      "path": "data/study/models/BV1X7zGY4E45.json",
+      "bytes": 205263,
+      "sha256": "f366673b13021525424cd0d1bb06f4b40119a322635872f7d3fa2064a05a54a4"
+    },
+    {
+      "path": "data/study/models/BV1Z4RHYKEcB.json",
+      "bytes": 321547,
+      "sha256": "cc2b128216f557e11ec2e567a674284cdb91910755c1b486faaeb3c1211b27d4"
+    },
+    {
+      "path": "data/study/models/BV1bnxr6cEJ9.json",
+      "bytes": 126389,
+      "sha256": "5a8bd2f167d0b50ecabfbbab30be247b8b19a6ea04e6a1c1c0786063350b93b6"
+    },
+    {
+      "path": "data/study/models/BV1mV4F6mE5Z.json",
+      "bytes": 161843,
+      "sha256": "3ec28aec71ea8247bfe2a3a6b315647beede4c50b325c8aca0ce2d513b20ac7b"
+    },
+    {
+      "path": "data/study/models/BV1rCxe6wEN9.json",
+      "bytes": 233355,
+      "sha256": "5313244f297b00770d606065f80e12216ee47ac619d85180bf915790d4363ee6"
+    },
+    {
+      "path": "data/study/models/BV1w5xh6sEEz.json",
+      "bytes": 146499,
+      "sha256": "363e8874717b0341a0434300e78f570e192c1c5d08c7d59748de9a87de805be7"
+    },
+    {
+      "path": "extension/dist/bili-danmaku-filter.user.js",
+      "bytes": 188784,
+      "sha256": "27b0c8572356c6d33b63d9e39738ad88ffa61d15c97a91214b0c7580ab39dbce"
+    }
+  ],
+  "counts": {
+    "stimuli": 6,
+    "teacher_rows": 988,
+    "gold_rows": 120,
+    "gold_sheet_rows": 120,
+    "models": 12,
+    "model_bytes": 2397183,
+    "run_sheet_rows": 180,
+    "run_sheet_participants": 30,
+    "userscript_bytes": 188784
+  }
+}

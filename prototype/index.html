@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZonE 弹幕过滤器 · 原型 v0.3</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">Z</div>
+      <div class="brand-text"><strong>ZonE</strong><span>弹幕过滤器 · 原型 v0.3</span></div>
+    </div>
+    <div class="scenario">
+      <span class="scenario-label">演示场景</span>
+      <div id="scenario-tabs" class="tabs"></div>
+      <span id="data-badge" class="badge"></span>
+    </div>
+    <div class="topbar-right">
+      <span class="status"><i class="dot"></i><span id="status-text">本地服务 · 演示模式</span></span>
+      <button id="reset-btn" class="ghost-btn" type="button">重置</button>
+      <div class="avatar">研</div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="stage">
+      <div class="player-card">
+        <div id="video" class="video">
+          <div class="poster">
+            <div class="glow glow-a"></div>
+            <div class="glow glow-b"></div>
+            <div class="poster-grid"></div>
+            <div class="poster-inner">
+              <div class="poster-kicker">DEMO FOOTAGE</div>
+              <div class="poster-title" id="poster-title">80年代迪厅必放金曲</div>
+              <div class="poster-sub" id="poster-sub">真实弹幕 · deepseek-flash 打标</div>
+            </div>
+            <div class="poster-play">▶</div>
+          </div>
+          <div id="danmaku-layer" class="danmaku-layer"></div>
+          <div id="paused-badge" class="paused-badge" hidden>已暂停 · 空格继续</div>
+          <div id="player-badge" class="player-badge"><i></i><span id="player-badge-text">过滤中</span></div>
+        </div>
+        <div class="controls">
+          <button id="play-btn" class="icon-btn" type="button" title="播放 / 暂停（空格）">▶</button>
+          <span id="time-label" class="time">00:00 / 03:33</span>
+          <div id="progress" class="progress">
+            <div id="buffer" class="buffer"></div>
+            <div id="played" class="played"></div>
+            <div id="knob" class="knob"></div>
+          </div>
+          <button id="dm-toggle" class="chip-btn" type="button" title="弹幕开关">弹幕 开</button>
+          <button class="icon-btn" type="button" title="全屏">⛶</button>
+        </div>
+      </div>
+
+      <div class="meta">
+        <h1 id="video-title">80年代迪厅必放金曲</h1>
+        <div class="meta-line">
+          <span id="meta-count">播放 128.4 万 · 弹幕 2.1 万</span>
+          <span class="sep">·</span>
+          <span id="meta-source">真实数据抽样</span>
+          <span class="sep">·</span>
+          <span id="meta-duration">03:33</span>
+        </div>
+      </div>
+
+      <div class="legend">
+        <div class="legend-title">这个原型演示什么</div>
+        <ul>
+          <li>左侧弹幕按「标签策略 + 置信度阈值 + 密度窗口」实时 show / hide / collapse。</li>
+          <li>右侧逐标签切换策略会立刻生效；被折叠或被隐藏的弹幕都进「折叠记录」，可展开或改标签。</li>
+          <li>切到第二个场景，看 political / inflammatory / attack 这几个新标签如何工作。</li>
+        </ul>
+      </div>
+    </section>
+
+    <aside class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>过滤控制台</h2>
+          <p class="muted" id="panel-sub">修改立即生效，无需刷新</p>
+        </div>
+        <label class="switch" title="总开关">
+          <input id="enabled" type="checkbox" checked>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="stats">
+        <div class="stat stat-show"><span class="stat-num" id="stat-show">0</span><span class="stat-label">显示</span></div>
+        <div class="stat stat-collapse"><span class="stat-num" id="stat-collapse">0</span><span class="stat-label">折叠</span></div>
+        <div class="stat stat-hide"><span class="stat-num" id="stat-hide">0</span><span class="stat-label">隐藏</span></div>
+      </div>
+
+      <div class="panel-tabs" id="panel-tabs">
+        <button class="tab active" data-view="tags" type="button">标签策略</button>
+        <button class="tab" data-view="folded" type="button">折叠记录 <span class="tab-count" id="tab-count">0</span></button>
+        <button class="tab" data-view="log" type="button">反馈日志</button>
+      </div>
+
+      <div class="panel-body">
+        <div id="view-tags" class="view">
+          <div id="tag-list" class="tag-list"></div>
+          <div class="settings">
+            <div class="settings-title">全局参数</div>
+            <div class="setting">
+              <label for="threshold">置信度阈值</label>
+              <input id="threshold" type="range" min="0.2" max="0.9" step="0.05" value="0.6">
+              <output id="threshold-out">0.60</output>
+            </div>
+            <div class="setting">
+              <label for="window">密度窗口</label>
+              <input id="window" type="number" min="2" max="60" step="1" value="10">
+              <span class="unit">秒</span>
+            </div>
+            <div class="setting">
+              <label for="maxvisible">窗口内上限</label>
+              <input id="maxvisible" type="number" min="1" max="60" step="1" value="12">
+              <span class="unit">条</span>
+            </div>
+            <div class="setting">
+              <label for="exceed">超限动作</label>
+              <select id="exceed">
+                <option value="collapse">折叠</option>
+                <option value="hide">隐藏</option>
+                <option value="show">放行</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div id="view-folded" class="view" hidden>
+          <div id="folded-list" class="folded-list"></div>
+          <div id="folded-empty" class="empty">播放后，被折叠或隐藏的弹幕会出现在这里。</div>
+        </div>
+
+        <div id="view-log" class="view" hidden>
+          <div id="log-list" class="log-list"></div>
+          <div id="log-empty" class="empty">还没有纠正记录。折叠记录里点「改标签」试试。</div>
+        </div>
+      </div>
+
+      <div class="panel-foot">原型 · 数据为离线打标结果 · 交互不写回服务</div>
+    </aside>
+  </main>
+
+  <div id="toast" class="toast" hidden></div>
+  <div id="correction" class="popover" hidden></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

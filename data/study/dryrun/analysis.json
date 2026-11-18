@@ -1,0 +1,665 @@
+{
+  "schema": 1,
+  "meta": {
+    "created": "2026-11-18T12:18:30Z",
+    "inputs": {
+      "questionnaire": "data/study/dryrun/questionnaire.csv",
+      "raw_dir": "data/study/dryrun/raw",
+      "gold": "data/study/gold.jsonl",
+      "gold_double": "/home/alphayang/bili-tagging/data/study/gold_double.jsonl",
+      "models_dir": "data/study/models",
+      "study_report": "/home/alphayang/bili-tagging/data/study/report.json"
+    },
+    "bootstrap_samples": 200,
+    "seed": 20261105
+  },
+  "cleaning": {
+    "questionnaire_rows": 6,
+    "session_logs": 6,
+    "included_rows": 6,
+    "excluded_rows": 0,
+    "included_participants": 1,
+    "participants": [
+      "P01"
+    ],
+    "excluded": [],
+    "excluded_participants": [],
+    "rows_by_condition": {
+      "A": 2,
+      "B": 2,
+      "C": 2
+    },
+    "notes": [],
+    "problems": []
+  },
+  "descriptives": {
+    "by_condition": {
+      "A": {
+        "n_blocks": 2,
+        "n_participants": 1,
+        "outcomes": {
+          "discomfort": {
+            "n": 2,
+            "mean": 2.3,
+            "sd": 0.99,
+            "se": 0.7,
+            "median": 2.3,
+            "min": 1.6,
+            "max": 3.0
+          },
+          "coview": {
+            "n": 2,
+            "mean": 3.0,
+            "sd": 0.0,
+            "se": 0.0,
+            "median": 3.0,
+            "min": 3.0,
+            "max": 3.0
+          },
+          "control": {
+            "n": 2,
+            "mean": 2.833,
+            "sd": 0.707,
+            "se": 0.5,
+            "median": 2.8333333333333335,
+            "min": 2.3333333333333335,
+            "max": 3.3333333333333335
+          },
+          "nasa": {
+            "n": 2,
+            "mean": 4.25,
+            "sd": 0.825,
+            "se": 0.583,
+            "median": 4.25,
+            "min": 3.6666666666666665,
+            "max": 4.833333333333333
+          },
+          "comp": {
+            "n": 2,
+            "mean": 0.6,
+            "sd": 0.0,
+            "se": 0.0,
+            "median": 0.6,
+            "min": 0.6,
+            "max": 0.6
+          },
+          "explain": {
+            "n": 2,
+            "mean": 3.0,
+            "sd": 0.0,
+            "se": 0.0,
+            "median": 3.0,
+            "min": 3.0,
+            "max": 3.0
+          },
+          "overall": {
+            "n": 2,
+            "mean": 4.25,
+            "sd": 1.061,
+            "se": 0.75,
+            "median": 4.25,
+            "min": 3.5,
+            "max": 5.0
+          },
+          "fomo": {
+            "n": 2,
+            "mean": 2.0,
+            "sd": 0.0,
+            "se": 0.0,
+            "median": 2.0,
+            "min": 2.0,
+            "max": 2.0
+          }
+        }
+      },
+      "B": {
+        "n_blocks": 2,
+        "n_participants": 1,
+        "outcomes": {
+          "discomfort": {
+            "n": 2,
+            "mean": 2.8,
+            "sd": 0.566,
+            "se": 0.4,
+            "median": 2.8,
+            "min": 2.4,
+            "max": 3.2
+          },
+          "coview": {
+            "n": 2,
+            "mean": 3.5,
+            "sd": 1.179,
+            "se": 0.833,
+            "median": 3.5,
+            "min": 2.6666666666666665,
+            "max": 4.333333333333333
+          },
+          "control": {
+            "n": 2,
+            "mean": 3.0,
+            "sd": 0.943,
+            "se": 0.667,
+            "median": 3.0,
+            "min": 2.3333333333333335,
+            "max": 3.6666666666666665
+          },
+          "nasa": {
+            "n": 2,
+            "mean": 3.333,
+            "sd": 0.236,
+            "se": 0.167,
+            "median": 3.333333333333333,
+            "min": 3.1666666666666665,
+            "max": 3.5
+          },
+          "comp": {
+            "n": 2,
+            "mean": 0.5,
+            "sd": 0.424,
+            "se": 0.3,
+            "median": 0.5,
+            "min": 0.2,
+            "max": 0.8
+          },
+          "explain": {
+            "n": 2,
+            "mean": 3.25,
+            "sd": 0.354,
+            "se": 0.25,
+            "median": 3.25,
+            "min": 3.0,
+            "max": 3.5
+          },
+          "overall": {
+            "n": 2,
+            "mean": 2.0,
+            "sd": 0.707,
+            "se": 0.5,
+            "median": 2.0,
+            "min": 1.5,
+            "max": 2.5
+          },
+          "fomo": {
+            "n": 2,
+            "mean": 2.0,
+            "sd": 0.0,
+            "se": 0.0,
+            "median": 2.0,
+            "min": 2.0,
+            "max": 2.0
+          }
+        }
+      },
+      "C": {
+        "n_blocks": 2,
+        "n_participants": 1,
+        "outcomes": {
+          "discomfort": {
+            "n": 2,
+            "mean": 3.5,
+            "sd": 0.424,
+            "se": 0.3,
+            "median": 3.5,
+            "min": 3.2,
+            "max": 3.8
+          },
+          "coview": {
+            "n": 2,
+            "mean": 3.167,
+            "sd": 2.121,
+            "se": 1.5,
+            "median": 3.166666666666667,
+            "min": 1.6666666666666667,
+            "max": 4.666666666666667
+          },
+          "control": {
+            "n": 2,
+            "mean": 3.0,
+            "sd": 0.943,
+            "se": 0.667,
+            "median": 3.0,
+            "min": 2.3333333333333335,
+            "max": 3.6666666666666665
+          },
+          "nasa": {
+            "n": 2,
+            "mean": 3.833,
+            "sd": 0.236,
+            "se": 0.167,
+            "median": 3.833333333333333,
+            "min": 3.6666666666666665,
+            "max": 4.0
+          },
+          "comp": {
+            "n": 2,
+            "mean": 0.6,
+            "sd": 0.0,
+            "se": 0.0,
+            "median": 0.6,
+            "min": 0.6,
+            "max": 0.6
+          },
+          "explain": {
+            "n": 2,
+            "mean": 3.0,
+            "sd": 0.0,
+            "se": 0.0,
+            "median": 3.0,
+            "min": 3.0,
+            "max": 3.0
+          },
+          "overall": {
+            "n": 2,
+            "mean": 3.25,
+            "sd": 0.354,
+            "se": 0.25,
+            "median": 3.25,
+            "min": 3.0,
+            "max": 3.5
+          },
+          "fomo": {
+            "n": 2,
+            "mean": 2.0,
+            "sd": 0.0,
+            "se": 0.0,
+            "median": 2.0,
+            "min": 2.0,
+            "max": 2.0
+          }
+        }
+      }
+    },
+    "by_video": {
+      "BV18E1NByEYv": {
+        "n_blocks": 1,
+        "conditions": {
+          "A": 1
+        },
+        "genres": {
+          "entertainment": 1
+        },
+        "densities": {
+          "low": 1
+        }
+      },
+      "BV1Ho4y1D7Wz": {
+        "n_blocks": 1,
+        "conditions": {
+          "A": 1
+        },
+        "genres": {
+          "information": 1
+        },
+        "densities": {
+          "high": 1
+        }
+      },
+      "BV1VMRKBCEDp": {
+        "n_blocks": 1,
+        "conditions": {
+          "B": 1
+        },
+        "genres": {
+          "information": 1
+        },
+        "densities": {
+          "low": 1
+        }
+      },
+      "BV1X7zGY4E45": {
+        "n_blocks": 1,
+        "conditions": {
+          "B": 1
+        },
+        "genres": {
+          "entertainment": 1
+        },
+        "densities": {
+          "high": 1
+        }
+      },
+      "BV1CzW26vEXz": {
+        "n_blocks": 1,
+        "conditions": {
+          "C": 1
+        },
+        "genres": {
+          "entertainment": 1
+        },
+        "densities": {
+          "low": 1
+        }
+      },
+      "BV1Z4RHYKEcB": {
+        "n_blocks": 1,
+        "conditions": {
+          "C": 1
+        },
+        "genres": {
+          "information": 1
+        },
+        "densities": {
+          "high": 1
+        }
+      }
+    }
+  },
+  "reliability": {
+    "A": {
+      "discomfort": null,
+      "coview": null,
+      "control": null,
+      "nasa": null,
+      "comp": null,
+      "explain": null,
+      "overall": null
+    },
+    "B": {
+      "discomfort": null,
+      "coview": null,
+      "control": null,
+      "nasa": null,
+      "comp": null,
+      "explain": null,
+      "overall": null
+    },
+    "C": {
+      "discomfort": null,
+      "coview": null,
+      "control": null,
+      "nasa": null,
+      "comp": null,
+      "explain": null,
+      "overall": null
+    }
+  },
+  "contrasts": {
+    "discomfort": [
+      {
+        "contrast": "C vs A",
+        "n": 1,
+        "note": "too few complete pairs"
+      },
+      {
+        "contrast": "C vs B",
+        "n": 1,
+        "note": "too few complete pairs"
+      },
+      {
+        "contrast": "B vs A",
+        "n": 1,
+        "note": "too few complete pairs"
+      }
+    ],
+    "coview": [
+      {
+        "contrast": "C vs A",
+        "n": 1,
+        "note": "too few complete pairs"
+      },
+      {
+        "contrast": "C vs B",
+        "n": 1,
+        "note": "too few complete pairs"
+      },
+      {
+        "contrast": "B vs A",
+        "n": 1,
+        "note": "too few complete pairs"
+      }
+    ],
+    "control": [
+      {
+        "contrast": "C vs A",
+        "n": 1,
+        "note": "too few complete pairs"
+      },
+      {
+        "contrast": "C vs B",
+        "n": 1,
+        "note": "too few complete pairs"
+      },
+      {
+        "contrast": "B vs A",
+        "n": 1,
+        "note": "too few complete pairs"
+      }
+    ],
+    "nasa": [
+      {
+        "contrast": "C vs A",
+        "n": 1,
+        "note": "too few complete pairs"
+      },
+      {
+        "contrast": "C vs B",
+        "n": 1,
+        "note": "too few complete pairs"
+      },
+      {
+        "contrast": "B vs A",
+        "n": 1,
+        "note": "too few complete pairs"
+      }
+    ],
+    "comp": [
+      {
+        "contrast": "C vs A",
+        "n": 1,
+        "note": "too few complete pairs"
+      },
+      {
+        "contrast": "C vs B",
+        "n": 1,
+        "note": "too few complete pairs"
+      },
+      {
+        "contrast": "B vs A",
+        "n": 1,
+        "note": "too few complete pairs"
+      }
+    ],
+    "explain": [
+      {
+        "contrast": "C vs A",
+        "n": 1,
+        "note": "too few complete pairs"
+      },
+      {
+        "contrast": "C vs B",
+        "n": 1,
+        "note": "too few complete pairs"
+      },
+      {
+        "contrast": "B vs A",
+        "n": 1,
+        "note": "too few complete pairs"
+      }
+    ],
+    "overall": [
+      {
+        "contrast": "C vs A",
+        "n": 1,
+        "note": "too few complete pairs"
+      },
+      {
+        "contrast": "C vs B",
+        "n": 1,
+        "note": "too few complete pairs"
+      },
+      {
+        "contrast": "B vs A",
+        "n": 1,
+        "note": "too few complete pairs"
+      }
+    ],
+    "fomo": [
+      {
+        "contrast": "C vs A",
+        "n": 1,
+        "note": "too few complete pairs"
+      },
+      {
+        "contrast": "C vs B",
+        "n": 1,
+        "note": "too few complete pairs"
+      },
+      {
+        "contrast": "B vs A",
+        "n": 1,
+        "note": "too few complete pairs"
+      }
+    ]
+  },
+  "lmm": {
+    "available": false,
+    "note": "statsmodels/pandas not installed (ModuleNotFoundError); use the planned Wilcoxon contrasts"
+  },
+  "rq1": {
+    "note": "exploratory: participants see only two videos per condition, genre x density is video-level",
+    "rows": [
+      {
+        "genre": "entertainment",
+        "density": "low",
+        "n_blocks": 1,
+        "n_videos": 1,
+        "means": {
+          "discomfort": 1.6,
+          "coview": 3.0,
+          "control": 3.333,
+          "fomo": 2.0
+        }
+      },
+      {
+        "genre": "information",
+        "density": "high",
+        "n_blocks": 1,
+        "n_videos": 1,
+        "means": {
+          "discomfort": 3.0,
+          "coview": 3.0,
+          "control": 2.333,
+          "fomo": 2.0
+        }
+      }
+    ],
+    "n_blocks": 2
+  },
+  "rq2": {
+    "latency": {
+      "A": {
+        "n": 2,
+        "p50_ms": 0.0,
+        "p95_ms": 1.0,
+        "mean_ms": 0.5
+      },
+      "B": {
+        "n": 2,
+        "p50_ms": 0.0,
+        "p95_ms": 2.0,
+        "mean_ms": 1.0
+      },
+      "C": {
+        "n": 2,
+        "p50_ms": 0.0,
+        "p95_ms": 0.0,
+        "mean_ms": 0.0
+      }
+    },
+    "latency_overall": {
+      "n": 6,
+      "p50_ms": 0.0,
+      "p95_ms": 2.0,
+      "mean_ms": 0.5
+    },
+    "decisions": {
+      "A": {
+        "shown": 1030,
+        "hidden": 77,
+        "collapsed": 0
+      },
+      "B": {
+        "shown": 2237,
+        "hidden": 699,
+        "collapsed": 0
+      },
+      "C": {
+        "shown": 346,
+        "hidden": 113,
+        "collapsed": 170
+      }
+    },
+    "behaviour": {
+      "corrections": 0,
+      "restores": 0,
+      "expands": 0,
+      "pref_changes": 0,
+      "segments": 6,
+      "corrections_per_10min": 0.0
+    },
+    "online_share": 1.0,
+    "truncated_sessions": 0,
+    "session_minutes": 20.0,
+    "gold": {
+      "available": true,
+      "n": 120,
+      "skipped_rows": 0,
+      "accuracy": 0.558,
+      "macro_f1": 0.496,
+      "per_tag": {
+        "humor": {
+          "precision": 0.763,
+          "recall": 0.763,
+          "f1": 0.763,
+          "support": 38
+        },
+        "other": {
+          "precision": 1.0,
+          "recall": 0.147,
+          "f1": 0.256,
+          "support": 34
+        },
+        "information": {
+          "precision": 0.52,
+          "recall": 0.619,
+          "f1": 0.565,
+          "support": 21
+        },
+        "emotional_resonance": {
+          "precision": 0.423,
+          "recall": 0.733,
+          "f1": 0.537,
+          "support": 15
+        },
+        "attack": {
+          "precision": 0.667,
+          "recall": 1.0,
+          "f1": 0.8,
+          "support": 6
+        },
+        "irrelevant_repetition": {
+          "precision": 0.111,
+          "recall": 0.25,
+          "f1": 0.154,
+          "support": 4
+        },
+        "conflict": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "f1": 0.4,
+          "support": 2
+        }
+      },
+      "source": "data/study/gold.jsonl",
+      "relevance_note": "gold rows carry no per-label score: relevance MAE skipped"
+    },
+    "double_annotation": {
+      "available": false,
+      "note": "double-annotation file missing or empty: /home/alphayang/bili-tagging/data/study/gold_double.jsonl"
+    }
+  },
+  "notes": [
+    "gold evaluation uses per-video models in data/study/models; skipped rows are counted",
+    "Wilcoxon p-values use the normal approximation with tie correction; the bootstrap CI resamples participants"
+  ]
+}

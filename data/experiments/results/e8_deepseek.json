@@ -1,0 +1,790 @@
+{
+  "backend": "deepseek",
+  "runs": {
+    "v4/audit": {
+      "set": "audit",
+      "n": 29,
+      "agreement": 0.8966,
+      "macro_f1": 0.8247,
+      "per_label_recall": {
+        "emotional_resonance": 1.0,
+        "humor": 0.9474,
+        "information": 0.5,
+        "irrelevant_repetition": 0.8333
+      },
+      "confusion": [
+        {
+          "gold": "humor",
+          "pred": "emotional_resonance",
+          "n": 1,
+          "share_of_label": 0.053
+        },
+        {
+          "gold": "information",
+          "pred": "humor",
+          "n": 1,
+          "share_of_label": 0.5
+        },
+        {
+          "gold": "irrelevant_repetition",
+          "pred": "humor",
+          "n": 1,
+          "share_of_label": 0.167
+        }
+      ],
+      "pred_dist": {
+        "humor": 20,
+        "emotional_resonance": 3,
+        "information": 1,
+        "irrelevant_repetition": 5
+      },
+      "elapsed_s": 54.0,
+      "ms_per_item": 1861.8,
+      "style": "v4"
+    },
+    "v4/indomain": {
+      "set": "indomain",
+      "n": 131,
+      "agreement": 0.6641,
+      "macro_f1": 0.386,
+      "per_label_recall": {
+        "conflict": 0.0,
+        "emotional_resonance": 0.871,
+        "humor": 0.8065,
+        "information": 0.8387,
+        "irrelevant_repetition": 0.2903,
+        "other": 0.0,
+        "spoiler": 0.0
+      },
+      "confusion": [
+        {
+          "gold": "irrelevant_repetition",
+          "pred": "humor",
+          "n": 7,
+          "share_of_label": 0.226
+        },
+        {
+          "gold": "irrelevant_repetition",
+          "pred": "other",
+          "n": 6,
+          "share_of_label": 0.194
+        },
+        {
+          "gold": "irrelevant_repetition",
+          "pred": "information",
+          "n": 5,
+          "share_of_label": 0.161
+        },
+        {
+          "gold": "emotional_resonance",
+          "pred": "humor",
+          "n": 4,
+          "share_of_label": 0.129
+        },
+        {
+          "gold": "irrelevant_repetition",
+          "pred": "emotional_resonance",
+          "n": 4,
+          "share_of_label": 0.129
+        },
+        {
+          "gold": "information",
+          "pred": "emotional_resonance",
+          "n": 3,
+          "share_of_label": 0.097
+        },
+        {
+          "gold": "humor",
+          "pred": "information",
+          "n": 3,
+          "share_of_label": 0.097
+        },
+        {
+          "gold": "spoiler",
+          "pred": "information",
+          "n": 3,
+          "share_of_label": 0.6
+        }
+      ],
+      "pred_dist": {
+        "humor": 39,
+        "information": 39,
+        "emotional_resonance": 36,
+        "other": 7,
+        "irrelevant_repetition": 10
+      },
+      "elapsed_s": 209.7,
+      "ms_per_item": 1600.9,
+      "information_to_humor_leak": 0.032,
+      "style": "v4"
+    },
+    "v4/boundary": {
+      "set": "boundary",
+      "n": 46,
+      "agreement": 0.913,
+      "macro_f1": 0.9125,
+      "per_label_recall": {
+        "attack": 1.0,
+        "conflict": 1.0,
+        "emotional_resonance": 0.8571,
+        "humor": 0.9091,
+        "inflammatory": 0.6667,
+        "information": 0.9231,
+        "irrelevant_repetition": 1.0,
+        "political": 1.0,
+        "spoiler": 1.0
+      },
+      "confusion": [
+        {
+          "gold": "information",
+          "pred": "humor",
+          "n": 1,
+          "share_of_label": 0.077
+        },
+        {
+          "gold": "emotional_resonance",
+          "pred": "information",
+          "n": 1,
+          "share_of_label": 0.143
+        },
+        {
+          "gold": "humor",
+          "pred": "spoiler",
+          "n": 1,
+          "share_of_label": 0.091
+        },
+        {
+          "gold": "inflammatory",
+          "pred": "conflict",
+          "n": 1,
+          "share_of_label": 0.333
+        }
+      ],
+      "pred_dist": {
+        "information": 13,
+        "humor": 11,
+        "emotional_resonance": 6,
+        "spoiler": 4,
+        "irrelevant_repetition": 4,
+        "attack": 2,
+        "conflict": 3,
+        "political": 1,
+        "inflammatory": 2
+      },
+      "elapsed_s": 112.7,
+      "ms_per_item": 2449.8,
+      "dominant_accuracy": 0.913,
+      "must_hit_rate": 0.9434,
+      "by_focus": {
+        "attack vs conflict": 1.0,
+        "attack vs inflammatory": 1.0,
+        "conflict vs inflammatory": 0.5,
+        "humor vs emotional_resonance": 1.0,
+        "information vs emotional_resonance": 1.0,
+        "information vs humor": 1.0,
+        "irrelevant_repetition vs humor": 1.0,
+        "political vs inflammatory": 1.0,
+        "spoiler vs humor": 0.667
+      },
+      "failures": [
+        {
+          "id": "b04b",
+          "text": "这才第3集？进度条骗我",
+          "expect": "information",
+          "got": "humor",
+          "tags": {
+            "humor": 0.7,
+            "information": 0.6
+          }
+        },
+        {
+          "id": "b08b",
+          "text": "这段实拍太震撼了",
+          "expect": "emotional_resonance",
+          "got": "information",
+          "tags": {
+            "emotional_resonance": 0.7,
+            "information": 0.7
+          }
+        },
+        {
+          "id": "b13b",
+          "text": "我赌五毛凶手是他弟弟",
+          "expect": "humor",
+          "got": "humor",
+          "tags": {
+            "humor": 0.6,
+            "spoiler": 0.2
+          }
+        },
+        {
+          "id": "b14b",
+          "text": "他最后没活下来，我剧透了吗",
+          "expect": "humor",
+          "got": "spoiler",
+          "tags": {
+            "humor": 0.5,
+            "spoiler": 0.9
+          }
+        },
+        {
+          "id": "b21b",
+          "text": "不服来辩",
+          "expect": "inflammatory",
+          "got": "conflict",
+          "tags": {
+            "conflict": 0.9
+          }
+        }
+      ],
+      "style": "v4"
+    },
+    "v2/audit": {
+      "set": "audit",
+      "n": 29,
+      "agreement": 0.7586,
+      "macro_f1": 0.7742,
+      "per_label_recall": {
+        "emotional_resonance": 1.0,
+        "humor": 0.6842,
+        "information": 1.0,
+        "irrelevant_repetition": 0.8333
+      },
+      "confusion": [
+        {
+          "gold": "humor",
+          "pred": "emotional_resonance",
+          "n": 6,
+          "share_of_label": 0.316
+        },
+        {
+          "gold": "irrelevant_repetition",
+          "pred": "humor",
+          "n": 1,
+          "share_of_label": 0.167
+        }
+      ],
+      "pred_dist": {
+        "humor": 14,
+        "emotional_resonance": 8,
+        "information": 2,
+        "irrelevant_repetition": 5
+      },
+      "elapsed_s": 0.0,
+      "ms_per_item": 0.0,
+      "style": "v2"
+    },
+    "v2/indomain": {
+      "set": "indomain",
+      "n": 131,
+      "agreement": 0.6489,
+      "macro_f1": 0.474,
+      "per_label_recall": {
+        "conflict": 0.0,
+        "emotional_resonance": 0.871,
+        "humor": 0.7097,
+        "information": 0.7742,
+        "irrelevant_repetition": 0.2903,
+        "other": 0.0,
+        "spoiler": 0.6
+      },
+      "confusion": [
+        {
+          "gold": "irrelevant_repetition",
+          "pred": "humor",
+          "n": 11,
+          "share_of_label": 0.355
+        },
+        {
+          "gold": "irrelevant_repetition",
+          "pred": "information",
+          "n": 9,
+          "share_of_label": 0.29
+        },
+        {
+          "gold": "humor",
+          "pred": "information",
+          "n": 8,
+          "share_of_label": 0.258
+        },
+        {
+          "gold": "information",
+          "pred": "other",
+          "n": 3,
+          "share_of_label": 0.097
+        },
+        {
+          "gold": "irrelevant_repetition",
+          "pred": "emotional_resonance",
+          "n": 2,
+          "share_of_label": 0.065
+        },
+        {
+          "gold": "emotional_resonance",
+          "pred": "humor",
+          "n": 2,
+          "share_of_label": 0.065
+        },
+        {
+          "gold": "emotional_resonance",
+          "pred": "information",
+          "n": 2,
+          "share_of_label": 0.065
+        },
+        {
+          "gold": "information",
+          "pred": "humor",
+          "n": 2,
+          "share_of_label": 0.065
+        }
+      ],
+      "pred_dist": {
+        "humor": 39,
+        "information": 44,
+        "emotional_resonance": 31,
+        "other": 3,
+        "irrelevant_repetition": 11,
+        "spoiler": 3
+      },
+      "elapsed_s": 0.0,
+      "ms_per_item": 0.0,
+      "information_to_humor_leak": 0.065,
+      "style": "v2"
+    },
+    "v2/boundary": {
+      "set": "boundary",
+      "n": 46,
+      "agreement": 0.8696,
+      "macro_f1": 0.8736,
+      "per_label_recall": {
+        "attack": 1.0,
+        "conflict": 1.0,
+        "emotional_resonance": 1.0,
+        "humor": 0.7273,
+        "inflammatory": 0.6667,
+        "information": 0.9231,
+        "irrelevant_repetition": 0.75,
+        "political": 1.0,
+        "spoiler": 1.0
+      },
+      "confusion": [
+        {
+          "gold": "humor",
+          "pred": "spoiler",
+          "n": 2,
+          "share_of_label": 0.182
+        },
+        {
+          "gold": "information",
+          "pred": "humor",
+          "n": 1,
+          "share_of_label": 0.077
+        },
+        {
+          "gold": "humor",
+          "pred": "emotional_resonance",
+          "n": 1,
+          "share_of_label": 0.091
+        },
+        {
+          "gold": "irrelevant_repetition",
+          "pred": "humor",
+          "n": 1,
+          "share_of_label": 0.25
+        },
+        {
+          "gold": "inflammatory",
+          "pred": "conflict",
+          "n": 1,
+          "share_of_label": 0.333
+        }
+      ],
+      "pred_dist": {
+        "information": 12,
+        "humor": 10,
+        "emotional_resonance": 8,
+        "spoiler": 5,
+        "irrelevant_repetition": 3,
+        "attack": 2,
+        "conflict": 3,
+        "political": 1,
+        "inflammatory": 2
+      },
+      "elapsed_s": 0.0,
+      "ms_per_item": 0.0,
+      "dominant_accuracy": 0.8696,
+      "must_hit_rate": 0.8679,
+      "by_focus": {
+        "attack vs conflict": 1.0,
+        "attack vs inflammatory": 1.0,
+        "conflict vs inflammatory": 0.5,
+        "humor vs emotional_resonance": 1.0,
+        "information vs emotional_resonance": 1.0,
+        "information vs humor": 0.8,
+        "irrelevant_repetition vs humor": 0.875,
+        "political vs inflammatory": 1.0,
+        "spoiler vs humor": 0.5
+      },
+      "failures": [
+        {
+          "id": "b01b",
+          "text": "这首歌1987年的，我爸都会唱",
+          "expect": "information",
+          "got": "information",
+          "tags": {
+            "information": 0.9
+          }
+        },
+        {
+          "id": "b04b",
+          "text": "这才第3集？进度条骗我",
+          "expect": "information",
+          "got": "humor",
+          "tags": {
+            "humor": 0.5,
+            "information": 0.4
+          }
+        },
+        {
+          "id": "b10b",
+          "text": "泪目，结果下一句给我整笑了",
+          "expect": "humor",
+          "got": "emotional_resonance",
+          "tags": {
+            "emotional_resonance": 0.8,
+            "humor": 0.6
+          }
+        },
+        {
+          "id": "b13b",
+          "text": "我赌五毛凶手是他弟弟",
+          "expect": "humor",
+          "got": "humor",
+          "tags": {
+            "humor": 0.5,
+            "spoiler": 0.5
+          }
+        },
+        {
+          "id": "b14b",
+          "text": "他最后没活下来，我剧透了吗",
+          "expect": "humor",
+          "got": "spoiler",
+          "tags": {
+            "humor": 0.5,
+            "spoiler": 0.9
+          }
+        },
+        {
+          "id": "b15b",
+          "text": "第8集才反转，我先睡为敬",
+          "expect": "humor",
+          "got": "spoiler",
+          "tags": {
+            "humor": 0.5,
+            "spoiler": 0.7
+          }
+        },
+        {
+          "id": "b19a",
+          "text": "好家伙",
+          "expect": "irrelevant_repetition",
+          "got": "humor",
+          "tags": {
+            "humor": 0.4
+          }
+        },
+        {
+          "id": "b21b",
+          "text": "不服来辩",
+          "expect": "inflammatory",
+          "got": "conflict",
+          "tags": {
+            "conflict": 0.9
+          }
+        }
+      ],
+      "style": "v2"
+    },
+    "v3/audit": {
+      "set": "audit",
+      "n": 29,
+      "agreement": 0.6897,
+      "macro_f1": 0.5815,
+      "per_label_recall": {
+        "emotional_resonance": 1.0,
+        "humor": 0.6316,
+        "information": 1.0,
+        "irrelevant_repetition": 0.6667
+      },
+      "confusion": [
+        {
+          "gold": "humor",
+          "pred": "emotional_resonance",
+          "n": 7,
+          "share_of_label": 0.368
+        },
+        {
+          "gold": "irrelevant_repetition",
+          "pred": "emotional_resonance",
+          "n": 1,
+          "share_of_label": 0.167
+        },
+        {
+          "gold": "irrelevant_repetition",
+          "pred": "other",
+          "n": 1,
+          "share_of_label": 0.167
+        }
+      ],
+      "pred_dist": {
+        "humor": 12,
+        "emotional_resonance": 10,
+        "information": 2,
+        "irrelevant_repetition": 4,
+        "other": 1
+      },
+      "elapsed_s": 0.0,
+      "ms_per_item": 0.0,
+      "style": "v3"
+    },
+    "v3/indomain": {
+      "set": "indomain",
+      "n": 131,
+      "agreement": 0.6107,
+      "macro_f1": 0.3549,
+      "per_label_recall": {
+        "conflict": 0.0,
+        "emotional_resonance": 0.8387,
+        "humor": 0.6774,
+        "information": 0.7419,
+        "irrelevant_repetition": 0.3226,
+        "other": 0.0,
+        "spoiler": 0.0
+      },
+      "confusion": [
+        {
+          "gold": "irrelevant_repetition",
+          "pred": "humor",
+          "n": 9,
+          "share_of_label": 0.29
+        },
+        {
+          "gold": "humor",
+          "pred": "information",
+          "n": 6,
+          "share_of_label": 0.194
+        },
+        {
+          "gold": "emotional_resonance",
+          "pred": "humor",
+          "n": 5,
+          "share_of_label": 0.161
+        },
+        {
+          "gold": "irrelevant_repetition",
+          "pred": "emotional_resonance",
+          "n": 5,
+          "share_of_label": 0.161
+        },
+        {
+          "gold": "humor",
+          "pred": "emotional_resonance",
+          "n": 4,
+          "share_of_label": 0.129
+        },
+        {
+          "gold": "irrelevant_repetition",
+          "pred": "information",
+          "n": 4,
+          "share_of_label": 0.129
+        },
+        {
+          "gold": "irrelevant_repetition",
+          "pred": "other",
+          "n": 3,
+          "share_of_label": 0.097
+        },
+        {
+          "gold": "information",
+          "pred": "emotional_resonance",
+          "n": 3,
+          "share_of_label": 0.097
+        }
+      ],
+      "pred_dist": {
+        "humor": 39,
+        "information": 37,
+        "emotional_resonance": 39,
+        "other": 4,
+        "irrelevant_repetition": 12
+      },
+      "elapsed_s": 0.0,
+      "ms_per_item": 0.0,
+      "information_to_humor_leak": 0.065,
+      "style": "v3"
+    },
+    "v3/boundary": {
+      "set": "boundary",
+      "n": 46,
+      "agreement": 0.8261,
+      "macro_f1": 0.8661,
+      "per_label_recall": {
+        "attack": 1.0,
+        "conflict": 1.0,
+        "emotional_resonance": 1.0,
+        "humor": 0.8182,
+        "inflammatory": 0.6667,
+        "information": 0.6154,
+        "irrelevant_repetition": 1.0,
+        "political": 1.0,
+        "spoiler": 1.0
+      },
+      "confusion": [
+        {
+          "gold": "information",
+          "pred": "humor",
+          "n": 4,
+          "share_of_label": 0.308
+        },
+        {
+          "gold": "humor",
+          "pred": "spoiler",
+          "n": 2,
+          "share_of_label": 0.182
+        },
+        {
+          "gold": "information",
+          "pred": "emotional_resonance",
+          "n": 1,
+          "share_of_label": 0.077
+        },
+        {
+          "gold": "inflammatory",
+          "pred": "conflict",
+          "n": 1,
+          "share_of_label": 0.333
+        }
+      ],
+      "pred_dist": {
+        "information": 8,
+        "emotional_resonance": 8,
+        "humor": 13,
+        "spoiler": 5,
+        "irrelevant_repetition": 4,
+        "attack": 2,
+        "conflict": 3,
+        "political": 1,
+        "inflammatory": 2
+      },
+      "elapsed_s": 0.0,
+      "ms_per_item": 0.0,
+      "dominant_accuracy": 0.8261,
+      "must_hit_rate": 0.9057,
+      "by_focus": {
+        "attack vs conflict": 1.0,
+        "attack vs inflammatory": 1.0,
+        "conflict vs inflammatory": 0.5,
+        "humor vs emotional_resonance": 0.875,
+        "information vs emotional_resonance": 1.0,
+        "information vs humor": 0.9,
+        "irrelevant_repetition vs humor": 1.0,
+        "political vs inflammatory": 1.0,
+        "spoiler vs humor": 0.667
+      },
+      "failures": [
+        {
+          "id": "b01b",
+          "text": "这首歌1987年的，我爸都会唱",
+          "expect": "information",
+          "got": "emotional_resonance",
+          "tags": {
+            "emotional_resonance": 0.75,
+            "information": 0.65
+          }
+        },
+        {
+          "id": "b02b",
+          "text": "原曲是肖邦的夜曲，难怪这么催眠",
+          "expect": "information",
+          "got": "humor",
+          "tags": {
+            "humor": 0.8,
+            "information": 0.65
+          }
+        },
+        {
+          "id": "b03b",
+          "text": "字幕在3:42，我瞎了三年",
+          "expect": "information",
+          "got": "humor",
+          "tags": {
+            "humor": 0.8,
+            "information": 0.65
+          }
+        },
+        {
+          "id": "b04b",
+          "text": "这才第3集？进度条骗我",
+          "expect": "information",
+          "got": "humor",
+          "tags": {
+            "humor": 0.75,
+            "information": 0.6
+          }
+        },
+        {
+          "id": "b05b",
+          "text": "原著里没有这段，编剧你出来",
+          "expect": "information",
+          "got": "humor",
+          "tags": {
+            "humor": 0.75,
+            "information": 0.65
+          }
+        },
+        {
+          "id": "b09b",
+          "text": "好听，笑死",
+          "expect": "humor",
+          "got": "humor",
+          "tags": {
+            "emotional_resonance": 0.5,
+            "humor": 0.65
+          }
+        },
+        {
+          "id": "b14b",
+          "text": "他最后没活下来，我剧透了吗",
+          "expect": "humor",
+          "got": "spoiler",
+          "tags": {
+            "humor": 0.5,
+            "spoiler": 0.9
+          }
+        },
+        {
+          "id": "b15b",
+          "text": "第8集才反转，我先睡为敬",
+          "expect": "humor",
+          "got": "spoiler",
+          "tags": {
+            "humor": 0.55,
+            "information": 0.45,
+            "spoiler": 0.85
+          }
+        },
+        {
+          "id": "b21b",
+          "text": "不服来辩",
+          "expect": "inflammatory",
+          "got": "conflict",
+          "tags": {
+            "conflict": 0.95
+          }
+        }
+      ],
+      "style": "v3"
+    }
+  }
+}

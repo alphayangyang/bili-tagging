@@ -1,0 +1,487 @@
+{
+  "dataset": {
+    "path": "data/experiments/dataset.jsonl",
+    "rows": 2457,
+    "videos": {
+      "BV1GJ411x7h7": {
+        "title": "【官方 MV】Never Gonna Give You Up - Rick Astley",
+        "domain": "music/meme",
+        "n_rows": 1407
+      },
+      "BV1w5xh6sEEz": {
+        "title": "【只对你有感觉】|“【恋爱の小曲】”",
+        "domain": "music/meme",
+        "n_rows": 173
+      },
+      "BV1rCxe6wEN9": {
+        "title": "一条视频看10月世界：中东在燃烧，法国在骚乱，中国网友在跨国吵架",
+        "domain": "politics",
+        "n_rows": 472
+      },
+      "BV1bnxr6cEJ9": {
+        "title": "外网中德骂战！10月31号 再现神推：中国人用梯子是买动物园门票",
+        "domain": "politics/conflict",
+        "n_rows": 67
+      },
+      "BV1mV4F6mE5Z": {
+        "title": "八倍AK致敬吃鸡，队友脸色对了",
+        "domain": "gaming",
+        "n_rows": 174
+      },
+      "BV1W18Y61Ee5": {
+        "title": "我妈妈第一次怀孕时……",
+        "domain": "story/drama",
+        "n_rows": 164
+      }
+    }
+  },
+  "experiment": "e3-topicality",
+  "generated_at": "2026-11-04T18:05:05Z",
+  "embedding": {
+    "model": "bge-m3",
+    "endpoint": "http://127.0.0.1:11434/api/embed",
+    "dim": 1024,
+    "environment_text": "title + '\n领域：' + domain",
+    "embed_seconds": 30.97,
+    "n_texts": 2297
+  },
+  "annotation": {
+    "seed": 20261105,
+    "per_video": 30,
+    "n_videos": 6,
+    "n_samples": 180,
+    "label_definition": "1=about this video's content/subject/visuals/audio/author, 0=generic reaction or unrelated chat",
+    "annotators": 1,
+    "gold_path": "data/experiments/topicality/gold.json",
+    "label_counts": {
+      "positive": 119,
+      "negative": 61
+    }
+  },
+  "hand_labels": {
+    "overall": {
+      "n": 180,
+      "n_positive": 119,
+      "n_negative": 61,
+      "auc": 0.5704642512742802,
+      "ci95": [
+        0.47773217814257485,
+        0.6500576036866359
+      ]
+    },
+    "per_video": {
+      "BV1GJ411x7h7": {
+        "n": 30,
+        "n_positive": 13,
+        "n_negative": 17,
+        "auc": 0.6923076923076923
+      },
+      "BV1w5xh6sEEz": {
+        "n": 30,
+        "n_positive": 20,
+        "n_negative": 10,
+        "auc": 0.44
+      },
+      "BV1rCxe6wEN9": {
+        "n": 30,
+        "n_positive": 20,
+        "n_negative": 10,
+        "auc": 0.535
+      },
+      "BV1bnxr6cEJ9": {
+        "n": 30,
+        "n_positive": 19,
+        "n_negative": 11,
+        "auc": 0.44976076555023925
+      },
+      "BV1mV4F6mE5Z": {
+        "n": 30,
+        "n_positive": 22,
+        "n_negative": 8,
+        "auc": 0.5511363636363636
+      },
+      "BV1W18Y61Ee5": {
+        "n": 30,
+        "n_positive": 25,
+        "n_negative": 5,
+        "auc": 0.784
+      }
+    }
+  },
+  "hand_label_diagnostics": {
+    "env_score_mean_positive": 0.4107428240679466,
+    "env_score_mean_negative": 0.39662275955579906,
+    "env_score_min": 0.25700292072901165,
+    "env_score_median": 0.39547828087633263,
+    "env_score_max": 0.5681776032196454,
+    "env_score_length_pearson": 0.12154256363737992,
+    "n_tied_env_scores": 3
+  },
+  "baselines": {
+    "char_bigram_overlap": {
+      "overall": {
+        "n": 180,
+        "n_positive": 119,
+        "n_negative": 61,
+        "auc": 0.5544840887174542,
+        "ci95": [
+          0.5204860570182271,
+          0.5887096774193549
+        ]
+      },
+      "per_video": {
+        "BV1GJ411x7h7": {
+          "n": 30,
+          "n_positive": 13,
+          "n_negative": 17,
+          "auc": 0.5384615384615384
+        },
+        "BV1w5xh6sEEz": {
+          "n": 30,
+          "n_positive": 20,
+          "n_negative": 10,
+          "auc": 0.5
+        },
+        "BV1rCxe6wEN9": {
+          "n": 30,
+          "n_positive": 20,
+          "n_negative": 10,
+          "auc": 0.6
+        },
+        "BV1bnxr6cEJ9": {
+          "n": 30,
+          "n_positive": 19,
+          "n_negative": 11,
+          "auc": 0.5263157894736842
+        },
+        "BV1mV4F6mE5Z": {
+          "n": 30,
+          "n_positive": 22,
+          "n_negative": 8,
+          "auc": 0.5681818181818182
+        },
+        "BV1W18Y61Ee5": {
+          "n": 30,
+          "n_positive": 25,
+          "n_negative": 5,
+          "auc": 0.58
+        }
+      }
+    },
+    "tfidf_cosine_title": {
+      "overall": {
+        "n": 180,
+        "n_positive": 119,
+        "n_negative": 61,
+        "auc": 0.5550351288056206,
+        "ci95": [
+          0.5214216834274693,
+          0.5889830508474576
+        ]
+      },
+      "per_video": {
+        "BV1GJ411x7h7": {
+          "n": 30,
+          "n_positive": 13,
+          "n_negative": 17,
+          "auc": 0.5384615384615384
+        },
+        "BV1w5xh6sEEz": {
+          "n": 30,
+          "n_positive": 20,
+          "n_negative": 10,
+          "auc": 0.5
+        },
+        "BV1rCxe6wEN9": {
+          "n": 30,
+          "n_positive": 20,
+          "n_negative": 10,
+          "auc": 0.6
+        },
+        "BV1bnxr6cEJ9": {
+          "n": 30,
+          "n_positive": 19,
+          "n_negative": 11,
+          "auc": 0.5311004784688995
+        },
+        "BV1mV4F6mE5Z": {
+          "n": 30,
+          "n_positive": 22,
+          "n_negative": 8,
+          "auc": 0.5681818181818182
+        },
+        "BV1W18Y61Ee5": {
+          "n": 30,
+          "n_positive": 25,
+          "n_negative": 5,
+          "auc": 0.58
+        }
+      }
+    }
+  },
+  "exploratory_probes": {
+    "note": "not pre-registered; the leave-one-out comment centroid uses no labels and is deployable from the segment bytes themselves",
+    "comment_centroid_loo": {
+      "overall": {
+        "n": 180,
+        "n_positive": 119,
+        "n_negative": 61,
+        "auc": 0.5553106488497038,
+        "ci95": [
+          0.4627016129032258,
+          0.6448879168944779
+        ]
+      },
+      "per_video": {
+        "BV1GJ411x7h7": {
+          "n": 30,
+          "n_positive": 13,
+          "n_negative": 17,
+          "auc": 0.8144796380090498
+        },
+        "BV1w5xh6sEEz": {
+          "n": 30,
+          "n_positive": 20,
+          "n_negative": 10,
+          "auc": 0.6
+        },
+        "BV1rCxe6wEN9": {
+          "n": 30,
+          "n_positive": 20,
+          "n_negative": 10,
+          "auc": 0.33
+        },
+        "BV1bnxr6cEJ9": {
+          "n": 30,
+          "n_positive": 19,
+          "n_negative": 11,
+          "auc": 0.5023923444976076
+        },
+        "BV1mV4F6mE5Z": {
+          "n": 30,
+          "n_positive": 22,
+          "n_negative": 8,
+          "auc": 0.36363636363636365
+        },
+        "BV1W18Y61Ee5": {
+          "n": 30,
+          "n_positive": 25,
+          "n_negative": 5,
+          "auc": 0.784
+        }
+      }
+    },
+    "title_plus_comment_centroid": {
+      "overall": {
+        "n": 180,
+        "n_positive": 119,
+        "n_negative": 61,
+        "auc": 0.5740460118473619,
+        "ci95": [
+          0.478783130957044,
+          0.6613707983193278
+        ]
+      },
+      "per_video": {
+        "BV1GJ411x7h7": {
+          "n": 30,
+          "n_positive": 13,
+          "n_negative": 17,
+          "auc": 0.8099547511312217
+        },
+        "BV1w5xh6sEEz": {
+          "n": 30,
+          "n_positive": 20,
+          "n_negative": 10,
+          "auc": 0.535
+        },
+        "BV1rCxe6wEN9": {
+          "n": 30,
+          "n_positive": 20,
+          "n_negative": 10,
+          "auc": 0.415
+        },
+        "BV1bnxr6cEJ9": {
+          "n": 30,
+          "n_positive": 19,
+          "n_negative": 11,
+          "auc": 0.45933014354066987
+        },
+        "BV1mV4F6mE5Z": {
+          "n": 30,
+          "n_positive": 22,
+          "n_negative": 8,
+          "auc": 0.4431818181818182
+        },
+        "BV1W18Y61Ee5": {
+          "n": 30,
+          "n_positive": 25,
+          "n_negative": 5,
+          "auc": 0.808
+        }
+      }
+    }
+  },
+  "conclusion": {
+    "note": "primary metric is the overall hand-label ROC-AUC; baselines use the same sampled items"
+  },
+  "external_validity": {
+    "definition": "negative=dominant in {other, irrelevant_repetition}, positive=everything else, score=1-cosine",
+    "negative_labels": [
+      "irrelevant_repetition",
+      "other"
+    ],
+    "probes": {
+      "title_env": {
+        "overall": {
+          "n": 2457,
+          "n_positive": 2216,
+          "n_negative": 241,
+          "auc": 0.5164505220426322,
+          "ci95": [
+            0.4795695126183747,
+            0.5536025060911939
+          ]
+        },
+        "per_video": {
+          "BV1GJ411x7h7": {
+            "n": 1407,
+            "n_positive": 1341,
+            "n_negative": 66,
+            "auc": 0.5622839129550539
+          },
+          "BV1w5xh6sEEz": {
+            "n": 173,
+            "n_positive": 155,
+            "n_negative": 18,
+            "auc": 0.5525089605734766
+          },
+          "BV1rCxe6wEN9": {
+            "n": 472,
+            "n_positive": 377,
+            "n_negative": 95,
+            "auc": 0.43720508166969146
+          },
+          "BV1bnxr6cEJ9": {
+            "n": 67,
+            "n_positive": 56,
+            "n_negative": 11,
+            "auc": 0.4301948051948052
+          },
+          "BV1mV4F6mE5Z": {
+            "n": 174,
+            "n_positive": 152,
+            "n_negative": 22,
+            "auc": 0.42194976076555024
+          },
+          "BV1W18Y61Ee5": {
+            "n": 164,
+            "n_positive": 135,
+            "n_negative": 29,
+            "auc": 0.4112388250319285
+          }
+        }
+      },
+      "comment_centroid_loo": {
+        "overall": {
+          "n": 2457,
+          "n_positive": 2216,
+          "n_negative": 241,
+          "auc": 0.552791280315173,
+          "ci95": [
+            0.5081189799608813,
+            0.5947820612165827
+          ]
+        },
+        "per_video": {
+          "BV1GJ411x7h7": {
+            "n": 1407,
+            "n_positive": 1341,
+            "n_negative": 66,
+            "auc": 0.5128296386685648
+          },
+          "BV1w5xh6sEEz": {
+            "n": 173,
+            "n_positive": 155,
+            "n_negative": 18,
+            "auc": 0.49659498207885305
+          },
+          "BV1rCxe6wEN9": {
+            "n": 472,
+            "n_positive": 377,
+            "n_negative": 95,
+            "auc": 0.6853971799525339
+          },
+          "BV1bnxr6cEJ9": {
+            "n": 67,
+            "n_positive": 56,
+            "n_negative": 11,
+            "auc": 0.525974025974026
+          },
+          "BV1mV4F6mE5Z": {
+            "n": 174,
+            "n_positive": 152,
+            "n_negative": 22,
+            "auc": 0.41297846889952156
+          },
+          "BV1W18Y61Ee5": {
+            "n": 164,
+            "n_positive": 135,
+            "n_negative": 29,
+            "auc": 0.2950191570881226
+          }
+        }
+      },
+      "title_plus_comment_centroid": {
+        "overall": {
+          "n": 2457,
+          "n_positive": 2216,
+          "n_negative": 241,
+          "auc": 0.5380212936471082,
+          "ci95": [
+            0.4975774173161997,
+            0.5778155706727135
+          ]
+        },
+        "per_video": {
+          "BV1GJ411x7h7": {
+            "n": 1407,
+            "n_positive": 1341,
+            "n_negative": 66,
+            "auc": 0.5426129301968228
+          },
+          "BV1w5xh6sEEz": {
+            "n": 173,
+            "n_positive": 155,
+            "n_negative": 18,
+            "auc": 0.5252688172043011
+          },
+          "BV1rCxe6wEN9": {
+            "n": 472,
+            "n_positive": 377,
+            "n_negative": 95,
+            "auc": 0.5783749825492113
+          },
+          "BV1bnxr6cEJ9": {
+            "n": 67,
+            "n_positive": 56,
+            "n_negative": 11,
+            "auc": 0.48214285714285715
+          },
+          "BV1mV4F6mE5Z": {
+            "n": 174,
+            "n_positive": 152,
+            "n_negative": 22,
+            "auc": 0.41566985645933013
+          },
+          "BV1W18Y61Ee5": {
+            "n": 164,
+            "n_positive": 135,
+            "n_negative": 29,
+            "auc": 0.31008939974457217
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,2663 @@
+{
+ "generated": "2026-11-04T15:15:59Z",
+ "note": "Scenario A: 1407 real danmaku of BV1GJ411x7h7 tagged by deepseek-flash; a stratified sample is shown. Scenario B is synthetic, written to exercise political / inflammatory / attack tags.",
+ "scenarios": [
+  {
+   "id": "music",
+   "title": "80年代迪厅必放金曲（真实数据抽样）",
+   "bvid": "BV1GJ411x7h7",
+   "duration": 213,
+   "simulated": false,
+   "source": "deepseek-flash 离线打标 · 1,407 条中分层抽 239 条",
+   "distribution": {
+    "irrelevant_repetition": 26,
+    "information": 44,
+    "humor": 120,
+    "emotional_resonance": 44,
+    "spoiler": 3,
+    "other": 1,
+    "conflict": 1
+   },
+   "items": [
+    {
+     "t": 1175,
+     "text": "从pcl2千万别点过来的",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.7
+     },
+     "evidence": "来源刷屏"
+    },
+    {
+     "t": 1521,
+     "text": "传送00:01",
+     "dominant": "information",
+     "tags": {
+      "information": 0.9
+     },
+     "evidence": "传送时间"
+    },
+    {
+     "t": 1753,
+     "text": "《143人正在被骗》",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.85
+     },
+     "evidence": "假标题调侃"
+    },
+    {
+     "t": 2300,
+     "text": "每 日 必 需 品",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.7,
+      "humor": 0.2
+     },
+     "evidence": "每日必需品刷屏"
+    },
+    {
+     "t": 3829,
+     "text": "谁是因为PCL2-CE骗来的",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.6
+     },
+     "evidence": "来源刷屏提问"
+    },
+    {
+     "t": 4409,
+     "text": "左 顾 右 盼",
+     "dominant": "information",
+     "tags": {
+      "information": 0.3,
+      "humor": 0.3
+     },
+     "evidence": "空格歌词玩梗"
+    },
+    {
+     "t": 4411,
+     "text": "自愿被骗",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "自愿被骗梗"
+    },
+    {
+     "t": 4780,
+     "text": "听着写寒假作业​",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.6
+     },
+     "evidence": "分享听歌写作业"
+    },
+    {
+     "t": 5116,
+     "text": "《三角符文第三章预告》",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.85
+     },
+     "evidence": "假预告标题"
+    },
+    {
+     "t": 5597,
+     "text": "pcl2过来的 《千万别点》",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.6,
+      "humor": 0.4
+     },
+     "evidence": "来源加假标题"
+    },
+    {
+     "t": 6348,
+     "text": "PCL2来的",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.85
+     },
+     "evidence": "低信息重复刷来源"
+    },
+    {
+     "t": 7201,
+     "text": "跳楼00：00",
+     "dominant": "information",
+     "tags": {
+      "information": 0.8
+     },
+     "evidence": "时间跳转"
+    },
+    {
+     "t": 7386,
+     "text": "愿 者 上 钩，",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.5
+     },
+     "evidence": "愿者上钩梗"
+    },
+    {
+     "t": 7824,
+     "text": "从PCL2来的点个赞",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.7
+     },
+     "evidence": "来源刷屏求赞"
+    },
+    {
+     "t": 8145,
+     "text": "Windows 12发布",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.85
+     },
+     "evidence": "假系统发布"
+    },
+    {
+     "t": 10544,
+     "text": "每日一次",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.4
+     },
+     "evidence": "每日一看表达喜爱"
+    },
+    {
+     "t": 10801,
+     "text": "跳动吧时间,绯红之王00:00",
+     "dominant": "information",
+     "tags": {
+      "information": 0.5,
+      "humor": 0.5
+     },
+     "evidence": "绯红之王空降梗"
+    },
+    {
+     "t": 13545,
+     "text": "金 碟 豹",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.7,
+      "information": 0.2
+     },
+     "evidence": "金碟豹刷屏"
+    },
+    {
+     "t": 18270,
+     "text": "又被骗了",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.5,
+      "emotional_resonance": 0.3
+     },
+     "evidence": "又被套路"
+    },
+    {
+     "t": 18782,
+     "text": "豪俊金曲",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.7
+     },
+     "evidence": "豪俊金曲刷屏"
+    },
+    {
+     "t": 20222,
+     "text": "我被骗了",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.6,
+      "humor": 0.2
+     },
+     "evidence": "表示我被骗了"
+    },
+    {
+     "t": 20337,
+     "text": "去年的卧槽",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.5
+     },
+     "evidence": "卧槽感叹"
+    },
+    {
+     "t": 22700,
+     "text": "索 尼 の 认 可",
+     "dominant": "humor",
+     "tags": {
+      "information": 0.2,
+      "humor": 0.7
+     },
+     "evidence": "空格玩索尼梗"
+    },
+    {
+     "t": 23099,
+     "text": "传送03:00",
+     "dominant": "information",
+     "tags": {
+      "information": 0.9
+     },
+     "evidence": "时间跳转"
+    },
+    {
+     "t": 24561,
+     "text": "so↑do↓I→",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.4,
+      "information": 0.2
+     },
+     "evidence": "歌词箭头梗"
+    },
+    {
+     "t": 25740,
+     "text": "草，字幕都有了",
+     "dominant": "information",
+     "tags": {
+      "information": 0.5,
+      "humor": 0.3
+     },
+     "evidence": "注意到字幕"
+    },
+    {
+     "t": 26020,
+     "text": "维多利亚3内测版",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7,
+      "information": 0.2
+     },
+     "evidence": "游戏梗调侃字幕"
+    },
+    {
+     "t": 26039,
+     "text": "每 日 一 遍",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.7,
+      "emotional_resonance": 0.2
+     },
+     "evidence": "空格刷每日一遍"
+    },
+    {
+     "t": 27171,
+     "text": "我爸喜欢这首歌",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.6
+     },
+     "evidence": "父亲喜欢"
+    },
+    {
+     "t": 27928,
+     "text": "金刚狼4预告",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.9
+     },
+     "evidence": "假金刚狼4预告玩梗"
+    },
+    {
+     "t": 28023,
+     "text": "猫 和 老鼠出 地图",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7
+     },
+     "evidence": "假猫和老鼠地图"
+    },
+    {
+     "t": 28631,
+     "text": "被骗了",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.6,
+      "humor": 0.2
+     },
+     "evidence": "表示被骗到"
+    },
+    {
+     "t": 29739,
+     "text": "无 限 列 车",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.6,
+      "humor": 0.2
+     },
+     "evidence": "无限列车刷屏"
+    },
+    {
+     "t": 30921,
+     "text": "星 蝶 公 主 第 五 季",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8,
+      "irrelevant_repetition": 0.2
+     },
+     "evidence": "空格假续作"
+    },
+    {
+     "t": 32113,
+     "text": "清晰度比YT还高点，官方就是不一样！",
+     "dominant": "information",
+     "tags": {
+      "information": 0.7
+     },
+     "evidence": "比较画质"
+    },
+    {
+     "t": 32339,
+     "text": "AD奶的盖~",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.4,
+      "humor": 0.3
+     },
+     "evidence": "低信息随机短语"
+    },
+    {
+     "t": 33231,
+     "text": "正 版 音 乐",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.7,
+      "humor": 0.2
+     },
+     "evidence": "正版音乐刷屏"
+    },
+    {
+     "t": 35059,
+     "text": "我从大唐gang简介传过来的。",
+     "dominant": "information",
+     "tags": {
+      "information": 0.7
+     },
+     "evidence": "说明来源"
+    },
+    {
+     "t": 35419,
+     "text": "My fashion design",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.6
+     },
+     "evidence": "无关低信息"
+    },
+    {
+     "t": 41924,
+     "text": "这个姐姐好美(✪▽✪)",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.8
+     },
+     "evidence": "夸姐姐美"
+    },
+    {
+     "t": 42415,
+     "text": "怎 么 成 为 替 身 使 者",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "假JOJO标题玩梗"
+    },
+    {
+     "t": 43269,
+     "text": "《PVZ4预告片》",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "虚构PVZ4预告"
+    },
+    {
+     "t": 44339,
+     "text": "官方的字幕也这么皮嘛",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.6
+     },
+     "evidence": "吐槽官方字幕皮"
+    },
+    {
+     "t": 44956,
+     "text": "丁克森的直译版在脑海挥之不去。",
+     "dominant": "information",
+     "tags": {
+      "information": 0.7,
+      "humor": 0.3
+     },
+     "evidence": "联想直译版"
+    },
+    {
+     "t": 45385,
+     "text": "衣品是真的好",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.5
+     },
+     "evidence": "夸衣品好"
+    },
+    {
+     "t": 49050,
+     "text": "翻译鬼才哈哈哈哈哈",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "讽翻译鬼才"
+    },
+    {
+     "t": 49882,
+     "text": "超級喜歡這種迪斯可風格",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.8
+     },
+     "evidence": "喜欢迪斯科风格"
+    },
+    {
+     "t": 50131,
+     "text": "《B站崩了》",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "虚构B站崩溃玩梗"
+    },
+    {
+     "t": 51059,
+     "text": "从来不会给你上",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "歌词歪译梗"
+    },
+    {
+     "t": 54226,
+     "text": "救命他真的好帅",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.9
+     },
+     "evidence": "激动夸帅"
+    },
+    {
+     "t": 54601,
+     "text": "虽然但是就是很好听",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.6
+     },
+     "evidence": "觉得好听"
+    },
+    {
+     "t": 55849,
+     "text": "索尼上传的时候有看翻译嘛，我要笑疯了",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7
+     },
+     "evidence": "调侃官方没检查翻译"
+    },
+    {
+     "t": 56425,
+     "text": "空洞骑士：丝绸之触",
+     "dominant": "information",
+     "tags": {
+      "information": 0.5,
+      "humor": 0.3
+     },
+     "evidence": "提空洞骑士续作"
+    },
+    {
+     "t": 56593,
+     "text": "《永 不 撒 谎》",
+     "dominant": "humor",
+     "tags": {
+      "information": 0.2,
+      "humor": 0.8
+     },
+     "evidence": "玩歌名翻译梗"
+    },
+    {
+     "t": 56901,
+     "text": "m'm'm",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.8
+     },
+     "evidence": "无意义字符"
+    },
+    {
+     "t": 57961,
+     "text": "其实这首歌还是挺好听的",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.6
+     },
+     "evidence": "赞歌曲好听"
+    },
+    {
+     "t": 58564,
+     "text": "永不撒谎，并伤害你",
+     "dominant": "information",
+     "tags": {
+      "information": 0.6
+     },
+     "evidence": "歌词翻译"
+    },
+    {
+     "t": 59723,
+     "text": "pcl2来的举个手",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.7
+     },
+     "evidence": "来源刷屏举手"
+    },
+    {
+     "t": 59918,
+     "text": "嘤嘤嘤",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "emotional_resonance": 0.4,
+      "irrelevant_repetition": 0.6
+     },
+     "evidence": "卖萌拟声刷屏"
+    },
+    {
+     "t": 61003,
+     "text": "翻译杀疯了",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.6
+     },
+     "evidence": "夸张夸翻译杀疯"
+    },
+    {
+     "t": 62206,
+     "text": "翻译组",
+     "dominant": "information",
+     "tags": {
+      "information": 0.3
+     },
+     "evidence": "只提及翻译组"
+    },
+    {
+     "t": 62379,
+     "text": "甚至有悬浮歌词",
+     "dominant": "information",
+     "tags": {
+      "information": 0.7
+     },
+     "evidence": "指出有悬浮歌词"
+    },
+    {
+     "t": 63041,
+     "text": "黑人小哥逐渐起舞",
+     "dominant": "information",
+     "tags": {
+      "information": 0.6,
+      "humor": 0.2
+     },
+     "evidence": "描述小哥起舞"
+    },
+    {
+     "t": 63444,
+     "text": "理查德汪苏泷哈哈哈哈哈哈哈哈",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.9,
+      "irrelevant_repetition": 0.2
+     },
+     "evidence": "名字恶搞带笑"
+    },
+    {
+     "t": 64078,
+     "text": "汪苏泷～",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.6,
+      "humor": 0.2
+     },
+     "evidence": "刷名字"
+    },
+    {
+     "t": 65300,
+     "text": "汪苏泷哈哈哈哈哈哈哈哈哈哈哈",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.6,
+      "irrelevant_repetition": 0.5
+     },
+     "evidence": "笑并刷汪苏泷"
+    },
+    {
+     "t": 65567,
+     "text": "这翻译太草了吧",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7
+     },
+     "evidence": "翻译太草"
+    },
+    {
+     "t": 68071,
+     "text": "60岁的声音，20岁的脸庞",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7,
+      "information": 0.2
+     },
+     "evidence": "声脸反差调侃"
+    },
+    {
+     "t": 70584,
+     "text": "汪苏泷～～～～～～～～～",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "emotional_resonance": 0.2,
+      "humor": 0.3,
+      "irrelevant_repetition": 0.6
+     },
+     "evidence": "刷汪苏泷"
+    },
+    {
+     "t": 73413,
+     "text": "完了，我上头了，怎么办",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.6,
+      "humor": 0.2
+     },
+     "evidence": "自嘲上头"
+    },
+    {
+     "t": 73748,
+     "text": "太草了，这字幕",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.9
+     },
+     "evidence": "字幕太搞笑"
+    },
+    {
+     "t": 75607,
+     "text": "意大利电视剧，飞行员与模特主题曲",
+     "dominant": "information",
+     "tags": {
+      "information": 0.9
+     },
+     "evidence": "指认意剧主题曲"
+    },
+    {
+     "t": 76000,
+     "text": "真不错",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.5
+     },
+     "evidence": "简单称赞"
+    },
+    {
+     "t": 76739,
+     "text": "如果排除被骗，这歌还真好听",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.6,
+      "humor": 0.2
+     },
+     "evidence": "吐槽被骗但歌好听"
+    },
+    {
+     "t": 76859,
+     "text": "玩具熊的午夜后宫安全漏洞最新资料片",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.6
+     },
+     "evidence": "伪造资料片标题"
+    },
+    {
+     "t": 76920,
+     "text": "字幕逐渐放飞自我",
+     "dominant": "information",
+     "tags": {
+      "information": 0.4,
+      "humor": 0.4
+     },
+     "evidence": "吐槽字幕放飞"
+    },
+    {
+     "t": 78086,
+     "text": "好家伙居然是原声",
+     "dominant": "information",
+     "tags": {
+      "information": 0.5,
+      "emotional_resonance": 0.4
+     },
+     "evidence": "惊讶是原声"
+    },
+    {
+     "t": 79271,
+     "text": "空中劈叉动作指导:爆裂金刚",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7
+     },
+     "evidence": "动作指导恶搞"
+    },
+    {
+     "t": 79299,
+     "text": "这到底是什么梗啊——————！！",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.5
+     },
+     "evidence": "求问什么梗"
+    },
+    {
+     "t": 81404,
+     "text": "三虫同框",
+     "dominant": "spoiler",
+     "tags": {
+      "spoiler": 0.9
+     },
+     "evidence": "剧透三虫同框"
+    },
+    {
+     "t": 82678,
+     "text": "高情商：又是你",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.9
+     },
+     "evidence": "高情商式玩梗"
+    },
+    {
+     "t": 83814,
+     "text": "范特西~",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.4,
+      "emotional_resonance": 0.2
+     },
+     "evidence": "短感叹，信息低"
+    },
+    {
+     "t": 85829,
+     "text": "繁体字幕有毒哈哈哈哈哈哈",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7,
+      "emotional_resonance": 0.2
+     },
+     "evidence": "吐槽繁体字幕有毒"
+    },
+    {
+     "t": 86031,
+     "text": "网易出1.19了",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "假更新消息"
+    },
+    {
+     "t": 86074,
+     "text": "害羞的",
+     "dominant": "information",
+     "tags": {
+      "information": 0.3,
+      "emotional_resonance": 0.3
+     },
+     "evidence": "描述害羞"
+    },
+    {
+     "t": 86699,
+     "text": "jojo第七部动漫化了",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.85
+     },
+     "evidence": "假动画化消息"
+    },
+    {
+     "t": 87254,
+     "text": "明天大行动，后天起源2",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "CS假更新梗"
+    },
+    {
+     "t": 89533,
+     "text": "蜘蛛侠英雄无归",
+     "dominant": "information",
+     "tags": {
+      "information": 0.4
+     },
+     "evidence": "提及电影名"
+    },
+    {
+     "t": 89994,
+     "text": "永远不会围绕着你的沙漠。",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.6,
+      "information": 0.3
+     },
+     "evidence": "恶搞歌词翻译"
+    },
+    {
+     "t": 90059,
+     "text": "汪苏泷：我笑了",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7
+     },
+     "evidence": "汪苏泷梗"
+    },
+    {
+     "t": 90914,
+     "text": "使命召唤白嫖枪皮",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "假白嫖枪皮"
+    },
+    {
+     "t": 90961,
+     "text": "传送00：00",
+     "dominant": "information",
+     "tags": {
+      "information": 0.9
+     },
+     "evidence": "传送时间"
+    },
+    {
+     "t": 91324,
+     "text": "哈哈呀哈哈",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.9
+     },
+     "evidence": "纯笑声刷屏"
+    },
+    {
+     "t": 92382,
+     "text": "D r e a m 入 驻 B 站",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8,
+      "irrelevant_repetition": 0.3
+     },
+     "evidence": "空格假官宣玩梗"
+    },
+    {
+     "t": 92749,
+     "text": "啥爷爷啊，rick现在才五十多岁",
+     "dominant": "information",
+     "tags": {
+      "information": 0.8,
+      "conflict": 0.2
+     },
+     "evidence": "纠正年龄"
+    },
+    {
+     "t": 94065,
+     "text": "突然发现这个无法后台播放，为什么？",
+     "dominant": "information",
+     "tags": {
+      "information": 0.3
+     },
+     "evidence": "询问后台播放"
+    },
+    {
+     "t": 94260,
+     "text": "字幕太暴力了",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.5
+     },
+     "evidence": "夸张吐槽字幕"
+    },
+    {
+     "t": 94383,
+     "text": "讲道理还挺好听",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.6
+     },
+     "evidence": "评价还挺好听"
+    },
+    {
+     "t": 95047,
+     "text": "挺好听",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.6
+     },
+     "evidence": "夸好听"
+    },
+    {
+     "t": 99362,
+     "text": "工 作 细 胞 3",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "假续作标题"
+    },
+    {
+     "t": 99549,
+     "text": "这字幕太草了",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "吐槽字幕生草"
+    },
+    {
+     "t": 102058,
+     "text": "我不做服务员啦，jojo！",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.9
+     },
+     "evidence": "JoJo梗"
+    },
+    {
+     "t": 102548,
+     "text": "腰马合一",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.6
+     },
+     "evidence": "腰马合一梗"
+    },
+    {
+     "t": 104971,
+     "text": "复 仇 者 联 盟 5",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "假复联5"
+    },
+    {
+     "t": 105571,
+     "text": "b 站 大 会 员 白 送",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.5,
+      "information": 0.2
+     },
+     "evidence": "假福利玩梗"
+    },
+    {
+     "t": 105695,
+     "text": "WINDOWS12发布会",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.6
+     },
+     "evidence": "假Win12发布会梗"
+    },
+    {
+     "t": 105797,
+     "text": "网易策划换了",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "假人事变动玩梗"
+    },
+    {
+     "t": 106563,
+     "text": "笑起来是真的阳光",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.6
+     },
+     "evidence": "夸笑容阳光"
+    },
+    {
+     "t": 107430,
+     "text": "他笑起来真的好好看 老帅了",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.9
+     },
+     "evidence": "夸赞喜欢角色"
+    },
+    {
+     "t": 107667,
+     "text": "海贼王完结了。",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.6,
+      "spoiler": 0.3
+     },
+     "evidence": "假完结剧透玩梗"
+    },
+    {
+     "t": 109037,
+     "text": "这衣服很潮啊，不错不错",
+     "dominant": "information",
+     "tags": {
+      "information": 0.4,
+      "emotional_resonance": 0.3
+     },
+     "evidence": "夸衣服潮"
+    },
+    {
+     "t": 109108,
+     "text": "宝可梦DP复刻下载链接",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "伪造下载链接梗"
+    },
+    {
+     "t": 109629,
+     "text": "iPhone使用Type-C接口",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "假iPhone接口消息"
+    },
+    {
+     "t": 109752,
+     "text": "鬼知道我循环了多少遍",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.7
+     },
+     "evidence": "循环上头"
+    },
+    {
+     "t": 110580,
+     "text": "博人传九尾回归（doge）",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.9
+     },
+     "evidence": "假九尾回归"
+    },
+    {
+     "t": 112741,
+     "text": "笑起来我心都要融化了！！",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.9
+     },
+     "evidence": "被笑容融化"
+    },
+    {
+     "t": 115216,
+     "text": "70个小伙伴 每日一刷打卡",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "emotional_resonance": 0.2,
+      "irrelevant_repetition": 0.8
+     },
+     "evidence": "打卡刷屏"
+    },
+    {
+     "t": 116494,
+     "text": "索尼ps5，1折",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7
+     },
+     "evidence": "假折扣玩梗"
+    },
+    {
+     "t": 116507,
+     "text": "这就是传说中的石之海动画？？？",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7
+     },
+     "evidence": "吐槽石之海动画"
+    },
+    {
+     "t": 116521,
+     "text": "泰拉瑞亚1.5",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "泰拉假更新"
+    },
+    {
+     "t": 117340,
+     "text": "暑 假 延 长 通 知",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.9
+     },
+     "evidence": "空格虚构暑假延长"
+    },
+    {
+     "t": 117965,
+     "text": "《崩二全员复活》",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.85
+     },
+     "evidence": "假剧情公告"
+    },
+    {
+     "t": 119169,
+     "text": "哈 利 波 特： 9",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "假哈利波特9"
+    },
+    {
+     "t": 119449,
+     "text": "九月高招S仙人兜",
+     "dominant": "information",
+     "tags": {
+      "information": 0.8
+     },
+     "evidence": "游戏角色档期信息"
+    },
+    {
+     "t": 119614,
+     "text": "贝 多 芬 出 新 曲",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.9
+     },
+     "evidence": "荒诞贝多芬出新曲"
+    },
+    {
+     "t": 120320,
+     "text": "JoJo land 抢先预告",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "虚构JoJo land预告"
+    },
+    {
+     "t": 124557,
+     "text": "真·上网[doge]",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.6
+     },
+     "evidence": "玩梗配doge"
+    },
+    {
+     "t": 124777,
+     "text": "进击的巨人终章之兵长再爱我一次",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.9
+     },
+     "evidence": "恶搞巨人标题"
+    },
+    {
+     "t": 125071,
+     "text": "喜羊羊与灰太狼完结",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "假完结消息"
+    },
+    {
+     "t": 125417,
+     "text": "《手舞足蹈》",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.6
+     },
+     "evidence": "仿手舞足蹈标题"
+    },
+    {
+     "t": 125686,
+     "text": "《蜘蛛侠3：三虫同框》",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7,
+      "information": 0.2
+     },
+     "evidence": "用蜘蛛侠梗标题"
+    },
+    {
+     "t": 126200,
+     "text": "《蜘蛛侠.英雄无归》",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.6,
+      "information": 0.3
+     },
+     "evidence": "复述电影标题玩梗"
+    },
+    {
+     "t": 127880,
+     "text": "港式字幕哪个机灵鬼投的笑死我了",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7,
+      "information": 0.3
+     },
+     "evidence": "港式字幕梗"
+    },
+    {
+     "t": 130096,
+     "text": "这翻译 我忘了原词了",
+     "dominant": "information",
+     "tags": {
+      "humor": 0.3,
+      "information": 0.3
+     },
+     "evidence": "忘原词吐槽"
+    },
+    {
+     "t": 132356,
+     "text": "想起来杰哥的昭和金曲",
+     "dominant": "information",
+     "tags": {
+      "information": 0.5,
+      "humor": 0.4
+     },
+     "evidence": "联想杰哥金曲"
+    },
+    {
+     "t": 133161,
+     "text": "帝 释 天 召 唤 动 画",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7
+     },
+     "evidence": "虚构动画标题"
+    },
+    {
+     "t": 133779,
+     "text": "永远不会放弃你",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7,
+      "information": 0.2
+     },
+     "evidence": "歌词梗永不放弃你"
+    },
+    {
+     "t": 134051,
+     "text": "这字幕是谁做的",
+     "dominant": "information",
+     "tags": {
+      "information": 0.3,
+      "humor": 0.3
+     },
+     "evidence": "质问字幕作者"
+    },
+    {
+     "t": 134557,
+     "text": "《蜘蛛侠英雄无归》三代同框最新消息",
+     "dominant": "spoiler",
+     "tags": {
+      "spoiler": 0.8,
+      "information": 0.3
+     },
+     "evidence": "剧透三代同框消息"
+    },
+    {
+     "t": 135262,
+     "text": "果然没让我失望",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.6
+     },
+     "evidence": "表达满意"
+    },
+    {
+     "t": 135458,
+     "text": "OneDrive 1100mb/1s",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.5,
+      "information": 0.3
+     },
+     "evidence": "用网盘速度调侃"
+    },
+    {
+     "t": 136323,
+     "text": "真的很好听啊",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.6
+     },
+     "evidence": "夸好听"
+    },
+    {
+     "t": 136644,
+     "text": "？？？？？？？",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.7,
+      "emotional_resonance": 0.2
+     },
+     "evidence": "连续问号表困惑"
+    },
+    {
+     "t": 136683,
+     "text": "《防沉迷解除》",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "虚构防沉迷解除"
+    },
+    {
+     "t": 136963,
+     "text": "三角符文全系列一次出完！",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.95
+     },
+     "evidence": "荒诞假发售消息"
+    },
+    {
+     "t": 139342,
+     "text": "《浑身是劲》",
+     "dominant": "information",
+     "tags": {
+      "information": 0.4,
+      "humor": 0.2
+     },
+     "evidence": "引用作品名"
+    },
+    {
+     "t": 140619,
+     "text": "《6G网络》",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.9
+     },
+     "evidence": "假6G网络"
+    },
+    {
+     "t": 141413,
+     "text": "魔女之旅出第二季了",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "魔女之旅假续作"
+    },
+    {
+     "t": 141886,
+     "text": "那时候正是迪斯科盛行的时候啊",
+     "dominant": "information",
+     "tags": {
+      "information": 0.8
+     },
+     "evidence": "迪斯科盛行科普"
+    },
+    {
+     "t": 143129,
+     "text": "漫长的3分钟",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.4,
+      "humor": 0.2
+     },
+     "evidence": "觉得三分钟漫长"
+    },
+    {
+     "t": 144167,
+     "text": "你心绞痛但是不敢上医院",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7
+     },
+     "evidence": "离谱字幕吐槽"
+    },
+    {
+     "t": 144543,
+     "text": "半条命3发售",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.9
+     },
+     "evidence": "半条命3假发售"
+    },
+    {
+     "t": 144983,
+     "text": "等会，这是官方字幕？",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.5,
+      "information": 0.2
+     },
+     "evidence": "惊讶官方字幕"
+    },
+    {
+     "t": 146365,
+     "text": "来 小亮给他整个活",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.9
+     },
+     "evidence": "小亮整活梗"
+    },
+    {
+     "t": 146642,
+     "text": "GTA6预告片发布啦",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.9
+     },
+     "evidence": "假GTA6预告梗"
+    },
+    {
+     "t": 147922,
+     "text": "笑死了理查德和汪苏泷hhhhhhh",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7,
+      "irrelevant_repetition": 0.4
+     },
+     "evidence": "笑死反应"
+    },
+    {
+     "t": 148534,
+     "text": "喵斯快跑新预告片",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7
+     },
+     "evidence": "假预告玩梗"
+    },
+    {
+     "t": 148816,
+     "text": "《回到未来4》",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "虚构续集标题玩梗"
+    },
+    {
+     "t": 149342,
+     "text": "理查德汪苏泷哈哈哈哈",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8,
+      "irrelevant_repetition": 0.2
+     },
+     "evidence": "名字恶搞笑"
+    },
+    {
+     "t": 149779,
+     "text": "为什么这个MV这么好康啊喂！！！",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.7,
+      "humor": 0.2
+     },
+     "evidence": "夸MV好看"
+    },
+    {
+     "t": 149965,
+     "text": "汪苏泷：？",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.6
+     },
+     "evidence": "汪苏泷问号梗"
+    },
+    {
+     "t": 150671,
+     "text": "叫啥爷爷啊，rick现在才五十几岁",
+     "dominant": "information",
+     "tags": {
+      "information": 0.8,
+      "conflict": 0.2
+     },
+     "evidence": "纠正年龄"
+    },
+    {
+     "t": 150908,
+     "text": "正版国际版MC免费送",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "虚构MC免费送"
+    },
+    {
+     "t": 150980,
+     "text": "好上瘾啊停不下来",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.6,
+      "humor": 0.2
+     },
+     "evidence": "上瘾停不下来"
+    },
+    {
+     "t": 155369,
+     "text": "海绵宝宝第三季",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.9
+     },
+     "evidence": "假海绵宝宝标题玩梗"
+    },
+    {
+     "t": 156881,
+     "text": "真的好听",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.6
+     },
+     "evidence": "夸好听"
+    },
+    {
+     "t": 156974,
+     "text": "这个翻译是官方的吗？！",
+     "dominant": "information",
+     "tags": {
+      "information": 0.6,
+      "emotional_resonance": 0.2
+     },
+     "evidence": "询问翻译是否官方"
+    },
+    {
+     "t": 157442,
+     "text": "魔禁出第四部啦！",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "假第四部"
+    },
+    {
+     "t": 157469,
+     "text": "jojo出第10部了!",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "虚构JOJO第十部"
+    },
+    {
+     "t": 157821,
+     "text": "《植物大战僵尸各大植物直播地址》",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.9
+     },
+     "evidence": "荒诞假直播标题"
+    },
+    {
+     "t": 158809,
+     "text": "《鬼灭之刃第三季预告片》",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "假预告片"
+    },
+    {
+     "t": 159810,
+     "text": "灵 魂 翻 译",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.6,
+      "information": 0.2
+     },
+     "evidence": "吐槽翻译"
+    },
+    {
+     "t": 159879,
+     "text": "传 说 之 下 困 难 线 完 结",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.9
+     },
+     "evidence": "假完结消息"
+    },
+    {
+     "t": 160000,
+     "text": "《国家队第二季更新》",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.9
+     },
+     "evidence": "伪造第二季消息"
+    },
+    {
+     "t": 161129,
+     "text": "好长啊",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.3,
+      "irrelevant_repetition": 0.2
+     },
+     "evidence": "感叹视频很长"
+    },
+    {
+     "t": 161663,
+     "text": "字幕是真的牛批，我笑了",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7,
+      "emotional_resonance": 0.3
+     },
+     "evidence": "夸字幕好笑"
+    },
+    {
+     "t": 162184,
+     "text": "这里影子好像电摇（雾）",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.6,
+      "information": 0.3
+     },
+     "evidence": "影子的联想吐槽"
+    },
+    {
+     "t": 163581,
+     "text": "无敌破坏王2ed",
+     "dominant": "information",
+     "tags": {
+      "information": 0.8
+     },
+     "evidence": "指认片尾曲"
+    },
+    {
+     "t": 166500,
+     "text": "龙族五出单行本",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "假出版消息"
+    },
+    {
+     "t": 166979,
+     "text": "歪头杀",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "information": 0.3,
+      "emotional_resonance": 0.4,
+      "humor": 0.3
+     },
+     "evidence": "夸歪头可爱"
+    },
+    {
+     "t": 167461,
+     "text": "这个翻译字幕是真的标准的。",
+     "dominant": "information",
+     "tags": {
+      "information": 0.6
+     },
+     "evidence": "评价翻译字幕标准"
+    },
+    {
+     "t": 168326,
+     "text": "完美的黄金回旋",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7,
+      "information": 0.2
+     },
+     "evidence": "JOJO梗"
+    },
+    {
+     "t": 168399,
+     "text": "小亮给他整活！",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.6
+     },
+     "evidence": "整活式调侃"
+    },
+    {
+     "t": 168837,
+     "text": "哲学复兴了…",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.6
+     },
+     "evidence": "哲学复兴梗"
+    },
+    {
+     "t": 169394,
+     "text": "23333333",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 1.0
+     },
+     "evidence": "数字笑声刷屏"
+    },
+    {
+     "t": 169423,
+     "text": "《歪头杀》",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "假标题玩梗"
+    },
+    {
+     "t": 170141,
+     "text": "他真的好帅，淦。",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.8
+     },
+     "evidence": "夸帅激动"
+    },
+    {
+     "t": 170148,
+     "text": "防 沉 迷 取 消",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.9
+     },
+     "evidence": "假取消防沉迷梗"
+    },
+    {
+     "t": 170505,
+     "text": "唐 探 4 背 景 音 乐",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "假BGM来源玩梗"
+    },
+    {
+     "t": 171091,
+     "text": "外星人免费送电脑了",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.95
+     },
+     "evidence": "荒诞假消息"
+    },
+    {
+     "t": 171497,
+     "text": "游戏人生第二季pv",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "虚构PV"
+    },
+    {
+     "t": 172221,
+     "text": "淦，笑起来显得又温柔又阳光",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.7
+     },
+     "evidence": "夸笑容温柔阳光"
+    },
+    {
+     "t": 172757,
+     "text": "rick年轻的时候真的太帅了",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.7
+     },
+     "evidence": "夸Rick年轻帅"
+    },
+    {
+     "t": 172925,
+     "text": "卧槽，这女的好有气质",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.7
+     },
+     "evidence": "赞气质"
+    },
+    {
+     "t": 175029,
+     "text": "《三体4 归零纪元》",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "虚构作品"
+    },
+    {
+     "t": 175085,
+     "text": "初中数学复变函数与积分变换讲解视频",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "离谱假课程名"
+    },
+    {
+     "t": 176525,
+     "text": "联 合 国 官 方 指 定 翻 译",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7
+     },
+     "evidence": "空格讽刺官方翻译"
+    },
+    {
+     "t": 176602,
+     "text": "我感觉这里绝对是摔了...所以没放",
+     "dominant": "information",
+     "tags": {
+      "information": 0.7
+     },
+     "evidence": "推测片段被剪掉"
+    },
+    {
+     "t": 176880,
+     "text": "方舟2定档",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7
+     },
+     "evidence": "假定档消息梗"
+    },
+    {
+     "t": 177000,
+     "text": "暴雪和网易分手了",
+     "dominant": "information",
+     "tags": {
+      "information": 0.9
+     },
+     "evidence": "真实分手新闻"
+    },
+    {
+     "t": 177239,
+     "text": "《丝之鸽出了》",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "假丝之歌发售"
+    },
+    {
+     "t": 178399,
+     "text": "《终将成为你第二季》",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "虚构终将第二季"
+    },
+    {
+     "t": 179119,
+     "text": "啊这个笑容好甜！",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.9
+     },
+     "evidence": "夸笑容好甜"
+    },
+    {
+     "t": 180380,
+     "text": "糖 豆 人 手 游 上 线",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "虚构手游上线"
+    },
+    {
+     "t": 180824,
+     "text": "《天降之物》第四季预告片",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "假续作预告"
+    },
+    {
+     "t": 182699,
+     "text": "这首歌是哪年的？",
+     "dominant": "other",
+     "tags": {
+      "other": 1.0
+     },
+     "evidence": "询问歌曲年份"
+    },
+    {
+     "t": 183951,
+     "text": "？？？字幕？？？",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.4,
+      "irrelevant_repetition": 0.4,
+      "humor": 0.2
+     },
+     "evidence": "问号表达迷惑"
+    },
+    {
+     "t": 185203,
+     "text": "《蜘蛛侠三代同框》",
+     "dominant": "spoiler",
+     "tags": {
+      "spoiler": 0.8
+     },
+     "evidence": "剧透三代同框"
+    },
+    {
+     "t": 185921,
+     "text": "jojo第七部决定动画化",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "虚构动画化决定"
+    },
+    {
+     "t": 186359,
+     "text": "全 职 猎 人 更 新 了",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "假更新消息梗"
+    },
+    {
+     "t": 186365,
+     "text": "樱花庄的宠物女孩第2季预告",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8
+     },
+     "evidence": "假续作预告梗"
+    },
+    {
+     "t": 187968,
+     "text": "GTA三部曲重置",
+     "dominant": "information",
+     "tags": {
+      "information": 0.5
+     },
+     "evidence": "提及GTA三部曲重置"
+    },
+    {
+     "t": 188620,
+     "text": "从红色警戒进来的，我淦",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.5,
+      "information": 0.2
+     },
+     "evidence": "表示从红警误入"
+    },
+    {
+     "t": 189588,
+     "text": "年轻时候真的帅",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.8
+     },
+     "evidence": "夸赞年轻时很帅"
+    },
+    {
+     "t": 190694,
+     "text": "rick确实很帅啊！真的顺眼！",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.7
+     },
+     "evidence": "夸Rick帅"
+    },
+    {
+     "t": 191320,
+     "text": "使命召唤手游范力肯行动",
+     "dominant": "information",
+     "tags": {
+      "information": 0.5
+     },
+     "evidence": "提及游戏活动名"
+    },
+    {
+     "t": 191820,
+     "text": "火力少年王动画版第六季（暴露年龄）",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.8,
+      "emotional_resonance": 0.2
+     },
+     "evidence": "假续作暴露年龄"
+    },
+    {
+     "t": 191851,
+     "text": "他好帅啊啊啊特别是笑起来",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.8
+     },
+     "evidence": "夸帅和笑容"
+    },
+    {
+     "t": 192718,
+     "text": "极兽聚门票免费抢",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.6
+     },
+     "evidence": "假抢票消息梗"
+    },
+    {
+     "t": 195786,
+     "text": "这里字幕的“卡”是上和下的合体",
+     "dominant": "information",
+     "tags": {
+      "information": 0.9,
+      "humor": 0.2
+     },
+     "evidence": "解释字幕拆字"
+    },
+    {
+     "t": 196927,
+     "text": "哈利波特魔法觉醒预告",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.9
+     },
+     "evidence": "假哈利波特预告玩梗"
+    },
+    {
+     "t": 197308,
+     "text": "从 不 让 你 失 望",
+     "dominant": "information",
+     "tags": {
+      "information": 0.5
+     },
+     "evidence": "歌词翻译"
+    },
+    {
+     "t": 197339,
+     "text": "别硕还真挺好听呀",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.6
+     },
+     "evidence": "夸好听"
+    },
+    {
+     "t": 197859,
+     "text": "因为歌词就是对爱的人专一的",
+     "dominant": "information",
+     "tags": {
+      "information": 0.7,
+      "emotional_resonance": 0.3
+     },
+     "evidence": "解释歌词含义"
+    },
+    {
+     "t": 198130,
+     "text": "这歌真的好听",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.8
+     },
+     "evidence": "称赞歌曲好听"
+    },
+    {
+     "t": 198226,
+     "text": "《暴太郎战队》编剧换人了。",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7
+     },
+     "evidence": "虚构编剧换人"
+    },
+    {
+     "t": 198504,
+     "text": "《合并同类项》",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.6
+     },
+     "evidence": "书名号玩梗"
+    },
+    {
+     "t": 198814,
+     "text": "开头见",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.6
+     },
+     "evidence": "刷开头见循环"
+    },
+    {
+     "t": 201363,
+     "text": "rick astley",
+     "dominant": "information",
+     "tags": {
+      "information": 0.9,
+      "humor": 0.3
+     },
+     "evidence": "点明歌手"
+    },
+    {
+     "t": 201424,
+     "text": "MC服务器多核优化",
+     "dominant": "information",
+     "tags": {
+      "information": 0.8
+     },
+     "evidence": "技术优化信息"
+    },
+    {
+     "t": 201530,
+     "text": "指环王重映了",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.7,
+      "information": 0.2
+     },
+     "evidence": "假重映玩梗"
+    },
+    {
+     "t": 201760,
+     "text": "其实hh好听的",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.5
+     },
+     "evidence": "评价好听"
+    },
+    {
+     "t": 202063,
+     "text": "原来我被骗了？",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.5,
+      "emotional_resonance": 0.2
+     },
+     "evidence": "被骗反应"
+    },
+    {
+     "t": 202484,
+     "text": "虽然被钓，但歌挺好听",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.6,
+      "humor": 0.4
+     },
+     "evidence": "承认被钓仍赞歌曲"
+    },
+    {
+     "t": 204189,
+     "text": "残夏打单",
+     "dominant": "information",
+     "tags": {
+      "information": 0.5
+     },
+     "evidence": "歌曲相关"
+    },
+    {
+     "t": 206492,
+     "text": "不说梗不梗，这歌是真的好听",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.6
+     },
+     "evidence": "认可歌曲好听"
+    },
+    {
+     "t": 207617,
+     "text": "现在估计已经是大爷了吧（dog）",
+     "dominant": "information",
+     "tags": {
+      "information": 0.3,
+      "humor": 0.3
+     },
+     "evidence": "调侃年龄"
+    },
+    {
+     "t": 208172,
+     "text": "看到这都是正经听歌的，但好多刷广告",
+     "dominant": "conflict",
+     "tags": {
+      "conflict": 0.3,
+      "information": 0.2
+     },
+     "evidence": "吐槽广告刷屏"
+    },
+    {
+     "t": 208200,
+     "text": "开头见xdm",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.5
+     },
+     "evidence": "刷开头见"
+    }
+   ]
+  },
+  {
+   "id": "debate",
+   "title": "时政 / 对喷切片（模拟数据）",
+   "bvid": "BV1xx411c7mD",
+   "duration": 180,
+   "simulated": true,
+   "source": "人工构造 44 条，用于展示政治 / 引战 / 攻击标签与折叠记录",
+   "distribution": {},
+   "items": [
+    {
+     "t": 2000,
+     "text": "这政策早该改了",
+     "dominant": "political",
+     "tags": {
+      "political": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 6500,
+     "text": "懂的都懂",
+     "dominant": "political",
+     "tags": {
+      "political": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 11000,
+     "text": "又开始赢麻了",
+     "dominant": "political",
+     "tags": {
+      "political": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 15500,
+     "text": "这话说得没毛病",
+     "dominant": "political",
+     "tags": {
+      "political": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 19000,
+     "text": "别光盯着一个角度吧",
+     "dominant": "political",
+     "tags": {
+      "political": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 23500,
+     "text": "数据呢？张口就来",
+     "dominant": "conflict",
+     "tags": {
+      "conflict": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 28000,
+     "text": "两边都别装了",
+     "dominant": "inflammatory",
+     "tags": {
+      "inflammatory": 0.9
+     },
+     "evidence": ""
+    },
+    {
+     "t": 32000,
+     "text": "这也能洗？",
+     "dominant": "inflammatory",
+     "tags": {
+      "inflammatory": 0.9
+     },
+     "evidence": ""
+    },
+    {
+     "t": 36500,
+     "text": "不服来辩",
+     "dominant": "inflammatory",
+     "tags": {
+      "inflammatory": 0.9
+     },
+     "evidence": ""
+    },
+    {
+     "t": 40000,
+     "text": "笑死，逻辑呢",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 44000,
+     "text": "这条楼里全是节奏",
+     "dominant": "inflammatory",
+     "tags": {
+      "inflammatory": 0.9
+     },
+     "evidence": ""
+    },
+    {
+     "t": 48000,
+     "text": "我先蹲个后续",
+     "dominant": "other",
+     "tags": {
+      "other": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 52000,
+     "text": "前面说得对，别被带节奏",
+     "dominant": "political",
+     "tags": {
+      "political": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 56000,
+     "text": "这就开始扣帽子了？",
+     "dominant": "attack",
+     "tags": {
+      "attack": 0.9
+     },
+     "evidence": ""
+    },
+    {
+     "t": 60000,
+     "text": "你连原文都没看",
+     "dominant": "attack",
+     "tags": {
+      "attack": 0.9
+     },
+     "evidence": ""
+    },
+    {
+     "t": 64000,
+     "text": "理性讨论不行吗",
+     "dominant": "conflict",
+     "tags": {
+      "conflict": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 68000,
+     "text": "这段确实有信息量",
+     "dominant": "information",
+     "tags": {
+      "information": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 72000,
+     "text": "哈哈哈哈哈",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 76000,
+     "text": "说到心坎里了",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 80000,
+     "text": "1",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 84000,
+     "text": "蹲一个课代表",
+     "dominant": "other",
+     "tags": {
+      "other": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 88000,
+     "text": "这波站他",
+     "dominant": "political",
+     "tags": {
+      "political": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 92000,
+     "text": "节奏狗滚出去",
+     "dominant": "attack",
+     "tags": {
+      "attack": 0.9
+     },
+     "evidence": ""
+    },
+    {
+     "t": 96000,
+     "text": "阴阳怪气什么呢",
+     "dominant": "inflammatory",
+     "tags": {
+      "inflammatory": 0.9
+     },
+     "evidence": ""
+    },
+    {
+     "t": 100000,
+     "text": "有本事拿数据说话",
+     "dominant": "conflict",
+     "tags": {
+      "conflict": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 104000,
+     "text": "这也能扯到立场",
+     "dominant": "political",
+     "tags": {
+      "political": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 108000,
+     "text": "笑不活了",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 112000,
+     "text": "泪目",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 116000,
+     "text": "重复刷屏的能不能停",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 120000,
+     "text": "其实是剪辑问题",
+     "dominant": "information",
+     "tags": {
+      "information": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 124000,
+     "text": "别吵了别吵了",
+     "dominant": "conflict",
+     "tags": {
+      "conflict": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 128000,
+     "text": "赢了赢了行了吧",
+     "dominant": "political",
+     "tags": {
+      "political": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 132000,
+     "text": "这标题就带节奏",
+     "dominant": "inflammatory",
+     "tags": {
+      "inflammatory": 0.9
+     },
+     "evidence": ""
+    },
+    {
+     "t": 136000,
+     "text": "直接举报",
+     "dominant": "attack",
+     "tags": {
+      "attack": 0.9
+     },
+     "evidence": ""
+    },
+    {
+     "t": 140000,
+     "text": "讲道理这段挺客观",
+     "dominant": "information",
+     "tags": {
+      "information": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 144000,
+     "text": "呜呜呜",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 148000,
+     "text": "666",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 152000,
+     "text": "细思极恐",
+     "dominant": "other",
+     "tags": {
+      "other": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 156000,
+     "text": "这也能上热门",
+     "dominant": "political",
+     "tags": {
+      "political": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 160000,
+     "text": "兄弟冷静",
+     "dominant": "conflict",
+     "tags": {
+      "conflict": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 164000,
+     "text": "我是来看弹幕的",
+     "dominant": "humor",
+     "tags": {
+      "humor": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 168000,
+     "text": "前排出售瓜子",
+     "dominant": "irrelevant_repetition",
+     "tags": {
+      "irrelevant_repetition": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 172000,
+     "text": "说得好",
+     "dominant": "emotional_resonance",
+     "tags": {
+      "emotional_resonance": 0.75
+     },
+     "evidence": ""
+    },
+    {
+     "t": 176000,
+     "text": "证据链呢",
+     "dominant": "information",
+     "tags": {
+      "information": 0.75
+     },
+     "evidence": ""
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,252 @@
+{
+  "scaling": {
+    "BV1GJ411x7h7": {
+      "rows": 1407,
+      "test_rows": 80,
+      "curve": {
+        "10": {
+          "agreement": 0.425,
+          "agreement_min": 0.4125,
+          "agreement_max": 0.4375,
+          "macro_f1": 0.2316,
+          "predict_s": 0.0052
+        },
+        "25": {
+          "agreement": 0.5375,
+          "agreement_min": 0.525,
+          "agreement_max": 0.55,
+          "macro_f1": 0.3117,
+          "predict_s": 0.0024
+        },
+        "50": {
+          "agreement": 0.5417,
+          "agreement_min": 0.475,
+          "agreement_max": 0.6125,
+          "macro_f1": 0.3216,
+          "predict_s": 0.003
+        },
+        "100": {
+          "agreement": 0.6167,
+          "agreement_min": 0.5625,
+          "agreement_max": 0.6875,
+          "macro_f1": 0.3633,
+          "predict_s": 0.0047
+        },
+        "200": {
+          "agreement": 0.6625,
+          "agreement_min": 0.6375,
+          "agreement_max": 0.675,
+          "macro_f1": 0.3945,
+          "predict_s": 0.0079
+        },
+        "400": {
+          "agreement": 0.6542,
+          "agreement_min": 0.6375,
+          "agreement_max": 0.6625,
+          "macro_f1": 0.3892,
+          "predict_s": 0.0148
+        }
+      }
+    },
+    "BV1w5xh6sEEz": {
+      "rows": 173,
+      "test_rows": 80,
+      "curve": {
+        "10": {
+          "agreement": 0.3333,
+          "agreement_min": 0.325,
+          "agreement_max": 0.3375,
+          "macro_f1": 0.183,
+          "predict_s": 0.0011
+        },
+        "25": {
+          "agreement": 0.3792,
+          "agreement_min": 0.35,
+          "agreement_max": 0.4,
+          "macro_f1": 0.2089,
+          "predict_s": 0.0016
+        },
+        "50": {
+          "agreement": 0.4167,
+          "agreement_min": 0.35,
+          "agreement_max": 0.45,
+          "macro_f1": 0.2312,
+          "predict_s": 0.0021
+        }
+      }
+    },
+    "BV1rCxe6wEN9": {
+      "rows": 472,
+      "test_rows": 80,
+      "curve": {
+        "10": {
+          "agreement": 0.1375,
+          "agreement_min": 0.0875,
+          "agreement_max": 0.2,
+          "macro_f1": 0.0961,
+          "predict_s": 0.0019
+        },
+        "25": {
+          "agreement": 0.2083,
+          "agreement_min": 0.1375,
+          "agreement_max": 0.25,
+          "macro_f1": 0.1435,
+          "predict_s": 0.0022
+        },
+        "50": {
+          "agreement": 0.2333,
+          "agreement_min": 0.2,
+          "agreement_max": 0.2875,
+          "macro_f1": 0.1608,
+          "predict_s": 0.0029
+        },
+        "100": {
+          "agreement": 0.2792,
+          "agreement_min": 0.2375,
+          "agreement_max": 0.3125,
+          "macro_f1": 0.1827,
+          "predict_s": 0.004
+        },
+        "200": {
+          "agreement": 0.3167,
+          "agreement_min": 0.3125,
+          "agreement_max": 0.325,
+          "macro_f1": 0.2093,
+          "predict_s": 0.007
+        }
+      }
+    },
+    "BV1mV4F6mE5Z": {
+      "rows": 174,
+      "test_rows": 80,
+      "curve": {
+        "10": {
+          "agreement": 0.3125,
+          "agreement_min": 0.3,
+          "agreement_max": 0.3375,
+          "macro_f1": 0.1309,
+          "predict_s": 0.0013
+        },
+        "25": {
+          "agreement": 0.3292,
+          "agreement_min": 0.3125,
+          "agreement_max": 0.35,
+          "macro_f1": 0.1484,
+          "predict_s": 0.0015
+        },
+        "50": {
+          "agreement": 0.3542,
+          "agreement_min": 0.3125,
+          "agreement_max": 0.375,
+          "macro_f1": 0.1621,
+          "predict_s": 0.0021
+        }
+      }
+    },
+    "BV1W18Y61Ee5": {
+      "rows": 164,
+      "test_rows": 80,
+      "curve": {
+        "10": {
+          "agreement": 0.3292,
+          "agreement_min": 0.3125,
+          "agreement_max": 0.35,
+          "macro_f1": 0.215,
+          "predict_s": 0.0019
+        },
+        "25": {
+          "agreement": 0.3458,
+          "agreement_min": 0.3,
+          "agreement_max": 0.4,
+          "macro_f1": 0.2002,
+          "predict_s": 0.003
+        },
+        "50": {
+          "agreement": 0.3792,
+          "agreement_min": 0.3625,
+          "agreement_max": 0.3875,
+          "macro_f1": 0.2192,
+          "predict_s": 0.0033
+        }
+      }
+    }
+  },
+  "escalation": {
+    "BV1GJ411x7h7": {
+      "base_agreement": 0.6875,
+      "n": 80,
+      "sweep": {
+        "0.2": {
+          "ceiling_agreement": 0.6875,
+          "escalation_rate": 0.0
+        },
+        "0.3": {
+          "ceiling_agreement": 0.8125,
+          "escalation_rate": 0.225
+        },
+        "0.4": {
+          "ceiling_agreement": 0.9625,
+          "escalation_rate": 0.625
+        },
+        "0.45": {
+          "ceiling_agreement": 0.9875,
+          "escalation_rate": 0.725
+        },
+        "0.5": {
+          "ceiling_agreement": 1.0,
+          "escalation_rate": 0.75
+        },
+        "0.6": {
+          "ceiling_agreement": 1.0,
+          "escalation_rate": 0.8375
+        },
+        "0.7": {
+          "ceiling_agreement": 1.0,
+          "escalation_rate": 0.85
+        },
+        "0.8": {
+          "ceiling_agreement": 1.0,
+          "escalation_rate": 0.9
+        }
+      }
+    },
+    "BV1rCxe6wEN9": {
+      "base_agreement": 0.325,
+      "n": 80,
+      "sweep": {
+        "0.2": {
+          "ceiling_agreement": 0.4625,
+          "escalation_rate": 0.175
+        },
+        "0.3": {
+          "ceiling_agreement": 0.925,
+          "escalation_rate": 0.775
+        },
+        "0.4": {
+          "ceiling_agreement": 0.975,
+          "escalation_rate": 0.875
+        },
+        "0.45": {
+          "ceiling_agreement": 0.9875,
+          "escalation_rate": 0.8875
+        },
+        "0.5": {
+          "ceiling_agreement": 0.9875,
+          "escalation_rate": 0.9
+        },
+        "0.6": {
+          "ceiling_agreement": 1.0,
+          "escalation_rate": 0.9375
+        },
+        "0.7": {
+          "ceiling_agreement": 1.0,
+          "escalation_rate": 0.975
+        },
+        "0.8": {
+          "ceiling_agreement": 1.0,
+          "escalation_rate": 1.0
+        }
+      }
+    }
+  }
+}

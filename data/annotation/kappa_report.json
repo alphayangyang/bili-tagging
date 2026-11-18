@@ -1,0 +1,13 @@
+{
+  "coder_a_labeled": 0,
+  "coder_b_labeled": 0,
+  "overlap": 0,
+  "observed_agreement": null,
+  "expected_agreement": null,
+  "cohen_kappa": null,
+  "verdict": "no overlapping labels yet",
+  "per_label": {},
+  "confusion": {},
+  "disagreements": [],
+  "invalid_labels": []
+}

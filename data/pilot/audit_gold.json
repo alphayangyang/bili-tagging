@@ -1,0 +1,118 @@
+{
+ "1": [
+  "humor",
+  0.85
+ ],
+ "2": [
+  "humor",
+  0.5
+ ],
+ "3": [
+  "humor",
+  0.8
+ ],
+ "4": [
+  "humor",
+  0.85
+ ],
+ "5": [
+  "humor",
+  0.6
+ ],
+ "6": [
+  "information",
+  0.7
+ ],
+ "7": [
+  "humor",
+  0.95
+ ],
+ "8": [
+  "emotional_resonance",
+  0.8
+ ],
+ "9": [
+  "humor",
+  0.9
+ ],
+ "10": [
+  "humor",
+  0.9
+ ],
+ "11": [
+  "irrelevant_repetition",
+  0.85
+ ],
+ "12": [
+  "humor",
+  0.85
+ ],
+ "13": [
+  "humor",
+  0.55
+ ],
+ "14": [
+  "emotional_resonance",
+  0.8
+ ],
+ "15": [
+  "irrelevant_repetition",
+  0.95
+ ],
+ "16": [
+  "irrelevant_repetition",
+  0.75
+ ],
+ "17": [
+  "irrelevant_repetition",
+  0.8
+ ],
+ "18": [
+  "irrelevant_repetition",
+  0.9
+ ],
+ "19": [
+  "humor",
+  0.6
+ ],
+ "20": [
+  "humor",
+  0.55
+ ],
+ "21": [
+  "humor",
+  0.6
+ ],
+ "22": [
+  "humor",
+  0.55
+ ],
+ "23": [
+  "humor",
+  0.55
+ ],
+ "24": [
+  "humor",
+  0.6
+ ],
+ "25": [
+  "information",
+  0.7
+ ],
+ "26": [
+  "humor",
+  0.6
+ ],
+ "27": [
+  "humor",
+  0.55
+ ],
+ "28": [
+  "irrelevant_repetition",
+  0.8
+ ],
+ "29": [
+  "humor",
+  0.5
+ ]
+}

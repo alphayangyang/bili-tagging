@@ -1,0 +1,585 @@
+{
+  "schema": 1,
+  "created": "2026-11-18T11:49:20Z",
+  "config": {
+    "stimuli": "/home/alphayang/bili-tagging/data/study/stimuli.json",
+    "tags_dir": "/home/alphayang/bili-tagging/data/tags",
+    "models_dir": "/home/alphayang/bili-tagging/data/study/models",
+    "dataset": "data/study/teacher_sample.jsonl",
+    "sample": 200,
+    "seed": 20261105,
+    "latency_samples": 20,
+    "live_density": true
+  },
+  "stimuli": [
+    {
+      "bvid": "BV1Ho4y1D7Wz",
+      "genre": "information",
+      "density": {
+        "duration_s": 186,
+        "items": 1200,
+        "span_s": 185.3,
+        "comments_per_min": 387.1,
+        "comments_per_min_span": 388.6,
+        "peak_per_min": 750.0,
+        "teacher_rows": 119,
+        "teacher_span_s": 184.1,
+        "teacher_comments_per_min": 38.1
+      },
+      "label": "science/chemistry",
+      "density_declared": "high",
+      "title": "三 分 钟 教 你 做 一 个 酷 炫 的 铋 晶 体",
+      "duration_s": 186,
+      "aid": 376717331,
+      "cid": 368951161,
+      "items": 1200,
+      "cache_items": 991,
+      "density_source": "live",
+      "stream": {
+        "count": 1200,
+        "source": "legacy",
+        "segments": 0,
+        "error": null
+      },
+      "teacher": {
+        "source": "dataset",
+        "rows": 119,
+        "coverage": 0.099,
+        "teacher_rows": 0,
+        "backend": "rules-online",
+        "model": null,
+        "teacher": false,
+        "items": 1200,
+        "cache_items": 991
+      },
+      "model": {
+        "path": "/home/alphayang/bili-tagging/data/study/models/BV1Ho4y1D7Wz.json",
+        "size_kb": 123.0,
+        "kind": "centroid",
+        "train_rows": 116,
+        "labels": {
+          "humor": 66,
+          "information": 35,
+          "emotional_resonance": 10,
+          "other": 3,
+          "irrelevant_repetition": 2
+        }
+      },
+      "density_feasibility": {
+        "can_high": true,
+        "can_low": true,
+        "suggested": "high"
+      },
+      "label_distribution": {
+        "humor": 66,
+        "information": 35,
+        "emotional_resonance": 10,
+        "irrelevant_repetition": 5,
+        "other": 3
+      },
+      "social_counts": {
+        "attack": 0,
+        "conflict": 0,
+        "spoiler": 0,
+        "inflammatory": 0,
+        "irrelevant_repetition": 5,
+        "hide_total": 0,
+        "labelled": 119,
+        "hide_share": 0.0
+      },
+      "status": "ok",
+      "reasons": [],
+      "warnings": [
+        "teacher labels cover only 9.9% of the stream: label distribution is an estimate",
+        "tag cache backend is 'rules-online' (online/partial labels): item count and density may understate the stream"
+      ]
+    },
+    {
+      "bvid": "BV18E1NByEYv",
+      "genre": "entertainment",
+      "density": {
+        "duration_s": 290,
+        "items": 1200,
+        "span_s": 289.8,
+        "comments_per_min": 248.3,
+        "comments_per_min_span": 248.4,
+        "peak_per_min": 690.0,
+        "teacher_rows": 117,
+        "teacher_span_s": 286.1,
+        "teacher_comments_per_min": 24.3
+      },
+      "label": "gaming/trash-talk",
+      "density_declared": "high",
+      "title": "哪个游戏的网络环境最恶臭？",
+      "duration_s": 290,
+      "aid": 115466353771829,
+      "cid": 33560462780,
+      "items": 1200,
+      "cache_items": 0,
+      "density_source": "live",
+      "stream": {
+        "count": 1200,
+        "source": "legacy",
+        "segments": 0,
+        "error": null
+      },
+      "teacher": {
+        "source": "dataset",
+        "rows": 117,
+        "coverage": 0.098,
+        "teacher_rows": 0,
+        "backend": null,
+        "model": null,
+        "teacher": false,
+        "items": 1200,
+        "cache_items": 0
+      },
+      "model": {
+        "path": "/home/alphayang/bili-tagging/data/study/models/BV18E1NByEYv.json",
+        "size_kb": 119.4,
+        "kind": "centroid",
+        "train_rows": 112,
+        "labels": {
+          "humor": 31,
+          "information": 28,
+          "emotional_resonance": 17,
+          "other": 14,
+          "attack": 8,
+          "conflict": 7,
+          "irrelevant_repetition": 6,
+          "political": 1
+        }
+      },
+      "density_feasibility": {
+        "can_high": true,
+        "can_low": true,
+        "suggested": "high"
+      },
+      "label_distribution": {
+        "humor": 31,
+        "information": 29,
+        "emotional_resonance": 18,
+        "other": 15,
+        "attack": 8,
+        "irrelevant_repetition": 8,
+        "conflict": 7,
+        "political": 1
+      },
+      "social_counts": {
+        "attack": 8,
+        "conflict": 7,
+        "spoiler": 0,
+        "inflammatory": 0,
+        "irrelevant_repetition": 8,
+        "hide_total": 15,
+        "labelled": 117,
+        "hide_share": 0.128
+      },
+      "status": "ok",
+      "reasons": [],
+      "warnings": [
+        "entertainment video has few hide-class comments for the C contrast (spoiler=0, need >= 5 each per video)",
+        "teacher labels cover only 9.8% of the stream: label distribution is an estimate"
+      ]
+    },
+    {
+      "bvid": "BV1VMRKBCEDp",
+      "genre": "information",
+      "density": {
+        "duration_s": 214,
+        "items": 1172,
+        "span_s": 213.3,
+        "comments_per_min": 328.6,
+        "comments_per_min_span": 329.7,
+        "peak_per_min": 445.0,
+        "teacher_rows": 174,
+        "teacher_span_s": 212.1,
+        "teacher_comments_per_min": 48.9
+      },
+      "label": "science/health",
+      "density_declared": "high",
+      "title": "3分钟解释各种睡眠时长的后果",
+      "duration_s": 214,
+      "aid": 116497246584911,
+      "cid": 37997449112,
+      "items": 1172,
+      "cache_items": 0,
+      "density_source": "live",
+      "stream": {
+        "count": 1172,
+        "source": "legacy",
+        "segments": 0,
+        "error": null
+      },
+      "teacher": {
+        "source": "dataset",
+        "rows": 174,
+        "coverage": 0.148,
+        "teacher_rows": 0,
+        "backend": null,
+        "model": null,
+        "teacher": false,
+        "items": 1172,
+        "cache_items": 0
+      },
+      "model": {
+        "path": "/home/alphayang/bili-tagging/data/study/models/BV1VMRKBCEDp.json",
+        "size_kb": 185.7,
+        "kind": "centroid",
+        "train_rows": 172,
+        "labels": {
+          "emotional_resonance": 54,
+          "information": 52,
+          "humor": 46,
+          "conflict": 11,
+          "attack": 3,
+          "irrelevant_repetition": 3,
+          "other": 3
+        }
+      },
+      "density_feasibility": {
+        "can_high": true,
+        "can_low": true,
+        "suggested": "high"
+      },
+      "label_distribution": {
+        "emotional_resonance": 55,
+        "information": 52,
+        "humor": 46,
+        "conflict": 11,
+        "irrelevant_repetition": 4,
+        "attack": 3,
+        "other": 3
+      },
+      "social_counts": {
+        "attack": 3,
+        "conflict": 11,
+        "spoiler": 0,
+        "inflammatory": 0,
+        "irrelevant_repetition": 4,
+        "hide_total": 14,
+        "labelled": 174,
+        "hide_share": 0.08
+      },
+      "status": "ok",
+      "reasons": [],
+      "warnings": [
+        "teacher labels cover only 14.8% of the stream: label distribution is an estimate"
+      ]
+    },
+    {
+      "bvid": "BV1X7zGY4E45",
+      "genre": "entertainment",
+      "density": {
+        "duration_s": 194,
+        "items": 1200,
+        "span_s": 193.1,
+        "comments_per_min": 371.1,
+        "comments_per_min_span": 372.9,
+        "peak_per_min": 521.0,
+        "teacher_rows": 184,
+        "teacher_span_s": 191.7,
+        "teacher_comments_per_min": 57.3
+      },
+      "label": "debate/conflict",
+      "density_declared": "high",
+      "title": "欢迎来到自由式辩论赛场！今日辩题是“吃坚果到底好还是不好”？有请双方辩手！",
+      "duration_s": 194,
+      "aid": 113548583768549,
+      "cid": 27039826980,
+      "items": 1200,
+      "cache_items": 0,
+      "density_source": "live",
+      "stream": {
+        "count": 1200,
+        "source": "legacy",
+        "segments": 0,
+        "error": null
+      },
+      "teacher": {
+        "source": "dataset",
+        "rows": 184,
+        "coverage": 0.153,
+        "teacher_rows": 0,
+        "backend": null,
+        "model": null,
+        "teacher": false,
+        "items": 1200,
+        "cache_items": 0
+      },
+      "model": {
+        "path": "/home/alphayang/bili-tagging/data/study/models/BV1X7zGY4E45.json",
+        "size_kb": 200.5,
+        "kind": "centroid",
+        "train_rows": 183,
+        "labels": {
+          "humor": 83,
+          "emotional_resonance": 37,
+          "information": 19,
+          "irrelevant_repetition": 19,
+          "attack": 10,
+          "conflict": 6,
+          "political": 5,
+          "inflammatory": 3,
+          "other": 1
+        }
+      },
+      "density_feasibility": {
+        "can_high": true,
+        "can_low": true,
+        "suggested": "high"
+      },
+      "label_distribution": {
+        "humor": 84,
+        "emotional_resonance": 37,
+        "information": 19,
+        "irrelevant_repetition": 19,
+        "attack": 10,
+        "conflict": 6,
+        "political": 5,
+        "inflammatory": 3,
+        "other": 1
+      },
+      "social_counts": {
+        "attack": 10,
+        "conflict": 6,
+        "spoiler": 0,
+        "inflammatory": 3,
+        "irrelevant_repetition": 19,
+        "hide_total": 19,
+        "labelled": 184,
+        "hide_share": 0.103
+      },
+      "status": "ok",
+      "reasons": [],
+      "warnings": [
+        "entertainment video has few hide-class comments for the C contrast (spoiler=0, need >= 5 each per video)",
+        "teacher labels cover only 15.3% of the stream: label distribution is an estimate"
+      ]
+    },
+    {
+      "bvid": "BV1Z4RHYKEcB",
+      "genre": "information",
+      "density": {
+        "duration_s": 281,
+        "items": 725,
+        "span_s": 280.3,
+        "comments_per_min": 154.8,
+        "comments_per_min_span": 155.2,
+        "peak_per_min": 225.0,
+        "teacher_rows": 197,
+        "teacher_span_s": 278.8,
+        "teacher_comments_per_min": 42.2
+      },
+      "label": "finance/explainer",
+      "density_declared": "high",
+      "title": "从零开始建立“金融世界观”- 基础分析框架 【阿周的Eureka】",
+      "duration_s": 281,
+      "aid": 114142128113908,
+      "cid": 28806153731,
+      "items": 725,
+      "cache_items": 0,
+      "density_source": "live",
+      "stream": {
+        "count": 725,
+        "source": "legacy",
+        "segments": 0,
+        "error": null
+      },
+      "teacher": {
+        "source": "dataset",
+        "rows": 197,
+        "coverage": 0.272,
+        "teacher_rows": 0,
+        "backend": null,
+        "model": null,
+        "teacher": false,
+        "items": 725,
+        "cache_items": 0
+      },
+      "model": {
+        "path": "/home/alphayang/bili-tagging/data/study/models/BV1Z4RHYKEcB.json",
+        "size_kb": 314.0,
+        "kind": "centroid",
+        "train_rows": 195,
+        "labels": {
+          "information": 82,
+          "emotional_resonance": 41,
+          "humor": 29,
+          "irrelevant_repetition": 18,
+          "conflict": 13,
+          "other": 8,
+          "attack": 3,
+          "inflammatory": 1
+        }
+      },
+      "density_feasibility": {
+        "can_high": true,
+        "can_low": true,
+        "suggested": "high"
+      },
+      "label_distribution": {
+        "information": 83,
+        "emotional_resonance": 41,
+        "humor": 29,
+        "irrelevant_repetition": 19,
+        "conflict": 13,
+        "other": 8,
+        "attack": 3,
+        "inflammatory": 1
+      },
+      "social_counts": {
+        "attack": 3,
+        "conflict": 13,
+        "spoiler": 0,
+        "inflammatory": 1,
+        "irrelevant_repetition": 19,
+        "hide_total": 17,
+        "labelled": 197,
+        "hide_share": 0.086
+      },
+      "status": "ok",
+      "reasons": [],
+      "warnings": []
+    },
+    {
+      "bvid": "BV1CzW26vEXz",
+      "genre": "entertainment",
+      "density": {
+        "duration_s": 271,
+        "items": 1119,
+        "span_s": 270.2,
+        "comments_per_min": 247.7,
+        "comments_per_min_span": 248.5,
+        "peak_per_min": 470.0,
+        "teacher_rows": 197,
+        "teacher_span_s": 267.9,
+        "teacher_comments_per_min": 43.9
+      },
+      "label": "anime/commentary",
+      "density_declared": "high",
+      "title": "离谱！日网友一条弃坑推文居然引来近千万网友围观！",
+      "duration_s": 271,
+      "aid": 117597664184695,
+      "cid": 43523311093,
+      "items": 1119,
+      "cache_items": 0,
+      "density_source": "live",
+      "stream": {
+        "count": 1119,
+        "source": "legacy",
+        "segments": 0,
+        "error": null
+      },
+      "teacher": {
+        "source": "dataset",
+        "rows": 197,
+        "coverage": 0.176,
+        "teacher_rows": 0,
+        "backend": null,
+        "model": null,
+        "teacher": false,
+        "items": 1119,
+        "cache_items": 0
+      },
+      "model": {
+        "path": "/home/alphayang/bili-tagging/data/study/models/BV1CzW26vEXz.json",
+        "size_kb": 320.9,
+        "kind": "centroid",
+        "train_rows": 195,
+        "labels": {
+          "emotional_resonance": 87,
+          "conflict": 33,
+          "information": 30,
+          "humor": 29,
+          "attack": 11,
+          "irrelevant_repetition": 2,
+          "other": 1,
+          "political": 1,
+          "spoiler": 1
+        }
+      },
+      "density_feasibility": {
+        "can_high": true,
+        "can_low": true,
+        "suggested": "high"
+      },
+      "label_distribution": {
+        "emotional_resonance": 88,
+        "conflict": 33,
+        "information": 30,
+        "humor": 29,
+        "attack": 12,
+        "irrelevant_repetition": 2,
+        "other": 1,
+        "political": 1,
+        "spoiler": 1
+      },
+      "social_counts": {
+        "attack": 12,
+        "conflict": 33,
+        "spoiler": 1,
+        "inflammatory": 0,
+        "irrelevant_repetition": 2,
+        "hide_total": 46,
+        "labelled": 197,
+        "hide_share": 0.234
+      },
+      "status": "ok",
+      "reasons": [],
+      "warnings": [
+        "entertainment video has few hide-class comments for the C contrast (spoiler=1, need >= 5 each per video)",
+        "teacher labels cover only 17.6% of the stream: label distribution is an estimate"
+      ]
+    }
+  ],
+  "summary": {
+    "stimuli": 6,
+    "genres": {
+      "information": 3,
+      "entertainment": 3
+    },
+    "ok": 6,
+    "insufficient": [],
+    "pairs": [
+      {
+        "index": 1,
+        "bvids": [
+          "BV1Ho4y1D7Wz",
+          "BV18E1NByEYv"
+        ],
+        "ok": true,
+        "problems": []
+      },
+      {
+        "index": 2,
+        "bvids": [
+          "BV1VMRKBCEDp",
+          "BV1X7zGY4E45"
+        ],
+        "ok": true,
+        "problems": []
+      },
+      {
+        "index": 3,
+        "bvids": [
+          "BV1Z4RHYKEcB",
+          "BV1CzW26vEXz"
+        ],
+        "ok": true,
+        "problems": []
+      }
+    ],
+    "social": {
+      "attack": 30,
+      "conflict": 46,
+      "spoiler": 1
+    },
+    "placeholder": false,
+    "ready": true,
+    "reasons": [],
+    "warnings": [
+      "material: only 1 spoiler comments across the entertainment set; spoiler collapse will be exercised rarely"
+    ]
+  }
+}

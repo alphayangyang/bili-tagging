@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.local
+data/raw/
+data/private/
+*.log
+.DS_Store
+Thumbs.db
+
+# generated models (rebuild with scripts/train_models.py)
+data/models/
+
+# generated danmaku caches; keep only the demo cache used by the README
+data/tags/*
+!data/tags/BV1GJ411x7h7.json
+data/backup/
+
+# course deliverables: keep the project itself out of the homework files
+submission/
+docs/intro/

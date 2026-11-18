@@ -1,0 +1,186 @@
+{
+  "backend": "deepseek",
+  "relabel_seconds": 0.0,
+  "sample_n": 400,
+  "sample_v2_distribution": {
+    "humor": 111,
+    "information": 111,
+    "emotional_resonance": 111,
+    "irrelevant_repetition": 60,
+    "spoiler": 5,
+    "other": 1,
+    "conflict": 1
+  },
+  "sample_v3_distribution": {
+    "information": 123,
+    "humor": 123,
+    "emotional_resonance": 121,
+    "irrelevant_repetition": 29,
+    "other": 4
+  },
+  "variants": [
+    {
+      "variant": "student_on_v2_1376",
+      "rows": 1376,
+      "distribution": {
+        "humor": 881,
+        "emotional_resonance": 230,
+        "information": 198,
+        "irrelevant_repetition": 60,
+        "spoiler": 5,
+        "conflict": 1,
+        "other": 1
+      },
+      "centroid": {
+        "fit_s": 0.042,
+        "labels": 7,
+        "audit": {
+          "n": 29,
+          "agreement": 0.5862,
+          "per_label_recall": {
+            "emotional_resonance": 1.0,
+            "humor": 0.7895,
+            "information": 0.0,
+            "irrelevant_repetition": 0.0
+          }
+        },
+        "boundary": {
+          "n": 46,
+          "dominant_accuracy": 0.1957,
+          "covered_n": 35,
+          "covered_accuracy": 0.2571,
+          "must_hit_rate": 0.3143
+        }
+      },
+      "softmax": {
+        "fit_s": 7.514,
+        "labels": 7,
+        "audit": {
+          "n": 29,
+          "agreement": 0.6897,
+          "per_label_recall": {
+            "emotional_resonance": 1.0,
+            "humor": 0.9474,
+            "information": 0.0,
+            "irrelevant_repetition": 0.0
+          }
+        },
+        "boundary": {
+          "n": 46,
+          "dominant_accuracy": 0.3478,
+          "covered_n": 31,
+          "covered_accuracy": 0.5161,
+          "must_hit_rate": 0.6129
+        }
+      }
+    },
+    {
+      "variant": "student_on_v2_400",
+      "rows": 400,
+      "distribution": {
+        "humor": 111,
+        "information": 111,
+        "emotional_resonance": 111,
+        "irrelevant_repetition": 60,
+        "spoiler": 5,
+        "other": 1,
+        "conflict": 1
+      },
+      "centroid": {
+        "fit_s": 0.012,
+        "labels": 7,
+        "audit": {
+          "n": 29,
+          "agreement": 0.5172,
+          "per_label_recall": {
+            "emotional_resonance": 1.0,
+            "humor": 0.6316,
+            "information": 0.0,
+            "irrelevant_repetition": 0.1667
+          }
+        },
+        "boundary": {
+          "n": 46,
+          "dominant_accuracy": 0.1522,
+          "covered_n": 35,
+          "covered_accuracy": 0.2,
+          "must_hit_rate": 0.2571
+        }
+      },
+      "softmax": {
+        "fit_s": 2.211,
+        "labels": 7,
+        "audit": {
+          "n": 29,
+          "agreement": 0.5517,
+          "per_label_recall": {
+            "emotional_resonance": 1.0,
+            "humor": 0.6842,
+            "information": 0.5,
+            "irrelevant_repetition": 0.0
+          }
+        },
+        "boundary": {
+          "n": 46,
+          "dominant_accuracy": 0.2826,
+          "covered_n": 31,
+          "covered_accuracy": 0.4194,
+          "must_hit_rate": 0.4839
+        }
+      }
+    },
+    {
+      "variant": "student_on_v4_400",
+      "rows": 400,
+      "distribution": {
+        "information": 123,
+        "humor": 123,
+        "emotional_resonance": 121,
+        "irrelevant_repetition": 29,
+        "other": 4
+      },
+      "centroid": {
+        "fit_s": 0.011,
+        "labels": 5,
+        "audit": {
+          "n": 29,
+          "agreement": 0.5517,
+          "per_label_recall": {
+            "emotional_resonance": 1.0,
+            "humor": 0.7368,
+            "information": 0.0,
+            "irrelevant_repetition": 0.0
+          }
+        },
+        "boundary": {
+          "n": 46,
+          "dominant_accuracy": 0.1739,
+          "covered_n": 31,
+          "covered_accuracy": 0.2581,
+          "must_hit_rate": 0.3226
+        }
+      },
+      "softmax": {
+        "fit_s": 1.646,
+        "labels": 5,
+        "audit": {
+          "n": 29,
+          "agreement": 0.5172,
+          "per_label_recall": {
+            "emotional_resonance": 1.0,
+            "humor": 0.6316,
+            "information": 0.5,
+            "irrelevant_repetition": 0.0
+          }
+        },
+        "boundary": {
+          "n": 46,
+          "dominant_accuracy": 0.3043,
+          "covered_n": 35,
+          "covered_accuracy": 0.4,
+          "must_hit_rate": 0.4286
+        }
+      }
+    }
+  ]
+}

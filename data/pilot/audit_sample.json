@@ -1,0 +1,332 @@
+{
+ "bvid": "BV1GJ411x7h7",
+ "rows": [
+  {
+   "id": "50878764053692421",
+   "text": "翻译最起码专八哈哈哈哈哈哈哈哈哈",
+   "rules_label": "information",
+   "pred_dominant": "humor",
+   "pred_score": 0.85,
+   "pred_tags": {
+    "humor": 0.85
+   },
+   "note": "调侃翻译水平高"
+  },
+  {
+   "id": "50556996254433285",
+   "text": "不愧是神级翻译",
+   "rules_label": "information",
+   "pred_dominant": "humor",
+   "pred_score": 0.55,
+   "pred_tags": {
+    "humor": 0.55,
+    "emotional_resonance": 0.15
+   },
+   "note": "感叹翻译神级"
+  },
+  {
+   "id": "47746728668954629",
+   "text": "这个翻译让视频更生草了……",
+   "rules_label": "information",
+   "pred_dominant": "humor",
+   "pred_score": 0.8,
+   "pred_tags": {
+    "humor": 0.8
+   },
+   "note": "吐槽翻译更搞笑"
+  },
+  {
+   "id": "48451607479713799",
+   "text": "翻译鬼才哈哈哈哈哈",
+   "rules_label": "information",
+   "pred_dominant": "humor",
+   "pred_score": 0.85,
+   "pred_tags": {
+    "humor": 0.85
+   },
+   "note": "调侃翻译鬼才"
+  },
+  {
+   "id": "48690986723835909",
+   "text": "翻译就离谱",
+   "rules_label": "information",
+   "pred_dominant": "humor",
+   "pred_score": 0.6,
+   "pred_tags": {
+    "humor": 0.6
+   },
+   "note": "吐槽翻译离谱"
+  },
+  {
+   "id": "49866197161738245",
+   "text": "这个翻译是官方的吗？！",
+   "rules_label": "information",
+   "pred_dominant": "humor",
+   "pred_score": 0.25,
+   "pred_tags": {
+    "humor": 0.25,
+    "emotional_resonance": 0.2
+   },
+   "note": "惊讶翻译是否官方"
+  },
+  {
+   "id": "49922258188632067",
+   "text": "草 字幕笑死我了",
+   "rules_label": "humor",
+   "pred_dominant": "humor",
+   "pred_score": 0.95,
+   "pred_tags": {
+    "humor": 0.95
+   },
+   "note": "字幕好笑"
+  },
+  {
+   "id": "44435559420002309",
+   "text": "梗我不懂，我就是单纯觉得好好听啊",
+   "rules_label": "humor",
+   "pred_dominant": "emotional_resonance",
+   "pred_score": 0.8,
+   "pred_tags": {
+    "emotional_resonance": 0.8
+   },
+   "note": "不懂梗但觉得好听"
+  },
+  {
+   "id": "47358040692228099",
+   "text": "CC字幕笑死了",
+   "rules_label": "humor",
+   "pred_dominant": "humor",
+   "pred_score": 0.9,
+   "pred_tags": {
+    "humor": 0.9
+   },
+   "note": "CC字幕好笑"
+  },
+  {
+   "id": "48059048493842437",
+   "text": "这新字幕笑死我了",
+   "rules_label": "humor",
+   "pred_dominant": "humor",
+   "pred_score": 0.95,
+   "pred_tags": {
+    "humor": 0.95
+   },
+   "note": "新字幕搞笑"
+  },
+  {
+   "id": "51323597270024199",
+   "text": "笑死了",
+   "rules_label": "humor",
+   "pred_dominant": "irrelevant_repetition",
+   "pred_score": 0.8,
+   "pred_tags": {
+    "irrelevant_repetition": 0.8
+   },
+   "note": "纯笑死反应"
+  },
+  {
+   "id": "49887606615310341",
+   "text": "这字幕咋回事儿啊笑死我了哈哈哈哈哈哈哈靠",
+   "rules_label": "humor",
+   "pred_dominant": "humor",
+   "pred_score": 0.85,
+   "pred_tags": {
+    "humor": 0.85,
+    "irrelevant_repetition": 0.15
+   },
+   "note": "吐槽字幕好笑"
+  },
+  {
+   "id": "45586639826190341",
+   "text": "张三真实身份曝光",
+   "rules_label": "emotional_resonance",
+   "pred_dominant": "humor",
+   "pred_score": 0.55,
+   "pred_tags": {
+    "humor": 0.55
+   },
+   "note": "玩张三身份梗"
+  },
+  {
+   "id": "976059320997453824",
+   "text": "淦，笑起来显得又温柔又阳光",
+   "rules_label": "emotional_resonance",
+   "pred_dominant": "emotional_resonance",
+   "pred_score": 0.8,
+   "pred_tags": {
+    "emotional_resonance": 0.8
+   },
+   "note": "夸笑容温柔阳光"
+  },
+  {
+   "id": "49135533920092163",
+   "text": "23333333",
+   "rules_label": "irrelevant_repetition",
+   "pred_dominant": "irrelevant_repetition",
+   "pred_score": 0.95,
+   "pred_tags": {
+    "irrelevant_repetition": 0.95
+   },
+   "note": "数字笑声刷屏"
+  },
+  {
+   "id": "49184284127789061",
+   "text": "嘤嘤嘤",
+   "rules_label": "irrelevant_repetition",
+   "pred_dominant": "irrelevant_repetition",
+   "pred_score": 0.75,
+   "pred_tags": {
+    "irrelevant_repetition": 0.75,
+    "emotional_resonance": 0.2
+   },
+   "note": "卖萌式刷屏"
+  },
+  {
+   "id": "49911743450185733",
+   "text": "？？？？？？？",
+   "rules_label": "irrelevant_repetition",
+   "pred_dominant": "irrelevant_repetition",
+   "pred_score": 0.85,
+   "pred_tags": {
+    "irrelevant_repetition": 0.85
+   },
+   "note": "问号刷屏表疑惑"
+  },
+  {
+   "id": "1798191146099580160",
+   "text": ".............................................",
+   "rules_label": "irrelevant_repetition",
+   "pred_dominant": "irrelevant_repetition",
+   "pred_score": 0.95,
+   "pred_tags": {
+    "irrelevant_repetition": 0.95
+   },
+   "note": "省略号刷屏"
+  },
+  {
+   "id": "47262393528483847",
+   "text": "烙印战士大结局了",
+   "rules_label": "spoiler",
+   "pred_dominant": "humor",
+   "pred_score": 0.5,
+   "pred_tags": {
+    "humor": 0.5,
+    "information": 0.2
+   },
+   "note": "玩作品大结局梗"
+  },
+  {
+   "id": "53071211905171456",
+   "text": "underverse第二季大结局预告",
+   "rules_label": "spoiler",
+   "pred_dominant": "humor",
+   "pred_score": 0.5,
+   "pred_tags": {
+    "humor": 0.5,
+    "information": 0.2
+   },
+   "note": "玩大结局预告梗"
+  },
+  {
+   "id": "54360890741474304",
+   "text": "《名侦探柯南大结局》",
+   "rules_label": "spoiler",
+   "pred_dominant": "humor",
+   "pred_score": 0.65,
+   "pred_tags": {
+    "humor": 0.65
+   },
+   "note": "柯南大结局是梗"
+  },
+  {
+   "id": "1023120563217941504",
+   "text": "《龙族》大结局",
+   "rules_label": "spoiler",
+   "pred_dominant": "humor",
+   "pred_score": 0.55,
+   "pred_tags": {
+    "humor": 0.55
+   },
+   "note": "玩龙族大结局梗"
+  },
+  {
+   "id": "1096620083733761792",
+   "text": "星海镖师大结局",
+   "rules_label": "spoiler",
+   "pred_dominant": "humor",
+   "pred_score": 0.55,
+   "pred_tags": {
+    "humor": 0.55
+   },
+   "note": "玩大结局梗"
+  },
+  {
+   "id": "1160277710338231040",
+   "text": "我是自愿的",
+   "rules_label": "other",
+   "pred_dominant": "humor",
+   "pred_score": 0.6,
+   "pred_tags": {
+    "humor": 0.6
+   },
+   "note": "玩自愿梗"
+  },
+  {
+   "id": "1350105265970066944",
+   "text": "CS2预告片",
+   "rules_label": "other",
+   "pred_dominant": "information",
+   "pred_score": 0.7,
+   "pred_tags": {
+    "information": 0.7
+   },
+   "note": "指出CS2预告片"
+  },
+  {
+   "id": "44625245475176453",
+   "text": "你不会得到这个来自其他伙计",
+   "rules_label": "other",
+   "pred_dominant": "humor",
+   "pred_score": 0.7,
+   "pred_tags": {
+    "humor": 0.7
+   },
+   "note": "复读生草翻译"
+  },
+  {
+   "id": "960636877954220032",
+   "text": "《10分钟教会你读心术》",
+   "rules_label": "other",
+   "pred_dominant": "humor",
+   "pred_score": 0.55,
+   "pred_tags": {
+    "humor": 0.55
+   },
+   "note": "玩标题梗"
+  },
+  {
+   "id": "51890945188167687",
+   "text": "[\"0.05\",\"0.1\",\"1-1\",\"4.02\",\"永不放弃你，从不让你走\",0,0,\"0.05\",\"0.1\",0,0,1,\"宋体\",0]",
+   "rules_label": "other",
+   "pred_dominant": "humor",
+   "pred_score": 0.55,
+   "pred_tags": {
+    "humor": 0.55,
+    "irrelevant_repetition": 0.3
+   },
+   "note": "玩Rickroll梗"
+  },
+  {
+   "id": "42958015764627459",
+   "text": "太好听了，感谢我的好兄弟骗我",
+   "rules_label": "other",
+   "pred_dominant": "emotional_resonance",
+   "pred_score": 0.75,
+   "pred_tags": {
+    "emotional_resonance": 0.75,
+    "humor": 0.35
+   },
+   "note": "夸好听并调侃被骗"
+  }
+ ]
+}

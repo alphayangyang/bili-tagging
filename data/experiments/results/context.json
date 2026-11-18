@@ -1,0 +1,5900 @@
+{
+  "experiment": "e2-context",
+  "created": "2026-11-04T18:02:16Z",
+  "dataset": {
+    "path": "data/experiments/dataset.jsonl",
+    "sha256": "b182f3cdc3f9c733339c5f4fd29c67e4fd788c0d3954a9c975bd7dd113ee5316",
+    "rows": 2457,
+    "videos": [
+      {
+        "bvid": "BV1GJ411x7h7",
+        "domain": "music/meme",
+        "title": "【官方 MV】Never Gonna Give You Up - Rick Astley",
+        "rows": 1407,
+        "dominant": {
+          "conflict": 1,
+          "emotional_resonance": 233,
+          "humor": 902,
+          "information": 200,
+          "irrelevant_repetition": 65,
+          "other": 1,
+          "spoiler": 5
+        }
+      },
+      {
+        "bvid": "BV1w5xh6sEEz",
+        "domain": "music/meme",
+        "title": "【只对你有感觉】|“【恋爱の小曲】”",
+        "rows": 173,
+        "dominant": {
+          "attack": 1,
+          "emotional_resonance": 45,
+          "humor": 66,
+          "information": 43,
+          "irrelevant_repetition": 14,
+          "other": 4
+        }
+      },
+      {
+        "bvid": "BV1rCxe6wEN9",
+        "domain": "politics",
+        "title": "一条视频看10月世界：中东在燃烧，法国在骚乱，中国网友在跨国吵架",
+        "rows": 472,
+        "dominant": {
+          "attack": 11,
+          "conflict": 6,
+          "emotional_resonance": 37,
+          "humor": 63,
+          "inflammatory": 1,
+          "information": 206,
+          "irrelevant_repetition": 84,
+          "other": 11,
+          "political": 53
+        }
+      },
+      {
+        "bvid": "BV1bnxr6cEJ9",
+        "domain": "politics/conflict",
+        "title": "外网中德骂战！10月31号 再现神推：中国人用梯子是买动物园门票",
+        "rows": 67,
+        "dominant": {
+          "attack": 9,
+          "conflict": 1,
+          "emotional_resonance": 8,
+          "humor": 15,
+          "information": 10,
+          "irrelevant_repetition": 11,
+          "political": 13
+        }
+      },
+      {
+        "bvid": "BV1mV4F6mE5Z",
+        "domain": "gaming",
+        "title": "八倍AK致敬吃鸡，队友脸色对了",
+        "rows": 174,
+        "dominant": {
+          "attack": 1,
+          "conflict": 3,
+          "emotional_resonance": 25,
+          "humor": 69,
+          "inflammatory": 2,
+          "information": 52,
+          "irrelevant_repetition": 6,
+          "other": 16
+        }
+      },
+      {
+        "bvid": "BV1W18Y61Ee5",
+        "domain": "story/drama",
+        "title": "我妈妈第一次怀孕时……",
+        "rows": 164,
+        "dominant": {
+          "attack": 2,
+          "conflict": 4,
+          "emotional_resonance": 47,
+          "humor": 60,
+          "information": 22,
+          "irrelevant_repetition": 12,
+          "other": 17
+        }
+      }
+    ],
+    "observed_labels": [
+      "attack",
+      "conflict",
+      "emotional_resonance",
+      "humor",
+      "inflammatory",
+      "information",
+      "irrelevant_repetition",
+      "other",
+      "political",
+      "spoiler"
+    ],
+    "macro_f1_labels": [
+      "information",
+      "humor",
+      "emotional_resonance",
+      "irrelevant_repetition",
+      "attack",
+      "conflict",
+      "spoiler",
+      "political",
+      "inflammatory",
+      "other"
+    ]
+  },
+  "config": {
+    "protocol": "leave-one-video-out",
+    "tagger": "centroid",
+    "vectorizer": "hashed char 1-3 grams, tf-idf, L2 (danmaku_filter.classify.linear)",
+    "max_train_rows": 2000,
+    "seed": 20261105,
+    "position_buckets": 5,
+    "neighbor_chars": 20,
+    "variants": {
+      "V0": "text only",
+      "V1": "text + video title",
+      "V2": "text + title + domain",
+      "V3": "text + title + position bucket (5)",
+      "V4": "text + title + previous/next comment (20 chars)"
+    },
+    "supplementary_variants": {
+      "S2": "text + domain",
+      "S3": "text + position bucket (5)",
+      "S4": "text + previous/next comment (20 chars)"
+    }
+  },
+  "results": {
+    "BV1GJ411x7h7": {
+      "V0": {
+        "test_bvid": "BV1GJ411x7h7",
+        "train_bvids": [
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 1407,
+        "n_train": 1050,
+        "n_train_used": 1050,
+        "train_capped": false,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political"
+        ],
+        "unseen_test_labels": [
+          "spoiler"
+        ],
+        "unseen_test_rows": 5,
+        "agreement": 0.4805,
+        "agreement_ceiling": 0.9964,
+        "macro_f1": 0.1408,
+        "prf_n": 1407,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.2922,
+            "recall": 0.45,
+            "f1": 0.3543,
+            "support": 200
+          },
+          "humor": {
+            "precision": 0.7164,
+            "recall": 0.5377,
+            "f1": 0.6143,
+            "support": 902
+          },
+          "emotional_resonance": {
+            "precision": 0.4082,
+            "recall": 0.4292,
+            "f1": 0.4184,
+            "support": 233
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0323,
+            "recall": 0.0154,
+            "f1": 0.0208,
+            "support": 65
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 5
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "tag_mae": 0.4818,
+        "tag_covered_rows": 1405,
+        "tag_pair_count": 1808,
+        "test_labels": {
+          "conflict": 1,
+          "emotional_resonance": 233,
+          "humor": 902,
+          "information": 200,
+          "irrelevant_repetition": 65,
+          "other": 1,
+          "spoiler": 5
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.4812,
+          "distinct_pred_labels": 9,
+          "mean_max_prob": 0.1442,
+          "train_majority_label": "information",
+          "train_majority_baseline": 0.1421,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.6411
+        }
+      },
+      "V1": {
+        "test_bvid": "BV1GJ411x7h7",
+        "train_bvids": [
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 1407,
+        "n_train": 1050,
+        "n_train_used": 1050,
+        "train_capped": false,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political"
+        ],
+        "unseen_test_labels": [
+          "spoiler"
+        ],
+        "unseen_test_rows": 5,
+        "agreement": 0.6411,
+        "agreement_ceiling": 0.9964,
+        "macro_f1": 0.0881,
+        "prf_n": 1407,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 200
+          },
+          "humor": {
+            "precision": 0.6447,
+            "recall": 0.9856,
+            "f1": 0.7795,
+            "support": 902
+          },
+          "emotional_resonance": {
+            "precision": 0.5652,
+            "recall": 0.0558,
+            "f1": 0.1016,
+            "support": 233
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 65
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 5
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "tag_mae": 0.4881,
+        "tag_covered_rows": 1405,
+        "tag_pair_count": 1808,
+        "test_labels": {
+          "conflict": 1,
+          "emotional_resonance": 233,
+          "humor": 902,
+          "information": 200,
+          "irrelevant_repetition": 65,
+          "other": 1,
+          "spoiler": 5
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.9801,
+          "distinct_pred_labels": 4,
+          "mean_max_prob": 0.131,
+          "train_majority_label": "information",
+          "train_majority_baseline": 0.1421,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.6411
+        }
+      },
+      "V2": {
+        "test_bvid": "BV1GJ411x7h7",
+        "train_bvids": [
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 1407,
+        "n_train": 1050,
+        "n_train_used": 1050,
+        "train_capped": false,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political"
+        ],
+        "unseen_test_labels": [
+          "spoiler"
+        ],
+        "unseen_test_rows": 5,
+        "agreement": 0.4264,
+        "agreement_ceiling": 0.9964,
+        "macro_f1": 0.0925,
+        "prf_n": 1407,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 200
+          },
+          "humor": {
+            "precision": 0.7729,
+            "recall": 0.4302,
+            "f1": 0.5527,
+            "support": 902
+          },
+          "emotional_resonance": {
+            "precision": 0.2343,
+            "recall": 0.9099,
+            "f1": 0.3726,
+            "support": 233
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 65
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 5
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "tag_mae": 0.4491,
+        "tag_covered_rows": 1405,
+        "tag_pair_count": 1808,
+        "test_labels": {
+          "conflict": 1,
+          "emotional_resonance": 233,
+          "humor": 902,
+          "information": 200,
+          "irrelevant_repetition": 65,
+          "other": 1,
+          "spoiler": 5
+        },
+        "diagnostics": {
+          "top_pred_label": "emotional_resonance",
+          "top_pred_share": 0.6432,
+          "distinct_pred_labels": 2,
+          "mean_max_prob": 0.1862,
+          "train_majority_label": "information",
+          "train_majority_baseline": 0.1421,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.6411
+        }
+      },
+      "V3": {
+        "test_bvid": "BV1GJ411x7h7",
+        "train_bvids": [
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 1407,
+        "n_train": 1050,
+        "n_train_used": 1050,
+        "train_capped": false,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political"
+        ],
+        "unseen_test_labels": [
+          "spoiler"
+        ],
+        "unseen_test_rows": 5,
+        "agreement": 0.6517,
+        "agreement_ceiling": 0.9964,
+        "macro_f1": 0.1038,
+        "prf_n": 1407,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 200
+          },
+          "humor": {
+            "precision": 0.656,
+            "recall": 0.9767,
+            "f1": 0.7849,
+            "support": 902
+          },
+          "emotional_resonance": {
+            "precision": 0.7059,
+            "recall": 0.1545,
+            "f1": 0.2535,
+            "support": 233
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 65
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 5
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "tag_mae": 0.4858,
+        "tag_covered_rows": 1405,
+        "tag_pair_count": 1808,
+        "test_labels": {
+          "conflict": 1,
+          "emotional_resonance": 233,
+          "humor": 902,
+          "information": 200,
+          "irrelevant_repetition": 65,
+          "other": 1,
+          "spoiler": 5
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.9545,
+          "distinct_pred_labels": 4,
+          "mean_max_prob": 0.1338,
+          "train_majority_label": "information",
+          "train_majority_baseline": 0.1421,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.6411
+        }
+      },
+      "V4": {
+        "test_bvid": "BV1GJ411x7h7",
+        "train_bvids": [
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 1407,
+        "n_train": 1050,
+        "n_train_used": 1050,
+        "train_capped": false,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political"
+        ],
+        "unseen_test_labels": [
+          "spoiler"
+        ],
+        "unseen_test_rows": 5,
+        "agreement": 0.6446,
+        "agreement_ceiling": 0.9964,
+        "macro_f1": 0.093,
+        "prf_n": 1407,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 200
+          },
+          "humor": {
+            "precision": 0.6499,
+            "recall": 0.9856,
+            "f1": 0.7833,
+            "support": 902
+          },
+          "emotional_resonance": {
+            "precision": 0.5128,
+            "recall": 0.0858,
+            "f1": 0.1471,
+            "support": 233
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 65
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 5
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "tag_mae": 0.4838,
+        "tag_covered_rows": 1405,
+        "tag_pair_count": 1808,
+        "test_labels": {
+          "conflict": 1,
+          "emotional_resonance": 233,
+          "humor": 902,
+          "information": 200,
+          "irrelevant_repetition": 65,
+          "other": 1,
+          "spoiler": 5
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.9723,
+          "distinct_pred_labels": 2,
+          "mean_max_prob": 0.1357,
+          "train_majority_label": "information",
+          "train_majority_baseline": 0.1421,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.6411
+        }
+      }
+    },
+    "BV1w5xh6sEEz": {
+      "V0": {
+        "test_bvid": "BV1w5xh6sEEz",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 173,
+        "n_train": 2284,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.3584,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.1335,
+        "prf_n": 173,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.1,
+            "recall": 0.0233,
+            "f1": 0.0377,
+            "support": 43
+          },
+          "humor": {
+            "precision": 0.4615,
+            "recall": 0.5455,
+            "f1": 0.5,
+            "support": 66
+          },
+          "emotional_resonance": {
+            "precision": 0.3846,
+            "recall": 0.4444,
+            "f1": 0.4124,
+            "support": 45
+          },
+          "irrelevant_repetition": {
+            "precision": 0.4167,
+            "recall": 0.3571,
+            "f1": 0.3846,
+            "support": 14
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 4
+          }
+        },
+        "tag_mae": 0.2928,
+        "tag_covered_rows": 173,
+        "tag_pair_count": 270,
+        "test_labels": {
+          "attack": 1,
+          "emotional_resonance": 45,
+          "humor": 66,
+          "information": 43,
+          "irrelevant_repetition": 14,
+          "other": 4
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.4509,
+          "distinct_pred_labels": 8,
+          "mean_max_prob": 0.1367,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3815,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3815
+        }
+      },
+      "V1": {
+        "test_bvid": "BV1w5xh6sEEz",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 173,
+        "n_train": 2284,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.1561,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0425,
+        "prf_n": 173,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0909,
+            "recall": 0.0233,
+            "f1": 0.037,
+            "support": 43
+          },
+          "humor": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 66
+          },
+          "emotional_resonance": {
+            "precision": 0.2921,
+            "recall": 0.5778,
+            "f1": 0.3881,
+            "support": 45
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 14
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 4
+          }
+        },
+        "tag_mae": 0.3067,
+        "tag_covered_rows": 173,
+        "tag_pair_count": 270,
+        "test_labels": {
+          "attack": 1,
+          "emotional_resonance": 45,
+          "humor": 66,
+          "information": 43,
+          "irrelevant_repetition": 14,
+          "other": 4
+        },
+        "diagnostics": {
+          "top_pred_label": "emotional_resonance",
+          "top_pred_share": 0.5145,
+          "distinct_pred_labels": 6,
+          "mean_max_prob": 0.1128,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3815,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3815
+        }
+      },
+      "V2": {
+        "test_bvid": "BV1w5xh6sEEz",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 173,
+        "n_train": 2284,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.341,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0827,
+        "prf_n": 173,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 43
+          },
+          "humor": {
+            "precision": 0.3736,
+            "recall": 0.5152,
+            "f1": 0.4331,
+            "support": 66
+          },
+          "emotional_resonance": {
+            "precision": 0.3049,
+            "recall": 0.5556,
+            "f1": 0.3937,
+            "support": 45
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 14
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 4
+          }
+        },
+        "tag_mae": 0.2816,
+        "tag_covered_rows": 173,
+        "tag_pair_count": 270,
+        "test_labels": {
+          "attack": 1,
+          "emotional_resonance": 45,
+          "humor": 66,
+          "information": 43,
+          "irrelevant_repetition": 14,
+          "other": 4
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.526,
+          "distinct_pred_labels": 2,
+          "mean_max_prob": 0.1474,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3815,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3815
+        }
+      },
+      "V3": {
+        "test_bvid": "BV1w5xh6sEEz",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 173,
+        "n_train": 2284,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.2254,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0605,
+        "prf_n": 173,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0714,
+            "recall": 0.0233,
+            "f1": 0.0351,
+            "support": 43
+          },
+          "humor": {
+            "precision": 0.2,
+            "recall": 0.0758,
+            "f1": 0.1099,
+            "support": 66
+          },
+          "emotional_resonance": {
+            "precision": 0.3301,
+            "recall": 0.7556,
+            "f1": 0.4595,
+            "support": 45
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 14
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 4
+          }
+        },
+        "tag_mae": 0.3031,
+        "tag_covered_rows": 173,
+        "tag_pair_count": 270,
+        "test_labels": {
+          "attack": 1,
+          "emotional_resonance": 45,
+          "humor": 66,
+          "information": 43,
+          "irrelevant_repetition": 14,
+          "other": 4
+        },
+        "diagnostics": {
+          "top_pred_label": "emotional_resonance",
+          "top_pred_share": 0.6069,
+          "distinct_pred_labels": 5,
+          "mean_max_prob": 0.1155,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3815,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3815
+        }
+      },
+      "V4": {
+        "test_bvid": "BV1w5xh6sEEz",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 173,
+        "n_train": 2284,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.2139,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0449,
+        "prf_n": 173,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.1,
+            "recall": 0.0233,
+            "f1": 0.0377,
+            "support": 43
+          },
+          "humor": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 66
+          },
+          "emotional_resonance": {
+            "precision": 0.2769,
+            "recall": 0.8,
+            "f1": 0.4114,
+            "support": 45
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 14
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 4
+          }
+        },
+        "tag_mae": 0.3045,
+        "tag_covered_rows": 173,
+        "tag_pair_count": 270,
+        "test_labels": {
+          "attack": 1,
+          "emotional_resonance": 45,
+          "humor": 66,
+          "information": 43,
+          "irrelevant_repetition": 14,
+          "other": 4
+        },
+        "diagnostics": {
+          "top_pred_label": "emotional_resonance",
+          "top_pred_share": 0.7572,
+          "distinct_pred_labels": 6,
+          "mean_max_prob": 0.1157,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3815,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3815
+        }
+      }
+    },
+    "BV1rCxe6wEN9": {
+      "V0": {
+        "test_bvid": "BV1rCxe6wEN9",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 472,
+        "n_train": 1985,
+        "n_train_used": 1985,
+        "train_capped": false,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.1992,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.1018,
+        "prf_n": 472,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.76,
+            "recall": 0.0922,
+            "f1": 0.1645,
+            "support": 206
+          },
+          "humor": {
+            "precision": 0.1519,
+            "recall": 0.6825,
+            "f1": 0.2486,
+            "support": 63
+          },
+          "emotional_resonance": {
+            "precision": 0.2133,
+            "recall": 0.4324,
+            "f1": 0.2857,
+            "support": 37
+          },
+          "irrelevant_repetition": {
+            "precision": 0.381,
+            "recall": 0.0952,
+            "f1": 0.1524,
+            "support": 84
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.186,
+            "recall": 0.1509,
+            "f1": 0.1667,
+            "support": 53
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          }
+        },
+        "tag_mae": 0.3386,
+        "tag_covered_rows": 472,
+        "tag_pair_count": 805,
+        "test_labels": {
+          "attack": 11,
+          "conflict": 6,
+          "emotional_resonance": 37,
+          "humor": 63,
+          "inflammatory": 1,
+          "information": 206,
+          "irrelevant_repetition": 84,
+          "other": 11,
+          "political": 53
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.5996,
+          "distinct_pred_labels": 9,
+          "mean_max_prob": 0.1379,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.1335,
+          "test_majority_label": "information",
+          "test_majority_share": 0.4364
+        }
+      },
+      "V1": {
+        "test_bvid": "BV1rCxe6wEN9",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 472,
+        "n_train": 1985,
+        "n_train_used": 1985,
+        "train_capped": false,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.1123,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0366,
+        "prf_n": 472,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 206
+          },
+          "humor": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 63
+          },
+          "emotional_resonance": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 37
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 84
+          },
+          "attack": {
+            "precision": 0.1538,
+            "recall": 0.1818,
+            "f1": 0.1667,
+            "support": 11
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.1111,
+            "recall": 0.9623,
+            "f1": 0.1992,
+            "support": 53
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          }
+        },
+        "tag_mae": 0.3495,
+        "tag_covered_rows": 472,
+        "tag_pair_count": 805,
+        "test_labels": {
+          "attack": 11,
+          "conflict": 6,
+          "emotional_resonance": 37,
+          "humor": 63,
+          "inflammatory": 1,
+          "information": 206,
+          "irrelevant_repetition": 84,
+          "other": 11,
+          "political": 53
+        },
+        "diagnostics": {
+          "top_pred_label": "political",
+          "top_pred_share": 0.9725,
+          "distinct_pred_labels": 2,
+          "mean_max_prob": 0.1637,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.1335,
+          "test_majority_label": "information",
+          "test_majority_share": 0.4364
+        }
+      },
+      "V2": {
+        "test_bvid": "BV1rCxe6wEN9",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 472,
+        "n_train": 1985,
+        "n_train_used": 1985,
+        "train_capped": false,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.1144,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0436,
+        "prf_n": 472,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 206
+          },
+          "humor": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 63
+          },
+          "emotional_resonance": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 37
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 84
+          },
+          "attack": {
+            "precision": 0.3333,
+            "recall": 0.1818,
+            "f1": 0.2353,
+            "support": 11
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.1116,
+            "recall": 0.9811,
+            "f1": 0.2004,
+            "support": 53
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          }
+        },
+        "tag_mae": 0.35,
+        "tag_covered_rows": 472,
+        "tag_pair_count": 805,
+        "test_labels": {
+          "attack": 11,
+          "conflict": 6,
+          "emotional_resonance": 37,
+          "humor": 63,
+          "inflammatory": 1,
+          "information": 206,
+          "irrelevant_repetition": 84,
+          "other": 11,
+          "political": 53
+        },
+        "diagnostics": {
+          "top_pred_label": "political",
+          "top_pred_share": 0.9873,
+          "distinct_pred_labels": 2,
+          "mean_max_prob": 0.2133,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.1335,
+          "test_majority_label": "information",
+          "test_majority_share": 0.4364
+        }
+      },
+      "V3": {
+        "test_bvid": "BV1rCxe6wEN9",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 472,
+        "n_train": 1985,
+        "n_train_used": 1985,
+        "train_capped": false,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.1038,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0299,
+        "prf_n": 472,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 206
+          },
+          "humor": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 63
+          },
+          "emotional_resonance": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 37
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 84
+          },
+          "attack": {
+            "precision": 0.08,
+            "recall": 0.1818,
+            "f1": 0.1111,
+            "support": 11
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.1051,
+            "recall": 0.8868,
+            "f1": 0.188,
+            "support": 53
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          }
+        },
+        "tag_mae": 0.3482,
+        "tag_covered_rows": 472,
+        "tag_pair_count": 805,
+        "test_labels": {
+          "attack": 11,
+          "conflict": 6,
+          "emotional_resonance": 37,
+          "humor": 63,
+          "inflammatory": 1,
+          "information": 206,
+          "irrelevant_repetition": 84,
+          "other": 11,
+          "political": 53
+        },
+        "diagnostics": {
+          "top_pred_label": "political",
+          "top_pred_share": 0.947,
+          "distinct_pred_labels": 2,
+          "mean_max_prob": 0.1499,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.1335,
+          "test_majority_label": "information",
+          "test_majority_share": 0.4364
+        }
+      },
+      "V4": {
+        "test_bvid": "BV1rCxe6wEN9",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 472,
+        "n_train": 1985,
+        "n_train_used": 1985,
+        "train_capped": false,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.0975,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0286,
+        "prf_n": 472,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 206
+          },
+          "humor": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 63
+          },
+          "emotional_resonance": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 37
+          },
+          "irrelevant_repetition": {
+            "precision": 1.0,
+            "recall": 0.0119,
+            "f1": 0.0235,
+            "support": 84
+          },
+          "attack": {
+            "precision": 0.0526,
+            "recall": 0.1818,
+            "f1": 0.0816,
+            "support": 11
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.1016,
+            "recall": 0.8302,
+            "f1": 0.1811,
+            "support": 53
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          }
+        },
+        "tag_mae": 0.3468,
+        "tag_covered_rows": 472,
+        "tag_pair_count": 805,
+        "test_labels": {
+          "attack": 11,
+          "conflict": 6,
+          "emotional_resonance": 37,
+          "humor": 63,
+          "inflammatory": 1,
+          "information": 206,
+          "irrelevant_repetition": 84,
+          "other": 11,
+          "political": 53
+        },
+        "diagnostics": {
+          "top_pred_label": "political",
+          "top_pred_share": 0.9174,
+          "distinct_pred_labels": 3,
+          "mean_max_prob": 0.1444,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.1335,
+          "test_majority_label": "information",
+          "test_majority_share": 0.4364
+        }
+      }
+    },
+    "BV1bnxr6cEJ9": {
+      "V0": {
+        "test_bvid": "BV1bnxr6cEJ9",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 67,
+        "n_train": 2390,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.3134,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.1786,
+        "prf_n": 67,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.25,
+            "recall": 0.1,
+            "f1": 0.1429,
+            "support": 10
+          },
+          "humor": {
+            "precision": 0.4375,
+            "recall": 0.4667,
+            "f1": 0.4516,
+            "support": 15
+          },
+          "emotional_resonance": {
+            "precision": 0.1333,
+            "recall": 0.25,
+            "f1": 0.1739,
+            "support": 8
+          },
+          "irrelevant_repetition": {
+            "precision": 0.75,
+            "recall": 0.2727,
+            "f1": 0.4,
+            "support": 11
+          },
+          "attack": {
+            "precision": 0.125,
+            "recall": 0.1111,
+            "f1": 0.1176,
+            "support": 9
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.4667,
+            "recall": 0.5385,
+            "f1": 0.5,
+            "support": 13
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "tag_mae": 0.4334,
+        "tag_covered_rows": 67,
+        "tag_pair_count": 123,
+        "test_labels": {
+          "attack": 9,
+          "conflict": 1,
+          "emotional_resonance": 8,
+          "humor": 15,
+          "information": 10,
+          "irrelevant_repetition": 11,
+          "political": 13
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.2388,
+          "distinct_pred_labels": 8,
+          "mean_max_prob": 0.1557,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.2239,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.2239
+        }
+      },
+      "V1": {
+        "test_bvid": "BV1bnxr6cEJ9",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 67,
+        "n_train": 2390,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.2239,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.1231,
+        "prf_n": 67,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.4,
+            "recall": 0.2,
+            "f1": 0.2667,
+            "support": 10
+          },
+          "humor": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 15
+          },
+          "emotional_resonance": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 8
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          },
+          "attack": {
+            "precision": 0.1765,
+            "recall": 0.3333,
+            "f1": 0.2308,
+            "support": 9
+          },
+          "conflict": {
+            "precision": 0.25,
+            "recall": 1.0,
+            "f1": 0.4,
+            "support": 1
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.2195,
+            "recall": 0.6923,
+            "f1": 0.3333,
+            "support": 13
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "tag_mae": 0.4441,
+        "tag_covered_rows": 67,
+        "tag_pair_count": 123,
+        "test_labels": {
+          "attack": 9,
+          "conflict": 1,
+          "emotional_resonance": 8,
+          "humor": 15,
+          "information": 10,
+          "irrelevant_repetition": 11,
+          "political": 13
+        },
+        "diagnostics": {
+          "top_pred_label": "political",
+          "top_pred_share": 0.6119,
+          "distinct_pred_labels": 4,
+          "mean_max_prob": 0.1267,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.2239,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.2239
+        }
+      },
+      "V2": {
+        "test_bvid": "BV1bnxr6cEJ9",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 67,
+        "n_train": 2390,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.209,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0545,
+        "prf_n": 67,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 10
+          },
+          "humor": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 15
+          },
+          "emotional_resonance": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 8
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          },
+          "attack": {
+            "precision": 0.1538,
+            "recall": 0.2222,
+            "f1": 0.1818,
+            "support": 9
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.2264,
+            "recall": 0.9231,
+            "f1": 0.3636,
+            "support": 13
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "tag_mae": 0.4405,
+        "tag_covered_rows": 67,
+        "tag_pair_count": 123,
+        "test_labels": {
+          "attack": 9,
+          "conflict": 1,
+          "emotional_resonance": 8,
+          "humor": 15,
+          "information": 10,
+          "irrelevant_repetition": 11,
+          "political": 13
+        },
+        "diagnostics": {
+          "top_pred_label": "political",
+          "top_pred_share": 0.791,
+          "distinct_pred_labels": 3,
+          "mean_max_prob": 0.1366,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.2239,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.2239
+        }
+      },
+      "V3": {
+        "test_bvid": "BV1bnxr6cEJ9",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 67,
+        "n_train": 2390,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.194,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.1036,
+        "prf_n": 67,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.1667,
+            "recall": 0.5,
+            "f1": 0.25,
+            "support": 10
+          },
+          "humor": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 15
+          },
+          "emotional_resonance": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 8
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          },
+          "attack": {
+            "precision": 0.1875,
+            "recall": 0.3333,
+            "f1": 0.24,
+            "support": 9
+          },
+          "conflict": {
+            "precision": 0.1429,
+            "recall": 1.0,
+            "f1": 0.25,
+            "support": 1
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.2857,
+            "recall": 0.3077,
+            "f1": 0.2963,
+            "support": 13
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "tag_mae": 0.4442,
+        "tag_covered_rows": 67,
+        "tag_pair_count": 123,
+        "test_labels": {
+          "attack": 9,
+          "conflict": 1,
+          "emotional_resonance": 8,
+          "humor": 15,
+          "information": 10,
+          "irrelevant_repetition": 11,
+          "political": 13
+        },
+        "diagnostics": {
+          "top_pred_label": "information",
+          "top_pred_share": 0.4478,
+          "distinct_pred_labels": 4,
+          "mean_max_prob": 0.1237,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.2239,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.2239
+        }
+      },
+      "V4": {
+        "test_bvid": "BV1bnxr6cEJ9",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 67,
+        "n_train": 2390,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.209,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0843,
+        "prf_n": 67,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.2121,
+            "recall": 0.7,
+            "f1": 0.3256,
+            "support": 10
+          },
+          "humor": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 15
+          },
+          "emotional_resonance": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 8
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          },
+          "attack": {
+            "precision": 0.125,
+            "recall": 0.2222,
+            "f1": 0.16,
+            "support": 9
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.3333,
+            "recall": 0.3846,
+            "f1": 0.3571,
+            "support": 13
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "tag_mae": 0.4439,
+        "tag_covered_rows": 67,
+        "tag_pair_count": 123,
+        "test_labels": {
+          "attack": 9,
+          "conflict": 1,
+          "emotional_resonance": 8,
+          "humor": 15,
+          "information": 10,
+          "irrelevant_repetition": 11,
+          "political": 13
+        },
+        "diagnostics": {
+          "top_pred_label": "information",
+          "top_pred_share": 0.4925,
+          "distinct_pred_labels": 4,
+          "mean_max_prob": 0.1215,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.2239,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.2239
+        }
+      }
+    },
+    "BV1mV4F6mE5Z": {
+      "V0": {
+        "test_bvid": "BV1mV4F6mE5Z",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 174,
+        "n_train": 2283,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.3276,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.1164,
+        "prf_n": 174,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.5,
+            "recall": 0.0385,
+            "f1": 0.0714,
+            "support": 52
+          },
+          "humor": {
+            "precision": 0.4286,
+            "recall": 0.6522,
+            "f1": 0.5172,
+            "support": 69
+          },
+          "emotional_resonance": {
+            "precision": 0.1842,
+            "recall": 0.28,
+            "f1": 0.2222,
+            "support": 25
+          },
+          "irrelevant_repetition": {
+            "precision": 0.2727,
+            "recall": 0.5,
+            "f1": 0.3529,
+            "support": 6
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 3
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 16
+          }
+        },
+        "tag_mae": 0.28,
+        "tag_covered_rows": 174,
+        "tag_pair_count": 283,
+        "test_labels": {
+          "attack": 1,
+          "conflict": 3,
+          "emotional_resonance": 25,
+          "humor": 69,
+          "inflammatory": 2,
+          "information": 52,
+          "irrelevant_repetition": 6,
+          "other": 16
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.6034,
+          "distinct_pred_labels": 7,
+          "mean_max_prob": 0.1373,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3966,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3966
+        }
+      },
+      "V1": {
+        "test_bvid": "BV1mV4F6mE5Z",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 174,
+        "n_train": 2283,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.1322,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0683,
+        "prf_n": 174,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.225,
+            "recall": 0.1731,
+            "f1": 0.1957,
+            "support": 52
+          },
+          "humor": {
+            "precision": 1.0,
+            "recall": 0.0145,
+            "f1": 0.0286,
+            "support": 69
+          },
+          "emotional_resonance": {
+            "precision": 0.1639,
+            "recall": 0.4,
+            "f1": 0.2326,
+            "support": 25
+          },
+          "irrelevant_repetition": {
+            "precision": 0.1429,
+            "recall": 0.1667,
+            "f1": 0.1538,
+            "support": 6
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "conflict": {
+            "precision": 0.0385,
+            "recall": 0.6667,
+            "f1": 0.0727,
+            "support": 3
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 16
+          }
+        },
+        "tag_mae": 0.2933,
+        "tag_covered_rows": 174,
+        "tag_pair_count": 283,
+        "test_labels": {
+          "attack": 1,
+          "conflict": 3,
+          "emotional_resonance": 25,
+          "humor": 69,
+          "inflammatory": 2,
+          "information": 52,
+          "irrelevant_repetition": 6,
+          "other": 16
+        },
+        "diagnostics": {
+          "top_pred_label": "emotional_resonance",
+          "top_pred_share": 0.3506,
+          "distinct_pred_labels": 10,
+          "mean_max_prob": 0.1084,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3966,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3966
+        }
+      },
+      "V2": {
+        "test_bvid": "BV1mV4F6mE5Z",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 174,
+        "n_train": 2283,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.1609,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0541,
+        "prf_n": 174,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 52
+          },
+          "humor": {
+            "precision": 0.5,
+            "recall": 0.058,
+            "f1": 0.1039,
+            "support": 69
+          },
+          "emotional_resonance": {
+            "precision": 0.1484,
+            "recall": 0.92,
+            "f1": 0.2556,
+            "support": 25
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "conflict": {
+            "precision": 0.125,
+            "recall": 0.3333,
+            "f1": 0.1818,
+            "support": 3
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 16
+          }
+        },
+        "tag_mae": 0.2894,
+        "tag_covered_rows": 174,
+        "tag_pair_count": 283,
+        "test_labels": {
+          "attack": 1,
+          "conflict": 3,
+          "emotional_resonance": 25,
+          "humor": 69,
+          "inflammatory": 2,
+          "information": 52,
+          "irrelevant_repetition": 6,
+          "other": 16
+        },
+        "diagnostics": {
+          "top_pred_label": "emotional_resonance",
+          "top_pred_share": 0.8908,
+          "distinct_pred_labels": 4,
+          "mean_max_prob": 0.1136,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3966,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3966
+        }
+      },
+      "V3": {
+        "test_bvid": "BV1mV4F6mE5Z",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 174,
+        "n_train": 2283,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.2069,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.1153,
+        "prf_n": 174,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.4231,
+            "recall": 0.2115,
+            "f1": 0.2821,
+            "support": 52
+          },
+          "humor": {
+            "precision": 0.75,
+            "recall": 0.0435,
+            "f1": 0.0822,
+            "support": 69
+          },
+          "emotional_resonance": {
+            "precision": 0.1818,
+            "recall": 0.64,
+            "f1": 0.2832,
+            "support": 25
+          },
+          "irrelevant_repetition": {
+            "precision": 0.2222,
+            "recall": 0.3333,
+            "f1": 0.2667,
+            "support": 6
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "conflict": {
+            "precision": 0.0625,
+            "recall": 0.3333,
+            "f1": 0.1053,
+            "support": 3
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "other": {
+            "precision": 0.1034,
+            "recall": 0.1875,
+            "f1": 0.1333,
+            "support": 16
+          }
+        },
+        "tag_mae": 0.2903,
+        "tag_covered_rows": 174,
+        "tag_pair_count": 283,
+        "test_labels": {
+          "attack": 1,
+          "conflict": 3,
+          "emotional_resonance": 25,
+          "humor": 69,
+          "inflammatory": 2,
+          "information": 52,
+          "irrelevant_repetition": 6,
+          "other": 16
+        },
+        "diagnostics": {
+          "top_pred_label": "emotional_resonance",
+          "top_pred_share": 0.5057,
+          "distinct_pred_labels": 7,
+          "mean_max_prob": 0.1129,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3966,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3966
+        }
+      },
+      "V4": {
+        "test_bvid": "BV1mV4F6mE5Z",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 174,
+        "n_train": 2283,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.1207,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0478,
+        "prf_n": 174,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.3333,
+            "recall": 0.0385,
+            "f1": 0.069,
+            "support": 52
+          },
+          "humor": {
+            "precision": 0.6,
+            "recall": 0.0435,
+            "f1": 0.0811,
+            "support": 69
+          },
+          "emotional_resonance": {
+            "precision": 0.1163,
+            "recall": 0.6,
+            "f1": 0.1948,
+            "support": 25
+          },
+          "irrelevant_repetition": {
+            "precision": 0.1111,
+            "recall": 0.1667,
+            "f1": 0.1333,
+            "support": 6
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 3
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 16
+          }
+        },
+        "tag_mae": 0.2915,
+        "tag_covered_rows": 174,
+        "tag_pair_count": 283,
+        "test_labels": {
+          "attack": 1,
+          "conflict": 3,
+          "emotional_resonance": 25,
+          "humor": 69,
+          "inflammatory": 2,
+          "information": 52,
+          "irrelevant_repetition": 6,
+          "other": 16
+        },
+        "diagnostics": {
+          "top_pred_label": "emotional_resonance",
+          "top_pred_share": 0.7414,
+          "distinct_pred_labels": 8,
+          "mean_max_prob": 0.1124,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3966,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3966
+        }
+      }
+    },
+    "BV1W18Y61Ee5": {
+      "V0": {
+        "test_bvid": "BV1W18Y61Ee5",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z"
+        ],
+        "n_test": 164,
+        "n_train": 2293,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.2988,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.1307,
+        "prf_n": 164,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.3333,
+            "recall": 0.0455,
+            "f1": 0.08,
+            "support": 22
+          },
+          "humor": {
+            "precision": 0.3607,
+            "recall": 0.3667,
+            "f1": 0.3636,
+            "support": 60
+          },
+          "emotional_resonance": {
+            "precision": 0.3793,
+            "recall": 0.4681,
+            "f1": 0.419,
+            "support": 47
+          },
+          "irrelevant_repetition": {
+            "precision": 0.6667,
+            "recall": 0.3333,
+            "f1": 0.4444,
+            "support": 12
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 4
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 17
+          }
+        },
+        "tag_mae": 0.3538,
+        "tag_covered_rows": 164,
+        "tag_pair_count": 261,
+        "test_labels": {
+          "attack": 2,
+          "conflict": 4,
+          "emotional_resonance": 47,
+          "humor": 60,
+          "information": 22,
+          "irrelevant_repetition": 12,
+          "other": 17
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.372,
+          "distinct_pred_labels": 8,
+          "mean_max_prob": 0.1382,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3659,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3659
+        }
+      },
+      "V1": {
+        "test_bvid": "BV1W18Y61Ee5",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z"
+        ],
+        "n_test": 164,
+        "n_train": 2293,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.2744,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.1239,
+        "prf_n": 164,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.25,
+            "recall": 0.1364,
+            "f1": 0.1765,
+            "support": 22
+          },
+          "humor": {
+            "precision": 1.0,
+            "recall": 0.0167,
+            "f1": 0.0328,
+            "support": 60
+          },
+          "emotional_resonance": {
+            "precision": 0.3426,
+            "recall": 0.7872,
+            "f1": 0.4774,
+            "support": 47
+          },
+          "irrelevant_repetition": {
+            "precision": 1.0,
+            "recall": 0.0833,
+            "f1": 0.1538,
+            "support": 12
+          },
+          "attack": {
+            "precision": 0.1667,
+            "recall": 0.5,
+            "f1": 0.25,
+            "support": 2
+          },
+          "conflict": {
+            "precision": 0.087,
+            "recall": 0.5,
+            "f1": 0.1481,
+            "support": 4
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 17
+          }
+        },
+        "tag_mae": 0.368,
+        "tag_covered_rows": 164,
+        "tag_pair_count": 261,
+        "test_labels": {
+          "attack": 2,
+          "conflict": 4,
+          "emotional_resonance": 47,
+          "humor": 60,
+          "information": 22,
+          "irrelevant_repetition": 12,
+          "other": 17
+        },
+        "diagnostics": {
+          "top_pred_label": "emotional_resonance",
+          "top_pred_share": 0.6585,
+          "distinct_pred_labels": 9,
+          "mean_max_prob": 0.1109,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3659,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3659
+        }
+      },
+      "V2": {
+        "test_bvid": "BV1W18Y61Ee5",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z"
+        ],
+        "n_test": 164,
+        "n_train": 2293,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.3293,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.1272,
+        "prf_n": 164,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.5,
+            "recall": 0.0909,
+            "f1": 0.1538,
+            "support": 22
+          },
+          "humor": {
+            "precision": 0.6,
+            "recall": 0.05,
+            "f1": 0.0923,
+            "support": 60
+          },
+          "emotional_resonance": {
+            "precision": 0.3092,
+            "recall": 1.0,
+            "f1": 0.4724,
+            "support": 47
+          },
+          "irrelevant_repetition": {
+            "precision": 1.0,
+            "recall": 0.0833,
+            "f1": 0.1538,
+            "support": 12
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "conflict": {
+            "precision": 1.0,
+            "recall": 0.25,
+            "f1": 0.4,
+            "support": 4
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 17
+          }
+        },
+        "tag_mae": 0.3609,
+        "tag_covered_rows": 164,
+        "tag_pair_count": 261,
+        "test_labels": {
+          "attack": 2,
+          "conflict": 4,
+          "emotional_resonance": 47,
+          "humor": 60,
+          "information": 22,
+          "irrelevant_repetition": 12,
+          "other": 17
+        },
+        "diagnostics": {
+          "top_pred_label": "emotional_resonance",
+          "top_pred_share": 0.9268,
+          "distinct_pred_labels": 6,
+          "mean_max_prob": 0.1188,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3659,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3659
+        }
+      },
+      "V3": {
+        "test_bvid": "BV1W18Y61Ee5",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z"
+        ],
+        "n_test": 164,
+        "n_train": 2293,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.2988,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.1139,
+        "prf_n": 164,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.4118,
+            "recall": 0.3182,
+            "f1": 0.359,
+            "support": 22
+          },
+          "humor": {
+            "precision": 0.1,
+            "recall": 0.0167,
+            "f1": 0.0286,
+            "support": 60
+          },
+          "emotional_resonance": {
+            "precision": 0.3333,
+            "recall": 0.8298,
+            "f1": 0.4756,
+            "support": 47
+          },
+          "irrelevant_repetition": {
+            "precision": 0.5,
+            "recall": 0.0833,
+            "f1": 0.1429,
+            "support": 12
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "conflict": {
+            "precision": 0.0909,
+            "recall": 0.25,
+            "f1": 0.1333,
+            "support": 4
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 17
+          }
+        },
+        "tag_mae": 0.3643,
+        "tag_covered_rows": 164,
+        "tag_pair_count": 261,
+        "test_labels": {
+          "attack": 2,
+          "conflict": 4,
+          "emotional_resonance": 47,
+          "humor": 60,
+          "information": 22,
+          "irrelevant_repetition": 12,
+          "other": 17
+        },
+        "diagnostics": {
+          "top_pred_label": "emotional_resonance",
+          "top_pred_share": 0.7134,
+          "distinct_pred_labels": 9,
+          "mean_max_prob": 0.115,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3659,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3659
+        }
+      },
+      "V4": {
+        "test_bvid": "BV1W18Y61Ee5",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z"
+        ],
+        "n_test": 164,
+        "n_train": 2293,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.2683,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0797,
+        "prf_n": 164,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.2,
+            "recall": 0.0455,
+            "f1": 0.0741,
+            "support": 22
+          },
+          "humor": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 60
+          },
+          "emotional_resonance": {
+            "precision": 0.2897,
+            "recall": 0.8936,
+            "f1": 0.4375,
+            "support": 47
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 12
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "conflict": {
+            "precision": 0.3333,
+            "recall": 0.25,
+            "f1": 0.2857,
+            "support": 4
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 17
+          }
+        },
+        "tag_mae": 0.3643,
+        "tag_covered_rows": 164,
+        "tag_pair_count": 261,
+        "test_labels": {
+          "attack": 2,
+          "conflict": 4,
+          "emotional_resonance": 47,
+          "humor": 60,
+          "information": 22,
+          "irrelevant_repetition": 12,
+          "other": 17
+        },
+        "diagnostics": {
+          "top_pred_label": "emotional_resonance",
+          "top_pred_share": 0.8841,
+          "distinct_pred_labels": 7,
+          "mean_max_prob": 0.1162,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3659,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3659
+        }
+      }
+    }
+  },
+  "supplementary": {
+    "BV1GJ411x7h7": {
+      "S2": {
+        "test_bvid": "BV1GJ411x7h7",
+        "train_bvids": [
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 1407,
+        "n_train": 1050,
+        "n_train_used": 1050,
+        "train_capped": false,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political"
+        ],
+        "unseen_test_labels": [
+          "spoiler"
+        ],
+        "unseen_test_rows": 5,
+        "agreement": 0.3156,
+        "agreement_ceiling": 0.9964,
+        "macro_f1": 0.0703,
+        "prf_n": 1407,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 200
+          },
+          "humor": {
+            "precision": 0.8321,
+            "recall": 0.2472,
+            "f1": 0.3812,
+            "support": 902
+          },
+          "emotional_resonance": {
+            "precision": 0.194,
+            "recall": 0.9485,
+            "f1": 0.3222,
+            "support": 233
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 65
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 5
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "tag_mae": 0.3943,
+        "tag_covered_rows": 1405,
+        "tag_pair_count": 1808,
+        "test_labels": {
+          "conflict": 1,
+          "emotional_resonance": 233,
+          "humor": 902,
+          "information": 200,
+          "irrelevant_repetition": 65,
+          "other": 1,
+          "spoiler": 5
+        },
+        "diagnostics": {
+          "top_pred_label": "emotional_resonance",
+          "top_pred_share": 0.8095,
+          "distinct_pred_labels": 2,
+          "mean_max_prob": 0.2745,
+          "train_majority_label": "information",
+          "train_majority_baseline": 0.1421,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.6411
+        }
+      },
+      "S3": {
+        "test_bvid": "BV1GJ411x7h7",
+        "train_bvids": [
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 1407,
+        "n_train": 1050,
+        "n_train_used": 1050,
+        "train_capped": false,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political"
+        ],
+        "unseen_test_labels": [
+          "spoiler"
+        ],
+        "unseen_test_rows": 5,
+        "agreement": 0.4485,
+        "agreement_ceiling": 0.9964,
+        "macro_f1": 0.1399,
+        "prf_n": 1407,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.2603,
+            "recall": 0.38,
+            "f1": 0.3089,
+            "support": 200
+          },
+          "humor": {
+            "precision": 0.7224,
+            "recall": 0.4645,
+            "f1": 0.5655,
+            "support": 902
+          },
+          "emotional_resonance": {
+            "precision": 0.4604,
+            "recall": 0.5236,
+            "f1": 0.49,
+            "support": 233
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0556,
+            "recall": 0.0154,
+            "f1": 0.0241,
+            "support": 65
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 5
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0051,
+            "recall": 1.0,
+            "f1": 0.0101,
+            "support": 1
+          }
+        },
+        "tag_mae": 0.4701,
+        "tag_covered_rows": 1405,
+        "tag_pair_count": 1808,
+        "test_labels": {
+          "conflict": 1,
+          "emotional_resonance": 233,
+          "humor": 902,
+          "information": 200,
+          "irrelevant_repetition": 65,
+          "other": 1,
+          "spoiler": 5
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.4186,
+          "distinct_pred_labels": 7,
+          "mean_max_prob": 0.1553,
+          "train_majority_label": "information",
+          "train_majority_baseline": 0.1421,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.6411
+        }
+      },
+      "S4": {
+        "test_bvid": "BV1GJ411x7h7",
+        "train_bvids": [
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 1407,
+        "n_train": 1050,
+        "n_train_used": 1050,
+        "train_capped": false,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political"
+        ],
+        "unseen_test_labels": [
+          "spoiler"
+        ],
+        "unseen_test_rows": 5,
+        "agreement": 0.4662,
+        "agreement_ceiling": 0.9964,
+        "macro_f1": 0.1203,
+        "prf_n": 1407,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.1835,
+            "recall": 0.3,
+            "f1": 0.2277,
+            "support": 200
+          },
+          "humor": {
+            "precision": 0.6519,
+            "recall": 0.5854,
+            "f1": 0.6168,
+            "support": 902
+          },
+          "emotional_resonance": {
+            "precision": 0.3837,
+            "recall": 0.2833,
+            "f1": 0.3259,
+            "support": 233
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0357,
+            "recall": 0.0308,
+            "f1": 0.0331,
+            "support": 65
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 5
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "tag_mae": 0.4835,
+        "tag_covered_rows": 1405,
+        "tag_pair_count": 1808,
+        "test_labels": {
+          "conflict": 1,
+          "emotional_resonance": 233,
+          "humor": 902,
+          "information": 200,
+          "irrelevant_repetition": 65,
+          "other": 1,
+          "spoiler": 5
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.57,
+          "distinct_pred_labels": 7,
+          "mean_max_prob": 0.1365,
+          "train_majority_label": "information",
+          "train_majority_baseline": 0.1421,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.6411
+        }
+      }
+    },
+    "BV1w5xh6sEEz": {
+      "S2": {
+        "test_bvid": "BV1w5xh6sEEz",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 173,
+        "n_train": 2284,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.3988,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0716,
+        "prf_n": 173,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 43
+          },
+          "humor": {
+            "precision": 0.3869,
+            "recall": 0.9848,
+            "f1": 0.5556,
+            "support": 66
+          },
+          "emotional_resonance": {
+            "precision": 0.8,
+            "recall": 0.0889,
+            "f1": 0.16,
+            "support": 45
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 14
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 4
+          }
+        },
+        "tag_mae": 0.2306,
+        "tag_covered_rows": 173,
+        "tag_pair_count": 270,
+        "test_labels": {
+          "attack": 1,
+          "emotional_resonance": 45,
+          "humor": 66,
+          "information": 43,
+          "irrelevant_repetition": 14,
+          "other": 4
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.9711,
+          "distinct_pred_labels": 2,
+          "mean_max_prob": 0.3184,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3815,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3815
+        }
+      },
+      "S3": {
+        "test_bvid": "BV1w5xh6sEEz",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 173,
+        "n_train": 2284,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.2948,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0783,
+        "prf_n": 173,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 43
+          },
+          "humor": {
+            "precision": 0.3738,
+            "recall": 0.6061,
+            "f1": 0.4624,
+            "support": 66
+          },
+          "emotional_resonance": {
+            "precision": 0.2195,
+            "recall": 0.2,
+            "f1": 0.2093,
+            "support": 45
+          },
+          "irrelevant_repetition": {
+            "precision": 0.25,
+            "recall": 0.0714,
+            "f1": 0.1111,
+            "support": 14
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 4
+          }
+        },
+        "tag_mae": 0.2771,
+        "tag_covered_rows": 173,
+        "tag_pair_count": 270,
+        "test_labels": {
+          "attack": 1,
+          "emotional_resonance": 45,
+          "humor": 66,
+          "information": 43,
+          "irrelevant_repetition": 14,
+          "other": 4
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.5838,
+          "distinct_pred_labels": 6,
+          "mean_max_prob": 0.1621,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3815,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3815
+        }
+      },
+      "S4": {
+        "test_bvid": "BV1w5xh6sEEz",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 173,
+        "n_train": 2284,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.2832,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0819,
+        "prf_n": 173,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0833,
+            "recall": 0.0233,
+            "f1": 0.0364,
+            "support": 43
+          },
+          "humor": {
+            "precision": 0.3333,
+            "recall": 0.2727,
+            "f1": 0.3,
+            "support": 66
+          },
+          "emotional_resonance": {
+            "precision": 0.2976,
+            "recall": 0.5556,
+            "f1": 0.3876,
+            "support": 45
+          },
+          "irrelevant_repetition": {
+            "precision": 0.1429,
+            "recall": 0.0714,
+            "f1": 0.0952,
+            "support": 14
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 4
+          }
+        },
+        "tag_mae": 0.2963,
+        "tag_covered_rows": 173,
+        "tag_pair_count": 270,
+        "test_labels": {
+          "attack": 1,
+          "emotional_resonance": 45,
+          "humor": 66,
+          "information": 43,
+          "irrelevant_repetition": 14,
+          "other": 4
+        },
+        "diagnostics": {
+          "top_pred_label": "emotional_resonance",
+          "top_pred_share": 0.5029,
+          "distinct_pred_labels": 7,
+          "mean_max_prob": 0.1275,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3815,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3815
+        }
+      }
+    },
+    "BV1rCxe6wEN9": {
+      "S2": {
+        "test_bvid": "BV1rCxe6wEN9",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 472,
+        "n_train": 1985,
+        "n_train_used": 1985,
+        "train_capped": false,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.1102,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0327,
+        "prf_n": 472,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 206
+          },
+          "humor": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 63
+          },
+          "emotional_resonance": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 37
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 84
+          },
+          "attack": {
+            "precision": 0.1,
+            "recall": 0.1818,
+            "f1": 0.129,
+            "support": 11
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.1106,
+            "recall": 0.9434,
+            "f1": 0.198,
+            "support": 53
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          }
+        },
+        "tag_mae": 0.3624,
+        "tag_covered_rows": 472,
+        "tag_pair_count": 805,
+        "test_labels": {
+          "attack": 11,
+          "conflict": 6,
+          "emotional_resonance": 37,
+          "humor": 63,
+          "inflammatory": 1,
+          "information": 206,
+          "irrelevant_repetition": 84,
+          "other": 11,
+          "political": 53
+        },
+        "diagnostics": {
+          "top_pred_label": "political",
+          "top_pred_share": 0.9576,
+          "distinct_pred_labels": 2,
+          "mean_max_prob": 0.3396,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.1335,
+          "test_majority_label": "information",
+          "test_majority_share": 0.4364
+        }
+      },
+      "S3": {
+        "test_bvid": "BV1rCxe6wEN9",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 472,
+        "n_train": 1985,
+        "n_train_used": 1985,
+        "train_capped": false,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.1695,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0862,
+        "prf_n": 472,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.8571,
+            "recall": 0.0291,
+            "f1": 0.0563,
+            "support": 206
+          },
+          "humor": {
+            "precision": 0.1491,
+            "recall": 0.7619,
+            "f1": 0.2494,
+            "support": 63
+          },
+          "emotional_resonance": {
+            "precision": 0.1619,
+            "recall": 0.4595,
+            "f1": 0.2394,
+            "support": 37
+          },
+          "irrelevant_repetition": {
+            "precision": 0.25,
+            "recall": 0.0357,
+            "f1": 0.0625,
+            "support": 84
+          },
+          "attack": {
+            "precision": 0.25,
+            "recall": 0.0909,
+            "f1": 0.1333,
+            "support": 11
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.3077,
+            "recall": 0.0755,
+            "f1": 0.1212,
+            "support": 53
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          }
+        },
+        "tag_mae": 0.3293,
+        "tag_covered_rows": 472,
+        "tag_pair_count": 805,
+        "test_labels": {
+          "attack": 11,
+          "conflict": 6,
+          "emotional_resonance": 37,
+          "humor": 63,
+          "inflammatory": 1,
+          "information": 206,
+          "irrelevant_repetition": 84,
+          "other": 11,
+          "political": 53
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.6504,
+          "distinct_pred_labels": 7,
+          "mean_max_prob": 0.1684,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.1335,
+          "test_majority_label": "information",
+          "test_majority_share": 0.4364
+        }
+      },
+      "S4": {
+        "test_bvid": "BV1rCxe6wEN9",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 472,
+        "n_train": 1985,
+        "n_train_used": 1985,
+        "train_capped": false,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.1483,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0644,
+        "prf_n": 472,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.7692,
+            "recall": 0.0485,
+            "f1": 0.0913,
+            "support": 206
+          },
+          "humor": {
+            "precision": 0.1148,
+            "recall": 0.381,
+            "f1": 0.1765,
+            "support": 63
+          },
+          "emotional_resonance": {
+            "precision": 0.1316,
+            "recall": 0.6757,
+            "f1": 0.2203,
+            "support": 37
+          },
+          "irrelevant_repetition": {
+            "precision": 0.2,
+            "recall": 0.0357,
+            "f1": 0.0606,
+            "support": 84
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.129,
+            "recall": 0.0755,
+            "f1": 0.0952,
+            "support": 53
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          }
+        },
+        "tag_mae": 0.3412,
+        "tag_covered_rows": 472,
+        "tag_pair_count": 805,
+        "test_labels": {
+          "attack": 11,
+          "conflict": 6,
+          "emotional_resonance": 37,
+          "humor": 63,
+          "inflammatory": 1,
+          "information": 206,
+          "irrelevant_repetition": 84,
+          "other": 11,
+          "political": 53
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.4258,
+          "distinct_pred_labels": 7,
+          "mean_max_prob": 0.1298,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.1335,
+          "test_majority_label": "information",
+          "test_majority_share": 0.4364
+        }
+      }
+    },
+    "BV1bnxr6cEJ9": {
+      "S2": {
+        "test_bvid": "BV1bnxr6cEJ9",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 67,
+        "n_train": 2390,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.194,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0356,
+        "prf_n": 67,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 10
+          },
+          "humor": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 15
+          },
+          "emotional_resonance": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 8
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 9
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.2167,
+            "recall": 1.0,
+            "f1": 0.3562,
+            "support": 13
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "tag_mae": 0.4267,
+        "tag_covered_rows": 67,
+        "tag_pair_count": 123,
+        "test_labels": {
+          "attack": 9,
+          "conflict": 1,
+          "emotional_resonance": 8,
+          "humor": 15,
+          "information": 10,
+          "irrelevant_repetition": 11,
+          "political": 13
+        },
+        "diagnostics": {
+          "top_pred_label": "political",
+          "top_pred_share": 0.8955,
+          "distinct_pred_labels": 3,
+          "mean_max_prob": 0.2135,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.2239,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.2239
+        }
+      },
+      "S3": {
+        "test_bvid": "BV1bnxr6cEJ9",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 67,
+        "n_train": 2390,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.2836,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.1347,
+        "prf_n": 67,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 10
+          },
+          "humor": {
+            "precision": 0.3333,
+            "recall": 0.6,
+            "f1": 0.4286,
+            "support": 15
+          },
+          "emotional_resonance": {
+            "precision": 0.0769,
+            "recall": 0.125,
+            "f1": 0.0952,
+            "support": 8
+          },
+          "irrelevant_repetition": {
+            "precision": 1.0,
+            "recall": 0.0909,
+            "f1": 0.1667,
+            "support": 11
+          },
+          "attack": {
+            "precision": 0.125,
+            "recall": 0.1111,
+            "f1": 0.1176,
+            "support": 9
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.5385,
+            "recall": 0.5385,
+            "f1": 0.5385,
+            "support": 13
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "tag_mae": 0.4325,
+        "tag_covered_rows": 67,
+        "tag_pair_count": 123,
+        "test_labels": {
+          "attack": 9,
+          "conflict": 1,
+          "emotional_resonance": 8,
+          "humor": 15,
+          "information": 10,
+          "irrelevant_repetition": 11,
+          "political": 13
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.403,
+          "distinct_pred_labels": 8,
+          "mean_max_prob": 0.1684,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.2239,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.2239
+        }
+      },
+      "S4": {
+        "test_bvid": "BV1bnxr6cEJ9",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1mV4F6mE5Z",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 67,
+        "n_train": 2390,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.1493,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0614,
+        "prf_n": 67,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 10
+          },
+          "humor": {
+            "precision": 0.2381,
+            "recall": 0.3333,
+            "f1": 0.2778,
+            "support": 15
+          },
+          "emotional_resonance": {
+            "precision": 0.1034,
+            "recall": 0.375,
+            "f1": 0.1622,
+            "support": 8
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 11
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 9
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.2,
+            "recall": 0.1538,
+            "f1": 0.1739,
+            "support": 13
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "tag_mae": 0.4375,
+        "tag_covered_rows": 67,
+        "tag_pair_count": 123,
+        "test_labels": {
+          "attack": 9,
+          "conflict": 1,
+          "emotional_resonance": 8,
+          "humor": 15,
+          "information": 10,
+          "irrelevant_repetition": 11,
+          "political": 13
+        },
+        "diagnostics": {
+          "top_pred_label": "emotional_resonance",
+          "top_pred_share": 0.4328,
+          "distinct_pred_labels": 6,
+          "mean_max_prob": 0.1422,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.2239,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.2239
+        }
+      }
+    },
+    "BV1mV4F6mE5Z": {
+      "S2": {
+        "test_bvid": "BV1mV4F6mE5Z",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 174,
+        "n_train": 2283,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.3218,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.1118,
+        "prf_n": 174,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.4286,
+            "recall": 0.0577,
+            "f1": 0.1017,
+            "support": 52
+          },
+          "humor": {
+            "precision": 0.4356,
+            "recall": 0.6377,
+            "f1": 0.5176,
+            "support": 69
+          },
+          "emotional_resonance": {
+            "precision": 0.16,
+            "recall": 0.32,
+            "f1": 0.2133,
+            "support": 25
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "conflict": {
+            "precision": 0.25,
+            "recall": 0.3333,
+            "f1": 0.2857,
+            "support": 3
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 16
+          }
+        },
+        "tag_mae": 0.2839,
+        "tag_covered_rows": 174,
+        "tag_pair_count": 283,
+        "test_labels": {
+          "attack": 1,
+          "conflict": 3,
+          "emotional_resonance": 25,
+          "humor": 69,
+          "inflammatory": 2,
+          "information": 52,
+          "irrelevant_repetition": 6,
+          "other": 16
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.5805,
+          "distinct_pred_labels": 7,
+          "mean_max_prob": 0.1217,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3966,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3966
+        }
+      },
+      "S3": {
+        "test_bvid": "BV1mV4F6mE5Z",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 174,
+        "n_train": 2283,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.3276,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.1125,
+        "prf_n": 174,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.5,
+            "recall": 0.0192,
+            "f1": 0.037,
+            "support": 52
+          },
+          "humor": {
+            "precision": 0.4167,
+            "recall": 0.6522,
+            "f1": 0.5085,
+            "support": 69
+          },
+          "emotional_resonance": {
+            "precision": 0.2,
+            "recall": 0.32,
+            "f1": 0.2462,
+            "support": 25
+          },
+          "irrelevant_repetition": {
+            "precision": 0.3333,
+            "recall": 0.1667,
+            "f1": 0.2222,
+            "support": 6
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 3
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "other": {
+            "precision": 0.1,
+            "recall": 0.125,
+            "f1": 0.1111,
+            "support": 16
+          }
+        },
+        "tag_mae": 0.2669,
+        "tag_covered_rows": 174,
+        "tag_pair_count": 283,
+        "test_labels": {
+          "attack": 1,
+          "conflict": 3,
+          "emotional_resonance": 25,
+          "humor": 69,
+          "inflammatory": 2,
+          "information": 52,
+          "irrelevant_repetition": 6,
+          "other": 16
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.6207,
+          "distinct_pred_labels": 6,
+          "mean_max_prob": 0.1656,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3966,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3966
+        }
+      },
+      "S4": {
+        "test_bvid": "BV1mV4F6mE5Z",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1W18Y61Ee5"
+        ],
+        "n_test": 174,
+        "n_train": 2283,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.2011,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0525,
+        "prf_n": 174,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 52
+          },
+          "humor": {
+            "precision": 0.4085,
+            "recall": 0.4203,
+            "f1": 0.4143,
+            "support": 69
+          },
+          "emotional_resonance": {
+            "precision": 0.0723,
+            "recall": 0.24,
+            "f1": 0.1111,
+            "support": 25
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 3
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 16
+          }
+        },
+        "tag_mae": 0.2832,
+        "tag_covered_rows": 174,
+        "tag_pair_count": 283,
+        "test_labels": {
+          "attack": 1,
+          "conflict": 3,
+          "emotional_resonance": 25,
+          "humor": 69,
+          "inflammatory": 2,
+          "information": 52,
+          "irrelevant_repetition": 6,
+          "other": 16
+        },
+        "diagnostics": {
+          "top_pred_label": "emotional_resonance",
+          "top_pred_share": 0.477,
+          "distinct_pred_labels": 8,
+          "mean_max_prob": 0.1307,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3966,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3966
+        }
+      }
+    },
+    "BV1W18Y61Ee5": {
+      "S2": {
+        "test_bvid": "BV1W18Y61Ee5",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z"
+        ],
+        "n_test": 164,
+        "n_train": 2293,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.2012,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.1266,
+        "prf_n": 164,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.1405,
+            "recall": 0.7727,
+            "f1": 0.2378,
+            "support": 22
+          },
+          "humor": {
+            "precision": 0.5,
+            "recall": 0.0167,
+            "f1": 0.0323,
+            "support": 60
+          },
+          "emotional_resonance": {
+            "precision": 0.4583,
+            "recall": 0.234,
+            "f1": 0.3099,
+            "support": 47
+          },
+          "irrelevant_repetition": {
+            "precision": 0.6,
+            "recall": 0.25,
+            "f1": 0.3529,
+            "support": 12
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "conflict": {
+            "precision": 0.5,
+            "recall": 0.25,
+            "f1": 0.3333,
+            "support": 4
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 17
+          }
+        },
+        "tag_mae": 0.3598,
+        "tag_covered_rows": 164,
+        "tag_pair_count": 261,
+        "test_labels": {
+          "attack": 2,
+          "conflict": 4,
+          "emotional_resonance": 47,
+          "humor": 60,
+          "information": 22,
+          "irrelevant_repetition": 12,
+          "other": 17
+        },
+        "diagnostics": {
+          "top_pred_label": "information",
+          "top_pred_share": 0.7378,
+          "distinct_pred_labels": 9,
+          "mean_max_prob": 0.1221,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3659,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3659
+        }
+      },
+      "S3": {
+        "test_bvid": "BV1W18Y61Ee5",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z"
+        ],
+        "n_test": 164,
+        "n_train": 2293,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.311,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.1259,
+        "prf_n": 164,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.3333,
+            "recall": 0.0455,
+            "f1": 0.08,
+            "support": 22
+          },
+          "humor": {
+            "precision": 0.36,
+            "recall": 0.45,
+            "f1": 0.4,
+            "support": 60
+          },
+          "emotional_resonance": {
+            "precision": 0.3846,
+            "recall": 0.4255,
+            "f1": 0.404,
+            "support": 47
+          },
+          "irrelevant_repetition": {
+            "precision": 0.75,
+            "recall": 0.25,
+            "f1": 0.375,
+            "support": 12
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 4
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 17
+          }
+        },
+        "tag_mae": 0.3423,
+        "tag_covered_rows": 164,
+        "tag_pair_count": 261,
+        "test_labels": {
+          "attack": 2,
+          "conflict": 4,
+          "emotional_resonance": 47,
+          "humor": 60,
+          "information": 22,
+          "irrelevant_repetition": 12,
+          "other": 17
+        },
+        "diagnostics": {
+          "top_pred_label": "humor",
+          "top_pred_share": 0.4573,
+          "distinct_pred_labels": 7,
+          "mean_max_prob": 0.1575,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3659,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3659
+        }
+      },
+      "S4": {
+        "test_bvid": "BV1W18Y61Ee5",
+        "train_bvids": [
+          "BV1GJ411x7h7",
+          "BV1w5xh6sEEz",
+          "BV1rCxe6wEN9",
+          "BV1bnxr6cEJ9",
+          "BV1mV4F6mE5Z"
+        ],
+        "n_test": 164,
+        "n_train": 2293,
+        "n_train_used": 2000,
+        "train_capped": true,
+        "train_labels": [
+          "attack",
+          "conflict",
+          "emotional_resonance",
+          "humor",
+          "inflammatory",
+          "information",
+          "irrelevant_repetition",
+          "other",
+          "political",
+          "spoiler"
+        ],
+        "unseen_test_labels": [],
+        "unseen_test_rows": 0,
+        "agreement": 0.2988,
+        "agreement_ceiling": 1.0,
+        "macro_f1": 0.0715,
+        "prf_n": 164,
+        "prf_unmatched": 0,
+        "per_label": {
+          "information": {
+            "precision": 0.25,
+            "recall": 0.0455,
+            "f1": 0.0769,
+            "support": 22
+          },
+          "humor": {
+            "precision": 0.2917,
+            "recall": 0.1167,
+            "f1": 0.1667,
+            "support": 60
+          },
+          "emotional_resonance": {
+            "precision": 0.3228,
+            "recall": 0.8723,
+            "f1": 0.4713,
+            "support": 47
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 12
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 4
+          },
+          "spoiler": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "political": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "inflammatory": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 17
+          }
+        },
+        "tag_mae": 0.3537,
+        "tag_covered_rows": 164,
+        "tag_pair_count": 261,
+        "test_labels": {
+          "attack": 2,
+          "conflict": 4,
+          "emotional_resonance": 47,
+          "humor": 60,
+          "information": 22,
+          "irrelevant_repetition": 12,
+          "other": 17
+        },
+        "diagnostics": {
+          "top_pred_label": "emotional_resonance",
+          "top_pred_share": 0.7744,
+          "distinct_pred_labels": 6,
+          "mean_max_prob": 0.1331,
+          "train_majority_label": "humor",
+          "train_majority_baseline": 0.3659,
+          "test_majority_label": "humor",
+          "test_majority_share": 0.3659
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "V0": {
+      "agreement_mean": 0.3296,
+      "agreement_weighted": 0.3904,
+      "macro_f1_mean": 0.1336,
+      "tag_mae_mean": 0.3634,
+      "unseen_test_rows": 5,
+      "agreement_pp_vs_v0": 0.0,
+      "macro_f1_pp_vs_v0": 0.0,
+      "tag_mae_delta_vs_v0": 0.0
+    },
+    "V1": {
+      "agreement_mean": 0.2567,
+      "agreement_weighted": 0.4335,
+      "macro_f1_mean": 0.0804,
+      "tag_mae_mean": 0.3749,
+      "unseen_test_rows": 5,
+      "agreement_pp_vs_v0": -7.29,
+      "macro_f1_pp_vs_v0": -5.32,
+      "tag_mae_delta_vs_v0": -0.0115
+    },
+    "V2": {
+      "agreement_mean": 0.2635,
+      "agreement_weighted": 0.3292,
+      "macro_f1_mean": 0.0758,
+      "tag_mae_mean": 0.3619,
+      "unseen_test_rows": 5,
+      "agreement_pp_vs_v0": -6.61,
+      "macro_f1_pp_vs_v0": -5.78,
+      "tag_mae_delta_vs_v0": 0.0015
+    },
+    "V3": {
+      "agreement_mean": 0.2801,
+      "agreement_weighted": 0.4489,
+      "macro_f1_mean": 0.0878,
+      "tag_mae_mean": 0.3726,
+      "unseen_test_rows": 5,
+      "agreement_pp_vs_v0": -4.95,
+      "macro_f1_pp_vs_v0": -4.58,
+      "tag_mae_delta_vs_v0": -0.0092
+    },
+    "V4": {
+      "agreement_mean": 0.259,
+      "agreement_weighted": 0.4351,
+      "macro_f1_mean": 0.063,
+      "tag_mae_mean": 0.3725,
+      "unseen_test_rows": 5,
+      "agreement_pp_vs_v0": -7.06,
+      "macro_f1_pp_vs_v0": -7.06,
+      "tag_mae_delta_vs_v0": -0.0091
+    }
+  },
+  "supplementary_aggregate": {
+    "S2": {
+      "agreement_mean": 0.2569,
+      "agreement_weighted": 0.2715,
+      "macro_f1_mean": 0.0748,
+      "tag_mae_mean": 0.343,
+      "unseen_test_rows": 5,
+      "agreement_pp_vs_v0": -7.27,
+      "macro_f1_pp_vs_v0": -5.88,
+      "tag_mae_delta_vs_v0": 0.0204
+    },
+    "S3": {
+      "agreement_mean": 0.3058,
+      "agreement_weighted": 0.3618,
+      "macro_f1_mean": 0.1129,
+      "tag_mae_mean": 0.353,
+      "unseen_test_rows": 5,
+      "agreement_pp_vs_v0": -2.38,
+      "macro_f1_pp_vs_v0": -2.07,
+      "tag_mae_delta_vs_v0": 0.0104
+    },
+    "S4": {
+      "agreement_mean": 0.2578,
+      "agreement_weighted": 0.3537,
+      "macro_f1_mean": 0.0753,
+      "tag_mae_mean": 0.3659,
+      "unseen_test_rows": 5,
+      "agreement_pp_vs_v0": -7.18,
+      "macro_f1_pp_vs_v0": -5.83,
+      "tag_mae_delta_vs_v0": -0.0025
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+ "study_id": "P01-A",
+ "condition": "all_on",
+ "started_at": "2026-11-18T09:25:00.000Z",
+ "ended_at": "2026-11-18T09:28:20.000Z",
+ "counts": {
+  "segments": 1,
+  "shown": 972,
+  "hidden": 19,
+  "collapsed": 0,
+  "thinned": 0,
+  "prefs": 0,
+  "corrections": 0,
+  "restores": 0,
+  "expands": 0,
+  "dropped_events": 0
+ },
+ "events": [
+  {
+   "t": 1795003484209,
+   "type": "segment",
+   "bvid": "BV1Ho4y1D7Wz",
+   "url": "https://api.bilibili.com/x/v2/dm/wbi/web/seg.so?type=1&oid=368951161&pid=376717331&segment_index=1&pull_mode=1&ps=0&pe=120000&web_location=1315873&x-bili-device-req-json=%7B%22platform%22:%22web%22,%22device%22:%22pc%22,%22mobi_app%22:%22web_cn%22%7D&x-bili-locale-json=%7B%22c_locale%22:%7B%22language%22:%22zh%22,%22script%22:%22Hans%22%7D,%22always_translate%22:false%7D&w_rid=4ed3a0a333d05958f2092ce34fcb43b6&wts=1795003483",
+   "segment_index": 1,
+   "shown": 972,
+   "hidden": 19,
+   "collapsed": 0,
+   "thinned": 0,
+   "by_label": {
+    "humor": 596,
+    "information": 150,
+    "other": 143,
+    "emotional_resonance": 77,
+    "irrelevant_repetition": 23,
+    "political": 2
+   },
+   "latency_ms": 1,
+   "online": true,
+   "applied": false
+  }
+ ],
+ "script_version": "dev",
+ "prefs": {
+  "version": 1,
+  "enabled": false,
+  "fail_open": true,
+  "min_confidence": 0.3,
+  "per_type": {
+   "information": "show",
+   "humor": "show",
+   "emotional_resonance": "show",
+   "irrelevant_repetition": "show",
+   "attack": "show",
+   "conflict": "show",
+   "spoiler": "show",
+   "political": "show",
+   "inflammatory": "show",
+   "other": "show"
+  },
+  "density": ""
+ },
+ "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+ "condition_label": "A"
+}

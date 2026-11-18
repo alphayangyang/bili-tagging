@@ -1,0 +1,516 @@
+[
+ {
+  "bvid": "BV1Ho4y1D7Wz",
+  "title": "三 分 钟 教 你 做 一 个 酷 炫 的 铋 晶 体",
+  "duration_s": 186,
+  "aid": 376717331,
+  "cid": 368951161,
+  "items": 1200,
+  "density": {
+   "items": 1200,
+   "per_min": 387.1,
+   "peak_per_min": 739.0,
+   "span_s": 185.4
+  },
+  "rules_counts": {
+   "attack": 0,
+   "conflict": 0,
+   "spoiler": 1,
+   "inflammatory": 0,
+   "irrelevant_repetition": 522,
+   "political": 2
+  }
+ },
+ {
+  "bvid": "BV1VMRKBCEDp",
+  "title": "3分钟解释各种睡眠时长的后果",
+  "duration_s": 214,
+  "aid": 116497246584911,
+  "cid": 37997449112,
+  "items": 1172,
+  "density": {
+   "items": 1172,
+   "per_min": 328.6,
+   "peak_per_min": 426.0,
+   "span_s": 213.4
+  },
+  "rules_counts": {
+   "attack": 3,
+   "conflict": 13,
+   "spoiler": 7,
+   "inflammatory": 3,
+   "irrelevant_repetition": 42,
+   "political": 8
+  }
+ },
+ {
+  "bvid": "BV1rAWc6YEFb",
+  "title": "3分钟看懂2026诺贝尔化学奖：开始只差一点，为什么结局天差地别？",
+  "duration_s": 222,
+  "aid": 117431452370455,
+  "cid": 42697361122,
+  "items": 139,
+  "density": {
+   "items": 139,
+   "per_min": 37.6,
+   "peak_per_min": 76.0,
+   "span_s": 213.9
+  },
+  "rules_counts": {
+   "attack": 0,
+   "conflict": 0,
+   "spoiler": 0,
+   "inflammatory": 0,
+   "irrelevant_repetition": 2,
+   "political": 1
+  }
+ },
+ {
+  "bvid": "BV18E1NByEYv",
+  "title": "哪个游戏的网络环境最恶臭？",
+  "duration_s": 290,
+  "aid": 115466353771829,
+  "cid": 33560462780,
+  "items": 1200,
+  "density": {
+   "items": 1200,
+   "per_min": 248.3,
+   "peak_per_min": 631.0,
+   "span_s": 289.8
+  },
+  "rules_counts": {
+   "attack": 15,
+   "conflict": 1,
+   "spoiler": 0,
+   "inflammatory": 3,
+   "irrelevant_repetition": 22,
+   "political": 2
+  }
+ },
+ {
+  "bvid": "BV1DeMyzjESo",
+  "title": "话糙理不糙 ，但这也太糙了吧",
+  "duration_s": 229,
+  "aid": 114680777415088,
+  "cid": 30491086516,
+  "items": 1062,
+  "density": {
+   "items": 1062,
+   "per_min": 278.3,
+   "peak_per_min": 461.0,
+   "span_s": 226.4
+  },
+  "rules_counts": {
+   "attack": 4,
+   "conflict": 4,
+   "spoiler": 0,
+   "inflammatory": 0,
+   "irrelevant_repetition": 24,
+   "political": 3
+  }
+ },
+ {
+  "bvid": "BV1MqEB6TEaR",
+  "title": "男生下头行为实力排行",
+  "duration_s": 226,
+  "aid": 116732429604104,
+  "cid": 39045432088,
+  "items": 1200,
+  "density": {
+   "items": 1200,
+   "per_min": 318.6,
+   "peak_per_min": 528.0,
+   "span_s": 226.0
+  },
+  "rules_counts": {
+   "attack": 1,
+   "conflict": 2,
+   "spoiler": 0,
+   "inflammatory": 0,
+   "irrelevant_repetition": 47,
+   "political": 1
+  }
+ },
+ {
+  "bvid": "BV1eSHx6nEgr",
+  "title": "撒旦托关系才能看2分钟",
+  "duration_s": 230,
+  "aid": 117388250976587,
+  "cid": 42486532523,
+  "items": 1200,
+  "density": {
+   "items": 1200,
+   "per_min": 313.0,
+   "peak_per_min": 672.0,
+   "span_s": 228.6
+  },
+  "rules_counts": {
+   "attack": 1,
+   "conflict": 0,
+   "spoiler": 0,
+   "inflammatory": 0,
+   "irrelevant_repetition": 872,
+   "political": 0
+  }
+ },
+ {
+  "bvid": "BV11BQUBGEm9",
+  "title": "“让你拿下辩论赛，不是让你拿下对方辩手”",
+  "duration_s": 260,
+  "aid": 116290014485947,
+  "cid": 36976004985,
+  "items": 852,
+  "density": {
+   "items": 852,
+   "per_min": 196.6,
+   "peak_per_min": 574.0,
+   "span_s": 257.8
+  },
+  "rules_counts": {
+   "attack": 3,
+   "conflict": 1,
+   "spoiler": 0,
+   "inflammatory": 0,
+   "irrelevant_repetition": 302,
+   "political": 5
+  }
+ },
+ {
+  "bvid": "BV1eU4y1n7qg",
+  "error": "TimeoutError: The read operation timed out"
+ },
+ {
+  "bvid": "BV1Z4RHYKEcB",
+  "title": "从零开始建立“金融世界观”- 基础分析框架 【阿周的Eureka】",
+  "duration_s": 281,
+  "aid": 114142128113908,
+  "cid": 28806153731,
+  "items": 725,
+  "density": {
+   "items": 725,
+   "per_min": 154.8,
+   "peak_per_min": 226.0,
+   "span_s": 280.4
+  },
+  "rules_counts": {
+   "attack": 0,
+   "conflict": 2,
+   "spoiler": 0,
+   "inflammatory": 1,
+   "irrelevant_repetition": 26,
+   "political": 11
+  }
+ },
+ {
+  "bvid": "BV1X7zGY4E45",
+  "title": "欢迎来到自由式辩论赛场！今日辩题是“吃坚果到底好还是不好”？有请双方辩手！",
+  "duration_s": 194,
+  "aid": 113548583768549,
+  "cid": 27039826980,
+  "items": 1200,
+  "density": {
+   "items": 1200,
+   "per_min": 371.1,
+   "peak_per_min": 427.0,
+   "span_s": 193.2
+  },
+  "rules_counts": {
+   "attack": 1,
+   "conflict": 33,
+   "spoiler": 1,
+   "inflammatory": 3,
+   "irrelevant_repetition": 162,
+   "political": 8
+  }
+ },
+ {
+  "bvid": "BV1o6421T7aM",
+  "title": "严重剧透！慎入！三分钟解构剧情！以最客观的视角复述《热辣滚烫》剧情！",
+  "duration_s": 211,
+  "aid": 1400639529,
+  "cid": 1438643553,
+  "items": 142,
+  "density": {
+   "items": 142,
+   "per_min": 40.4,
+   "peak_per_min": 120.0,
+   "span_s": 196.0
+  },
+  "rules_counts": {
+   "attack": 0,
+   "conflict": 0,
+   "spoiler": 0,
+   "inflammatory": 0,
+   "irrelevant_repetition": 95,
+   "political": 1
+  }
+ },
+ {
+  "bvid": "BV1SV411U7GQ",
+  "title": "采访翻车现场有多搞笑，全是名场面，最后一个笑吐了",
+  "duration_s": 221,
+  "aid": 414319881,
+  "cid": 226748387,
+  "items": 1200,
+  "density": {
+   "items": 1200,
+   "per_min": 325.8,
+   "peak_per_min": 391.0,
+   "span_s": 218.5
+  },
+  "rules_counts": {
+   "attack": 1,
+   "conflict": 1,
+   "spoiler": 0,
+   "inflammatory": 0,
+   "irrelevant_repetition": 106,
+   "political": 7
+  }
+ },
+ {
+  "bvid": "BV16BfgBVEMS",
+  "title": "看来人类文明这次凶多吉少了原视频",
+  "duration_s": 182,
+  "aid": 116101774049295,
+  "cid": 36174368475,
+  "items": 1200,
+  "density": {
+   "items": 1200,
+   "per_min": 395.6,
+   "peak_per_min": 887.0,
+   "span_s": 180.7
+  },
+  "rules_counts": {
+   "attack": 0,
+   "conflict": 0,
+   "spoiler": 0,
+   "inflammatory": 0,
+   "irrelevant_repetition": 9,
+   "political": 0
+  }
+ },
+ {
+  "bvid": "BV1ko4y1t7QN",
+  "title": "【B站最全】小鬼九大逆天名场面大全，每一个都能成为万恶之源",
+  "duration_s": 249,
+  "aid": 398186238,
+  "cid": 1115538112,
+  "items": 1200,
+  "density": {
+   "items": 1200,
+   "per_min": 289.2,
+   "peak_per_min": 407.0,
+   "span_s": 248.2
+  },
+  "rules_counts": {
+   "attack": 5,
+   "conflict": 3,
+   "spoiler": 2,
+   "inflammatory": 0,
+   "irrelevant_repetition": 119,
+   "political": 3
+  }
+ },
+ {
+  "bvid": "BV161sX6UEqt",
+  "title": "建议所有骂过时代少年团的都来看一下这个视ping",
+  "duration_s": 300,
+  "aid": 117519348140524,
+  "cid": 43132323556,
+  "items": 1200,
+  "density": {
+   "items": 1200,
+   "per_min": 240.0,
+   "peak_per_min": 629.0,
+   "span_s": 297.7
+  },
+  "rules_counts": {
+   "attack": 5,
+   "conflict": 0,
+   "spoiler": 1,
+   "inflammatory": 1,
+   "irrelevant_repetition": 187,
+   "political": 4
+  }
+ },
+ {
+  "bvid": "BV1CuvSBAEPV",
+  "title": "当你质疑牢A去自查，却发现了油管3000W播放视频……",
+  "duration_s": 194,
+  "aid": 115818658531646,
+  "cid": 35119171160,
+  "items": 642,
+  "density": {
+   "items": 642,
+   "per_min": 198.6,
+   "peak_per_min": 328.0,
+   "span_s": 193.4
+  },
+  "rules_counts": {
+   "attack": 0,
+   "conflict": 1,
+   "spoiler": 0,
+   "inflammatory": 0,
+   "irrelevant_repetition": 9,
+   "political": 29
+  }
+ },
+ {
+  "bvid": "BV1JJ4m1M78x",
+  "error": "TimeoutError: The read operation timed out"
+ },
+ {
+  "bvid": "BV1CY4b64E6E",
+  "title": "《嫁金钗》大结局一整个夜香女帝的临终幻想，内娱的古偶癫剧困在封建主义里了",
+  "duration_s": 227,
+  "aid": 117563606436539,
+  "cid": 43353245019,
+  "items": 296,
+  "density": {
+   "items": 296,
+   "per_min": 78.2,
+   "peak_per_min": 115.0,
+   "span_s": 224.7
+  },
+  "rules_counts": {
+   "attack": 1,
+   "conflict": 2,
+   "spoiler": 0,
+   "inflammatory": 0,
+   "irrelevant_repetition": 22,
+   "political": 5
+  }
+ },
+ {
+  "bvid": "BV1FngP6rExg",
+  "title": "锐评高开低走臭水沟的百合作品【第四期】",
+  "duration_s": 262,
+  "aid": 117093374627183,
+  "cid": 40906657760,
+  "items": 358,
+  "density": {
+   "items": 358,
+   "per_min": 82.0,
+   "peak_per_min": 129.0,
+   "span_s": 256.7
+  },
+  "rules_counts": {
+   "attack": 1,
+   "conflict": 0,
+   "spoiler": 0,
+   "inflammatory": 0,
+   "irrelevant_repetition": 63,
+   "political": 4
+  }
+ },
+ {
+  "bvid": "BV1dkPrzzEka",
+  "title": "剧情那么烂，制作组那么多人难道没人发现？为什么不改？",
+  "duration_s": 181,
+  "aid": 116174956334938,
+  "cid": 36466788186,
+  "items": 341,
+  "density": {
+   "items": 341,
+   "per_min": 113.0,
+   "peak_per_min": 138.0,
+   "span_s": 178.4
+  },
+  "rules_counts": {
+   "attack": 1,
+   "conflict": 0,
+   "spoiler": 0,
+   "inflammatory": 0,
+   "irrelevant_repetition": 6,
+   "political": 3
+  }
+ },
+ {
+  "bvid": "BV1Sptv6HEVY",
+  "title": "暴 雨 告 发",
+  "duration_s": 206,
+  "aid": 117210328603937,
+  "cid": 41566145226,
+  "items": 1200,
+  "density": {
+   "items": 1200,
+   "per_min": 349.5,
+   "peak_per_min": 533.0,
+   "span_s": 205.2
+  },
+  "rules_counts": {
+   "attack": 1,
+   "conflict": 1,
+   "spoiler": 0,
+   "inflammatory": 0,
+   "irrelevant_repetition": 167,
+   "political": 1
+  }
+ },
+ {
+  "bvid": "BV1AE411v7CN",
+  "title": "被父母抛弃的少女，为了钱，居然卖身成为别人的妹妹？！",
+  "duration_s": 300,
+  "aid": 75031230,
+  "cid": 128354924,
+  "items": 1190,
+  "density": {
+   "items": 1190,
+   "per_min": 238.0,
+   "peak_per_min": 372.0,
+   "span_s": 299.8
+  },
+  "rules_counts": {
+   "attack": 1,
+   "conflict": 0,
+   "spoiler": 0,
+   "inflammatory": 0,
+   "irrelevant_repetition": 144,
+   "political": 8
+  }
+ },
+ {
+  "bvid": "BV1Eo7n6iEhf",
+  "title": "海贼王极速版:1-1000集",
+  "duration_s": 201,
+  "aid": 116820291884910,
+  "cid": 39445137852,
+  "items": 716,
+  "density": {
+   "items": 716,
+   "per_min": 213.7,
+   "peak_per_min": 220.0,
+   "span_s": 200.5
+  },
+  "rules_counts": {
+   "attack": 0,
+   "conflict": 0,
+   "spoiler": 3,
+   "inflammatory": 0,
+   "irrelevant_repetition": 47,
+   "political": 12
+  }
+ },
+ {
+  "bvid": "BV1CzW26vEXz",
+  "title": "离谱！日网友一条弃坑推文居然引来近千万网友围观！",
+  "duration_s": 271,
+  "aid": 117597664184695,
+  "cid": 43523311093,
+  "items": 1119,
+  "density": {
+   "items": 1119,
+   "per_min": 247.7,
+   "peak_per_min": 407.0,
+   "span_s": 270.4
+  },
+  "rules_counts": {
+   "attack": 2,
+   "conflict": 6,
+   "spoiler": 7,
+   "inflammatory": 0,
+   "irrelevant_repetition": 31,
+   "political": 41
+  }
+ }
+]

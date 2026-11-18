@@ -1,0 +1,126 @@
+{
+  "version": 0.3,
+  "language": "zh",
+  "fallback": "other",
+  "note": "Generated from danmaku_filter/taxonomy.py; edit the Python source, then regenerate.",
+  "categories": [
+    {
+      "id": "information",
+      "name": "Information",
+      "definition": "Adds factual or explanatory content about the video: sources, trivia, background, translations, timestamps, or explanations of what is on screen.",
+      "examples": [
+        "这个BGM出自《星际穿越》",
+        "注意看右下角的时间",
+        "原曲是肖邦的夜曲"
+      ],
+      "visibility": "show",
+      "priority": 3
+    },
+    {
+      "id": "humor",
+      "name": "Humor",
+      "definition": "A joke, pun, meme reference, or witty remark whose main purpose is to amuse, with some content beyond pure laughter.",
+      "examples": [
+        "这波操作属实是反向带货",
+        "导演：我谢谢你"
+      ],
+      "visibility": "show",
+      "priority": 6
+    },
+    {
+      "id": "emotional_resonance",
+      "name": "Emotional resonance",
+      "definition": "Expresses or echoes emotion, empathy, agreement, or shared feeling with the video or with other viewers.",
+      "examples": [
+        "看到这里真的泪目了",
+        "太真实了，说的就是我"
+      ],
+      "visibility": "show",
+      "priority": 5
+    },
+    {
+      "id": "irrelevant_repetition",
+      "name": "Irrelevant repetition",
+      "definition": "Low-information, repetitive, or spam-like reactions: character flooding, number or word spam, first, front row, passing by, empty hype.",
+      "examples": [
+        "哈哈哈哈哈哈哈",
+        "1111",
+        "第一",
+        "前排打卡"
+      ],
+      "visibility": "collapse",
+      "priority": 7
+    },
+    {
+      "id": "attack",
+      "name": "Attack",
+      "definition": "Insults, harassment, or hostility directed at a person or group: the creator, other viewers, or people in the video.",
+      "examples": [
+        "up主就是个傻逼",
+        "滚出去吧别恶心人了"
+      ],
+      "visibility": "hide",
+      "priority": 1
+    },
+    {
+      "id": "conflict",
+      "name": "Conflict",
+      "definition": "Argumentative or confrontational replies that escalate disagreement, including provocation and dismissive taunts, without an explicit insult.",
+      "examples": [
+        "你懂什么就在这里说",
+        "别杠了，有本事你来"
+      ],
+      "visibility": "hide",
+      "priority": 2
+    },
+    {
+      "id": "spoiler",
+      "name": "Spoiler",
+      "definition": "Reveals content that appears later in the video or story and ruins surprise; requires video context and a timestamp to judge.",
+      "examples": [
+        "剧透预警：他最后没活下来",
+        "别急，等下就反转了"
+      ],
+      "visibility": "hide",
+      "priority": 4
+    },
+    {
+      "id": "political",
+      "name": "Political stance",
+      "definition": "States, implies, or mocks a political position on public affairs: policy, institutions, leaders, elections, or national, ethnic and regional identity. The stance can be serious or ironic.",
+      "examples": [
+        "这政策早该改了",
+        "懂的都懂",
+        "又开始赢麻了"
+      ],
+      "visibility": "show",
+      "priority": 8
+    },
+    {
+      "id": "inflammatory",
+      "name": "Inflammatory bait",
+      "definition": "Deliberately provokes or takes sides in a heated social issue (gender, region, fandom, morality) to start a fight or rally a camp, without necessarily insulting a specific person.",
+      "examples": [
+        "这也能洗？",
+        "两边都别装了",
+        "不服来辩"
+      ],
+      "visibility": "hide",
+      "priority": 2
+    },
+    {
+      "id": "other",
+      "name": "Other / unclassifiable",
+      "definition": "Text whose social function cannot be judged from the text and timestamp, or that does not serve any function above: off-topic chatter, private inside references, raw symbol strings, or unreadable fragments.",
+      "examples": [
+        "？？？",
+        "蹲一个",
+        "-----"
+      ],
+      "visibility": "show",
+      "priority": 99,
+      "fallback": true,
+      "usage": "Last resort, not a safe default. Label other only when every tag scores below 0.2; when a comment is merely ambiguous, give the closest tag a low score and explain the choice in the note."
+    }
+  ]
+}

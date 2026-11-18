@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "study_id": "P023-B",
+  "participant": "P023",
+  "condition": "B",
+  "started_at": "2026-11-20T09:00:00Z",
+  "ended_at": "2026-11-20T09:44:00Z",
+  "counts": {
+    "shown": 100,
+    "hidden": 20,
+    "collapsed": 10
+  },
+  "events": [
+    {
+      "type": "segment",
+      "bvid": "BV1VMRKBCEDp",
+      "segment": 0,
+      "ts": 0,
+      "shown": 37,
+      "hidden": 0,
+      "collapsed": 0,
+      "by_label": {
+        "attack": 0
+      },
+      "latency_ms": 7.26,
+      "online": 1,
+      "applied": false
+    },
+    {
+      "type": "segment",
+      "bvid": "BV1VMRKBCEDp",
+      "segment": 1,
+      "ts": 1000,
+      "shown": 22,
+      "hidden": 0,
+      "collapsed": 0,
+      "by_label": {
+        "attack": 4
+      },
+      "latency_ms": 3.04,
+      "online": 2,
+      "applied": false
+    },
+    {
+      "type": "segment",
+      "bvid": "BV1VMRKBCEDp",
+      "segment": 2,
+      "ts": 2000,
+      "shown": 35,
+      "hidden": 0,
+      "collapsed": 0,
+      "by_label": {
+        "attack": 4
+      },
+      "latency_ms": 7.51,
+      "online": 3,
+      "applied": false
+    },
+    {
+      "type": "segment",
+      "bvid": "BV1X7zGY4E45",
+      "segment": 0,
+      "ts": 0,
+      "shown": 8,
+      "hidden": 0,
+      "collapsed": 0,
+      "by_label": {
+        "attack": 0
+      },
+      "latency_ms": 7.32,
+      "online": 1,
+      "applied": false
+    },
+    {
+      "type": "segment",
+      "bvid": "BV1X7zGY4E45",
+      "segment": 1,
+      "ts": 1000,
+      "shown": 9,
+      "hidden": 0,
+      "collapsed": 0,
+      "by_label": {
+        "attack": 0
+      },
+      "latency_ms": 3.04,
+      "online": 2,
+      "applied": false
+    },
+    {
+      "type": "segment",
+      "bvid": "BV1X7zGY4E45",
+      "segment": 2,
+      "ts": 2000,
+      "shown": 13,
+      "hidden": 0,
+      "collapsed": 0,
+      "by_label": {
+        "attack": 0
+      },
+      "latency_ms": 4.78,
+      "online": 3,
+      "applied": false
+    }
+  ],
+  "script_version": "0.4.0-demo",
+  "prefs": {
+    "min_confidence": 0.3
+  },
+  "ua": "demo"
+}

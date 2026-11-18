@@ -1,0 +1,837 @@
+{
+  "sets": {
+    "human_gold": {
+      "rules": {
+        "n": 29,
+        "agreement": 0.3448,
+        "agreement_ci95": [
+          0.1724,
+          0.5517
+        ],
+        "macro_f1": 0.2571,
+        "tag_mae": 0.7879,
+        "ms_per_item": 0.13,
+        "pred_dist": {
+          "information": 5,
+          "political": 1,
+          "humor": 5,
+          "emotional_resonance": 4,
+          "irrelevant_repetition": 4,
+          "spoiler": 5,
+          "other": 5
+        },
+        "intensity_mae": 0.15
+      },
+      "linear_centroid": {
+        "n": 29,
+        "agreement": 0.7586,
+        "agreement_ci95": [
+          0.5862,
+          0.8966
+        ],
+        "macro_f1": 0.5513,
+        "tag_mae": 0.25,
+        "ms_per_item": 1.351,
+        "pred_dist": {
+          "humor": 20,
+          "emotional_resonance": 4,
+          "irrelevant_repetition": 3,
+          "information": 2
+        },
+        "intensity_mae": 0.2728
+      },
+      "linear_softmax": {
+        "n": 29,
+        "agreement": 0.8276,
+        "agreement_ci95": [
+          0.6897,
+          0.9655
+        ],
+        "macro_f1": 0.7167,
+        "tag_mae": 0.25,
+        "ms_per_item": 141.954,
+        "pred_dist": {
+          "humor": 21,
+          "information": 2,
+          "emotional_resonance": 3,
+          "irrelevant_repetition": 3
+        },
+        "intensity_mae": 0.262
+      },
+      "tfidf_svm": {
+        "n": 29,
+        "agreement": 0.8276,
+        "agreement_ci95": [
+          0.6897,
+          0.9655
+        ],
+        "macro_f1": 0.7167,
+        "tag_mae": 1.0,
+        "ms_per_item": 18.095,
+        "pred_dist": {
+          "humor": 21,
+          "information": 2,
+          "emotional_resonance": 3,
+          "irrelevant_repetition": 3
+        },
+        "intensity_mae": 0.2793
+      },
+      "bge_anchor": {
+        "n": 29,
+        "agreement": 0.2759,
+        "agreement_ci95": [
+          0.1034,
+          0.4483
+        ],
+        "macro_f1": 0.1769,
+        "tag_mae": 0.5313,
+        "ms_per_item": 25.521,
+        "pred_dist": {
+          "irrelevant_repetition": 8,
+          "emotional_resonance": 2,
+          "information": 4,
+          "political": 7,
+          "humor": 2,
+          "spoiler": 5,
+          "inflammatory": 1
+        },
+        "intensity_mae": 0.1468
+      },
+      "qwen35_4b": {
+        "n": 29,
+        "agreement": 0.6897,
+        "agreement_ci95": [
+          0.5172,
+          0.8621
+        ],
+        "macro_f1": 0.3658,
+        "tag_mae": 0.4608,
+        "ms_per_item": 0.004,
+        "pred_dist": {
+          "humor": 15,
+          "emotional_resonance": 5,
+          "spoiler": 3,
+          "irrelevant_repetition": 4,
+          "other": 2
+        },
+        "intensity_mae": 0.1976
+      }
+    },
+    "in_domain": {
+      "rules": {
+        "n": 131,
+        "agreement": 0.1679,
+        "agreement_ci95": [
+          0.1069,
+          0.2366
+        ],
+        "macro_f1": 0.1216,
+        "tag_mae": 0.5174,
+        "ms_per_item": 0.012,
+        "pred_dist": {
+          "humor": 6,
+          "other": 96,
+          "emotional_resonance": 19,
+          "information": 6,
+          "political": 2,
+          "irrelevant_repetition": 1,
+          "spoiler": 1
+        }
+      },
+      "linear_centroid": {
+        "n": 131,
+        "agreement": 0.5954,
+        "agreement_ci95": [
+          0.5115,
+          0.6794
+        ],
+        "macro_f1": 0.3356,
+        "tag_mae": 0.2182,
+        "ms_per_item": 0.32,
+        "pred_dist": {
+          "humor": 60,
+          "emotional_resonance": 39,
+          "irrelevant_repetition": 24,
+          "information": 8
+        }
+      },
+      "linear_softmax": {
+        "n": 131,
+        "agreement": 0.5573,
+        "agreement_ci95": [
+          0.4733,
+          0.6336
+        ],
+        "macro_f1": 0.311,
+        "tag_mae": 0.2023,
+        "ms_per_item": 31.219,
+        "pred_dist": {
+          "humor": 77,
+          "emotional_resonance": 32,
+          "irrelevant_repetition": 9,
+          "information": 13
+        }
+      },
+      "tfidf_svm": {
+        "n": 131,
+        "agreement": 0.5954,
+        "agreement_ci95": [
+          0.5115,
+          0.6718
+        ],
+        "macro_f1": 0.3419,
+        "tag_mae": 0.5219,
+        "ms_per_item": 0.258,
+        "pred_dist": {
+          "humor": 64,
+          "emotional_resonance": 39,
+          "irrelevant_repetition": 16,
+          "information": 12
+        }
+      },
+      "bge_anchor": {
+        "n": 131,
+        "agreement": 0.229,
+        "agreement_ci95": [
+          0.1603,
+          0.2977
+        ],
+        "macro_f1": 0.1113,
+        "tag_mae": 0.4775,
+        "ms_per_item": 14.808,
+        "pred_dist": {
+          "humor": 3,
+          "political": 29,
+          "irrelevant_repetition": 46,
+          "attack": 5,
+          "emotional_resonance": 6,
+          "inflammatory": 8,
+          "information": 21,
+          "spoiler": 13
+        }
+      },
+      "qwen35_4b": {
+        "n": 131,
+        "agreement": 0.5267,
+        "agreement_ci95": [
+          0.4504,
+          0.6107
+        ],
+        "macro_f1": 0.3181,
+        "tag_mae": 0.3778,
+        "ms_per_item": 0.002,
+        "pred_dist": {
+          "humor": 18,
+          "information": 42,
+          "irrelevant_repetition": 28,
+          "spoiler": 11,
+          "emotional_resonance": 27,
+          "other": 4,
+          "political": 1
+        }
+      }
+    },
+    "new:BV1w5xh6sEEz": {
+      "rules": {
+        "n": 100,
+        "agreement": 0.19,
+        "agreement_ci95": [
+          0.12,
+          0.27
+        ],
+        "macro_f1": 0.193,
+        "tag_mae": 0.4272,
+        "ms_per_item": 0.012,
+        "pred_dist": {
+          "other": 77,
+          "information": 14,
+          "emotional_resonance": 2,
+          "humor": 1,
+          "irrelevant_repetition": 6
+        }
+      },
+      "linear_centroid": {
+        "n": 100,
+        "agreement": 0.28,
+        "agreement_ci95": [
+          0.19,
+          0.37
+        ],
+        "macro_f1": 0.1298,
+        "tag_mae": 0.1288,
+        "ms_per_item": 0.734,
+        "pred_dist": {
+          "humor": 42,
+          "irrelevant_repetition": 10,
+          "emotional_resonance": 25,
+          "attack": 1,
+          "conflict": 2,
+          "information": 7,
+          "political": 5,
+          "other": 7,
+          "spoiler": 1
+        }
+      },
+      "linear_softmax": {
+        "n": 100,
+        "agreement": 0.34,
+        "agreement_ci95": [
+          0.25,
+          0.44
+        ],
+        "macro_f1": 0.2285,
+        "tag_mae": 0.0969,
+        "ms_per_item": 160.514,
+        "pred_dist": {
+          "humor": 68,
+          "irrelevant_repetition": 12,
+          "emotional_resonance": 11,
+          "information": 9
+        }
+      },
+      "tfidf_svm": {
+        "n": 100,
+        "agreement": 0.27,
+        "agreement_ci95": [
+          0.19,
+          0.36
+        ],
+        "macro_f1": 0.1444,
+        "tag_mae": 0.5951,
+        "ms_per_item": 0.807,
+        "pred_dist": {
+          "humor": 36,
+          "irrelevant_repetition": 20,
+          "emotional_resonance": 25,
+          "conflict": 2,
+          "information": 11,
+          "political": 1,
+          "other": 4,
+          "attack": 1
+        }
+      },
+      "bge_anchor": {
+        "n": 100,
+        "agreement": 0.23,
+        "agreement_ci95": [
+          0.15,
+          0.32
+        ],
+        "macro_f1": 0.1418,
+        "tag_mae": 0.4604,
+        "ms_per_item": 15.914,
+        "pred_dist": {
+          "irrelevant_repetition": 47,
+          "political": 15,
+          "inflammatory": 12,
+          "attack": 4,
+          "humor": 6,
+          "conflict": 4,
+          "emotional_resonance": 3,
+          "spoiler": 3,
+          "information": 6
+        }
+      },
+      "qwen35_4b": {
+        "n": 100,
+        "agreement": 0.44,
+        "agreement_ci95": [
+          0.34,
+          0.53
+        ],
+        "macro_f1": 0.267,
+        "tag_mae": 0.3262,
+        "ms_per_item": 0.002,
+        "pred_dist": {
+          "other": 27,
+          "humor": 10,
+          "irrelevant_repetition": 21,
+          "information": 13,
+          "emotional_resonance": 25,
+          "conflict": 1,
+          "spoiler": 3
+        }
+      }
+    },
+    "new:BV1rCxe6wEN9": {
+      "rules": {
+        "n": 100,
+        "agreement": 0.17,
+        "agreement_ci95": [
+          0.1,
+          0.25
+        ],
+        "macro_f1": 0.1425,
+        "tag_mae": 0.4281,
+        "ms_per_item": 0.012,
+        "pred_dist": {
+          "other": 78,
+          "humor": 2,
+          "political": 9,
+          "conflict": 1,
+          "irrelevant_repetition": 6,
+          "emotional_resonance": 2,
+          "information": 2
+        }
+      },
+      "linear_centroid": {
+        "n": 100,
+        "agreement": 0.2,
+        "agreement_ci95": [
+          0.13,
+          0.28
+        ],
+        "macro_f1": 0.1202,
+        "tag_mae": 0.1404,
+        "ms_per_item": 0.647,
+        "pred_dist": {
+          "humor": 59,
+          "emotional_resonance": 15,
+          "information": 4,
+          "irrelevant_repetition": 8,
+          "political": 8,
+          "attack": 4,
+          "other": 2
+        }
+      },
+      "linear_softmax": {
+        "n": 100,
+        "agreement": 0.14,
+        "agreement_ci95": [
+          0.08,
+          0.21
+        ],
+        "macro_f1": 0.0781,
+        "tag_mae": 0.1284,
+        "ms_per_item": 147.671,
+        "pred_dist": {
+          "humor": 72,
+          "information": 14,
+          "irrelevant_repetition": 4,
+          "emotional_resonance": 10
+        }
+      },
+      "tfidf_svm": {
+        "n": 100,
+        "agreement": 0.21,
+        "agreement_ci95": [
+          0.14,
+          0.29
+        ],
+        "macro_f1": 0.1357,
+        "tag_mae": 0.5944,
+        "ms_per_item": 0.607,
+        "pred_dist": {
+          "humor": 50,
+          "information": 20,
+          "irrelevant_repetition": 10,
+          "emotional_resonance": 15,
+          "political": 3,
+          "other": 2
+        }
+      },
+      "bge_anchor": {
+        "n": 100,
+        "agreement": 0.18,
+        "agreement_ci95": [
+          0.11,
+          0.26
+        ],
+        "macro_f1": 0.0939,
+        "tag_mae": 0.4606,
+        "ms_per_item": 15.563,
+        "pred_dist": {
+          "political": 44,
+          "spoiler": 6,
+          "irrelevant_repetition": 26,
+          "inflammatory": 8,
+          "attack": 8,
+          "humor": 2,
+          "emotional_resonance": 2,
+          "information": 2,
+          "conflict": 2
+        }
+      },
+      "qwen35_4b": {
+        "n": 100,
+        "agreement": 0.34,
+        "agreement_ci95": [
+          0.25,
+          0.44
+        ],
+        "macro_f1": 0.304,
+        "tag_mae": 0.3406,
+        "ms_per_item": 922.501,
+        "pred_dist": {
+          "irrelevant_repetition": 39,
+          "humor": 15,
+          "conflict": 1,
+          "emotional_resonance": 7,
+          "other": 9,
+          "political": 18,
+          "information": 9,
+          "attack": 2
+        }
+      }
+    },
+    "new:BV1bnxr6cEJ9": {
+      "rules": {
+        "n": 67,
+        "agreement": 0.2239,
+        "agreement_ci95": [
+          0.1343,
+          0.3284
+        ],
+        "macro_f1": 0.1937,
+        "tag_mae": 0.4807,
+        "ms_per_item": 0.012,
+        "pred_dist": {
+          "other": 37,
+          "irrelevant_repetition": 9,
+          "information": 3,
+          "emotional_resonance": 2,
+          "political": 13,
+          "humor": 3
+        }
+      },
+      "linear_centroid": {
+        "n": 67,
+        "agreement": 0.2985,
+        "agreement_ci95": [
+          0.194,
+          0.403
+        ],
+        "macro_f1": 0.1813,
+        "tag_mae": 0.1579,
+        "ms_per_item": 1.134,
+        "pred_dist": {
+          "emotional_resonance": 14,
+          "humor": 21,
+          "attack": 5,
+          "information": 3,
+          "political": 16,
+          "irrelevant_repetition": 3,
+          "inflammatory": 2,
+          "conflict": 3
+        }
+      },
+      "linear_softmax": {
+        "n": 67,
+        "agreement": 0.403,
+        "agreement_ci95": [
+          0.2836,
+          0.5224
+        ],
+        "macro_f1": 0.2843,
+        "tag_mae": 0.1264,
+        "ms_per_item": 238.718,
+        "pred_dist": {
+          "humor": 37,
+          "irrelevant_repetition": 8,
+          "information": 14,
+          "emotional_resonance": 8
+        }
+      },
+      "tfidf_svm": {
+        "n": 67,
+        "agreement": 0.3433,
+        "agreement_ci95": [
+          0.2388,
+          0.4627
+        ],
+        "macro_f1": 0.2784,
+        "tag_mae": 0.6026,
+        "ms_per_item": 1.19,
+        "pred_dist": {
+          "information": 18,
+          "humor": 18,
+          "emotional_resonance": 17,
+          "political": 7,
+          "irrelevant_repetition": 6,
+          "attack": 1
+        }
+      },
+      "bge_anchor": {
+        "n": 67,
+        "agreement": 0.3284,
+        "agreement_ci95": [
+          0.2239,
+          0.4478
+        ],
+        "macro_f1": 0.2069,
+        "tag_mae": 0.4654,
+        "ms_per_item": 16.931,
+        "pred_dist": {
+          "inflammatory": 10,
+          "political": 25,
+          "irrelevant_repetition": 19,
+          "attack": 7,
+          "information": 4,
+          "humor": 1,
+          "emotional_resonance": 1
+        }
+      },
+      "qwen35_4b": {
+        "n": 67,
+        "agreement": 0.4925,
+        "agreement_ci95": [
+          0.3881,
+          0.6119
+        ],
+        "macro_f1": 0.426,
+        "tag_mae": 0.3233,
+        "ms_per_item": 895.611,
+        "pred_dist": {
+          "emotional_resonance": 10,
+          "humor": 16,
+          "irrelevant_repetition": 11,
+          "information": 9,
+          "political": 9,
+          "other": 5,
+          "conflict": 4,
+          "attack": 3
+        }
+      }
+    },
+    "new:BV1mV4F6mE5Z": {
+      "rules": {
+        "n": 100,
+        "agreement": 0.25,
+        "agreement_ci95": [
+          0.17,
+          0.34
+        ],
+        "macro_f1": 0.1769,
+        "tag_mae": 0.4072,
+        "ms_per_item": 0.014,
+        "pred_dist": {
+          "emotional_resonance": 2,
+          "other": 81,
+          "humor": 3,
+          "irrelevant_repetition": 3,
+          "information": 11
+        }
+      },
+      "linear_centroid": {
+        "n": 100,
+        "agreement": 0.26,
+        "agreement_ci95": [
+          0.17,
+          0.36
+        ],
+        "macro_f1": 0.1138,
+        "tag_mae": 0.1291,
+        "ms_per_item": 0.658,
+        "pred_dist": {
+          "humor": 57,
+          "emotional_resonance": 22,
+          "information": 4,
+          "irrelevant_repetition": 5,
+          "attack": 2,
+          "political": 8,
+          "other": 2
+        }
+      },
+      "linear_softmax": {
+        "n": 100,
+        "agreement": 0.32,
+        "agreement_ci95": [
+          0.23,
+          0.42
+        ],
+        "macro_f1": 0.1712,
+        "tag_mae": 0.1073,
+        "ms_per_item": 171.519,
+        "pred_dist": {
+          "humor": 70,
+          "information": 12,
+          "irrelevant_repetition": 5,
+          "emotional_resonance": 13
+        }
+      },
+      "tfidf_svm": {
+        "n": 100,
+        "agreement": 0.33,
+        "agreement_ci95": [
+          0.24,
+          0.43
+        ],
+        "macro_f1": 0.1803,
+        "tag_mae": 0.6015,
+        "ms_per_item": 0.775,
+        "pred_dist": {
+          "humor": 54,
+          "information": 14,
+          "irrelevant_repetition": 11,
+          "emotional_resonance": 21
+        }
+      },
+      "bge_anchor": {
+        "n": 100,
+        "agreement": 0.11,
+        "agreement_ci95": [
+          0.05,
+          0.17
+        ],
+        "macro_f1": 0.0792,
+        "tag_mae": 0.4817,
+        "ms_per_item": 15.448,
+        "pred_dist": {
+          "emotional_resonance": 3,
+          "irrelevant_repetition": 31,
+          "inflammatory": 20,
+          "political": 24,
+          "conflict": 1,
+          "spoiler": 4,
+          "attack": 11,
+          "information": 5,
+          "humor": 1
+        }
+      },
+      "qwen35_4b": {
+        "n": 100,
+        "agreement": 0.35,
+        "agreement_ci95": [
+          0.25,
+          0.45
+        ],
+        "macro_f1": 0.1779,
+        "tag_mae": 0.3532,
+        "ms_per_item": 798.534,
+        "pred_dist": {
+          "emotional_resonance": 14,
+          "information": 6,
+          "other": 18,
+          "irrelevant_repetition": 18,
+          "humor": 40,
+          "political": 1,
+          "conflict": 2,
+          "spoiler": 1
+        }
+      }
+    },
+    "new:BV1W18Y61Ee5": {
+      "rules": {
+        "n": 100,
+        "agreement": 0.23,
+        "agreement_ci95": [
+          0.15,
+          0.32
+        ],
+        "macro_f1": 0.1768,
+        "tag_mae": 0.4362,
+        "ms_per_item": 0.013,
+        "pred_dist": {
+          "irrelevant_repetition": 7,
+          "other": 83,
+          "information": 5,
+          "humor": 1,
+          "emotional_resonance": 4
+        }
+      },
+      "linear_centroid": {
+        "n": 100,
+        "agreement": 0.18,
+        "agreement_ci95": [
+          0.11,
+          0.26
+        ],
+        "macro_f1": 0.1237,
+        "tag_mae": 0.1381,
+        "ms_per_item": 0.718,
+        "pred_dist": {
+          "irrelevant_repetition": 6,
+          "political": 16,
+          "emotional_resonance": 33,
+          "humor": 37,
+          "other": 4,
+          "information": 2,
+          "attack": 1,
+          "conflict": 1
+        }
+      },
+      "linear_softmax": {
+        "n": 100,
+        "agreement": 0.31,
+        "agreement_ci95": [
+          0.22,
+          0.4
+        ],
+        "macro_f1": 0.1998,
+        "tag_mae": 0.1113,
+        "ms_per_item": 168.204,
+        "pred_dist": {
+          "irrelevant_repetition": 6,
+          "information": 10,
+          "humor": 71,
+          "emotional_resonance": 12,
+          "other": 1
+        }
+      },
+      "tfidf_svm": {
+        "n": 100,
+        "agreement": 0.26,
+        "agreement_ci95": [
+          0.18,
+          0.34
+        ],
+        "macro_f1": 0.1859,
+        "tag_mae": 0.6012,
+        "ms_per_item": 0.835,
+        "pred_dist": {
+          "irrelevant_repetition": 11,
+          "information": 12,
+          "political": 8,
+          "emotional_resonance": 28,
+          "humor": 34,
+          "other": 7
+        }
+      },
+      "bge_anchor": {
+        "n": 100,
+        "agreement": 0.23,
+        "agreement_ci95": [
+          0.15,
+          0.32
+        ],
+        "macro_f1": 0.1978,
+        "tag_mae": 0.4784,
+        "ms_per_item": 16.623,
+        "pred_dist": {
+          "irrelevant_repetition": 23,
+          "emotional_resonance": 7,
+          "political": 32,
+          "attack": 9,
+          "inflammatory": 16,
+          "conflict": 2,
+          "humor": 4,
+          "information": 5,
+          "spoiler": 2
+        }
+      },
+      "qwen35_4b": {
+        "n": 100,
+        "agreement": 0.46,
+        "agreement_ci95": [
+          0.36,
+          0.55
+        ],
+        "macro_f1": 0.3355,
+        "tag_mae": 0.3272,
+        "ms_per_item": 938.904,
+        "pred_dist": {
+          "irrelevant_repetition": 26,
+          "emotional_resonance": 28,
+          "attack": 3,
+          "information": 12,
+          "other": 8,
+          "humor": 21,
+          "spoiler": 2
+        }
+      }
+    }
+  },
+  "config": {
+    "stage": "local"
+  }
+}

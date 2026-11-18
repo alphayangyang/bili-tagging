@@ -1,0 +1,982 @@
+{
+  "schema": 1,
+  "meta": {
+    "created": "2026-11-18T11:21:44Z",
+    "inputs": {
+      "questionnaire": "data/study/demo/questionnaire.csv",
+      "raw_dir": "data/study/demo/raw",
+      "gold": "/home/alphayang/bili-tagging/data/study/gold.jsonl",
+      "gold_double": "/home/alphayang/bili-tagging/data/study/gold_double.jsonl",
+      "models_dir": "/home/alphayang/bili-tagging/data/study/models",
+      "study_report": "/home/alphayang/bili-tagging/data/study/report.json"
+    },
+    "bootstrap_samples": 5000,
+    "seed": 20261105
+  },
+  "cleaning": {
+    "questionnaire_rows": 144,
+    "session_logs": 72,
+    "included_rows": 144,
+    "excluded_rows": 0,
+    "included_participants": 24,
+    "participants": [
+      "P001",
+      "P002",
+      "P003",
+      "P004",
+      "P005",
+      "P006",
+      "P007",
+      "P008",
+      "P009",
+      "P010",
+      "P011",
+      "P012",
+      "P013",
+      "P014",
+      "P015",
+      "P016",
+      "P017",
+      "P018",
+      "P019",
+      "P020",
+      "P021",
+      "P022",
+      "P023",
+      "P024"
+    ],
+    "excluded": [],
+    "excluded_participants": [],
+    "rows_by_condition": {
+      "A": 48,
+      "B": 48,
+      "C": 48
+    },
+    "notes": [],
+    "problems": []
+  },
+  "descriptives": {
+    "by_condition": {
+      "A": {
+        "n_blocks": 48,
+        "n_participants": 24,
+        "outcomes": {
+          "discomfort": {
+            "n": 48,
+            "mean": 2.183,
+            "sd": 0.482,
+            "se": 0.07,
+            "median": 2.15,
+            "min": 1.22,
+            "max": 3.56
+          },
+          "coview": {
+            "n": 48,
+            "mean": 2.556,
+            "sd": 0.511,
+            "se": 0.074,
+            "median": 2.5500000000000003,
+            "min": 1.4666666666666668,
+            "max": 3.766666666666667
+          },
+          "control": {
+            "n": 48,
+            "mean": 3.779,
+            "sd": 0.552,
+            "se": 0.08,
+            "median": 3.7833333333333337,
+            "min": 2.3333333333333335,
+            "max": 4.933333333333334
+          },
+          "nasa": {
+            "n": 48,
+            "mean": 2.655,
+            "sd": 0.488,
+            "se": 0.07,
+            "median": 2.716666666666667,
+            "min": 1.5333333333333332,
+            "max": 3.783333333333333
+          },
+          "comp": {
+            "n": 48,
+            "mean": 5.622,
+            "sd": 0.486,
+            "se": 0.07,
+            "median": 5.6499999999999995,
+            "min": 4.54,
+            "max": 6.840000000000001
+          },
+          "explain": {
+            "n": 48,
+            "mean": 5.397,
+            "sd": 0.5,
+            "se": 0.072,
+            "median": 5.425000000000001,
+            "min": 3.8499999999999996,
+            "max": 6.35
+          },
+          "overall": {
+            "n": 48,
+            "mean": 5.044,
+            "sd": 0.528,
+            "se": 0.076,
+            "median": 4.95,
+            "min": 3.95,
+            "max": 6.7
+          },
+          "fomo": {
+            "n": 48,
+            "mean": 4.392,
+            "sd": 0.781,
+            "se": 0.113,
+            "median": 4.35,
+            "min": 2.3,
+            "max": 5.8
+          }
+        }
+      },
+      "B": {
+        "n_blocks": 48,
+        "n_participants": 24,
+        "outcomes": {
+          "discomfort": {
+            "n": 48,
+            "mean": 1.708,
+            "sd": 0.409,
+            "se": 0.059,
+            "median": 1.7,
+            "min": 1.02,
+            "max": 2.58
+          },
+          "coview": {
+            "n": 48,
+            "mean": 1.989,
+            "sd": 0.452,
+            "se": 0.065,
+            "median": 2.033333333333333,
+            "min": 1.1666666666666667,
+            "max": 3.033333333333333
+          },
+          "control": {
+            "n": 48,
+            "mean": 3.298,
+            "sd": 0.425,
+            "se": 0.061,
+            "median": 3.316666666666667,
+            "min": 2.566666666666667,
+            "max": 4.166666666666667
+          },
+          "nasa": {
+            "n": 48,
+            "mean": 2.078,
+            "sd": 0.466,
+            "se": 0.067,
+            "median": 2.033333333333333,
+            "min": 1.1833333333333333,
+            "max": 3.1666666666666665
+          },
+          "comp": {
+            "n": 48,
+            "mean": 5.116,
+            "sd": 0.475,
+            "se": 0.069,
+            "median": 5.11,
+            "min": 4.12,
+            "max": 6.24
+          },
+          "explain": {
+            "n": 48,
+            "mean": 4.867,
+            "sd": 0.436,
+            "se": 0.063,
+            "median": 4.8500000000000005,
+            "min": 4.1,
+            "max": 5.95
+          },
+          "overall": {
+            "n": 48,
+            "mean": 4.468,
+            "sd": 0.501,
+            "se": 0.072,
+            "median": 4.475,
+            "min": 3.3499999999999996,
+            "max": 5.5
+          },
+          "fomo": {
+            "n": 48,
+            "mean": 3.704,
+            "sd": 0.747,
+            "se": 0.108,
+            "median": 3.55,
+            "min": 2.7,
+            "max": 5.7
+          }
+        }
+      },
+      "C": {
+        "n_blocks": 48,
+        "n_participants": 24,
+        "outcomes": {
+          "discomfort": {
+            "n": 48,
+            "mean": 1.186,
+            "sd": 0.227,
+            "se": 0.033,
+            "median": 1.07,
+            "min": 1.0,
+            "max": 1.92
+          },
+          "coview": {
+            "n": 48,
+            "mean": 1.276,
+            "sd": 0.301,
+            "se": 0.044,
+            "median": 1.1666666666666667,
+            "min": 1.0,
+            "max": 2.3333333333333335
+          },
+          "control": {
+            "n": 48,
+            "mean": 2.442,
+            "sd": 0.497,
+            "se": 0.072,
+            "median": 2.5666666666666664,
+            "min": 1.1333333333333333,
+            "max": 3.266666666666667
+          },
+          "nasa": {
+            "n": 48,
+            "mean": 1.377,
+            "sd": 0.364,
+            "se": 0.053,
+            "median": 1.2583333333333333,
+            "min": 1.0,
+            "max": 2.2666666666666666
+          },
+          "comp": {
+            "n": 48,
+            "mean": 4.193,
+            "sd": 0.538,
+            "se": 0.078,
+            "median": 4.2299999999999995,
+            "min": 3.08,
+            "max": 5.38
+          },
+          "explain": {
+            "n": 48,
+            "mean": 3.94,
+            "sd": 0.595,
+            "se": 0.086,
+            "median": 3.925,
+            "min": 2.8,
+            "max": 5.2
+          },
+          "overall": {
+            "n": 48,
+            "mean": 3.589,
+            "sd": 0.46,
+            "se": 0.066,
+            "median": 3.55,
+            "min": 2.4,
+            "max": 4.35
+          },
+          "fomo": {
+            "n": 48,
+            "mean": 2.967,
+            "sd": 0.706,
+            "se": 0.102,
+            "median": 3.05,
+            "min": 1.1,
+            "max": 4.4
+          }
+        }
+      }
+    },
+    "by_video": {
+      "BV1Ho4y1D7Wz": {
+        "n_blocks": 24,
+        "conditions": {
+          "A": 16,
+          "B": 8
+        },
+        "genres": {
+          "information": 24
+        },
+        "densities": {
+          "high": 24
+        }
+      },
+      "BV18E1NByEYv": {
+        "n_blocks": 24,
+        "conditions": {
+          "A": 16,
+          "B": 8
+        },
+        "genres": {
+          "entertainment": 24
+        },
+        "densities": {
+          "low": 24
+        }
+      },
+      "BV1VMRKBCEDp": {
+        "n_blocks": 24,
+        "conditions": {
+          "B": 12,
+          "C": 4,
+          "A": 8
+        },
+        "genres": {
+          "information": 24
+        },
+        "densities": {
+          "low": 24
+        }
+      },
+      "BV1X7zGY4E45": {
+        "n_blocks": 24,
+        "conditions": {
+          "B": 12,
+          "C": 4,
+          "A": 8
+        },
+        "genres": {
+          "entertainment": 24
+        },
+        "densities": {
+          "high": 24
+        }
+      },
+      "BV1Z4RHYKEcB": {
+        "n_blocks": 24,
+        "conditions": {
+          "C": 20,
+          "B": 4
+        },
+        "genres": {
+          "information": 24
+        },
+        "densities": {
+          "high": 24
+        }
+      },
+      "BV1CzW26vEXz": {
+        "n_blocks": 24,
+        "conditions": {
+          "C": 20,
+          "B": 4
+        },
+        "genres": {
+          "entertainment": 24
+        },
+        "densities": {
+          "low": 24
+        }
+      }
+    }
+  },
+  "reliability": {
+    "A": {
+      "discomfort": 0.884,
+      "coview": 0.833,
+      "control": 0.847,
+      "nasa": 0.894,
+      "comp": 0.878,
+      "explain": 0.607,
+      "overall": 0.702
+    },
+    "B": {
+      "discomfort": 0.835,
+      "coview": 0.812,
+      "control": 0.661,
+      "nasa": 0.898,
+      "comp": 0.865,
+      "explain": 0.531,
+      "overall": 0.732
+    },
+    "C": {
+      "discomfort": 0.748,
+      "coview": 0.771,
+      "control": 0.854,
+      "nasa": 0.886,
+      "comp": 0.897,
+      "explain": 0.796,
+      "overall": 0.679
+    }
+  },
+  "contrasts": {
+    "discomfort": [
+      {
+        "contrast": "C vs A",
+        "n": 24,
+        "mean_diff": -0.997,
+        "ci95": [
+          -1.128,
+          -0.86
+        ],
+        "d": -2.91,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 0,
+          "w_plus": 0,
+          "z": -4.286,
+          "p": 0.0
+        },
+        "p_holm": 0.0
+      },
+      {
+        "contrast": "C vs B",
+        "n": 24,
+        "mean_diff": -0.522,
+        "ci95": [
+          -0.647,
+          -0.389
+        ],
+        "d": -1.571,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 5.0,
+          "w_plus": 5.0,
+          "z": -4.143,
+          "p": 0.0
+        },
+        "p_holm": 0.0
+      },
+      {
+        "contrast": "B vs A",
+        "n": 24,
+        "mean_diff": -0.475,
+        "ci95": [
+          -0.618,
+          -0.335
+        ],
+        "d": -1.291,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 2.0,
+          "w_plus": 2.0,
+          "z": -4.229,
+          "p": 0.0
+        },
+        "p_holm": 0.0
+      }
+    ],
+    "coview": [
+      {
+        "contrast": "C vs A",
+        "n": 24,
+        "mean_diff": -1.28,
+        "ci95": [
+          -1.425,
+          -1.119
+        ],
+        "d": -3.38,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 0,
+          "w_plus": 0,
+          "z": -4.29,
+          "p": 0.0
+        },
+        "p_holm": 0.0
+      },
+      {
+        "contrast": "C vs B",
+        "n": 24,
+        "mean_diff": -0.713,
+        "ci95": [
+          -0.846,
+          -0.569
+        ],
+        "d": -1.956,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 1.0,
+          "w_plus": 1.0,
+          "z": -4.257,
+          "p": 0.0
+        },
+        "p_holm": 0.0
+      },
+      {
+        "contrast": "B vs A",
+        "n": 24,
+        "mean_diff": -0.567,
+        "ci95": [
+          -0.726,
+          -0.404
+        ],
+        "d": -1.356,
+        "wilcoxon": {
+          "n": 23,
+          "statistic": 5.5,
+          "w_plus": 5.5,
+          "z": -4.031,
+          "p": 0.0001
+        },
+        "p_holm": 0.0001
+      }
+    ],
+    "control": [
+      {
+        "contrast": "C vs A",
+        "n": 24,
+        "mean_diff": -1.338,
+        "ci95": [
+          -1.533,
+          -1.144
+        ],
+        "d": -2.717,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 0,
+          "w_plus": 0,
+          "z": -4.286,
+          "p": 0.0
+        },
+        "p_holm": 0.0
+      },
+      {
+        "contrast": "C vs B",
+        "n": 24,
+        "mean_diff": -0.856,
+        "ci95": [
+          -1.037,
+          -0.685
+        ],
+        "d": -1.898,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 0,
+          "w_plus": 0,
+          "z": -4.286,
+          "p": 0.0
+        },
+        "p_holm": 0.0
+      },
+      {
+        "contrast": "B vs A",
+        "n": 24,
+        "mean_diff": -0.481,
+        "ci95": [
+          -0.649,
+          -0.302
+        ],
+        "d": -1.124,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 19.5,
+          "w_plus": 19.5,
+          "z": -3.729,
+          "p": 0.0002
+        },
+        "p_holm": 0.0002
+      }
+    ],
+    "nasa": [
+      {
+        "contrast": "C vs A",
+        "n": 24,
+        "mean_diff": -1.277,
+        "ci95": [
+          -1.417,
+          -1.115
+        ],
+        "d": -3.373,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 0,
+          "w_plus": 0,
+          "z": -4.286,
+          "p": 0.0
+        },
+        "p_holm": 0.0
+      },
+      {
+        "contrast": "C vs B",
+        "n": 24,
+        "mean_diff": -0.7,
+        "ci95": [
+          -0.874,
+          -0.524
+        ],
+        "d": -1.571,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 5.0,
+          "w_plus": 5.0,
+          "z": -4.143,
+          "p": 0.0
+        },
+        "p_holm": 0.0
+      },
+      {
+        "contrast": "B vs A",
+        "n": 24,
+        "mean_diff": -0.577,
+        "ci95": [
+          -0.733,
+          -0.403
+        ],
+        "d": -1.378,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 10.0,
+          "w_plus": 10.0,
+          "z": -4.0,
+          "p": 0.0001
+        },
+        "p_holm": 0.0001
+      }
+    ],
+    "comp": [
+      {
+        "contrast": "C vs A",
+        "n": 24,
+        "mean_diff": -1.429,
+        "ci95": [
+          -1.62,
+          -1.225
+        ],
+        "d": -2.869,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 0,
+          "w_plus": 0,
+          "z": -4.286,
+          "p": 0.0
+        },
+        "p_holm": 0.0
+      },
+      {
+        "contrast": "C vs B",
+        "n": 24,
+        "mean_diff": -0.923,
+        "ci95": [
+          -1.121,
+          -0.725
+        ],
+        "d": -1.852,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 0,
+          "w_plus": 0,
+          "z": -4.286,
+          "p": 0.0
+        },
+        "p_holm": 0.0
+      },
+      {
+        "contrast": "B vs A",
+        "n": 24,
+        "mean_diff": -0.506,
+        "ci95": [
+          -0.646,
+          -0.356
+        ],
+        "d": -1.383,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 10.0,
+          "w_plus": 10.0,
+          "z": -4.0,
+          "p": 0.0001
+        },
+        "p_holm": 0.0001
+      }
+    ],
+    "explain": [
+      {
+        "contrast": "C vs A",
+        "n": 24,
+        "mean_diff": -1.457,
+        "ci95": [
+          -1.657,
+          -1.241
+        ],
+        "d": -2.752,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 0,
+          "w_plus": 0,
+          "z": -4.287,
+          "p": 0.0
+        },
+        "p_holm": 0.0
+      },
+      {
+        "contrast": "C vs B",
+        "n": 24,
+        "mean_diff": -0.927,
+        "ci95": [
+          -1.14,
+          -0.719
+        ],
+        "d": -1.752,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 0,
+          "w_plus": 0,
+          "z": -4.286,
+          "p": 0.0
+        },
+        "p_holm": 0.0
+      },
+      {
+        "contrast": "B vs A",
+        "n": 24,
+        "mean_diff": -0.53,
+        "ci95": [
+          -0.704,
+          -0.345
+        ],
+        "d": -1.181,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 23.0,
+          "w_plus": 23.0,
+          "z": -3.63,
+          "p": 0.0003
+        },
+        "p_holm": 0.0003
+      }
+    ],
+    "overall": [
+      {
+        "contrast": "C vs A",
+        "n": 24,
+        "mean_diff": -1.455,
+        "ci95": [
+          -1.589,
+          -1.3
+        ],
+        "d": -4.017,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 0,
+          "w_plus": 0,
+          "z": -4.288,
+          "p": 0.0
+        },
+        "p_holm": 0.0
+      },
+      {
+        "contrast": "C vs B",
+        "n": 24,
+        "mean_diff": -0.879,
+        "ci95": [
+          -1.08,
+          -0.691
+        ],
+        "d": -1.811,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 0,
+          "w_plus": 0,
+          "z": -4.287,
+          "p": 0.0
+        },
+        "p_holm": 0.0
+      },
+      {
+        "contrast": "B vs A",
+        "n": 24,
+        "mean_diff": -0.576,
+        "ci95": [
+          -0.772,
+          -0.373
+        ],
+        "d": -1.126,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 23.0,
+          "w_plus": 23.0,
+          "z": -3.63,
+          "p": 0.0003
+        },
+        "p_holm": 0.0003
+      }
+    ],
+    "fomo": [
+      {
+        "contrast": "C vs A",
+        "n": 24,
+        "mean_diff": -1.425,
+        "ci95": [
+          -1.671,
+          -1.142
+        ],
+        "d": -2.07,
+        "wilcoxon": {
+          "n": 24,
+          "statistic": 2.0,
+          "w_plus": 2.0,
+          "z": -4.229,
+          "p": 0.0
+        },
+        "p_holm": 0.0
+      },
+      {
+        "contrast": "C vs B",
+        "n": 24,
+        "mean_diff": -0.738,
+        "ci95": [
+          -0.96,
+          -0.498
+        ],
+        "d": -1.265,
+        "wilcoxon": {
+          "n": 23,
+          "statistic": 8.0,
+          "w_plus": 8.0,
+          "z": -3.957,
+          "p": 0.0001
+        },
+        "p_holm": 0.0002
+      },
+      {
+        "contrast": "B vs A",
+        "n": 24,
+        "mean_diff": -0.687,
+        "ci95": [
+          -0.867,
+          -0.504
+        ],
+        "d": -1.467,
+        "wilcoxon": {
+          "n": 23,
+          "statistic": 5.0,
+          "w_plus": 5.0,
+          "z": -4.046,
+          "p": 0.0001
+        },
+        "p_holm": 0.0002
+      }
+    ]
+  },
+  "lmm": {
+    "available": false,
+    "note": "statsmodels/pandas not installed (ModuleNotFoundError); use the planned Wilcoxon contrasts"
+  },
+  "rq1": {
+    "note": "exploratory: participants see only two videos per condition, genre x density is video-level",
+    "rows": [
+      {
+        "genre": "entertainment",
+        "density": "high",
+        "n_blocks": 8,
+        "n_videos": 1,
+        "means": {
+          "discomfort": 2.073,
+          "coview": 2.413,
+          "control": 3.55,
+          "fomo": 4.213
+        }
+      },
+      {
+        "genre": "entertainment",
+        "density": "low",
+        "n_blocks": 16,
+        "n_videos": 1,
+        "means": {
+          "discomfort": 2.126,
+          "coview": 2.508,
+          "control": 3.744,
+          "fomo": 4.219
+        }
+      },
+      {
+        "genre": "information",
+        "density": "high",
+        "n_blocks": 16,
+        "n_videos": 1,
+        "means": {
+          "discomfort": 2.215,
+          "coview": 2.46,
+          "control": 3.8,
+          "fomo": 4.356
+        }
+      },
+      {
+        "genre": "information",
+        "density": "low",
+        "n_blocks": 8,
+        "n_videos": 1,
+        "means": {
+          "discomfort": 2.345,
+          "coview": 2.987,
+          "control": 4.037,
+          "fomo": 4.987
+        }
+      }
+    ],
+    "n_blocks": 48
+  },
+  "rq2": {
+    "latency": {
+      "A": {
+        "n": 144,
+        "p50_ms": 5.83,
+        "p95_ms": 11.14,
+        "mean_ms": 5.9
+      },
+      "B": {
+        "n": 144,
+        "p50_ms": 6.37,
+        "p95_ms": 11.47,
+        "mean_ms": 6.3
+      },
+      "C": {
+        "n": 144,
+        "p50_ms": 5.28,
+        "p95_ms": 10.83,
+        "mean_ms": 5.7
+      }
+    },
+    "latency_overall": {
+      "n": 432,
+      "p50_ms": 5.88,
+      "p95_ms": 11.15,
+      "mean_ms": 5.97
+    },
+    "decisions": {
+      "A": {
+        "shown": 2400,
+        "hidden": 480,
+        "collapsed": 240
+      },
+      "B": {
+        "shown": 2400,
+        "hidden": 480,
+        "collapsed": 240
+      },
+      "C": {
+        "shown": 2400,
+        "hidden": 480,
+        "collapsed": 240
+      }
+    },
+    "behaviour": {
+      "corrections": 0,
+      "restores": 0,
+      "expands": 0,
+      "pref_changes": 0,
+      "segments": 432,
+      "corrections_per_10min": 0.0
+    },
+    "online_share": 1.0,
+    "truncated_sessions": 0,
+    "session_minutes": 2013.0,
+    "gold": {
+      "available": false,
+      "note": "gold file missing or empty: /home/alphayang/bili-tagging/data/study/gold.jsonl"
+    },
+    "double_annotation": {
+      "available": false,
+      "note": "double-annotation file missing or empty: /home/alphayang/bili-tagging/data/study/gold_double.jsonl"
+    }
+  },
+  "notes": [
+    "Wilcoxon p-values use the normal approximation with tie correction; the bootstrap CI resamples participants"
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "study_id": "P015-C",
+  "participant": "P015",
+  "condition": "C",
+  "started_at": "2026-11-20T09:00:00Z",
+  "ended_at": "2026-11-20T09:30:00Z",
+  "counts": {
+    "shown": 100,
+    "hidden": 20,
+    "collapsed": 10
+  },
+  "events": [
+    {
+      "type": "segment",
+      "bvid": "BV1Z4RHYKEcB",
+      "segment": 0,
+      "ts": 0,
+      "shown": 14,
+      "hidden": 11,
+      "collapsed": 1,
+      "by_label": {
+        "attack": 2
+      },
+      "latency_ms": 2.02,
+      "online": 1,
+      "applied": true
+    },
+    {
+      "type": "segment",
+      "bvid": "BV1Z4RHYKEcB",
+      "segment": 1,
+      "ts": 1000,
+      "shown": 15,
+      "hidden": 21,
+      "collapsed": 15,
+      "by_label": {
+        "attack": 0
+      },
+      "latency_ms": 1.53,
+      "online": 2,
+      "applied": true
+    },
+    {
+      "type": "segment",
+      "bvid": "BV1Z4RHYKEcB",
+      "segment": 2,
+      "ts": 2000,
+      "shown": 15,
+      "hidden": 6,
+      "collapsed": 10,
+      "by_label": {
+        "attack": 3
+      },
+      "latency_ms": 3.04,
+      "online": 3,
+      "applied": true
+    },
+    {
+      "type": "segment",
+      "bvid": "BV1CzW26vEXz",
+      "segment": 0,
+      "ts": 0,
+      "shown": 14,
+      "hidden": 12,
+      "collapsed": 9,
+      "by_label": {
+        "attack": 0
+      },
+      "latency_ms": 8.33,
+      "online": 1,
+      "applied": true
+    },
+    {
+      "type": "segment",
+      "bvid": "BV1CzW26vEXz",
+      "segment": 1,
+      "ts": 1000,
+      "shown": 29,
+      "hidden": 26,
+      "collapsed": 20,
+      "by_label": {
+        "attack": 4
+      },
+      "latency_ms": 2.82,
+      "online": 2,
+      "applied": true
+    },
+    {
+      "type": "segment",
+      "bvid": "BV1CzW26vEXz",
+      "segment": 2,
+      "ts": 2000,
+      "shown": 13,
+      "hidden": 14,
+      "collapsed": 13,
+      "by_label": {
+        "attack": 2
+      },
+      "latency_ms": 7.31,
+      "online": 3,
+      "applied": true
+    }
+  ],
+  "script_version": "0.4.0-demo",
+  "prefs": {
+    "min_confidence": 0.3
+  },
+  "ua": "demo"
+}

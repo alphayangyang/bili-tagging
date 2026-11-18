@@ -1,0 +1,176 @@
+[
+ {
+  "bvid": "BV1Ho4y1D7Wz",
+  "density": "high",
+  "study": {
+   "condition": "prototype",
+   "density": "high",
+   "recordOnly": false
+  },
+  "poolReady": true,
+  "poolCounts": {
+   "shown": 581,
+   "hidden": 28,
+   "collapsed": 591
+  },
+  "poolItems": 1200,
+  "loadMs": 421,
+  "shown": 925,
+  "hidden": 29,
+  "collapsed": 37,
+  "domCount": 59,
+  "diag": {
+   "intercepts": 2,
+   "ok": 1,
+   "fail": 0,
+   "online": 0,
+   "found": true,
+   "lastError": ""
+  }
+ },
+ {
+  "bvid": "BV18E1NByEYv",
+  "density": "low",
+  "study": {
+   "condition": "prototype",
+   "density": "low",
+   "recordOnly": false
+  },
+  "poolReady": true,
+  "poolCounts": {
+   "shown": 706,
+   "hidden": 56,
+   "collapsed": 438
+  },
+  "poolItems": 1200,
+  "loadMs": 1875,
+  "shown": 1440,
+  "hidden": 58,
+  "collapsed": 21,
+  "domCount": 18,
+  "diag": {
+   "intercepts": 2,
+   "ok": 1,
+   "fail": 0,
+   "online": 0,
+   "found": true,
+   "lastError": ""
+  }
+ },
+ {
+  "bvid": "BV1VMRKBCEDp",
+  "density": "low",
+  "study": {
+   "condition": "prototype",
+   "density": "low",
+   "recordOnly": false
+  },
+  "poolReady": true,
+  "poolCounts": {
+   "shown": 901,
+   "hidden": 57,
+   "collapsed": 214
+  },
+  "poolItems": 1172,
+  "loadMs": 475,
+  "shown": 523,
+  "hidden": 47,
+  "collapsed": 194,
+  "domCount": 15,
+  "diag": {
+   "intercepts": 2,
+   "ok": 0,
+   "fail": 0,
+   "online": 0,
+   "found": null,
+   "lastError": ""
+  }
+ },
+ {
+  "bvid": "BV1X7zGY4E45",
+  "density": "high",
+  "study": {
+   "condition": "prototype",
+   "density": "high",
+   "recordOnly": false
+  },
+  "poolReady": true,
+  "poolCounts": {
+   "shown": 671,
+   "hidden": 251,
+   "collapsed": 278
+  },
+  "poolItems": 1200,
+  "loadMs": 3205,
+  "shown": 1919,
+  "hidden": 652,
+  "collapsed": 261,
+  "domCount": 41,
+  "diag": {
+   "intercepts": 2,
+   "ok": 1,
+   "fail": 0,
+   "online": 0,
+   "found": true,
+   "lastError": ""
+  }
+ },
+ {
+  "bvid": "BV1Z4RHYKEcB",
+  "density": "high",
+  "study": {
+   "condition": "prototype",
+   "density": "high",
+   "recordOnly": false
+  },
+  "poolReady": true,
+  "poolCounts": {
+   "shown": 652,
+   "hidden": 71,
+   "collapsed": 2
+  },
+  "poolItems": 725,
+  "loadMs": 214,
+  "shown": 303,
+  "hidden": 42,
+  "collapsed": 0,
+  "domCount": 13,
+  "diag": {
+   "intercepts": 2,
+   "ok": 0,
+   "fail": 0,
+   "online": 0,
+   "found": null,
+   "lastError": ""
+  }
+ },
+ {
+  "bvid": "BV1CzW26vEXz",
+  "density": "low",
+  "study": {
+   "condition": "prototype",
+   "density": "low",
+   "recordOnly": false
+  },
+  "poolReady": true,
+  "poolCounts": {
+   "shown": 790,
+   "hidden": 93,
+   "collapsed": 236
+  },
+  "poolItems": 1119,
+  "loadMs": 300,
+  "shown": 387,
+  "hidden": 71,
+  "collapsed": 170,
+  "domCount": 20,
+  "diag": {
+   "intercepts": 2,
+   "ok": 0,
+   "fail": 0,
+   "online": 0,
+   "found": null,
+   "lastError": ""
+  }
+ }
+]

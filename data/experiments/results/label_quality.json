@@ -1,0 +1,26 @@
+{
+ "n": 29,
+ "dominant_match": 26,
+ "dominant_agreement": 0.8966,
+ "mean_absolute_intensity_error": 0.052,
+ "errors": [
+  {
+   "text": "这个翻译是官方的吗？！",
+   "pred": "humor",
+   "pred_score": 0.25,
+   "manual": "information"
+  },
+  {
+   "text": "[\"0.05\",\"0.1\",\"1-1\",\"4.02\",\"永不放弃你，从不让你走\",0,0,\"0.05\",\"0.1\",0,0,1,\"宋体\",0]",
+   "pred": "humor",
+   "pred_score": 0.55,
+   "manual": "irrelevant_repetition"
+  },
+  {
+   "text": "太好听了，感谢我的好兄弟骗我",
+   "pred": "emotional_resonance",
+   "pred_score": 0.75,
+   "manual": "humor"
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+{
+  "BV1GJ411x7h7": {
+    "rows": 1407,
+    "test": 120,
+    "l1_agreement": 0.275,
+    "prior_corrected_oracle": 0.2333,
+    "prior_corrected_fewshot20": 0.3667,
+    "em_self_training": 0.0,
+    "majority_oracle_prior": 0.2333,
+    "oracle_prior": {
+      "information": 0.142,
+      "humor": 0.641,
+      "emotional_resonance": 0.166,
+      "irrelevant_repetition": 0.046
+    },
+    "train_prior": {
+      "information": 0.317,
+      "humor": 0.26,
+      "emotional_resonance": 0.154,
+      "irrelevant_repetition": 0.121,
+      "attack": 0.023,
+      "conflict": 0.013,
+      "political": 0.063,
+      "other": 0.046
+    }
+  },
+  "BV1w5xh6sEEz": {
+    "rows": 173,
+    "test": 120,
+    "l1_agreement": 0.275,
+    "prior_corrected_oracle": 0.275,
+    "prior_corrected_fewshot20": 0.2833,
+    "em_self_training": 0.0,
+    "majority_oracle_prior": 0.2833,
+    "oracle_prior": {
+      "information": 0.249,
+      "humor": 0.382,
+      "emotional_resonance": 0.26,
+      "irrelevant_repetition": 0.081,
+      "attack": 0.006,
+      "other": 0.023
+    },
+    "train_prior": {
+      "information": 0.212,
+      "humor": 0.491,
+      "emotional_resonance": 0.151,
+      "irrelevant_repetition": 0.078,
+      "attack": 0.011,
+      "conflict": 0.007,
+      "political": 0.026,
+      "other": 0.02
+    }
+  },
+  "BV1rCxe6wEN9": {
+    "rows": 472,
+    "test": 120,
+    "l1_agreement": 0.2083,
+    "prior_corrected_oracle": 0.15,
+    "prior_corrected_fewshot20": 0.15,
+    "em_self_training": 0.15,
+    "majority_oracle_prior": 0.15,
+    "oracle_prior": {
+      "information": 0.436,
+      "humor": 0.133,
+      "emotional_resonance": 0.078,
+      "irrelevant_repetition": 0.178,
+      "attack": 0.023,
+      "conflict": 0.013,
+      "political": 0.112,
+      "other": 0.023
+    },
+    "train_prior": {
+      "information": 0.165,
+      "humor": 0.56,
+      "emotional_resonance": 0.18,
+      "irrelevant_repetition": 0.054,
+      "attack": 0.007,
+      "political": 0.007,
+      "other": 0.019
+    }
+  },
+  "BV1mV4F6mE5Z": {
+    "rows": 174,
+    "test": 120,
+    "l1_agreement": 0.2333,
+    "prior_corrected_oracle": 0.0167,
+    "prior_corrected_fewshot20": 0.2833,
+    "em_self_training": 0.0167,
+    "majority_oracle_prior": 0.2833,
+    "oracle_prior": {
+      "information": 0.299,
+      "humor": 0.397,
+      "emotional_resonance": 0.144,
+      "irrelevant_repetition": 0.034,
+      "attack": 0.006,
+      "conflict": 0.017,
+      "inflammatory": 0.011,
+      "other": 0.092
+    },
+    "train_prior": {
+      "information": 0.211,
+      "humor": 0.487,
+      "emotional_resonance": 0.161,
+      "irrelevant_repetition": 0.08,
+      "attack": 0.011,
+      "conflict": 0.005,
+      "political": 0.029,
+      "other": 0.013
+    }
+  },
+  "BV1W18Y61Ee5": {
+    "rows": 164,
+    "test": 120,
+    "l1_agreement": 0.275,
+    "prior_corrected_oracle": 0.1417,
+    "prior_corrected_fewshot20": 0.2667,
+    "em_self_training": 0.0,
+    "majority_oracle_prior": 0.2583,
+    "oracle_prior": {
+      "information": 0.134,
+      "humor": 0.366,
+      "emotional_resonance": 0.287,
+      "irrelevant_repetition": 0.073,
+      "attack": 0.012,
+      "conflict": 0.024,
+      "other": 0.104
+    },
+    "train_prior": {
+      "information": 0.223,
+      "humor": 0.487,
+      "emotional_resonance": 0.152,
+      "irrelevant_repetition": 0.08,
+      "attack": 0.009,
+      "political": 0.026,
+      "other": 0.014
+    }
+  }
+}

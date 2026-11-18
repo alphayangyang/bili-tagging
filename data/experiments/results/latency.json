@@ -1,0 +1,51 @@
+{
+  "inprocess": {
+    "rules": {
+      "n": 200,
+      "ms_per_item": 0.0604
+    },
+    "linear_centroid": {
+      "n": 200,
+      "ms_per_item": 0.1327
+    },
+    "linear_softmax": {
+      "n": 200,
+      "ms_per_item": 16.5744
+    },
+    "tfidf_svm": {
+      "n": 200,
+      "ms_per_item": 2.7109
+    },
+    "bge_anchor": {
+      "n": 40,
+      "ms_per_item": 22.9359
+    },
+    "qwen35_4b": {
+      "ms_per_item": 800.0,
+      "source": "E1 matrix (network, local GPU)"
+    },
+    "deepseek_flash": {
+      "ms_per_item": 530.0,
+      "source": "E1 matrix (network, cloud)"
+    }
+  },
+  "http": {
+    "n": 300,
+    "total_ms": 120.2,
+    "ms_per_item": 0.401,
+    "found": false,
+    "online": 0
+  },
+  "sizes": {
+    "BV16hxj6jE19.json": 158.9,
+    "BV1GJ411x7h7.json": 2995.6,
+    "BV1PF4g6ME26.json": 80.8,
+    "BV1bnxr6cEJ9.json": 196.3,
+    "BV1mV4F6mE5Z.json": 123.3,
+    "BV1rCxe6wEN9.json": 1269.0,
+    "BV1w5xh6sEEz.json": 79.9,
+    "BV1zcXDBuEHV.json": 40.7,
+    "_global.json": 7156.7,
+    "trained_centroid_600rows": 501.9
+  }
+}

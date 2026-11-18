@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "placeholder": false,
+  "note": "S2 stimuli chosen 2026-11-18 from ego-browser keyword harvest; duration 180-300 s, >=300 stream comments, peak >=150/min. Density cells are declared per pair (one high one low).",
+  "stimuli": [
+    {
+      "bvid": "BV1Ho4y1D7Wz",
+      "genre": "information",
+      "density": "high",
+      "label": "science/chemistry",
+      "title": "三 分 钟 教 你 做 一 个 酷 炫 的 铋 晶 体"
+    },
+    {
+      "bvid": "BV18E1NByEYv",
+      "genre": "entertainment",
+      "density": "low",
+      "label": "gaming/trash-talk",
+      "title": "哪个游戏的网络环境最恶臭？"
+    },
+    {
+      "bvid": "BV1VMRKBCEDp",
+      "genre": "information",
+      "density": "low",
+      "label": "science/health",
+      "title": "3分钟解释各种睡眠时长的后果"
+    },
+    {
+      "bvid": "BV1X7zGY4E45",
+      "genre": "entertainment",
+      "density": "high",
+      "label": "debate/conflict",
+      "title": "欢迎来到自由式辩论赛场！今日辩题是“吃坚果到底好还是不好”？"
+    },
+    {
+      "bvid": "BV1Z4RHYKEcB",
+      "genre": "information",
+      "density": "high",
+      "label": "finance/explainer",
+      "title": "从零开始建立“金融世界观”- 基础分析框架【阿周的Eureka】"
+    },
+    {
+      "bvid": "BV1CzW26vEXz",
+      "genre": "entertainment",
+      "density": "low",
+      "label": "anime/commentary",
+      "title": "离谱！日网友一条弃坑推文居然引来近千万网友围观！"
+    }
+  ]
+}

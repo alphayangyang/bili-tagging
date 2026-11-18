@@ -1,0 +1,57 @@
+{
+ "study_id": "P01-C",
+ "condition": "prototype",
+ "condition_label": "C",
+ "started_at": "2026-11-18T12:41:00.534Z",
+ "ended_at": "2026-11-18T12:41:21.141Z",
+ "counts": {
+  "segments": 1,
+  "shown": 60,
+  "hidden": 0,
+  "collapsed": 0,
+  "thinned": 568,
+  "prefs": 0,
+  "corrections": 0,
+  "restores": 0,
+  "expands": 0,
+  "dropped_events": 0
+ },
+ "events": [
+  {
+   "t": 1795005664130,
+   "type": "segment",
+   "bvid": "BV1CzW26vEXz",
+   "url": "https://api.bilibili.com/x/v2/dm/wbi/web/seg.so?type=1&oid=43523311093&pid=117597664184695&segment_index=1&pull_mode=1&ps=0&pe=120000&web_location=1315873&x-bili-device-req-json=%7B%22platform%22:%22web%22,%22device%22:%22pc%22,%22mobi_app%22:%22web_cn%22%7D&x-bili-locale-json=%7B%22c_locale%22:%7B%22language%22:%22zh%22,%22script%22:%22Hans%22%7D,%22always_translate%22:false%7D&w_rid=762b1a86dbe4edd660b8cb86b32d1156&wts=1795005664",
+   "segment_index": 1,
+   "shown": 60,
+   "hidden": 0,
+   "collapsed": 0,
+   "thinned": 568,
+   "by_label": {},
+   "latency_ms": 0,
+   "online": true,
+   "applied": true
+  }
+ ],
+ "script_version": "dev",
+ "prefs": {
+  "version": 1,
+  "enabled": true,
+  "fail_open": true,
+  "min_confidence": 0.3,
+  "per_type": {
+   "information": "show",
+   "humor": "show",
+   "emotional_resonance": "show",
+   "irrelevant_repetition": "hide",
+   "attack": "hide",
+   "conflict": "hide",
+   "spoiler": "collapse",
+   "political": "show",
+   "inflammatory": "hide",
+   "other": "show"
+  },
+  "density": ""
+ },
+ "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+}

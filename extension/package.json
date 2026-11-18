@@ -1,0 +1,15 @@
+{
+  "name": "bili-danmaku-filter-userscript",
+  "version": "0.4.2",
+  "private": true,
+  "type": "module",
+  "description": "Tampermonkey userscript that filters Bilibili danmaku with a local tagging service.",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test/",
+    "check": "node --check dist/bili-danmaku-filter.user.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
