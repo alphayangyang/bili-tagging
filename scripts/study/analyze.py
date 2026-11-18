@@ -1250,6 +1250,11 @@ def analyse(args: argparse.Namespace) -> dict:
         analysis["notes"].append(
             "gold evaluation uses per-video models in %s; skipped rows are counted" % args.models_dir
         )
+    if analysis["rq2"]["gold"].get("available"):
+        analysis["notes"].append(
+            "the shipped models were trained on a pool that overlaps the gold set; for a leave-reference-out "
+            "estimate (agreement .525, macro-F1 .350) see docs/study/results-simulated.md section 6"
+        )
     analysis["notes"].append(
         "Wilcoxon p-values use the normal approximation with tie correction; the bootstrap CI resamples participants"
     )

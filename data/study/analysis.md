@@ -1,6 +1,6 @@
 # S2 controlled viewing study: analysis
 
-Generated 2026-11-18T16:41:01Z from 36 questionnaire rows and 36 session logs.
+Generated 2026-11-18T16:47:15Z from 36 questionnaire rows and 36 session logs.
 
 ## Data cleaning
 
@@ -132,5 +132,6 @@ n=120 accuracy=0.558 macro-F1=0.496 (skipped 0 rows).
 double-annotation file missing or empty: /home/alphayang/bili-tagging/data/study/gold_double.jsonl
 
 - gold evaluation uses per-video models in /home/alphayang/bili-tagging/data/study/models; skipped rows are counted
+- the shipped models were trained on a pool that overlaps the gold set; for a leave-reference-out estimate (agreement .525, macro-F1 .350) see docs/study/results-simulated.md section 6
 - Wilcoxon p-values use the normal approximation with tie correction; the bootstrap CI resamples participants
 
