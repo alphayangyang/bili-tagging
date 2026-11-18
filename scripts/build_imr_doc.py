@@ -18,6 +18,7 @@ REPO = Path(__file__).resolve().parents[1]
 MD = REPO / "docs" / "study" / "imr-methods-results.md"
 OUT = REPO / "submission" / "Class X + ZonE + IMR.docx"
 FIG1 = REPO / "submission" / "figures" / "imr-figure1.png"
+FIG2 = REPO / "submission" / "figures" / "imr-figure2-simulated.png"
 FONT = "Times New Roman"
 BODY = 11
 
@@ -136,6 +137,11 @@ def main():
         elif re.match(r"^Figure \d+\.", line):
             if line.startswith("Figure 1."):
                 doc.add_picture(str(FIG1), width=Inches(6.4))
+                pic_par = doc.paragraphs[-1]
+                pic_par.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                pic_par.paragraph_format.space_before = Pt(8)
+            elif line.startswith("Figure 2."):
+                doc.add_picture(str(FIG2), width=Inches(6.0))
                 pic_par = doc.paragraphs[-1]
                 pic_par.alignment = WD_ALIGN_PARAGRAPH.CENTER
                 pic_par.paragraph_format.space_before = Pt(8)

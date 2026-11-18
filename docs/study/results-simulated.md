@@ -27,6 +27,9 @@
 | 总体评价 | 3.71 | 3.88 | **4.88** |
 | 可解释性（仅 C） | — | — | 5.29 |
 
+图：`submission/figures/imr-figure2-simulated.png`（三个量表的三条件均值与 95% bootstrap 区间，
+由 `python3 scripts/study/agents/make_figure.py` 从 questionnaire.csv 生成，已嵌入 IMR docx 的 Figure 2）。
+
 ## 3. 计划对比（被试均值，配对 Wilcoxon + Holm，n = 6）
 
 | 对比 | 差值 [95% bootstrap CI] | Cohen's d_z | p | p(Holm) |

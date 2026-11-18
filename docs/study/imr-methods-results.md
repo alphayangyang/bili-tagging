@@ -147,6 +147,8 @@ Reporting conventions: p values are reported to three decimals, effect sizes wit
 
 Before recruiting, the full pipeline was exercised with six simulated participants: LLM agents, each given a distinct viewer persona, that read the block materials (video facts, two screenshots, the comment samples and the filtering counts) and completed the same rating forms. They did not watch the videos. Their data are labelled simulated everywhere, are analysed with the identical script, and are reported here only to show what the tables above will look like; they are not evidence for or against H1 to H5.
 
+Figure 2. Simulated condition means for discomfort, control and overall (1–7, six simulated participants), with 95% participant-level bootstrap intervals.
+
 Table 9. Simulated dry run, condition means (1–7, six agents, two blocks per condition per agent).
 | Measure | A all-on | B keyword | C prototype |
 | Discomfort | 3.65 (1.07) | 3.43 (0.93) | 2.63 (0.69) |

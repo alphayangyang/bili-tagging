@@ -21,6 +21,7 @@
 | data/study/agents/frames/ | 6 支视频各 2 帧截图（30%、75%），已去除插件角标 |
 | data/study/agents/out/P01..P06.json | 6 个 agent 的原始作答 |
 | scripts/study/agents/assemble.py | 组装 questionnaire.csv + raw session JSON |
+| scripts/study/agents/make_figure.py | 画 Figure 2（三条件均值 + 被试级 bootstrap 95% CI） |
 | data/study/questionnaire.csv | 36 行问卷（analyze.py 输入） |
 | data/study/raw/dmf-study-*.json | 36 个 session 导出（含 counts/events） |
 | data/study/analysis.json / analysis.md | analyze.py 输出 |
