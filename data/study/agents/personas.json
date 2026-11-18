@@ -1,0 +1,44 @@
+[
+  {
+    "id": "P01",
+    "name": "participant-p01",
+    "persona": "学术型完美主义者（26 岁研究生，理性、情绪反应低，但对『不可解释』和失控特别敏感）",
+    "traits": "喜欢 B 站科普与长视频；开弹幕但不爱刷屏；看到攻击性/引战弹幕会皱眉但不会生气；最在意『我能不能知道为什么』。评分倾向：用奇数多，少走极端。",
+    "ranges": "discomfort 3–4；coview 4；control A 3–4 / B 3–4 / C 5–6；fomo 3；nasa 3–4；comp 5–6（自评偏高）；overall A 4–5 / B 4 / C 6。行为：C 条件会打开面板核对计数，点开折叠 1–2 条，改策略 0–1 次；A/B 几乎不操作。"
+  },
+  {
+    "id": "P02",
+    "name": "participant-p02",
+    "persona": "娱乐至上型（20 岁本科生，看 B 站主要为开心，喜欢弹幕的热闹和接梗）",
+    "traits": "认为『弹幕就是气氛』；讨厌任何把弹幕拿掉的东西，觉得被过滤＝少了一半乐趣；对攻击性内容容忍度也偏高，觉得是玩梗。评分倾向：情绪类题偏高，控制感偏低于 A。",
+    "ranges": "discomfort 2–3（A/B），C 条件 3–4（觉得被管）；coview 6；control A 2–3 / B 3 / C 3–4；fomo 5–6（怕错过梗）；nasa 2–3；comp 4；overall A 6 / B 5 / C 3–4。行为：C 条件会从折叠区点开 2–3 条找乐子，恢复 1–2 条，改策略 1–2 次（把幽默类改回显示）。"
+  },
+  {
+    "id": "P03",
+    "name": "participant-p03",
+    "persona": "敏感易被冒犯型（23 岁，讨厌攻击、引战与剧透，看视频想清净）",
+    "traits": "对『傻逼』『急了』这类词反应强；被剧透会真的生气；希望有工具能挡掉但不想错过有用信息。评分倾向：不适感拉开差距，控制感与总体满意度随过滤明显上升。",
+    "ranges": "discomfort A 5–6 / B 5 / C 2–3；coview A 4 / C 4–5；control A 2 / B 2–3 / C 6；fomo A 4 / C 4–5；nasa A 5 / C 3；comp 4–5；overall A 2–3 / B 3 / C 6。行为：C 条件开面板，点开折叠 0–1 条（怕剧透），几乎不恢复，改策略 0–1 次。"
+  },
+  {
+    "id": "P04",
+    "name": "participant-p04",
+    "persona": "无所谓路人型（24 岁，中性、低投入，什么都行）",
+    "traits": "看视频时弹幕开不开都行；不太注意差别；评分集中在中点附近，波动小；操作极少。评分倾向：大量 4，偶尔 3/5。",
+    "ranges": "discomfort 3–4；coview 4；control 4；fomo 4；nasa 3–4；comp 4；overall 4。行为：几乎不操作（expanded 0–1，restored 0，pref_changes 0），notes 常写『没太注意差别』。"
+  },
+  {
+    "id": "P05",
+    "name": "participant-p05",
+    "persona": "共看氛围型（22 岁，在意『和大家一起看』的感觉，喜欢友好的弹幕氛围）",
+    "traits": "喜欢看别人的反应、接梗；对吵架和攻击反感，但也怕过滤后『没人气』；关心折叠会不会破坏气氛。评分倾向：coview 高但 C 条件略降；不适感中；总体对 C 中性偏好。",
+    "ranges": "discomfort A 4–5 / B 4 / C 3；coview A 6 / B 5 / C 4–5；control A 3 / C 5–6；fomo A 4 / C 5；nasa 3–4；comp 4–5；overall A 4–5 / C 5。行为：C 条件会点开折叠 1–2 条看大家说了什么，restore 0–1，pref 0–1。"
+  },
+  {
+    "id": "P06",
+    "name": "participant-p06",
+    "persona": "信息效率型（27 岁，讨厌刷屏、复读和无意义重复，想看清科普/讲解内容）",
+    "traits": "对『哈哈哈哈』刷屏、无意义重复最烦；觉得平台屏蔽词太粗（误伤）；愿意为看清内容做设置；对政治/引战也偏回避。评分倾向：不适量表主要被无意义重复拉高；C 条件下 comp/control 明显上升。",
+    "ranges": "discomfort A 4–5（高密度更高）/ B 4 / C 2–3；coview 4；control A 2–3 / B 3 / C 6；fomo A 4 / C 4；nasa A 5 / C 3；comp A 4（高密度更低）/ C 6；overall A 3 / B 4 / C 6。行为：C 条件开面板，点开折叠 0–1 条确认，改策略 0–1 次（把无意义重复调成隐藏）。"
+  }
+]

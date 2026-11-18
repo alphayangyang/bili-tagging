@@ -43,6 +43,8 @@
 | L23 | S2 收尾工具：S1 单标注金标 120 条（analyze --gold 出 per-tag P/R/F1）、主试清单 + 结果报告模板、一键自检脚本 precheck.py（服务/材料/模型/报告/链接表/金标/版本 7 项） | DONE | lead | data/study/gold_sheet.jsonl + gold.jsonl（120 行，6 视频各 20 条，与 teacher 一致率 0.575）；脚本 scripts/study/precheck.py + tests/test_study_precheck.py（16 用例）；文档 docs/study/{gold-annotation,examiner-checklist,results-template}.md；RQ2 金标结果 dominant 0.558 / macro-F1 0.496 / other recall 0.147 / attack recall 1.0（support 6）；docs/study/recruitment.md（招募/排期/提醒）、protocol §14 改为「6 件事当前状态」；281 python tests + 103 js pass |
 | L24 | 分析口径 QA：Krippendorff α 有限样本修正（原实现系统性低估）、Wilcoxon/Holm/Cronbach 与 scipy/参考值逐值对齐、macro-F1 并集口径写明、功效模拟脚本 | DONE | lead | analyze.py 的 krippendorff_alpha_nominal 改为 (N²−Σn²)/(N(N−1))，与 krippendorff 0.9.0 在 4 组固定样例上逐值一致（0.620/0.240/0.298/0.294）；tests/test_study_analyze.py 新增 scipy 参考值与 Holm 参考例；scripts/study/power_sim.py + tests/test_study_power.py；protocol §2.4 补「N=24 对 d≥0.7 有 80%+ power、d=0.6 约 .78，Holm 后 .61/.74」、§8.2 补 α 与 macro-F1 口径、results-template §2.5 分析口径；README S2 行同步；286 python tests |
 
+| L25 | S2 模拟运行（AI 被试）+ IMR 结果更新：6 个 LLM 子智能体按人格作答 36 块 → assemble → analyze.py 出表；拉丁方修正（每视频每条件 2 次、每被试看全 6 支）；familiar 编码/延迟匹配两个 bug 修掉；IMR 数字改去泄漏口径并补统计方法段与 §2.6 模拟小节 | DONE | lead | `data/study/agents/`（run-sheet-6.csv、blocks/、frames/、out/、README.md）、`scripts/study/agents/{build_materials,assemble}.py`、`data/study/{questionnaire.csv,raw/,analysis.json,analysis.md}`、`docs/study/results-simulated.md`、`docs/study/imr-methods-results.md` + `submission/Class X + ZonE + IMR.docx`（2,532 词 / 9 表 / 1 图）；去泄漏金标：agreement .525、macro-F1 .350（CI [.255,.430]）、3 表逐标签；模拟结果 C vs A 不适感 −1.02（Holm p=.344，n=6 不足以显著）；297 python tests + 104 js pass |
+
 ## TODO（未开始，按序）
 
 阶段：方案 v2 落地（详见 `docs/design/plan-v2.md`）。
@@ -72,6 +74,12 @@
     ② 整池打分 3.6 万条时 `labelPool` 会退化成服务批量（无每视频模型），冷启动首屏等待可能 > 2.5 s；
     ③ 低置信放行开关默认开，已确认关掉后「全隐藏」能整池清零，但真机上要不要默认关需可用性测试；
     ④ study 模式已验证：A/B record-only 走原始段并记录（只记录策略会做什么），C 走整池过滤；三条件都应用密度格抽稀（low = 30 条/分）。
+
+12. **S2 真人执行**（模拟管线已通，见 L25）：按 `data/study/run-sheet.csv`（30 被试 × 6 块 = 180 URL）招人；
+    A/B 条件用带屏蔽词账号，C 条件确认整池加载；每块导出 session JSON 到 `data/study/raw/`、问卷填 `data/study/questionnaire.csv`，
+    然后 `python3 scripts/study/analyze.py --bootstrap 5000`。注意：模拟运行已证明 n=6 时 Wilcoxon 最小 p≈.031、Holm 后不可能显著，N=16 才够。
+13. **IMR 提交收尾**：`submission/Class X + ZonE + IMR.docx` 里的班级号占位 `Class X` 待用户给；
+    若还要交 PDF 需另找转换工具（本机无 LibreOffice）。文中标注器数字已改为去泄漏的 .525 / .350（.558/.496 只作为 shipped 模型的乐观对照写在 results-simulated.md）。
 
 11. **按报告结论做质量工程**（见 docs/experiments/REPORT.md §12/§14）：
     ① active learning 降 teacher 升级比例（现状 θ=0.45 时 62–88% 要过 LLM，目标同质量下减半）；
@@ -124,6 +132,7 @@
 | 2026-11-18 | S2 正式研究材料与工具链（L22）：6 支真实刺激视频定稿 + 材料级 social 校验；teacher 抽样标注 988 行、每视频线性模型重训、report ready；研究模式 A/B/C 端到端冒烟（A/B 只记录、C 真过滤）；低密度格抽稀（thinSegmentDrop，30 条/分、10 s 窗、稳定 hash，三条件生效）；session_url/run-sheet（180 URL）、demo 分析链路、session-kit | 263 python tests + 103 js pass；A-high 972 shown / A-low 60 shown（thinned 931）/ C-low 60 / C-high 925；`data/study/report.json` ready=true；修 3 个 bug：study 条件 A/B/C 别名、thinned 未透传、GM shim 经页面 fetch 导致同一段被二次过滤（新增 state.nativeFetch 与 record 合并取最大） |
 | 2026-11-18 | S2 收尾工具（L23）：单标注金标 120 条 + analyze --gold 打通 per-tag P/R/F1；主试清单/结果模板；precheck.py 一键自检（7 项） | 金标：dominant 0.558 / macro-F1 0.496 / other recall 0.147（模型从不判 other）；precheck 在真实仓库 7/7 PASS；281 python tests + 103 js pass |
 | 2026-11-18 | S2 分析管线 dry-run（真实导出 + 合成问卷）：条件标识兼容（all_on/keyword/prototype ↔ A/B/C，新增 condition_label）、重复记录延迟取最大、清洗规则说明；session-kit 补每块导出/命名流程 | 265 python tests + 103 js pass；dry-run `analysed 6 blocks / 1 participants`，A/B/C 各 2 块，RQ1/RQ2 表正常产出；C 条件 6 支实测过滤占比 10.1–51.6%（`c-condition-check.json`）；数据在 `data/study/dryrun/`（合成问卷，不可当结果引用） |
+| 2026-11-19 | S2 模拟运行（L25）：6 个 LLM 被试 36 块 + 拉丁方修正 + 组装/分析全链路；IMR 更新为去泄漏数字并补统计方法段与 §2.6 模拟小节 | `python3 scripts/study/analyze.py --bootstrap 5000` → analysed 36 blocks / 6 participants；A/B/C 不适感 3.65/3.43/2.63、控制感 2.67/2.92/4.89；拉丁方修正后每视频每条件 2 次；去泄漏 labeler agreement .525 / macro-F1 .350；docx 2,532 词 / 9 表 / 1 图，TNR 11 双倍行距 |
 | 2026-11-18 | 统计口径 QA（L24）：α 有限样本修正 + Wilcoxon/Holm/Cronbach 参考值回归 + 功效模拟 | Krippendorff α 原实现低估（0.6 vs 0.62、0.2 vs 0.24），改为 (N²−Σn²)/(N(N−1)) 后与 krippendorff 0.9.0 四组样例一致；Wilcoxon 与 scipy 逐值一致（p=0.1060/0.3428），Holm 参考例 [0.005,0.08,0.12,0.4,0.5]；power_sim：N=24 时 d=0.6 → .78、d=0.7 → .90（Holm 后 .61/.74）；286 python tests + 103 js pass；文档 protocol §2.4/§8.2、results-template §2.5、gold-annotation §5/§7 |
 | 2026-11-06 | 压测 E9（151 万弹幕视频，单段 5,886 条）+ 7 个修复：`_TagStore` 缓存（服务端 2,288 ms → 41.1 ms / 56×）、teacher 队列上限 4,000、密度只对 show 竞争槽位、暂停角标提示、decisions 带 labels 修面板统计、BrokenPipe 静默、旧构建注入排查 | `docs/experiments/e9-stress.md`；193 python tests + 58 js pass；截图 `docs/screenshots/e9-density-{off,on}.png` |
 | 2026-11-05 | 全量实验 + 实验报告（E0–E7） | docs/experiments/REPORT.md、data/experiments/results/*.json；2,457 条 / 6 视频；178 tests OK |

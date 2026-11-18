@@ -1,0 +1,301 @@
+{
+  "labeled": "data/study/teacher_v4.jsonl",
+  "pooled": false,
+  "split_dev": 0.0,
+  "train_rows": 2816,
+  "gold_rows": 120,
+  "tau_objective": "harm",
+  "methods": {
+    "softmax": {
+      "report_rows": 120,
+      "tune_rows": 120,
+      "argmax": {
+        "n": 120,
+        "accuracy": 0.525,
+        "macro_f1": 0.3502,
+        "weighted_f1": 0.5095,
+        "family_macro_f1": 0.4369,
+        "mean_cost": 0.2292,
+        "cost_weighted_accuracy": 0.7708,
+        "per_label": {
+          "information": {
+            "precision": 0.5862,
+            "recall": 0.68,
+            "f1": 0.6296,
+            "support": 25
+          },
+          "humor": {
+            "precision": 0.6383,
+            "recall": 0.6383,
+            "f1": 0.6383,
+            "support": 47
+          },
+          "emotional_resonance": {
+            "precision": 0.5,
+            "recall": 0.5714,
+            "f1": 0.5333,
+            "support": 21
+          },
+          "irrelevant_repetition": {
+            "precision": 0.25,
+            "recall": 0.25,
+            "f1": 0.25,
+            "support": 4
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "conflict": {
+            "precision": 0.4286,
+            "recall": 0.375,
+            "f1": 0.4,
+            "support": 8
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 9
+          }
+        },
+        "filter": {
+          "precision": 0.2941,
+          "recall": 0.2778,
+          "f1": 0.2857,
+          "tp": 5,
+          "fp": 12,
+          "fn": 13
+        },
+        "harm_per_1000": 308.33,
+        "top_confusions": [
+          {
+            "gold": "other",
+            "pred": "humor",
+            "count": 6
+          },
+          {
+            "gold": "emotional_resonance",
+            "pred": "humor",
+            "count": 6
+          },
+          {
+            "gold": "information",
+            "pred": "emotional_resonance",
+            "count": 6
+          },
+          {
+            "gold": "humor",
+            "pred": "information",
+            "count": 5
+          },
+          {
+            "gold": "humor",
+            "pred": "attack",
+            "count": 3
+          },
+          {
+            "gold": "emotional_resonance",
+            "pred": "information",
+            "count": 3
+          },
+          {
+            "gold": "humor",
+            "pred": "irrelevant_repetition",
+            "count": 3
+          },
+          {
+            "gold": "attack",
+            "pred": "humor",
+            "count": 3
+          }
+        ]
+      },
+      "tau_objective": "harm",
+      "tau": 0.7,
+      "reject_cv": -208.334,
+      "reject": {
+        "n": 120,
+        "accuracy": 0.3333,
+        "macro_f1": 0.2981,
+        "weighted_f1": 0.3866,
+        "family_macro_f1": 0.3681,
+        "mean_cost": 0.2992,
+        "cost_weighted_accuracy": 0.7008,
+        "per_label": {
+          "information": {
+            "precision": 0.8571,
+            "recall": 0.48,
+            "f1": 0.6154,
+            "support": 25
+          },
+          "humor": {
+            "precision": 0.7778,
+            "recall": 0.2979,
+            "f1": 0.4308,
+            "support": 47
+          },
+          "emotional_resonance": {
+            "precision": 0.3636,
+            "recall": 0.1905,
+            "f1": 0.25,
+            "support": 21
+          },
+          "irrelevant_repetition": {
+            "precision": 0.25,
+            "recall": 0.25,
+            "f1": 0.25,
+            "support": 4
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "conflict": {
+            "precision": 0.6667,
+            "recall": 0.25,
+            "f1": 0.3636,
+            "support": 8
+          },
+          "other": {
+            "precision": 0.1,
+            "recall": 0.7778,
+            "f1": 0.1772,
+            "support": 9
+          }
+        },
+        "filter": {
+          "precision": 0.4286,
+          "recall": 0.1667,
+          "f1": 0.24,
+          "tp": 3,
+          "fp": 4,
+          "fn": 15
+        },
+        "harm_per_1000": 191.67,
+        "top_confusions": [
+          {
+            "gold": "humor",
+            "pred": "other",
+            "count": 29
+          },
+          {
+            "gold": "emotional_resonance",
+            "pred": "other",
+            "count": 15
+          },
+          {
+            "gold": "information",
+            "pred": "other",
+            "count": 7
+          },
+          {
+            "gold": "conflict",
+            "pred": "other",
+            "count": 5
+          },
+          {
+            "gold": "information",
+            "pred": "emotional_resonance",
+            "count": 5
+          },
+          {
+            "gold": "attack",
+            "pred": "other",
+            "count": 5
+          },
+          {
+            "gold": "humor",
+            "pred": "irrelevant_repetition",
+            "count": 3
+          },
+          {
+            "gold": "irrelevant_repetition",
+            "pred": "other",
+            "count": 2
+          }
+        ]
+      },
+      "ci": {
+        "macro_f1": [
+          0.2539,
+          0.4276
+        ],
+        "harm_per_1000": [
+          200.0,
+          425.0
+        ],
+        "reject_macro_f1": [
+          0.1974,
+          0.3888
+        ],
+        "reject_harm_per_1000": [
+          116.67,
+          283.33
+        ]
+      },
+      "harm_curve": [
+        {
+          "w_false_hide": 0.25,
+          "filter": 133.3,
+          "show_all": 150.0,
+          "delta": -16.7
+        },
+        {
+          "w_false_hide": 0.5,
+          "filter": 158.3,
+          "show_all": 150.0,
+          "delta": 8.3
+        },
+        {
+          "w_false_hide": 1.0,
+          "filter": 208.3,
+          "show_all": 150.0,
+          "delta": 58.3
+        },
+        {
+          "w_false_hide": 2.0,
+          "filter": 308.3,
+          "show_all": 150.0,
+          "delta": 158.3
+        },
+        {
+          "w_false_hide": 4.0,
+          "filter": 508.3,
+          "show_all": 150.0,
+          "delta": 358.3
+        }
+      ],
+      "policy": {
+        "show_all": {
+          "gamma": 2.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 18,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "harm_per_1000": 150.0
+        },
+        "gamma": 0.75,
+        "cv_harm": 225.0,
+        "at_gamma": {
+          "gamma": 0.75,
+          "tp": 3,
+          "fp": 5,
+          "fn": 15,
+          "precision": 0.375,
+          "recall": 0.1667,
+          "f1": 0.2308,
+          "harm_per_1000": 208.33
+        },
+        "harm_w1": 166.67,
+        "harm_w4": 291.67
+      }
+    }
+  }
+}

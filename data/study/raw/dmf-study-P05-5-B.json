@@ -1,0 +1,42 @@
+{
+  "schema": "dmf-study-session/1",
+  "study_id": "P05-5-B",
+  "participant": "P05",
+  "condition": "keyword",
+  "condition_label": "B",
+  "started_at": "2026-11-19T12:16:00Z",
+  "ended_at": "2026-11-19T12:19:16Z",
+  "script_version": "0.4.2-simulated",
+  "prefs": {
+    "condition": "B"
+  },
+  "counts": {
+    "segments": 1,
+    "shown": 2066,
+    "hidden": 35,
+    "collapsed": 0,
+    "thinned": 0,
+    "expands": 0,
+    "restores": 0,
+    "prefs": 0,
+    "corrections": 0,
+    "dropped_events": 0
+  },
+  "events": [
+    {
+      "t": 1795090560000,
+      "type": "segment",
+      "bvid": "BV1Ho4y1D7Wz",
+      "segment_index": 1,
+      "shown": 2066,
+      "hidden": 35,
+      "collapsed": 0,
+      "thinned": 0,
+      "latency_ms": 163.0,
+      "online": true
+    }
+  ],
+  "simulated": true,
+  "participant_kind": "llm-agent",
+  "persona": "共看氛围型（22岁，喜欢和大家一起看的弹幕氛围，反感吵架但怕冷清）"
+}

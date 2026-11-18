@@ -1,0 +1,42 @@
+{
+  "schema": "dmf-study-session/1",
+  "study_id": "P02-5-B",
+  "participant": "P02",
+  "condition": "keyword",
+  "condition_label": "B",
+  "started_at": "2026-11-19T10:01:00Z",
+  "ended_at": "2026-11-19T10:05:51Z",
+  "script_version": "0.4.2-simulated",
+  "prefs": {
+    "condition": "B"
+  },
+  "counts": {
+    "segments": 1,
+    "shown": 721,
+    "hidden": 4,
+    "collapsed": 0,
+    "thinned": 0,
+    "expands": 0,
+    "restores": 0,
+    "prefs": 0,
+    "corrections": 0,
+    "dropped_events": 0
+  },
+  "events": [
+    {
+      "t": 1795082460000,
+      "type": "segment",
+      "bvid": "BV1Z4RHYKEcB",
+      "segment_index": 1,
+      "shown": 721,
+      "hidden": 4,
+      "collapsed": 0,
+      "thinned": 0,
+      "latency_ms": 17.0,
+      "online": true
+    }
+  ],
+  "simulated": true,
+  "participant_kind": "llm-agent",
+  "persona": "娱乐至上型（20岁本科生，把弹幕当气氛，讨厌被过滤）"
+}

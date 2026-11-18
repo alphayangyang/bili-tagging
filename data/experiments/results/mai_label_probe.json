@@ -1,0 +1,968 @@
+{
+ "summary": {
+  "n": 120,
+  "accuracy": 0.5417,
+  "macro_f1": 0.3949,
+  "weighted_f1": 0.5035,
+  "family_macro_f1": 0.4963,
+  "mean_cost": 0.21,
+  "cost_weighted_accuracy": 0.79,
+  "per_label": {
+   "information": [
+    0.4857142857142857,
+    0.68,
+    0.5666666666666667,
+    25
+   ],
+   "humor": [
+    0.5294117647058824,
+    0.7659574468085106,
+    0.6260869565217391,
+    47
+   ],
+   "emotional_resonance": [
+    0.875,
+    0.3333333333333333,
+    0.48275862068965514,
+    21
+   ],
+   "irrelevant_repetition": [
+    0.2,
+    0.25,
+    0.22222222222222224,
+    4
+   ],
+   "attack": [
+    1.0,
+    0.5,
+    0.6666666666666666,
+    6
+   ],
+   "conflict": [
+    0.0,
+    0.0,
+    0.0,
+    8
+   ],
+   "spoiler": [
+    0.0,
+    0.0,
+    0.0,
+    0
+   ],
+   "political": [
+    0.0,
+    0.0,
+    0.0,
+    0
+   ],
+   "inflammatory": [
+    0.0,
+    0.0,
+    0.0,
+    0
+   ],
+   "other": [
+    1.0,
+    0.1111111111111111,
+    0.19999999999999998,
+    9
+   ]
+  },
+  "filter": {
+   "precision": 0.625,
+   "recall": 0.2778,
+   "f1": 0.3846,
+   "tp": 5,
+   "fp": 3,
+   "fn": 13
+  },
+  "harm_per_1000": 158.33,
+  "top_confusions": [
+   {
+    "gold": "emotional_resonance",
+    "pred": "humor",
+    "count": 11
+   },
+   {
+    "gold": "humor",
+    "pred": "information",
+    "count": 9
+   },
+   {
+    "gold": "information",
+    "pred": "humor",
+    "count": 8
+   },
+   {
+    "gold": "conflict",
+    "pred": "humor",
+    "count": 6
+   },
+   {
+    "gold": "other",
+    "pred": "humor",
+    "count": 4
+   },
+   {
+    "gold": "irrelevant_repetition",
+    "pred": "information",
+    "count": 3
+   },
+   {
+    "gold": "emotional_resonance",
+    "pred": "information",
+    "count": 3
+   },
+   {
+    "gold": "attack",
+    "pred": "humor",
+    "count": 3
+   }
+  ],
+  "agreement": 0.5416666666666666,
+  "elapsed_s": 61.4
+ },
+ "rows": [
+  {
+   "text": "视频内含有危险行为，请勿模仿",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "information",
+   "pred": "information",
+   "note": "安全提示"
+  },
+  {
+   "text": "炽    合    金    块",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "humor",
+   "pred": "irrelevant_repetition",
+   "note": "无意义字符"
+  },
+  {
+   "text": "寇 基 雷",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "other",
+   "pred": "irrelevant_repetition",
+   "note": "无意义字符"
+  },
+  {
+   "text": "@老大南",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "other",
+   "pred": "other",
+   "note": "提及他人"
+  },
+  {
+   "text": "没有铀235的可以用钚243替代",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "用钚243替代铀235，荒诞的替代方案"
+  },
+  {
+   "text": "《妈见打》",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "妈见打，谐音梗"
+  },
+  {
+   "text": "听不懂思密达",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "思密达，韩语梗"
+  },
+  {
+   "text": "表面淬火（战痕累累）",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "表面淬火，战痕累累，反差萌"
+  },
+  {
+   "text": "前面说剪刀的，我还用勺子呢",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "勺子剪刀的梗"
+  },
+  {
+   "text": "剪刀是让你这样用的？",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "剪刀用法调侃"
+  },
+  {
+   "text": "可以喝了",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "humor",
+   "pred": "information",
+   "note": "告知可饮用"
+  },
+  {
+   "text": "熟了可以吃了",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "humor",
+   "pred": "information",
+   "note": "告知可食用"
+  },
+  {
+   "text": "买了，孩子很爱喝",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "humor",
+   "pred": "information",
+   "note": "分享购买体验"
+  },
+  {
+   "text": "投铋",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "谐音梗玩梗"
+  },
+  {
+   "text": "骂见打",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "谐音梗玩梗"
+  },
+  {
+   "text": "明示投币三连（悲）",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "玩三连梗"
+  },
+  {
+   "text": "好的这一步我把最完美的一次夹碎了",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "irrelevant_repetition",
+   "pred": "information",
+   "note": "游戏内物品名称"
+  },
+  {
+   "text": "炽合金块",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "humor",
+   "pred": "information",
+   "note": "游戏内物品名称"
+  },
+  {
+   "text": "秩序结晶",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "irrelevant_repetition",
+   "pred": "information",
+   "note": "游戏内物品名称"
+  },
+  {
+   "text": "？",
+   "bvid": "BV1Ho4y1D7Wz",
+   "gold": "other",
+   "pred": "humor",
+   "note": "问号表达惊讶"
+  },
+  {
+   "text": "fps(速答",
+   "bvid": "BV18E1NByEYv",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "速答梗"
+  },
+  {
+   "text": "通通恶臭",
+   "bvid": "BV18E1NByEYv",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "恶臭调侃"
+  },
+  {
+   "text": "都是必样的",
+   "bvid": "BV18E1NByEYv",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "必样谐音梗"
+  },
+  {
+   "text": "拉完了",
+   "bvid": "BV18E1NByEYv",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "拉完了表达结束"
+  },
+  {
+   "text": "开除大飞",
+   "bvid": "BV18E1NByEYv",
+   "gold": "information",
+   "pred": "humor",
+   "note": "调侃大飞"
+  },
+  {
+   "text": "鼠鼠是起源地铁逃生的呀",
+   "bvid": "BV18E1NByEYv",
+   "gold": "emotional_resonance",
+   "pred": "information",
+   "note": "解释鼠鼠起源"
+  },
+  {
+   "text": "好！",
+   "bvid": "BV18E1NByEYv",
+   "gold": "emotional_resonance",
+   "pred": "emotional_resonance",
+   "note": "表达赞同"
+  },
+  {
+   "text": "压抑在哪",
+   "bvid": "BV18E1NByEYv",
+   "gold": "conflict",
+   "pred": "information",
+   "note": "询问压抑在哪"
+  },
+  {
+   "text": "弹幕现身说法这一块",
+   "bvid": "BV18E1NByEYv",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "弹幕现身说法这一块"
+  },
+  {
+   "text": "哦对了",
+   "bvid": "BV18E1NByEYv",
+   "gold": "irrelevant_repetition",
+   "pred": "information",
+   "note": "哦对了"
+  },
+  {
+   "text": "？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？",
+   "bvid": "BV18E1NByEYv",
+   "gold": "humor",
+   "pred": "irrelevant_repetition",
+   "note": "？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？"
+  },
+  {
+   "text": "？馒头卡！！",
+   "bvid": "BV18E1NByEYv",
+   "gold": "emotional_resonance",
+   "pred": "humor",
+   "note": "？馒头卡！！"
+  },
+  {
+   "text": "压力给到后续游戏圈",
+   "bvid": "BV18E1NByEYv",
+   "gold": "information",
+   "pred": "humor",
+   "note": "游戏圈压力梗"
+  },
+  {
+   "text": "没有英雄联盟?",
+   "bvid": "BV18E1NByEYv",
+   "gold": "information",
+   "pred": "humor",
+   "note": "英雄联盟梗"
+  },
+  {
+   "text": "这不光遇吗",
+   "bvid": "BV18E1NByEYv",
+   "gold": "information",
+   "pred": "humor",
+   "note": "光遇梗"
+  },
+  {
+   "text": "月",
+   "bvid": "BV18E1NByEYv",
+   "gold": "other",
+   "pred": "humor",
+   "note": "月梗"
+  },
+  {
+   "text": "重做金水！！！",
+   "bvid": "BV18E1NByEYv",
+   "gold": "other",
+   "pred": "humor",
+   "note": "重做金水，经典梗"
+  },
+  {
+   "text": "此次在AC亦有记载",
+   "bvid": "BV18E1NByEYv",
+   "gold": "humor",
+   "pred": "information",
+   "note": "AC记载，提供背景"
+  },
+  {
+   "text": "还算好的了这都",
+   "bvid": "BV18E1NByEYv",
+   "gold": "emotional_resonance",
+   "pred": "humor",
+   "note": "还算好的了，调侃语气"
+  },
+  {
+   "text": "这都是鸟液，老鸟垢会无语习惯了",
+   "bvid": "BV18E1NByEYv",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "鸟液鸟垢，抽象梗"
+  },
+  {
+   "text": "养生这一块",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "养生梗"
+  },
+  {
+   "text": "养生呢",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "养生梗"
+  },
+  {
+   "text": "我去刚刚熬夜熬穿就刷到",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "emotional_resonance",
+   "pred": "humor",
+   "note": "熬夜梗"
+  },
+  {
+   "text": "什么拉罗萨拉曼卡",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "other",
+   "pred": "humor",
+   "note": "谐音梗"
+  },
+  {
+   "text": "生前何必早睡，死后自然长眠",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "谐音梗，笑点"
+  },
+  {
+   "text": "有不猝死的风险吗？",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "玩梗，调侃"
+  },
+  {
+   "text": "还有长期的可能吗",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "玩梗，调侃"
+  },
+  {
+   "text": "高三生已经这样6个月了",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "emotional_resonance",
+   "pred": "information",
+   "note": "提供信息"
+  },
+  {
+   "text": "不，并不正常",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "information",
+   "pred": "humor",
+   "note": "正常吗"
+  },
+  {
+   "text": "老年人呢",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "humor",
+   "pred": "information",
+   "note": "老年人呢"
+  },
+  {
+   "text": "睡10笑死",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "睡10笑死"
+  },
+  {
+   "text": "md神人学校，那我就受着呗",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "emotional_resonance",
+   "pred": "humor",
+   "note": "神人学校"
+  },
+  {
+   "text": "罗志祥",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "调侃罗志祥"
+  },
+  {
+   "text": "谁问了？出来挨打",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "attack",
+   "pred": "humor",
+   "note": "玩梗谁问了"
+  },
+  {
+   "text": "张雪峰肯定没有短睡基因",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "humor",
+   "pred": "information",
+   "note": "提供张雪峰信息"
+  },
+  {
+   "text": "我的合适是在9小时，睡6.5小时，换算一下卡在两个区域中间咋办",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "information",
+   "pred": "humor",
+   "note": "调侃睡眠换算"
+  },
+  {
+   "text": "12-14小时",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "information",
+   "pred": "information",
+   "note": "提供睡眠时长信息"
+  },
+  {
+   "text": "我一天能睡9~10个小时。",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "information",
+   "pred": "information",
+   "note": "提供个人睡眠时长信息"
+  },
+  {
+   "text": "很难睡超过八小时，大概七小时左右睡眠。中午必须午睡",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "information",
+   "pred": "information",
+   "note": "提供睡眠时长和午睡习惯信息"
+  },
+  {
+   "text": "记住高考的考生号吗？",
+   "bvid": "BV1VMRKBCEDp",
+   "gold": "humor",
+   "pred": "information",
+   "note": "提供高考考生号记忆信息"
+  },
+  {
+   "text": "崩急典孝麻，典，太典了（",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "典中典之绷急典"
+  },
+  {
+   "text": "刚吃完坚果",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "other",
+   "pred": "information",
+   "note": "刚吃完坚果"
+  },
+  {
+   "text": "开头就绷不住了",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "emotional_resonance",
+   "pred": "emotional_resonance",
+   "note": "开头就绷不住了"
+  },
+  {
+   "text": "第一句就封神了",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "emotional_resonance",
+   "pred": "humor",
+   "note": "第一句就封神了"
+  },
+  {
+   "text": "我不行了啊啊啊啊啊",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "emotional_resonance",
+   "pred": "humor",
+   "note": "夸张表达，属于玩笑性质"
+  },
+  {
+   "text": "这还是人嘛？",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "emotional_resonance",
+   "pred": "humor",
+   "note": "反问句式，带有调侃意味"
+  },
+  {
+   "text": "哈哈哈哈哈哈哈哈",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "纯笑声，无实际信息"
+  },
+  {
+   "text": "666",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "emotional_resonance",
+   "pred": "humor",
+   "note": "网络用语，表示惊讶或无语"
+  },
+  {
+   "text": "清楚了，清楚了",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "emotional_resonance",
+   "pred": "humor",
+   "note": "复读机式发言"
+  },
+  {
+   "text": "碳基生物什么成分",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "humor",
+   "pred": "information",
+   "note": "科普成分"
+  },
+  {
+   "text": "啊哈哈哈哈哈哈哈哈",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "纯笑声刷屏"
+  },
+  {
+   "text": "这段话可以申遗了",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "夸张修辞"
+  },
+  {
+   "text": "血压上来了",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "emotional_resonance",
+   "pred": "humor",
+   "note": "血压上来了"
+  },
+  {
+   "text": "“当代网友”",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "当代网友"
+  },
+  {
+   "text": "10g奇亚籽里有3.4g膳食纤维。占人体所需的14%。这里面只有测量结果，没有计算问题。",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "information",
+   "pred": "information",
+   "note": "奇亚籽膳食纤维含量"
+  },
+  {
+   "text": "已经在生气了",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "emotional_resonance",
+   "pred": "emotional_resonance",
+   "note": "已经在生气了"
+  },
+  {
+   "text": "太真实了",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "emotional_resonance",
+   "pred": "emotional_resonance",
+   "note": "真实到让人共鸣"
+  },
+  {
+   "text": "人身攻击阴谋论真的很可怕",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "information",
+   "pred": "humor",
+   "note": "调侃阴谋论的荒谬"
+  },
+  {
+   "text": "哈哈哈哈无敌了",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "纯粹的笑声表达"
+  },
+  {
+   "text": "不行了笑死我了太典了啊哈哈哈",
+   "bvid": "BV1X7zGY4E45",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "笑到不行了"
+  },
+  {
+   "text": "看哭了",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "emotional_resonance",
+   "pred": "emotional_resonance",
+   "note": "被内容打动"
+  },
+  {
+   "text": "我想要点儿经济学呢，拜拜",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "玩梗调侃"
+  },
+  {
+   "text": "好棒！！期待之后的更新",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "emotional_resonance",
+   "pred": "emotional_resonance",
+   "note": "表达喜爱与期待"
+  },
+  {
+   "text": "没用的",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "conflict",
+   "pred": "irrelevant_repetition",
+   "note": "无意义重复"
+  },
+  {
+   "text": "阅读了那本超厉害的炒股翻茄小说《陈小群游资笔记》，让我成功在深圳全款买下了一套房子。",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "炒股小说变现实买房"
+  },
+  {
+   "text": "货币，金银，我想起了政治和历史",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "information",
+   "pred": "information",
+   "note": "货币金银历史关联"
+  },
+  {
+   "text": ".3333333333333.",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "irrelevant_repetition",
+   "pred": "irrelevant_repetition",
+   "note": "纯符号无意义重复"
+  },
+  {
+   "text": "像素画",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "information",
+   "pred": "information",
+   "note": "像素画类型说明"
+  },
+  {
+   "text": "不愧我儿，讲的真好",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "调侃式夸奖"
+  },
+  {
+   "text": "你是银行的债权人，所以其实某种角度来说，你放进银行的钱确实不属于的你",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "information",
+   "pred": "information",
+   "note": "解释银行债权关系"
+  },
+  {
+   "text": "完全没天赋的我，这里已经看不懂了。。。。",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "emotional_resonance",
+   "pred": "emotional_resonance",
+   "note": "表达看不懂的情绪"
+  },
+  {
+   "text": "无中生有！",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "conflict",
+   "pred": "humor",
+   "note": "玩梗无中生有"
+  },
+  {
+   "text": "我作为外行没看懂就没意义，你懂也不能证明这意义",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "conflict",
+   "pred": "humor",
+   "note": "外行没看懂的调侃"
+  },
+  {
+   "text": "逆回购就是央行购买商行的债券，成为债权人，给钱给商行，商行在规定时间再买回来，这样实现的央行向商行投放流动性的过程",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "information",
+   "pred": "information",
+   "note": "解释逆回购机制"
+  },
+  {
+   "text": "看不懂了",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "other",
+   "pred": "emotional_resonance",
+   "note": "表达困惑与无奈"
+  },
+  {
+   "text": "这里不是证券吧，依旧是优质债券才能做抵押品",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "information",
+   "pred": "information",
+   "note": "补充债券抵押细节"
+  },
+  {
+   "text": "这要有会计基础",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "information",
+   "pred": "information",
+   "note": "解释会计基础概念"
+  },
+  {
+   "text": "就是没钱了，管央行借钱",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "information",
+   "pred": "information",
+   "note": "说明央行借贷机制"
+  },
+  {
+   "text": "酸辣粉，麻辣粉",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "谐音梗调侃"
+  },
+  {
+   "text": "人家up自己都说要改了你还隔着不用改 你舔啥呢",
+   "bvid": "BV1Z4RHYKEcB",
+   "gold": "attack",
+   "pred": "attack",
+   "note": "批评粉丝盲目支持"
+  },
+  {
+   "text": "尾田，老漫画家中的败类！",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "attack",
+   "pred": "attack",
+   "note": "骂尾田是败类"
+  },
+  {
+   "text": "啥才是完美海贼王剧情发展到结局，有吗？",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "information",
+   "pred": "information",
+   "note": "讨论海贼王剧情走向"
+  },
+  {
+   "text": "我十年前就不追了哈哈",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "emotional_resonance",
+   "pred": "humor",
+   "note": "十年前就不追了哈哈"
+  },
+  {
+   "text": "没说错呀哈哈哈哈，休刊就算了质量确实一直在下滑",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "conflict",
+   "pred": "humor",
+   "note": "休刊就算了质量确实一直在下滑"
+  },
+  {
+   "text": "98年开始看的  大妈篇就不看了",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "information",
+   "pred": "information",
+   "note": "提供观看建议"
+  },
+  {
+   "text": "只能说埃及巴看不看",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "other",
+   "pred": "information",
+   "note": "评价内容质量"
+  },
+  {
+   "text": "依旧是区区普通",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "emotional_resonance",
+   "pred": "information",
+   "note": "评价内容质量"
+  },
+  {
+   "text": "日本网友有舔狗之资。",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "attack",
+   "pred": "humor",
+   "note": "调侃日本网友"
+  },
+  {
+   "text": "《你不干、有的是人干》",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "玩梗"
+  },
+  {
+   "text": "结晶粉",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "attack",
+   "pred": "humor",
+   "note": "玩梗"
+  },
+  {
+   "text": "神在哪",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "conflict",
+   "pred": "humor",
+   "note": "玩梗"
+  },
+  {
+   "text": "看了90几卷后就看不动了。后面完全没有感觉了",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "information",
+   "pred": "information",
+   "note": "提供信息"
+  },
+  {
+   "text": "笑嘻了，碰瓷博人傳",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "调侃碰瓷博人传"
+  },
+  {
+   "text": "人家追那么久因为质量不行不看了不能说一嘴啊，说什么是别人的自由",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "conflict",
+   "pred": "humor",
+   "note": "阴阳怪气别人自由"
+  },
+  {
+   "text": "我哪时候一口气补了三百多集动画.然后顶上战争开始追的漫画到凯多之后就真的无力了.",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "information",
+   "pred": "information",
+   "note": "分享追番经历"
+  },
+  {
+   "text": "那位网友他不是人",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "attack",
+   "pred": "attack",
+   "note": "人身攻击网友"
+  },
+  {
+   "text": "和之国弃坑",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "information",
+   "pred": "humor",
+   "note": "弃坑梗"
+  },
+  {
+   "text": "罗杰死后再无海贼王（）",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "humor",
+   "pred": "humor",
+   "note": "罗杰死了"
+  },
+  {
+   "text": "很多网文不也是这样吗，好不容易火了一部小说，于是该结尾的时候迟迟不了结，没完没了的拖剧情",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "information",
+   "pred": "information",
+   "note": "网文拖剧情"
+  },
+  {
+   "text": "支持顶上战争之后都是垃圾的说法",
+   "bvid": "BV1CzW26vEXz",
+   "gold": "conflict",
+   "pred": "humor",
+   "note": "顶上战争后"
+  }
+ ]
+}

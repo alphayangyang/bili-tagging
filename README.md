@@ -239,6 +239,7 @@ python3 -m danmaku_filter.cli reclassify --bvid BV1GJ411x7h7 --backend llm --lim
 
 | 产出 | 位置 | 说明 |
 | --- | --- | --- |
+| IMR 作业（Methods + Results，11/18 作业） | `submission/Class X + ZonE + IMR.docx`、`docs/study/imr-methods-results.md` | 被试/材料/测量/流程 + 结果章设计（表骨架、分析计划、Wilcoxon + Holm、效应量、bootstrap CI）；含去泄漏标注器效度（.525 / .350）与 §2.6 模拟运行示意结果；TNR 11、双倍行距；班级号仍为占位 Class X |
 | Revised introduction + pilot study（10/29 作业） | `submission/ZonE + Introduction + pilot study.docx` | 标题与作者、specialized scope、前人局限、目标 + RQ/H1–H4、四阶段研究设计（Figure 1）、先导试验（Table 2/3）、6 篇 APA 参考文献；TNR 11、双倍行距、两端对齐 |
 | 先导试验说明 | `docs/pilot/README.md` | 三个可行性问题、语料、结果（0.53 s/条、29 条审核 89.7%、MAE 0.05）、局限 |
 | 先导试验数据 | `data/pilot/audit_sample.json`、`data/pilot/audit_gold.json` | 29 条分层样本与人工标签，`python3 scripts/audit_score.py` 可复核 |
@@ -248,6 +249,7 @@ python3 -m danmaku_filter.cli reclassify --bvid BV1GJ411x7h7 --backend llm --lim
 | 标签边界实验（E8） | docs/experiments/e8-boundary.md | prompt v2→v3→v4 对比：判定顺序 + 46 条最小对立对；deepseek-flash audit 0.759→0.897、边界 must-hit 0.913→0.957、information 召回 0.774→0.839；本地 4B 持平，边界收益靠云端 teacher |
 | 压测报告（E9） | `docs/experiments/e9-stress.md` | 单段 5,886 条 / 全站 151 万弹幕视频：服务端 0.007 ms/条（修复前 0.39 ms/条）、客户端单段 30–55 ms、帧率 p95 14 ms；密度旋钮把 16,000 条压到 30 条常驻；暴露并修好 6 个问题（缓存重解析、队列上限、密度覆盖显式折叠、暂停无提示、面板统计口径、BrokenPipe） |
 | 正式实验（S2）材料与工具 | docs/study/ | 6 支真实刺激视频（信息 3 + 娱乐 3、密度高/低配对）；teacher 抽样标注 988 行、每视频线性模型；研究模式 A/B/C（A/B 只记录、C 整池过滤）+ 低密度格抽稀（30 条/分）；session_url/run-sheet、知情同意、主试逐字稿、问卷、analyze.py；分析管线已用真实导出 + 合成问卷干跑（data/study/dryrun）；统计口径已与 scipy/参考实现逐值对齐（Wilcoxon p、Holm、Cronbach、Krippendorff α 有限样本修正）并做功效模拟（scripts/study/power_sim.py：N=24 对 d≥0.7 有 80% power） |
+| S2 模拟运行（AI 被试，非人类数据） | docs/study/results-simulated.md、data/study/agents/、data/study/analysis.md | 6 个 LLM 子智能体按人格作答 36 块（修正后的拉丁方：每视频每条件各 2 次）→ assemble → analyze.py；A/B/C 不适感 3.65/3.43/2.63、控制感 2.67/2.92/4.89，方向与假设一致但 n=6 时 Holm 后不显著；顺带修出 3 个 bug（拉丁方不平衡、familiar 编码、延迟匹配）；金标改去泄漏口径 dominant .525 / macro-F1 .350 |
 | S1 金标 + 主试工具 | docs/study/gold-annotation.md、docs/study/examiner-checklist.md、docs/study/results-template.md、scripts/study/precheck.py | 120 条单标注金标（6 视频各 20 条，与 teacher 一致率 0.575）；analyze --gold 出 per-tag P/R/F1：dominant 0.558、macro-F1 0.496、other recall 0.147（模型几乎从不判 other）；主试清单（含 B 条件平台屏蔽词步骤与降级方案）/结果模板/一键自检 7 项（服务、材料、模型、报告、链接表、金标、脚本版本）；招募文案与排期模板 docs/study/recruitment.md |
 
 

@@ -49,19 +49,19 @@ Interaction burden. The logs also record every restore (a folded comment brought
 
 System performance. The script records the decision latency of each segment (median and 95th percentile per block), the time needed to load and score the whole pool, the number of blocks that failed open, and the share of comments labelled by the local model rather than by the fallback rules.
 
-Instrument validation. A reference set of 120 comments (20 per video, sampled at equal intervals across each video) was labelled by the first author using the annotation guide, then compared with the tagger's output. The tagger reproduces the reference dominant label on 55.8% of comments and reaches a macro-F1 of 0.50; Table 3 shows the per-label breakdown. The weak categories bound the filtering gain we can expect in condition C and are reported as a limitation rather than treated as a result.
+Instrument validation. A reference set of 120 comments (20 per video, sampled at equal intervals across each video) was labelled by the first author using the annotation guide, then compared with the tagger's output. The comparison is made under a leave-reference-out protocol: every reference comment is removed from the tagger's training pool before the per-video models are re-fitted, so the figures are not inflated by memorised text. The tagger reproduces the reference dominant label on 52.5% of comments and reaches a macro-F1 of 0.350 (95% bootstrap CI [0.255, 0.430]); Table 3 shows the per-label breakdown. The weak categories bound the filtering gain we can expect in condition C and are reported as a limitation rather than treated as a result.
 
 Table 3. Tagger validation on the 120-comment reference set.
-| Label | Precision | Recall | F1 |
-| Humour | .76 | .76 | .76 |
-| Information | .52 | .62 | .57 |
-| Emotional resonance | .42 | .73 | .54 |
-| Attack | .67 | 1.00 | .80 |
-| Irrelevant repetition | .11 | .25 | .15 |
-| Conflict | .25 | 1.00 | .40 |
-| Other | 1.00 | .15 | .26 |
+| Label | Precision | Recall | F1 | Support |
+| Humour | .64 | .64 | .64 | 47 |
+| Information | .59 | .68 | .63 | 25 |
+| Emotional resonance | .50 | .57 | .53 | 21 |
+| Conflict | .43 | .38 | .40 | 8 |
+| Irrelevant repetition | .25 | .25 | .25 | 4 |
+| Other | .00 | .00 | .00 | 9 |
+| Attack | .00 | .00 | .00 | 6 |
 
-Note. Dominant-label agreement = .558; macro-F1 = .496. Labels without positive examples in the reference set are omitted.
+Note. Leave-reference-out evaluation, n = 120; dominant-label agreement = .525, macro-F1 = .350, weighted F1 = .509. Labels that do not occur in the reference set are omitted. The weak categories (other, attack, irrelevant repetition) bound the filtering gain expected in condition C and are treated as a limitation rather than a result.
 
 Debrief notes. After the last block the experimenter asks three open questions: which comments they noticed, whether they wanted anything back, and whether anything surprised them. Answers are written down as short notes and analysed thematically. No questionnaire or rating scale is administered, so the quantitative evidence comes entirely from the logs.
 
@@ -74,6 +74,8 @@ Figure 1. Session procedure. Each participant completes six blocks; the order of
 ### 1.7 Analysis plan
 
 All measures are aggregated to participant means before inference, and blocks are the unit of description. The three planned contrasts are C versus A (total effect of filtering), C versus B (semantic versus keyword filtering) and B versus A (platform baseline), tested with two-tailed Wilcoxon signed-rank tests on participant means and Holm correction across the three contrasts. Effect sizes are Cohen's d_z for paired comparisons and Cliff's delta as a distribution-free check, each with 95% percentile bootstrap confidence intervals from 10,000 resamples. Hypotheses H1 to H4 are directional and tested as listed in Table 4; H5 is exploratory and reported descriptively with an interaction plot. The manipulation check compares rendered comments per minute between density cells within each condition. Missing or failed blocks are reported, and blocks with a failed pool load are excluded from filtering analyses but kept in the counts.
+
+Statistical inference follows the conventions of the field. A two-tailed Wilcoxon signed-rank test compares the two conditions on participant means; the null hypothesis is that the median within-participant difference is zero, and a p value below .05 is read as evidence against that null, never as the probability that the hypothesis is true. Because three contrasts are tested, p values are Holm-adjusted: the smallest of the three is compared with .05/3, the next with .05/2 and the largest with .05, which keeps the family-wise error rate at .05. A non-significant contrast is reported as "no detectable difference", not as evidence of equivalence. Effect sizes are Cohen's d_z (mean difference divided by the standard deviation of the within-participant differences; 0.2, 0.5 and 0.8 are read as small, medium and large) and Cliff's delta as a distribution-free alternative, each accompanied by a 95% percentile bootstrap interval computed from 10,000 resamples of participants.
 
 Table 4. Hypotheses, measures and tests.
 | Hypothesis | Comparison | Measure | Test |
@@ -140,6 +142,22 @@ Figure 3 (planned). Removal recall for C versus A and C versus B by density cell
 The exploratory analysis asks whether the benefit of filtering is larger when the stream is dense and whether it differs between informational and entertainment videos; because N = 16 and the cells contain two blocks per participant, the analysis is descriptive and will be reported as an interaction plot with confidence intervals rather than as a formal test. The debrief notes will be grouped into three themes: comments participants wanted removed, comments they wanted back, and comments they did not notice at all. Quotations will be translated into English and reported with participant codes.
 
 Reporting conventions: p values are reported to three decimals, effect sizes with 95% bootstrap confidence intervals, alpha is .05 and the three planned contrasts are Holm-corrected; all tests are two-tailed except the directional tests specified in Table 4. When a result contradicts a hypothesis we report the direction, the effect size and the interval rather than only the p value.
+
+### 2.6 Simulated dry run (illustrative only)
+
+Before recruiting, the full pipeline was exercised with six simulated participants: LLM agents, each given a distinct viewer persona, that read the block materials (video facts, two screenshots, the comment samples and the filtering counts) and completed the same rating forms. They did not watch the videos. Their data are labelled simulated everywhere, are analysed with the identical script, and are reported here only to show what the tables above will look like; they are not evidence for or against H1 to H5.
+
+Table 9. Simulated dry run, condition means (1–7, six agents, two blocks per condition per agent).
+| Measure | A all-on | B keyword | C prototype |
+| Discomfort | 3.65 (1.07) | 3.43 (0.93) | 2.63 (0.69) |
+| Co-viewing | 4.25 | 4.06 | 4.22 |
+| Control | 2.67 | 2.92 | 4.89 |
+| FOMO | 4.08 | 4.00 | 4.42 |
+| NASA-TLX load | 3.15 | 3.14 | 2.89 |
+| Comprehension (self-rated) | 4.18 | 4.15 | 4.28 |
+| Overall | 3.71 | 3.88 | 4.88 |
+
+The direction matches the hypotheses: C has the lowest discomfort, the highest control and the highest overall rating. With six participants, however, the smallest attainable two-tailed Wilcoxon p value is about .031, and after Holm correction none of the three planned contrasts reaches .05 (C versus A discomfort: difference -1.02, 95% CI [-1.90, -0.03], d_z = -0.79, p = .115, adjusted p = .344). The latency table in 2.4 is populated from the instrumented preflight rather than from the simulation (C: segment p50 1 ms, p95 31 ms, because the pool is served locally). The dry run is reported in full in docs/study/results-simulated.md, together with the three design bugs it exposed.
 
 ## 3. References
 

@@ -23,13 +23,18 @@ REPO = Path(__file__).resolve().parents[2]
 DEFAULT_STIMULI = REPO / "data" / "study" / "stimuli.json"
 
 # protocol §2.3: subject index mod 6 -> {condition: pair} and condition order
+# Each participant views all three video pairs, one pair under each condition,
+# and each pair contributes both of its videos, so a participant watches all six
+# videos once.  The cyclic and anti-cyclic assignment rows below put every video
+# under every condition exactly twice across the six participants, and the six
+# condition orders balance carry-over.
 LATIN = (
     ({"A": 1, "B": 2, "C": 3}, ("A", "B", "C")),
-    ({"A": 1, "B": 3, "C": 2}, ("A", "C", "B")),
-    ({"A": 2, "B": 1, "C": 3}, ("B", "A", "C")),
-    ({"A": 2, "B": 1, "C": 3}, ("B", "C", "A")),
-    ({"A": 1, "B": 2, "C": 3}, ("C", "A", "B")),
-    ({"A": 1, "B": 2, "C": 3}, ("C", "B", "A")),
+    ({"A": 2, "B": 3, "C": 1}, ("A", "C", "B")),
+    ({"A": 3, "B": 1, "C": 2}, ("B", "A", "C")),
+    ({"A": 1, "B": 3, "C": 2}, ("B", "C", "A")),
+    ({"A": 2, "B": 1, "C": 3}, ("C", "A", "B")),
+    ({"A": 3, "B": 2, "C": 1}, ("C", "B", "A")),
 )
 
 
@@ -49,8 +54,9 @@ def urls_for(participant: int, pairs: dict[int, tuple[dict, dict]], base: str) -
     rows = []
     for position, condition in enumerate(order, start=1):
         pair = pairs[assignment[condition]]
-        for block, entry in enumerate(pair, start=1):
-            study_id = "P%02d-%s" % (participant, condition)
+        for offset, entry in enumerate(pair):
+            block = (position - 1) * 2 + offset + 1
+            study_id = "P%02d-%d-%s" % (participant, block, condition)
             density = entry.get("density") or "high"
             url = "%s/video/%s/?dmf_study=%s&dmf_cond=%s&dmf_density=%s" % (
                 base, entry["bvid"], study_id, condition, density)

@@ -1,0 +1,42 @@
+{
+  "schema": "dmf-study-session/1",
+  "study_id": "P06-3-B",
+  "participant": "P06",
+  "condition": "keyword",
+  "condition_label": "B",
+  "started_at": "2026-11-19T12:53:00Z",
+  "ended_at": "2026-11-19T12:56:44Z",
+  "script_version": "0.4.2-simulated",
+  "prefs": {
+    "condition": "B"
+  },
+  "counts": {
+    "segments": 1,
+    "shown": 399,
+    "hidden": 0,
+    "collapsed": 0,
+    "thinned": 772,
+    "expands": 0,
+    "restores": 0,
+    "prefs": 0,
+    "corrections": 0,
+    "dropped_events": 0
+  },
+  "events": [
+    {
+      "t": 1795092780000,
+      "type": "segment",
+      "bvid": "BV1VMRKBCEDp",
+      "segment_index": 1,
+      "shown": 399,
+      "hidden": 0,
+      "collapsed": 0,
+      "thinned": 772,
+      "latency_ms": 17.0,
+      "online": true
+    }
+  ],
+  "simulated": true,
+  "participant_kind": "llm-agent",
+  "persona": "信息效率型（27 岁，讨厌刷屏/复读/无意义重复，想看清科普讲解；觉得平台屏蔽词太粗，愿意为看清内容调设置；对政治/引战偏回避）"
+}

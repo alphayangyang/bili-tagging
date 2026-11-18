@@ -1,0 +1,215 @@
+{
+  "rows": 2789,
+  "results": [
+    {
+      "name": "flat-softmax",
+      "n": 120,
+      "accuracy": 0.5333,
+      "macro_f1": 0.3549,
+      "weighted_f1": 0.5094,
+      "family_macro_f1": 0.4191,
+      "mean_cost": 0.2275,
+      "cost_weighted_accuracy": 0.7725,
+      "per_label": {
+        "information": {
+          "precision": 0.5152,
+          "recall": 0.68,
+          "f1": 0.5862,
+          "support": 25
+        },
+        "humor": {
+          "precision": 0.6591,
+          "recall": 0.617,
+          "f1": 0.6374,
+          "support": 47
+        },
+        "emotional_resonance": {
+          "precision": 0.4667,
+          "recall": 0.6667,
+          "f1": 0.549,
+          "support": 21
+        },
+        "irrelevant_repetition": {
+          "precision": 0.2,
+          "recall": 0.25,
+          "f1": 0.2222,
+          "support": 4
+        },
+        "attack": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        },
+        "conflict": {
+          "precision": 0.4,
+          "recall": 0.25,
+          "f1": 0.3077,
+          "support": 8
+        },
+        "other": {
+          "precision": 0.5,
+          "recall": 0.1111,
+          "f1": 0.1818,
+          "support": 9
+        }
+      },
+      "filter": {
+        "precision": 0.2727,
+        "recall": 0.1667,
+        "f1": 0.2069,
+        "tp": 3,
+        "fp": 8,
+        "fn": 15
+      },
+      "harm_per_1000": 258.33,
+      "top_confusions": [
+        {
+          "gold": "humor",
+          "pred": "information",
+          "count": 9
+        },
+        {
+          "gold": "information",
+          "pred": "emotional_resonance",
+          "count": 6
+        },
+        {
+          "gold": "other",
+          "pred": "humor",
+          "count": 5
+        },
+        {
+          "gold": "emotional_resonance",
+          "pred": "information",
+          "count": 4
+        },
+        {
+          "gold": "humor",
+          "pred": "irrelevant_repetition",
+          "count": 4
+        },
+        {
+          "gold": "attack",
+          "pred": "humor",
+          "count": 4
+        },
+        {
+          "gold": "conflict",
+          "pred": "emotional_resonance",
+          "count": 4
+        },
+        {
+          "gold": "humor",
+          "pred": "emotional_resonance",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "hierarchical",
+      "n": 120,
+      "accuracy": 0.5333,
+      "macro_f1": 0.3554,
+      "weighted_f1": 0.5131,
+      "family_macro_f1": 0.4606,
+      "mean_cost": 0.2275,
+      "cost_weighted_accuracy": 0.7725,
+      "per_label": {
+        "information": {
+          "precision": 0.5161,
+          "recall": 0.64,
+          "f1": 0.5714,
+          "support": 25
+        },
+        "humor": {
+          "precision": 0.6667,
+          "recall": 0.6383,
+          "f1": 0.6522,
+          "support": 47
+        },
+        "emotional_resonance": {
+          "precision": 0.4667,
+          "recall": 0.6667,
+          "f1": 0.549,
+          "support": 21
+        },
+        "irrelevant_repetition": {
+          "precision": 0.1667,
+          "recall": 0.25,
+          "f1": 0.2,
+          "support": 4
+        },
+        "attack": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        },
+        "conflict": {
+          "precision": 0.5,
+          "recall": 0.25,
+          "f1": 0.3333,
+          "support": 8
+        },
+        "other": {
+          "precision": 0.5,
+          "recall": 0.1111,
+          "f1": 0.1818,
+          "support": 9
+        }
+      },
+      "filter": {
+        "precision": 0.3333,
+        "recall": 0.2222,
+        "f1": 0.2667,
+        "tp": 4,
+        "fp": 8,
+        "fn": 14
+      },
+      "harm_per_1000": 250.0,
+      "top_confusions": [
+        {
+          "gold": "humor",
+          "pred": "information",
+          "count": 8
+        },
+        {
+          "gold": "information",
+          "pred": "emotional_resonance",
+          "count": 6
+        },
+        {
+          "gold": "emotional_resonance",
+          "pred": "information",
+          "count": 4
+        },
+        {
+          "gold": "humor",
+          "pred": "irrelevant_repetition",
+          "count": 4
+        },
+        {
+          "gold": "other",
+          "pred": "humor",
+          "count": 4
+        },
+        {
+          "gold": "attack",
+          "pred": "humor",
+          "count": 4
+        },
+        {
+          "gold": "conflict",
+          "pred": "emotional_resonance",
+          "count": 4
+        },
+        {
+          "gold": "emotional_resonance",
+          "pred": "humor",
+          "count": 3
+        }
+      ]
+    }
+  ]
+}

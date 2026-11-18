@@ -1,0 +1,42 @@
+{
+  "schema": "dmf-study-session/1",
+  "study_id": "P04-6-A",
+  "participant": "P04",
+  "condition": "all_on",
+  "condition_label": "A",
+  "started_at": "2026-11-19T11:35:00Z",
+  "ended_at": "2026-11-19T11:40:00Z",
+  "script_version": "0.4.2-simulated",
+  "prefs": {
+    "condition": "A"
+  },
+  "counts": {
+    "segments": 1,
+    "shown": 489,
+    "hidden": 0,
+    "collapsed": 0,
+    "thinned": 1030,
+    "expands": 0,
+    "restores": 0,
+    "prefs": 0,
+    "corrections": 0,
+    "dropped_events": 0
+  },
+  "events": [
+    {
+      "t": 1795088100000,
+      "type": "segment",
+      "bvid": "BV18E1NByEYv",
+      "segment_index": 1,
+      "shown": 489,
+      "hidden": 0,
+      "collapsed": 0,
+      "thinned": 1030,
+      "latency_ms": 24.0,
+      "online": false
+    }
+  ],
+  "simulated": true,
+  "participant_kind": "llm-agent",
+  "persona": "无所谓路人型（24 岁，中性、低投入，什么都行）"
+}

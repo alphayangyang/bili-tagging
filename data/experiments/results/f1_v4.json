@@ -1,0 +1,878 @@
+{
+  "labeled": "data/study/teacher_v4.jsonl",
+  "pooled": false,
+  "split_dev": 0.0,
+  "train_rows": 2816,
+  "gold_rows": 120,
+  "tau_objective": "harm",
+  "methods": {
+    "centroid": {
+      "report_rows": 120,
+      "tune_rows": 120,
+      "argmax": {
+        "n": 120,
+        "accuracy": 0.3667,
+        "macro_f1": 0.2999,
+        "weighted_f1": 0.3513,
+        "family_macro_f1": 0.4479,
+        "mean_cost": 0.2833,
+        "cost_weighted_accuracy": 0.7167,
+        "per_label": {
+          "information": {
+            "precision": 0.4412,
+            "recall": 0.7143,
+            "f1": 0.5455,
+            "support": 21
+          },
+          "humor": {
+            "precision": 0.5714,
+            "recall": 0.4211,
+            "f1": 0.4848,
+            "support": 38
+          },
+          "emotional_resonance": {
+            "precision": 0.3636,
+            "recall": 0.5333,
+            "f1": 0.4324,
+            "support": 15
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0769,
+            "recall": 0.25,
+            "f1": 0.1176,
+            "support": 4
+          },
+          "attack": {
+            "precision": 0.5,
+            "recall": 0.1667,
+            "f1": 0.25,
+            "support": 6
+          },
+          "conflict": {
+            "precision": 0.1,
+            "recall": 0.5,
+            "f1": 0.1667,
+            "support": 2
+          },
+          "other": {
+            "precision": 0.4,
+            "recall": 0.0588,
+            "f1": 0.1026,
+            "support": 34
+          }
+        },
+        "filter": {
+          "precision": 0.2,
+          "recall": 0.5,
+          "f1": 0.2857,
+          "tp": 6,
+          "fp": 24,
+          "fn": 6
+        },
+        "harm_per_1000": 450.0,
+        "top_confusions": [
+          {
+            "gold": "other",
+            "pred": "humor",
+            "count": 8
+          },
+          {
+            "gold": "humor",
+            "pred": "information",
+            "count": 8
+          },
+          {
+            "gold": "other",
+            "pred": "information",
+            "count": 7
+          },
+          {
+            "gold": "other",
+            "pred": "emotional_resonance",
+            "count": 7
+          },
+          {
+            "gold": "other",
+            "pred": "irrelevant_repetition",
+            "count": 5
+          },
+          {
+            "gold": "humor",
+            "pred": "irrelevant_repetition",
+            "count": 5
+          },
+          {
+            "gold": "other",
+            "pred": "conflict",
+            "count": 4
+          },
+          {
+            "gold": "information",
+            "pred": "emotional_resonance",
+            "count": 4
+          }
+        ]
+      },
+      "tau_objective": "harm",
+      "tau": 0.85,
+      "reject_cv": -116.666,
+      "reject": {
+        "n": 120,
+        "accuracy": 0.2833,
+        "macro_f1": 0.0635,
+        "weighted_f1": 0.1259,
+        "family_macro_f1": 0.1203,
+        "mean_cost": 0.3275,
+        "cost_weighted_accuracy": 0.6725,
+        "per_label": {
+          "information": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 21
+          },
+          "humor": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 38
+          },
+          "emotional_resonance": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 15
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 4
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "other": {
+            "precision": 0.2857,
+            "recall": 1.0,
+            "f1": 0.4444,
+            "support": 34
+          }
+        },
+        "filter": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 1,
+          "fn": 12
+        },
+        "harm_per_1000": 116.67,
+        "top_confusions": [
+          {
+            "gold": "humor",
+            "pred": "other",
+            "count": 37
+          },
+          {
+            "gold": "information",
+            "pred": "other",
+            "count": 21
+          },
+          {
+            "gold": "emotional_resonance",
+            "pred": "other",
+            "count": 15
+          },
+          {
+            "gold": "attack",
+            "pred": "other",
+            "count": 6
+          },
+          {
+            "gold": "irrelevant_repetition",
+            "pred": "other",
+            "count": 4
+          },
+          {
+            "gold": "conflict",
+            "pred": "other",
+            "count": 2
+          },
+          {
+            "gold": "humor",
+            "pred": "irrelevant_repetition",
+            "count": 1
+          }
+        ]
+      },
+      "ci": {
+        "macro_f1": [
+          0.2188,
+          0.3975
+        ],
+        "harm_per_1000": [
+          316.67,
+          591.67
+        ],
+        "reject_macro_f1": [
+          0.0476,
+          0.0844
+        ],
+        "reject_harm_per_1000": [
+          58.33,
+          175.0
+        ]
+      },
+      "harm_curve": [
+        {
+          "w_false_hide": 0.25,
+          "filter": 100.0,
+          "show_all": 100.0,
+          "delta": 0.0
+        },
+        {
+          "w_false_hide": 0.5,
+          "filter": 150.0,
+          "show_all": 100.0,
+          "delta": 50.0
+        },
+        {
+          "w_false_hide": 1.0,
+          "filter": 250.0,
+          "show_all": 100.0,
+          "delta": 150.0
+        },
+        {
+          "w_false_hide": 2.0,
+          "filter": 450.0,
+          "show_all": 100.0,
+          "delta": 350.0
+        },
+        {
+          "w_false_hide": 4.0,
+          "filter": 850.0,
+          "show_all": 100.0,
+          "delta": 750.0
+        }
+      ],
+      "policy": {
+        "show_all": {
+          "gamma": 2.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 12,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "harm_per_1000": 100.0
+        },
+        "gamma": 0.85,
+        "cv_harm": 116.67,
+        "at_gamma": {
+          "gamma": 0.85,
+          "tp": 0,
+          "fp": 1,
+          "fn": 12,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "harm_per_1000": 116.67
+        },
+        "harm_w1": 108.33,
+        "harm_w4": 133.33
+      }
+    },
+    "softmax": {
+      "report_rows": 120,
+      "tune_rows": 120,
+      "argmax": {
+        "n": 120,
+        "accuracy": 0.4,
+        "macro_f1": 0.2867,
+        "weighted_f1": 0.3401,
+        "family_macro_f1": 0.3546,
+        "mean_cost": 0.2833,
+        "cost_weighted_accuracy": 0.7167,
+        "per_label": {
+          "information": {
+            "precision": 0.4828,
+            "recall": 0.6667,
+            "f1": 0.56,
+            "support": 21
+          },
+          "humor": {
+            "precision": 0.5106,
+            "recall": 0.6316,
+            "f1": 0.5647,
+            "support": 38
+          },
+          "emotional_resonance": {
+            "precision": 0.3333,
+            "recall": 0.5333,
+            "f1": 0.4103,
+            "support": 15
+          },
+          "irrelevant_repetition": {
+            "precision": 0.25,
+            "recall": 0.25,
+            "f1": 0.25,
+            "support": 4
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "conflict": {
+            "precision": 0.1429,
+            "recall": 0.5,
+            "f1": 0.2222,
+            "support": 2
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 34
+          }
+        },
+        "filter": {
+          "precision": 0.1765,
+          "recall": 0.25,
+          "f1": 0.2069,
+          "tp": 3,
+          "fp": 14,
+          "fn": 9
+        },
+        "harm_per_1000": 308.33,
+        "top_confusions": [
+          {
+            "gold": "other",
+            "pred": "humor",
+            "count": 13
+          },
+          {
+            "gold": "other",
+            "pred": "emotional_resonance",
+            "count": 8
+          },
+          {
+            "gold": "other",
+            "pred": "information",
+            "count": 8
+          },
+          {
+            "gold": "emotional_resonance",
+            "pred": "humor",
+            "count": 5
+          },
+          {
+            "gold": "information",
+            "pred": "emotional_resonance",
+            "count": 5
+          },
+          {
+            "gold": "humor",
+            "pred": "information",
+            "count": 4
+          },
+          {
+            "gold": "other",
+            "pred": "conflict",
+            "count": 3
+          },
+          {
+            "gold": "humor",
+            "pred": "irrelevant_repetition",
+            "count": 3
+          }
+        ]
+      },
+      "tau_objective": "harm",
+      "tau": 0.75,
+      "reject_cv": -200.0,
+      "reject": {
+        "n": 120,
+        "accuracy": 0.4083,
+        "macro_f1": 0.2332,
+        "weighted_f1": 0.382,
+        "family_macro_f1": 0.346,
+        "mean_cost": 0.265,
+        "cost_weighted_accuracy": 0.735,
+        "per_label": {
+          "information": {
+            "precision": 0.7273,
+            "recall": 0.381,
+            "f1": 0.5,
+            "support": 21
+          },
+          "humor": {
+            "precision": 0.6471,
+            "recall": 0.2895,
+            "f1": 0.4,
+            "support": 38
+          },
+          "emotional_resonance": {
+            "precision": 0.3333,
+            "recall": 0.2,
+            "f1": 0.25,
+            "support": 15
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 4
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "other": {
+            "precision": 0.3462,
+            "recall": 0.7941,
+            "f1": 0.4821,
+            "support": 34
+          }
+        },
+        "filter": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 5,
+          "fn": 12
+        },
+        "harm_per_1000": 183.33,
+        "top_confusions": [
+          {
+            "gold": "humor",
+            "pred": "other",
+            "count": 23
+          },
+          {
+            "gold": "emotional_resonance",
+            "pred": "other",
+            "count": 10
+          },
+          {
+            "gold": "information",
+            "pred": "other",
+            "count": 8
+          },
+          {
+            "gold": "attack",
+            "pred": "other",
+            "count": 5
+          },
+          {
+            "gold": "information",
+            "pred": "emotional_resonance",
+            "count": 4
+          },
+          {
+            "gold": "irrelevant_repetition",
+            "pred": "other",
+            "count": 3
+          },
+          {
+            "gold": "humor",
+            "pred": "irrelevant_repetition",
+            "count": 3
+          },
+          {
+            "gold": "other",
+            "pred": "humor",
+            "count": 3
+          }
+        ]
+      },
+      "ci": {
+        "macro_f1": [
+          0.2081,
+          0.3769
+        ],
+        "harm_per_1000": [
+          200.0,
+          433.33
+        ],
+        "reject_macro_f1": [
+          0.1785,
+          0.3115
+        ],
+        "reject_harm_per_1000": [
+          100.0,
+          275.0
+        ]
+      },
+      "harm_curve": [
+        {
+          "w_false_hide": 0.25,
+          "filter": 104.2,
+          "show_all": 100.0,
+          "delta": 4.2
+        },
+        {
+          "w_false_hide": 0.5,
+          "filter": 133.3,
+          "show_all": 100.0,
+          "delta": 33.3
+        },
+        {
+          "w_false_hide": 1.0,
+          "filter": 191.7,
+          "show_all": 100.0,
+          "delta": 91.7
+        },
+        {
+          "w_false_hide": 2.0,
+          "filter": 308.3,
+          "show_all": 100.0,
+          "delta": 208.3
+        },
+        {
+          "w_false_hide": 4.0,
+          "filter": 541.7,
+          "show_all": 100.0,
+          "delta": 441.7
+        }
+      ],
+      "policy": {
+        "show_all": {
+          "gamma": 2.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 12,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "harm_per_1000": 100.0
+        },
+        "gamma": 0.85,
+        "cv_harm": 233.34,
+        "at_gamma": {
+          "gamma": 0.85,
+          "tp": 0,
+          "fp": 6,
+          "fn": 12,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "harm_per_1000": 200.0
+        },
+        "harm_w1": 150.0,
+        "harm_w4": 300.0
+      }
+    },
+    "ensemble": {
+      "report_rows": 120,
+      "tune_rows": 120,
+      "argmax": {
+        "n": 120,
+        "accuracy": 0.3917,
+        "macro_f1": 0.2797,
+        "weighted_f1": 0.3335,
+        "family_macro_f1": 0.3597,
+        "mean_cost": 0.2875,
+        "cost_weighted_accuracy": 0.7125,
+        "per_label": {
+          "information": {
+            "precision": 0.4516,
+            "recall": 0.6667,
+            "f1": 0.5385,
+            "support": 21
+          },
+          "humor": {
+            "precision": 0.5111,
+            "recall": 0.6053,
+            "f1": 0.5542,
+            "support": 38
+          },
+          "emotional_resonance": {
+            "precision": 0.3478,
+            "recall": 0.5333,
+            "f1": 0.4211,
+            "support": 15
+          },
+          "irrelevant_repetition": {
+            "precision": 0.2,
+            "recall": 0.25,
+            "f1": 0.2222,
+            "support": 4
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "conflict": {
+            "precision": 0.1429,
+            "recall": 0.5,
+            "f1": 0.2222,
+            "support": 2
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 34
+          }
+        },
+        "filter": {
+          "precision": 0.1667,
+          "recall": 0.25,
+          "f1": 0.2,
+          "tp": 3,
+          "fp": 15,
+          "fn": 9
+        },
+        "harm_per_1000": 325.0,
+        "top_confusions": [
+          {
+            "gold": "other",
+            "pred": "humor",
+            "count": 12
+          },
+          {
+            "gold": "other",
+            "pred": "information",
+            "count": 9
+          },
+          {
+            "gold": "other",
+            "pred": "emotional_resonance",
+            "count": 7
+          },
+          {
+            "gold": "humor",
+            "pred": "information",
+            "count": 5
+          },
+          {
+            "gold": "emotional_resonance",
+            "pred": "humor",
+            "count": 5
+          },
+          {
+            "gold": "information",
+            "pred": "emotional_resonance",
+            "count": 5
+          },
+          {
+            "gold": "other",
+            "pred": "conflict",
+            "count": 3
+          },
+          {
+            "gold": "humor",
+            "pred": "irrelevant_repetition",
+            "count": 3
+          }
+        ]
+      },
+      "tau_objective": "harm",
+      "tau": 0.6,
+      "reject_cv": -150.0,
+      "reject": {
+        "n": 120,
+        "accuracy": 0.4,
+        "macro_f1": 0.1978,
+        "weighted_f1": 0.3327,
+        "family_macro_f1": 0.2778,
+        "mean_cost": 0.2725,
+        "cost_weighted_accuracy": 0.7275,
+        "per_label": {
+          "information": {
+            "precision": 0.75,
+            "recall": 0.1429,
+            "f1": 0.24,
+            "support": 21
+          },
+          "humor": {
+            "precision": 1.0,
+            "recall": 0.2105,
+            "f1": 0.3478,
+            "support": 38
+          },
+          "emotional_resonance": {
+            "precision": 0.5,
+            "recall": 0.2,
+            "f1": 0.2857,
+            "support": 15
+          },
+          "irrelevant_repetition": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 4
+          },
+          "attack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "conflict": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "other": {
+            "precision": 0.3434,
+            "recall": 1.0,
+            "f1": 0.5113,
+            "support": 34
+          }
+        },
+        "filter": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 3,
+          "fn": 12
+        },
+        "harm_per_1000": 150.0,
+        "top_confusions": [
+          {
+            "gold": "humor",
+            "pred": "other",
+            "count": 27
+          },
+          {
+            "gold": "information",
+            "pred": "other",
+            "count": 15
+          },
+          {
+            "gold": "emotional_resonance",
+            "pred": "other",
+            "count": 11
+          },
+          {
+            "gold": "attack",
+            "pred": "other",
+            "count": 6
+          },
+          {
+            "gold": "irrelevant_repetition",
+            "pred": "other",
+            "count": 4
+          },
+          {
+            "gold": "humor",
+            "pred": "irrelevant_repetition",
+            "count": 3
+          },
+          {
+            "gold": "information",
+            "pred": "emotional_resonance",
+            "count": 3
+          },
+          {
+            "gold": "conflict",
+            "pred": "other",
+            "count": 2
+          }
+        ]
+      },
+      "ci": {
+        "macro_f1": [
+          0.203,
+          0.3627
+        ],
+        "harm_per_1000": [
+          216.67,
+          458.33
+        ],
+        "reject_macro_f1": [
+          0.1404,
+          0.2732
+        ],
+        "reject_harm_per_1000": [
+          83.33,
+          225.0
+        ]
+      },
+      "harm_curve": [
+        {
+          "w_false_hide": 0.25,
+          "filter": 106.2,
+          "show_all": 100.0,
+          "delta": 6.2
+        },
+        {
+          "w_false_hide": 0.5,
+          "filter": 137.5,
+          "show_all": 100.0,
+          "delta": 37.5
+        },
+        {
+          "w_false_hide": 1.0,
+          "filter": 200.0,
+          "show_all": 100.0,
+          "delta": 100.0
+        },
+        {
+          "w_false_hide": 2.0,
+          "filter": 325.0,
+          "show_all": 100.0,
+          "delta": 225.0
+        },
+        {
+          "w_false_hide": 4.0,
+          "filter": 575.0,
+          "show_all": 100.0,
+          "delta": 475.0
+        }
+      ],
+      "policy": {
+        "show_all": {
+          "gamma": 2.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 12,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "harm_per_1000": 100.0
+        },
+        "gamma": 0.75,
+        "cv_harm": 166.67,
+        "at_gamma": {
+          "gamma": 0.75,
+          "tp": 0,
+          "fp": 4,
+          "fn": 12,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "harm_per_1000": 166.67
+        },
+        "harm_w1": 133.33,
+        "harm_w4": 233.33
+      }
+    }
+  }
+}

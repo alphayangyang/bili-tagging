@@ -1,0 +1,42 @@
+{
+  "schema": "dmf-study-session/1",
+  "study_id": "P03-3-A",
+  "participant": "P03",
+  "condition": "all_on",
+  "condition_label": "A",
+  "started_at": "2026-11-19T10:38:00Z",
+  "ended_at": "2026-11-19T10:42:51Z",
+  "script_version": "0.4.2-simulated",
+  "prefs": {
+    "condition": "A"
+  },
+  "counts": {
+    "segments": 1,
+    "shown": 725,
+    "hidden": 0,
+    "collapsed": 0,
+    "thinned": 0,
+    "expands": 0,
+    "restores": 0,
+    "prefs": 0,
+    "corrections": 0,
+    "dropped_events": 0
+  },
+  "events": [
+    {
+      "t": 1795084680000,
+      "type": "segment",
+      "bvid": "BV1Z4RHYKEcB",
+      "segment_index": 1,
+      "shown": 725,
+      "hidden": 0,
+      "collapsed": 0,
+      "thinned": 0,
+      "latency_ms": 32.0,
+      "online": false
+    }
+  ],
+  "simulated": true,
+  "participant_kind": "llm-agent",
+  "persona": "敏感易被冒犯型：23 岁，讨厌攻击、引战与剧透，看视频想清净"
+}

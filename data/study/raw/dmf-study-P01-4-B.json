@@ -1,0 +1,42 @@
+{
+  "schema": "dmf-study-session/1",
+  "study_id": "P01-4-B",
+  "participant": "P01",
+  "condition": "keyword",
+  "condition_label": "B",
+  "started_at": "2026-11-19T09:12:00Z",
+  "ended_at": "2026-11-19T09:15:24Z",
+  "script_version": "0.4.2-simulated",
+  "prefs": {
+    "condition": "B"
+  },
+  "counts": {
+    "segments": 1,
+    "shown": 4103,
+    "hidden": 18,
+    "collapsed": 0,
+    "thinned": 0,
+    "expands": 0,
+    "restores": 0,
+    "prefs": 0,
+    "corrections": 0,
+    "dropped_events": 0
+  },
+  "events": [
+    {
+      "t": 1795079520000,
+      "type": "segment",
+      "bvid": "BV1X7zGY4E45",
+      "segment_index": 1,
+      "shown": 4103,
+      "hidden": 18,
+      "collapsed": 0,
+      "thinned": 0,
+      "latency_ms": 163.0,
+      "online": true
+    }
+  ],
+  "simulated": true,
+  "participant_kind": "llm-agent",
+  "persona": "学术型完美主义者（26 岁研究生，理性、情绪反应低，但对『不可解释』和失控特别敏感）"
+}
